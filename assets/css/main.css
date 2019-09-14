@@ -317,11 +317,11 @@
 	@media screen and (max-width: 1680px) {
 
 		.row > * {
-			padding: 0 0 0 1.5em;
+			padding: 0 0 0 0;
 		}
 
 		.row {
-			margin: 0 0 -1px -1.5em;
+			margin: 0 0 0 0;
 		}
 
 		.row.uniform > * {
@@ -532,11 +532,11 @@
 	@media screen and (max-width: 1280px) {
 
 		.row > * {
-			padding: 0 0 0 1.5em;
+			padding: 0 0 0 0;
 		}
 
 		.row {
-			margin: 0 0 -1px -1.5em;
+			margin: 0 0 1px 1.5em;
 		}
 
 		.row.uniform > * {
@@ -544,7 +544,7 @@
 		}
 
 		.row.uniform {
-			margin: -1.5em 0 -1px -1.5em;
+			margin: -1.5em 0 1px 1.5em;
 		}
 
 		.row.\32 00\25 > * {
@@ -751,7 +751,7 @@
 		}
 
 		.row {
-			margin: 0 0 -1px -1.5em;
+			margin: 0 0 0 0;
 		}
 
 		.row.uniform > * {
