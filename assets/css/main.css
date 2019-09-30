@@ -3951,3 +3951,29 @@
 		background-color: #f4f4f4;
 		text-shadow: 1px 1px 0px #fff;
 	}
+
+iframe.animated-logo {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100vh;
+	pointer-events: none;
+	animation: animatedLogoFade 0.5s ease-in 2.5s;
+	animation-fill-mode: both;
+}
+
+section#banner, nav#nav {
+	/* opacity: 0; */
+	animation: animatedLogoFade 1s ease-out 2.25s 1 reverse;
+	animation-fill-mode: both;
+}
+
+@keyframes animatedLogoFade {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
