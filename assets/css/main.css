@@ -24,6 +24,7 @@
 
 	body {
 		line-height: 1;
+		margin: 0;
 	}
 
 	ol, ul {
@@ -1175,6 +1176,15 @@
 	}
 
 	@media screen and (max-width: 480px) {
+		svg#animated-logo {
+			position: fixed;
+			top: 20vh;
+			left: 50vw;
+			transform: translate(-50%, -20%);
+			animation: animatedLogoFade 0.25s ease-in 3.5s;
+			animation-fill-mode: both;
+			z-index: 99;
+		}
 
 		.row > * {
 			padding: 0 0 0 1.5em;
@@ -1387,6 +1397,18 @@
 			margin-left: 8.33333%;
 		}
 
+	}
+
+	@media screen and (min-width: 481px) {
+		svg#animated-logo {
+			position: fixed;
+			top: 50vh;
+			left: 50vw;
+			transform: translate(-50%, -50%);
+			animation: animatedLogoFade 0.25s ease-in 3.5s;
+			animation-fill-mode: both;
+			z-index: 99;
+		}
 	}
 
 /* Basic */
@@ -3952,20 +3974,20 @@
 		text-shadow: 1px 1px 0px #fff;
 	}
 
-iframe.animated-logo {
+/* #animated-logo is in media queries */
+
+#animated-logo-background {
 	position: fixed;
 	top: 0;
-	right: 0;
-	width: 100%;
+	left: 0;
+	width: 100vw;
 	height: 100vh;
-	pointer-events: none;
-	animation: animatedLogoFade 0.5s ease-in 2.5s;
+	animation: animatedLogoFade 0.25s ease-in 3.5s;
 	animation-fill-mode: both;
 }
 
 section#banner, nav#nav {
-	/* opacity: 0; */
-	animation: animatedLogoFade 1s ease-out 2.25s 1 reverse;
+	animation: animatedLogoFade 1.5s ease-out 3s 1 reverse;
 	animation-fill-mode: both;
 }
 
