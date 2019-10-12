@@ -3986,7 +3986,7 @@
 	animation-fill-mode: both;
 }
 
-section#banner, nav#nav {
+section#banner.animated-banner, nav#nav.animated-nav {
 	animation: animatedLogoFade 1.5s ease-out 3s 1 reverse;
 	animation-fill-mode: both;
 }
