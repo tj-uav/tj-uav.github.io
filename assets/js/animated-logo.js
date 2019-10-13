@@ -8,9 +8,15 @@ const SVGHeight = 243.227;
 		index = 0
 	paper.node.id = "animated-logo" //give the SVG an ID
 
-	var background = Snap(window.innerWidth, window.innerHeight);
+
+
+	var background = Snap(window.innerWidth, window.innerHeight)
 	background.node.id = "animated-logo-background"
 
+	setTimeout(() => {
+		document.getElementById("animated-logo").remove();
+		document.getElementById("animated-logo-background").remove();
+	}, 3500);
 	/*****************************
 	 *   	     TOP T	 		 *
 	 * ***************************/
