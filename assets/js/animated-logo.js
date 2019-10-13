@@ -3,6 +3,14 @@ const SVGHeight = 243.227;
 
 
 (function drawUAVlogo(scale) {
+	window.addEventListener('click', () => {
+		removeStuffs()
+		let banner = document.querySelector('section#banner.animated-banner')
+		let nav = document.querySelector('nav#nav.animated-nav')
+		banner.classList.remove('animated-banner')
+		nav.classList.remove('animated-nav')
+	})
+
 	var paper = Snap(SVGWidth * scale, SVGHeight * scale),
 		LOGO = new Array(),
 		index = 0
@@ -13,9 +21,13 @@ const SVGHeight = 243.227;
 	var background = Snap(window.innerWidth, window.innerHeight)
 	background.node.id = "animated-logo-background"
 
+	function removeStuffs() {
+		document.getElementById("animated-logo").remove()
+		document.getElementById("animated-logo-background").remove()
+	}
+
 	setTimeout(() => {
-		document.getElementById("animated-logo").remove();
-		document.getElementById("animated-logo-background").remove();
+		removeStuffs()
 	}, 3500);
 	/*****************************
 	 *   	     TOP T	 		 *
