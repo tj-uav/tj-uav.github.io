@@ -54,24 +54,28 @@
 		</article>
 
 
-		<div class="row">
-			<form name="letters" id="letters" class="col s9">
-				<div class="row">
+		<div class="10u -1u">
+			<form name="letters" id="letters">
+				<div class="row uniform">
 
-					<label for="input_letters" class="active">Name:</label>
-					<input style="margin-bottom : 15px;" name="name" placeholder="John Doe" id="letset" type="text" class="validate invalid" required="">
+					<div class="6u 12u$(xsmall)">
+						<input type="text" name="name" value placeholder="Name">
+					</div>
 
+					<div class="6u$ 12u$(xsmall)">
+						<input type="email" name="email" value placeholder="Email">
+					</div>
 
-					<label for="input_letters" class="active">Email:</label>
-					<input style="margin-bottom : 15px;" name="name" placeholder="johndoe@email.com" id="letset" type="text" class="validate invalid" required="">
+					<div class="12u$">
+						<textarea name="message" cols="40" rows="5" placeholder="Enter your Message"></textarea>
+					</div>
 
-
-					<label class="active">Message:</label>
-					<textarea style="resize:none; margin-bottom:20px;" name="Text1" cols="40" rows="5"></textarea>
-
-
-					<button style="width: 7em;" type="button">Submit</button>
-					<p id="table" style="white-space: pre-line;"></p>
+					<div class="12u$">
+						<ul class="actions">
+							<li><input type="submit" value="Submit" class="special"></li>
+							<li><input type="reset" value="Reset"></li>
+						</ul>
+					</div>
 				</div>
 			</form>
 		</div>
