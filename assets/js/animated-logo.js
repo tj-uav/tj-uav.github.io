@@ -22,8 +22,12 @@ const SVGHeight = 243.227;
 	background.node.id = "animated-logo-background"
 
 	function removeStuffs() {
-		document.getElementById("animated-logo").remove()
-		document.getElementById("animated-logo-background").remove()
+		let logo = document.getElementById("animated-logo")
+		let background = document.getElementById("animated-logo-background")
+		if (logo !== null)
+			logo.remove()
+		if (background !== null)
+			background.remove()
 	}
 
 	setTimeout(() => {
