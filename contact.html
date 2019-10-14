@@ -5,95 +5,110 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<link rel="shortcut icon" type="image/png" href="images/favicon1.png">
-		<title>TJ UAV</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-	</head>
-	<body>
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+<head>
+	<link rel="shortcut icon" type="image/png" href="images/favicon1.png">
+	<title>TJ UAV</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	<style>
+		#contact-image {
+			background-image: url("./images/6-7\ Pictures/1.jpg");
+		}
+	</style>
+</head>
 
-				<!-- Header -->
-					<header id="header">
-						<h1><a href="index.html">TJ UAV</a></h1>
-						<nav id="nav">
+<body>
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<h1><a href="index.html">TJ UAV</a></h1>
+			<nav id="nav">
+				<ul>
+					<li class="special">
+						<a href="#menu" class="menuToggle"><span>Menu</span></a>
+						<div id="menu">
 							<ul>
-								<li class="special">
-									<a href="#menu" class="menuToggle"><span>Menu</span></a>
-									<div id="menu">
-										<ul>
-											<li><a href="index.html">Home</a></li>\
-											<li><a href="competition.html">AUVSI SUAS</a></li>
-											<li><a href="gallery.html">Video and Photo Gallery</a></li>
-											<li><a href="planedownloads.html">Downloads</a></li>
-											<li><a href="sponsorship.html">Sponsors</a></li>
-										</ul>
-									</div>
-								</li>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="squad.html">Meet the Squad</a></li>
+								<li><a href="competition.html">AUVSI SUAS</a></li>
+								<li><a href="gallery.html">Video and Photo Gallery</a></li>
+								<li><a href="planedownloads.html">Downloads</a></li>
+								<li><a href="sponsorship.html">Sponsors</a></li>
+								<li><a href="contact.html">Contact Us</a></li>
 							</ul>
-						</nav>
-					</header>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</header>
 
-				<!-- Main -->
-					<article id="main">
-						<header style="background-image:url("../../images/6-7 Pictures/1.jpg");"> <!--Displays nothing for some reason-->
-							<h2>Contact Us</h2>
-							<p>Feel free to reach out to TJ UAV!</p>
-						</header>
-					</article>
-
-
-					<div class="row">
-					    <form name="letters" id="letters" class="col s9">
-					      <div class="row">
-
-							  <label for="input_letters" class="active">Name:</label>
-							  <input style="margin-bottom : 15px;" name="name" placeholder="John Doe" id="letset" type="text" class="validate invalid" required="">
+		<!-- Main -->
+		<article id="main" class="row">
+			<header id="contact-image" class="12u$">
+				<h2>Contact Us</h2>
+				<p>Feel free to reach out to TJ UAV!</p>
+			</header>
+		</article>
 
 
-							  <label for="input_letters" class="active">Email:</label>
-							  <input style="margin-bottom : 15px;" name="name" placeholder="johndoe@email.com" id="letset" type="text" class="validate invalid" required="">
+		<div class="10u -1u">
+			<form name="letters" id="letters">
+				<div class="row uniform">
 
+					<div class="6u 12u$(xsmall)">
+						<input type="text" name="name" value placeholder="Name">
+					</div>
 
-							  <label class="active">Message:</label>
-							  <textarea style="resize:none; margin-bottom:20px;" name="Text1" cols="40" rows="5"></textarea>
+					<div class="6u$ 12u$(xsmall)">
+						<input type="email" name="email" value placeholder="Email">
+					</div>
 
+					<div class="12u$">
+						<textarea name="message" cols="40" rows="5" placeholder="Enter your Message"></textarea>
+					</div>
 
-					    <button style = "width: 7em;" type="button">Submit</button>
-					    <p id="table" style="white-space: pre-line;"></p>
-					</div></form>
-					  </div>
-
-
-
-
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="icons">
-							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+					<div class="12u$">
+						<ul class="actions">
+							<li><input type="submit" value="Submit" class="special"></li>
+							<li><input type="reset" value="Reset"></li>
 						</ul>
-						<ul class="copyright">
-							<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</footer>
+					</div>
+				</div>
+			</form>
+		</div>
 
-			</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
 
-	</body>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<ul class="icons">
+				<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+			</ul>
+			<ul class="copyright">
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>

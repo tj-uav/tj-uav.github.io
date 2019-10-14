@@ -1474,6 +1474,7 @@
 		border-bottom: dotted 1px;
 		color: inherit;
 		text-decoration: none;
+		pointer-events: all;
 	}
 
 		a:hover {
