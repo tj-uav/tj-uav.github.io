@@ -3977,6 +3977,14 @@
 
 /* #animated-logo is in media queries */
 
+
+/*
+removes the extra SVGs added when animation is cut short.  Not sure why they are added to begin with
+*/
+svg:not(#animated-logo-background):not(#animated-logo) { 
+	height: 0;
+}
+
 #animated-logo-background {
 	position: fixed;
 	top: 0;

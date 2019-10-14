@@ -3,6 +3,7 @@ const SVGHeight = 243.227;
 
 
 (function drawUAVlogo(scale) {
+	let hasRemovedStuffs = false;
 	window.addEventListener('click', () => {
 		removeStuffs()
 		let banner = document.querySelector('section#banner.animated-banner')
@@ -22,6 +23,8 @@ const SVGHeight = 243.227;
 	background.node.id = "animated-logo-background"
 
 	function removeStuffs() {
+		if (hasRemovedStuffs === false)
+			hasRemovedStuffs = true;
 		let logo = document.getElementById("animated-logo")
 		let background = document.getElementById("animated-logo-background")
 		if (logo !== null)
@@ -31,7 +34,8 @@ const SVGHeight = 243.227;
 	}
 
 	setTimeout(() => {
-		removeStuffs()
+		if (hasRemovedStuffs === false)
+			removeStuffs()
 	}, 4000);
 	/*****************************
 	 *   	     TOP T	 		 *
