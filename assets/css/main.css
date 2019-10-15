@@ -4000,6 +4000,12 @@ section#banner.animated-banner, nav#nav.animated-nav {
 	animation-fill-mode: both;
 }
 
+#menu ul > li > a.disabled-link {
+	opacity: 0.75;
+	text-decoration: line-through;
+	pointer-events: none;
+}
+
 @keyframes animatedLogoFade {
 	from {
 		opacity: 1;
