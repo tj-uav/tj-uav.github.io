@@ -3979,7 +3979,7 @@
 
 
 /*
-removes the extra SVGs added when animation is cut short.  Not sure why they are added to begin with
+hides the extra SVGs added when animation is cut short.  Not sure why they are added to begin with
 */
 svg:not(#animated-logo-background):not(#animated-logo) { 
 	height: 0;
@@ -4013,4 +4013,38 @@ section#banner.animated-banner, nav#nav.animated-nav {
 	to {
 		opacity: 0;
 	}
+}
+
+#competition-team, #previous-presidents {
+	border: 1px solid #2e3842;
+	border-radius: 3px;
+	padding: 0 1em 1em 1em;
+	width: calc(100% + 2em);
+	transform: translate(-1em, 0);
+	margin: 45px auto 15px auto;
+}
+
+#competition-team::before, #previous-presidents::before {
+	content: "";
+	position: relative;
+	display: inline-block;
+	font-size: 155%;
+	font-weight: bold;
+	letter-spacing: 0.225em;
+	padding: 5px 5px 5px 10px;
+	line-height: 1em;
+	text-transform: uppercase;
+	text-align: center;
+	transform: translate(0, -50%);
+	background: white;
+	/* border-left: 1px solid black;
+	border-right: 1px solid black; */
+}
+
+#competition-team::before {
+	content: "competition team";
+}
+
+#previous-presidents::before {
+	content: "previous presidents";
 }
