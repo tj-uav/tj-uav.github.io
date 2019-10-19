@@ -3992,11 +3992,13 @@ svg:not(#animated-logo-background):not(#animated-logo) {
 	width: 100vw;
 	height: 100vh;
 	animation: animatedLogoFade 0.25s ease-in 3.5s;
+	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;
 }
 
 section#banner.animated-banner, nav#nav.animated-nav {
 	animation: animatedLogoFade 1.5s ease-out 3s 1 reverse;
+	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;
 }
 
