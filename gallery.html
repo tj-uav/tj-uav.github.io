@@ -389,7 +389,32 @@
 						<span class="dot" onclick="currentSlide(17)"></span>
 					</div>
 
+					<button id="autoplay" class="special" style="margin-left: 50%; margin-top: 2em; transform: translate(-50%, 0);">
+						<span>Autoplay: Enabled</span>
+					</button>
+
 					<script>
+						let interval = setInterval(() => {
+							plusSlides(1);
+						}, 5000);
+
+						let autoplay = document.querySelector('#autoplay');
+						let span = document.querySelector('#autoplay span');
+						autoplay.addEventListener('click', () => {
+							if (autoplay.classList.contains('special')) {
+								span.textContent = 'Autoplay: Disabled';
+								clearInterval(interval);
+							} else {
+								span.textContent = 'Autoplay: Enabled';
+								interval = setInterval(() => {
+									plusSlides(1);
+								}, 5000);
+							}
+							autoplay.classList.toggle('special');
+						})
+
+
+
 						var slideIndex = 1;
 						showSlides(slideIndex);
 
@@ -430,18 +455,8 @@
 		<footer id="footer">
 			<ul class="icons">
 				<li><a href="https://www.facebook.com/groups/595833823874037/?ref=share" class="icon fa-facebook-square" target="_blank"><span class="label">Facebook</span></a></li>
-				<!-- add actual email here, make sure it can't be searched by bots and spammed -->
 				<li><a href="mailto:tjhsstuav@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
 			</ul>
-
-
-			<!-- <ul class="icons">
-							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon fa-facebook-square"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-							<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
-						</ul> -->
 			<ul class="copyright">
 				<li>&copy; Untitled</li>
 				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
