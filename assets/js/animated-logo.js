@@ -154,7 +154,7 @@ const SVGHeight = 243.227;
 		let pathString = ""
 		for (let i = 0; i < section.length - 1; i++)
 			for (let j = 0; j < section[i].length; j++) { //the one with individual values like "M", 123.456, etc
-				pathString += section[i][j] + (j >= 1 ? "," : "")
+				pathString += section[i][j] + (j >= 1 ? " " : "")
 			}
 		section[section.length - 1].transform = `t${-58.526 * scale},${-125.675 * scale}s${scale}, 0, 0`
 		paper.path(pathString).attr(section[section.length - 1])
