@@ -4,7 +4,7 @@ const SVGHeight = 243.227;
 
 (function drawUAVlogo(scale) {
 	let hasRemovedStuffs = false;
-	window.addEventListener('click', () => {
+	window.addEventListener('click', function () {
 		removeStuffs()
 		let banner = document.querySelector('section#banner.animated-banner')
 		let nav = document.querySelector('nav#nav.animated-nav')
@@ -33,7 +33,7 @@ const SVGHeight = 243.227;
 			background.remove()
 	}
 
-	setTimeout(() => {
+	setTimeout(function () {
 		if (hasRemovedStuffs === false)
 			removeStuffs()
 	}, 4000);
@@ -44,7 +44,7 @@ const SVGHeight = 243.227;
 	let topTmask = paper.rect(findLowestX(topT), findLowestY(topT), 0, findHighestY(topT) - findLowestY(topT)).attr({
 		fill: "#FFF"
 	})
-	setTimeout(() => {
+	setTimeout(function () {
 		topTmask.animate({
 			width: findHighestX(topT) - findLowestX(topT)
 		}, 1500, mina.easeinout)
@@ -64,7 +64,7 @@ const SVGHeight = 243.227;
 		transform: `r${Snap.atan(20.286/42.896)},${findHighestX(bottomT)},${findLowestY(bottomT)}`,
 		fill: "#FFF"
 	})
-	setTimeout(() => {
+	setTimeout(function () {
 		bottomTmask.animate({
 			height: Snap.len(407.377, 125.675, 325.54, 303.051)
 		}, 1000, mina.easeinout)
@@ -83,7 +83,7 @@ const SVGHeight = 243.227;
 	let topJmask = paper.rect(findLowestX(topJ), findLowestY(topJ), 0, findHighestY(topJ) - findLowestY(topJ)).attr({
 		fill: "#FFF"
 	})
-	setTimeout(() => {
+	setTimeout(function () {
 		topJmask.animate({
 			width: findHighestX(topJ) - findLowestX(topJ)
 		}, 1500, mina.easeinout)
@@ -103,7 +103,7 @@ const SVGHeight = 243.227;
 		fill: "#FFF",
 		transform: `r${Snap.atan(20.286/42.896)},${findHighestX(bottomJ)},${findLowestY(bottomJ)}`,
 	})
-	setTimeout(() => {
+	setTimeout(function () {
 		bottomJmask.animate({
 			height: Snap.len(348.747, 376.476, 451.559, 159.14),
 		}, 1000)
@@ -122,7 +122,7 @@ const SVGHeight = 243.227;
 	let linesMask = paper.rect(208.562 + (913.237 - 208.562) / 2, 192.594, 0, findHighestY(lines) - findLowestY(lines) - 192.594).attr({
 		fill: "#FFF"
 	})
-	setTimeout(() => {
+	setTimeout(function () {
 		linesMask.animate({
 			width: 913.237 - 208.562,
 			transform: `t${-((913.237 - 208.562) / 2)},0`
@@ -139,7 +139,7 @@ const SVGHeight = 243.227;
 	let textUAVmask = paper.rect(385.486, 237.761, 485.388, 131.14).attr({
 		fill: "#000"
 	})
-	setTimeout(() => {
+	setTimeout(function () {
 		textUAVmask.animate({
 			fill: "#FFF"
 		}, 1500, mina.easeout)
