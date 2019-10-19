@@ -1,0 +1,6 @@
+section#banner.animated-banner,
+nav#nav.animated-nav {
+	animation: unset;
+	-webkit-animation-fill-mode: unset;
+	animation-fill-mode: unset;
+}
