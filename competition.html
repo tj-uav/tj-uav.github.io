@@ -23,8 +23,46 @@
 			background-image: linear-gradient(top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./images/AUVSI.jpg");
 		}
 
-		p {
-			text-align: justify;
+		#centered-on-page {
+			display: flex;
+			justify-content: space-around;
+		}
+
+		a {
+			color: transparent;
+		}
+
+		#videos>iframe {
+			width: 47.5%;
+		}
+
+		#videos {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		@media screen and (max-width: 736px) {
+			#centered-on-page {
+				flex-direction: column;
+				align-items: center;
+				justify-content: unset;
+			}
+
+			#centered-on-page>a:first-child {
+				margin-bottom: 1em;
+			}
+
+			#videos {
+				flex-direction: column;
+			}
+
+			#videos>iframe {
+				width: 100%;
+			}
+
+			#videos>iframe:first-of-type {
+				margin-bottom: 1em;
+			}
 		}
 	</style>
 </head>
@@ -70,11 +108,18 @@
 						Interoperability (the transmission and receiving of data), Autonomous Flight, Obstacle Avoidance, ODCL (Object Detection, Classification, Localization), and Air Delivery. In
 						addition to the UAS, teams must provide a Technical Design Paper and a Flight Readiness Review. In our first year, 2019, our team placed 23 out of 75 teams overall, a very
 						substantial achievement.</p>
-					<a href="https://www.auvsi-suas.org" target="_blank"><button class="special">Visit the Competition Page</button></a>
-					<a href="files\auvsi_suas-2019-journals-thomas_jefferson_high_school.pdf" target="_blank"><button class="special">View Our Technical Paper for the 2019 Competition</button></a>
-					<p>			</p>
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/I-CSZEmz2J4" frameborder="50" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/1tz2nyi6ayU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<div id="centered-on-page">
+						<a href="files\auvsi_suas-2019-journals-thomas_jefferson_high_school.pdf" target="_blank"><button class="special">2019 Technical Paper</button></a>
+						<a href="https://www.auvsi-suas.org" target="_blank"><button>Visit the Competition Page</button></a>
+					</div>
+					<hr>
+					<div id="videos">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/I-CSZEmz2J4" frameborder="50"
+								allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen></iframe>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/1tz2nyi6ayU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen></iframe>
+					</div>
 				</div>
 			</section>
 		</article>
