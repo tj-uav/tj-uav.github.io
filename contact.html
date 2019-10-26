@@ -19,6 +19,41 @@
 		#contact-image {
 			background-image: url("./images/6-7\ Pictures/1.jpg");
 		}
+
+		#thank {
+			position: fixed;
+			display: none;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background: #2e3842;
+			padding: 1em 2em;
+			z-index: 99;
+		}
+
+		#thank.enabled {
+			display: flex;
+		}
+
+		#thank header {
+			display: flex;
+			flex-direction: column;
+		}
+
+		#thank-cover {
+			display: none;
+			position: fixed;
+			width: 100vw;
+			height: 100vh;
+			top: 0;
+			left: 0;
+			background: rgba(0, 0, 0, 0.5);
+			z-index: 5;
+		}
+
+		#thank-cover.enabled {
+			display: unset;
+		}
 	</style>
 </head>
 
@@ -51,6 +86,17 @@
 		</header>
 
 		<!-- Main -->
+		<div id="thank-cover"></div>
+		<article id="thank" class="row style2">
+			<header class="12u$">
+				<h2>Thank you for contacting us!</h2>
+				<button class="special" onclick="(function() {
+					document.querySelector('#thank-cover').classList.remove('enabled')
+					document.querySelector('#thank').classList.remove('enabled')
+				})()">Ok</button>
+			</header>
+		</article>
+
 		<article id="main" class="row">
 			<header id="contact-image" class="12u$">
 				<h2>Contact Us</h2>
@@ -60,27 +106,19 @@
 
 
 		<div class="10u -1u">
-			<form name="letters" id="letters" onsubmit="(function() {
-				var name = document.querySelector('#letters .name input')
-				var subject = document.querySelector('#letters .subject input')
-				var message = document.querySelector('#letters .message textarea')
-				var emailLink = `mailto:tjhsstuav@gmail.com?subject=${subject.value}&body=message%20from%20${name.value}:%20${message.value}`
-				let win = window.open(emailLink, 'emailWindow')
-				if (win && win.open && !win.closed) 
-					win.close()
-			})()">
+			<form name="letters" id="letters">
 				<div class="row uniform">
 
 					<div class="6u 12u$(xsmall) name">
-						<input type="text" name="name" value placeholder="Name">
+						<input type="text" name="name" value="" placeholder="Name">
 					</div>
 
 					<div class="6u$ 12u$(xsmall) email">
-						<input type="email" name="email" value placeholder="Email">
+						<input type="email" name="email" value="" placeholder="Email">
 					</div>
 
 					<div class="12u$ 12u$(xsmall) subject">
-						<input type="text" name="subject" value placeholder="Subject">
+						<input type="text" name="subject" value="" placeholder="Subject">
 					</div>
 
 					<div class="12u$ message">
@@ -89,12 +127,34 @@
 
 					<div class="12u$">
 						<ul class="actions">
-							<li><input type="submit" value="Submit" class="special"></li>
+							<li><input type="submit" name="submit" value="Submit" class="special"></li>
 							<li><input type="reset" value="Reset"></li>
 						</ul>
 					</div>
 				</div>
 			</form>
+
+			<script>
+				const scriptURL = 'https://script.google.com/macros/s/AKfycbzhUIL3OmitTfOS7MaNOfMQDKbqJqFdXC7Z7qIfpFmKImBuzwQr/exec'
+				const form = document.forms['letters']
+
+				form.addEventListener('submit', (e) => {
+					e.preventDefault()
+					fetch(scriptURL, {
+							method: 'POST',
+							body: new FormData(form)
+						})
+						.then(response => console.log('Success!', response))
+						.catch(error => console.error('Error!', error.message))
+
+					document.querySelector('#thank-cover').classList.add('enabled')
+					document.querySelector('#thank').classList.add('enabled')
+					let formForClearing = document.querySelectorAll('form#letters input[name]:not(input[name="submit"]), form#letters textarea')
+					formForClearing.forEach(element => {
+						element.value = "";
+					})
+				})
+			</script>
 		</div>
 
 
