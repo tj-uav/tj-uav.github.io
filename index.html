@@ -15,6 +15,23 @@
 		<link rel="stylesheet" href="assets/css/ie11.css" />
 		<![endif]-->
 	<style>
+		@media screen and (max-width: 1024px) {
+			#banner .inner {
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			#banner {
+				min-height: 25em;
+			}
+		}
+
+		.banner-text:not(.banner-text:last-of-type) {
+			margin: unset;
+			padding: unset;
+		}
+
 		#contact-wrapper {
 			display: flex;
 		}
@@ -76,9 +93,9 @@
 		<section id="banner" class="animated-banner">
 			<div class="inner">
 				<h2>TJ UAV</h2>
-				<p>Team at TJHSST<br />
-					UAV Enthusiasts<br />
-					Do all things aerospace</p>
+				<p class="banner-text">Team at TJHSST</p>
+				<p class="banner-text">UAV Enthusiasts</p>
+				<p class="banner-text">Do all things aerospace</p>
 				<ul class="actions">
 					<li><a href="files/sponsorshippacket.pdf" class="button special" target="_blank">Sponsorship Packet</a></li>
 				</ul>
