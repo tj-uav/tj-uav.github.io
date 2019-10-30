@@ -15,9 +15,29 @@
 		<link rel="stylesheet" href="assets/css/ie11.css" />
 		<![endif]-->
 	<style>
-		@media screen and (max-width: 440px) {
-			a.button.special {
-				margin-left: 50%;
+		#contact-wrapper {
+			display: flex;
+		}
+
+		#contact-wrapper>* {
+			flex: 0.5;
+		}
+
+		@media screen and (max-width: 625px) {
+
+			/* on screens up to 625 px */
+			#contact-wrapper {
+				flex-direction: column-reverse;
+				justify-content: center;
+			}
+
+			#contact-wrapper .left {
+				text-align: center;
+			}
+
+			#contact-wrapper .right,
+			#contact-wrapper .right img {
+				margin-top: -1em;
 			}
 		}
 	</style>
@@ -89,16 +109,28 @@
 						</p>
 					</div>
 					<div class="inner">
-						<div class="row">
+						<div id="contact-wrapper">
+							<div class="left">
+								<h2>Contact Us</h2>
+								<p>Feel free to reach out to TJUAV</p>
+								<a class="button special" href="./contact.html">Reach us Here!</a>
+							</div>
+							<div class="right">
+								<img id="contact-logo" src="images/favicon1.png" alt="TJUAV Logo" style="width: 100%; height: 100%;">
+							</div>
+						</div>
+
+
+						<!-- <div class="row">
 							<div class="6u 12u$(medium)">
 								<h2>Contact Us</h2>
 								<p>Feel free to reach out to TJUAV</p>
 								<a class="button special" href="./contact.html">Reach us Here!</a>
 							</div>
 							<div class="6u 12u$(medium)">
-								<img src="images/favicon1.png" alt="TJUAV Logo" style="width: 100%; height: 100%;">
+								<img id="contact-logo" src="images/favicon1.png" alt="TJUAV Logo" style="width: 100%; height: 100%;">
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</section>
 			</article>
