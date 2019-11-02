@@ -2331,7 +2331,7 @@
 		input[type="button"].special,
 		button.special,
 		.button.special {
-			background-color: #ed4933;
+			background-color: #CC1300;/*#ed4933*/
 			box-shadow: none !important;
 			color: #ffffff !important;
 		}
@@ -2341,7 +2341,7 @@
 			input[type="button"].special:hover,
 			button.special:hover,
 			.button.special:hover {
-				background-color: #ef5e4a !important;
+				background-color: /*#ef5e4a*/#eb341c !important;
 			}
 
 			input[type="submit"].special:active,
@@ -2349,7 +2349,7 @@
 			input[type="button"].special:active,
 			button.special:active,
 			.button.special:active {
-				background-color: #eb341c !important;
+				background-color: #ef5e4a/*#eb341c*/ !important;
 			}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -3183,7 +3183,7 @@
 		-ms-transition: -ms-transform 0.5s ease;
 		transition: transform 0.5s ease;
 		-webkit-overflow-scrolling: touch;
-		background: #21b2a6;
+		background: #346cbc/*#21b2a6*/;
 		color: #ffffff;
 		height: 100%;
 		max-width: 80%;
@@ -3981,9 +3981,9 @@
 /*
 hides the extra SVGs added when animation is cut short.  Not sure why they are added to begin with
 */
-svg:not(#animated-logo-background):not(#animated-logo) { 
+/* svg:not(#animated-logo-background):not(#animated-logo) { 
 	height: 0;
-}
+} */
 
 #animated-logo-background {
 	position: fixed;
