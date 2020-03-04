@@ -1,4 +1,4 @@
 # site1
-tjuav.org
+https://tjuav.org
 
 index is rcclub1.html
