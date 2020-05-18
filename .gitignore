@@ -1,4 +1,23 @@
-ssite/images/6-7 Videos/1gp.mp4
-ssite/images/6-7 Videos/2kv.mp4
-ssite/images/6-7 Videos/3lol.mp4
-ssite/images/6-7 Videos/4f86.mp4
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
