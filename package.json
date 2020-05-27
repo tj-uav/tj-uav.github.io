@@ -16,8 +16,8 @@
     "start": "npm install -g serve && serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postinstall": "react-scripts build"
+    "eject": "react-scripts eject"
+//    "postinstall": "react-scripts build"
   },
   "engines": {
     "node": "~6.10.3",
