@@ -1,0 +1,12 @@
+@import "../colors";
+@import "../globals";
+
+#footer {
+    padding: 0 $margin-x;
+    height: 5rem;
+    width: 100vw;
+    background: $darker;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

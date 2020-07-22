@@ -1,0 +1,10 @@
+@import '../_colors';
+
+.button {
+    text-decoration: none;
+    border-radius: 0.125rem;
+    padding: 0.25rem 1.25rem;
+    border: none;
+    background: $accent-red;
+    color: $text;
+}
