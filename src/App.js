@@ -1,5 +1,6 @@
 import React from "react"
-import Heading from "components/Header"
+import Header from "components/Header"
+import Footer from "components/Footer"
 import Home from "pages/home/Home"
 import GlobalFonts from "fonts/fonts"
 
@@ -7,8 +8,9 @@ const App = () => {
 	return (
 		<>
 			<GlobalFonts />
-			<Heading />
+			<Header />
 			<Home />
+			<Footer />
 		</>
 	)
 }
