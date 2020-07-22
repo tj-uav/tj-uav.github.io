@@ -1,20 +1,16 @@
 import React from "react"
-import Nav from "./components/Nav"
-import Home from "./Home"
-import Footer from "./components/Footer"
+import Heading from "components/Header"
+import Home from "pages/home/Home"
+import GlobalFonts from "fonts/fonts"
 
 const App = () => {
-    return (
-        <div className="App">
-            <header className="App-header">
-                <Nav />
-            </header>
-            {/* page goes here */}
-            <Home />
-            {/* page goes here */}
-            <Footer />
-        </div>
-    )
+	return (
+		<>
+			<GlobalFonts />
+			<Heading />
+			<Home />
+		</>
+	)
 }
 
 export default App
