@@ -1,0 +1,38 @@
+{
+	"hero": {
+		"description": "A student-run team that designs, builds, and operates a custom search and rescue unmanned aerial system (copied from CUAir lol). Help us achieve our dreams by sponsoring us!"
+	},
+	"info": {
+		"cards": [
+			{
+				"heading": "Team at TJHSST",
+				"content": "We are a group of innovative high-schoolers from the Thomas Jefferson High School for Sciece and Techology, ranked #1 high school in the nation.",
+				"button": "More About Us",
+				"img": "tjhsst.svg"
+			},
+			{
+				"heading": "Aerospace Geeks",
+				"content": "In addition to creating and flying unmanned aircraft for fun, we create a search and rescue UAV for the yearly and international AUVSI SUAS competition.",
+				"button": "Learn More",
+				"img": "plane.svg"
+			},
+			{
+				"heading": "UAV Enthusiasts",
+				"content": "Design and build.  Program and fly.  Crash and repeat.  We love every part of the process.",
+				"button": "Meet the Team",
+				"img": "drone.svg"
+			}
+		]
+	},
+	"about": {
+		"title": "About Us",
+		"description": "Thomas Jefferson Unmanned Aerial Vehicle (TJUAV) Team seeks to teach students about the basics of aeronautical design, flight, and programming. Students learn basic aviation, aircraft construction electrical engineering, and computer science through several side projects such as individual construction of radio controlled (RC) planes and lectures by team leads. We work with Unmanned Aerial Systems (UAS) such as fixed wing and multirotor aircraft, flight computers, computer vision, and other technologies to achieve autonomous flight, respond to ground station commands, and detect objects..."
+	},
+	"sponsor": {
+		"title": "Sponsors",
+		"description": "Put a brief summary of what our sponsors do for us here, along with a blurb to make organizations feel bad about not sponsoring us.  Sponsor us!"
+	},
+	"contact": {
+		"title": "Contact"
+	}
+}
