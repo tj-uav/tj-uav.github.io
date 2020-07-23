@@ -11,7 +11,7 @@ const Home = () => {
 			<Hero content={data.hero} />
 			<Cards content={data.info.cards} />
 			<About content={data.about} />
-			<ContactSponsors content={data} />
+			<ContactSponsors id="sponsor" content={data} />
 		</>
 	)
 }

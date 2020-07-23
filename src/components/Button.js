@@ -4,10 +4,15 @@ import { Paragraph } from "theme/Styles"
 import { red, text } from "theme/Colors"
 
 const StyledButton = styled.a`
-	padding: 0.25rem 1rem;
 	border-radius: 0.125rem;
+	padding: 0.25rem 1rem;
+	text-decoration: none;
 	background: ${red};
 	color: ${text};
+
+	:hover {
+		text-decoration: underline;
+	}
 `
 
 const Button = ({ href, ...props }) => {

@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "react-router-dom"
 import Button from "./Button"
 import { darker } from "theme/Colors"
 import { Heading, Paragraph } from "theme/Styles"
@@ -34,21 +35,37 @@ const LinksList = styled.ul`
 	}
 `
 
+const StyledLink = styled(Link)`
+	text-decoration: none;
+	:hover {
+		text-decoration: underline;
+	}
+`
+
 const Header = () => (
 	<StyledHeader>
-		<h1 style={{ ...Heading, alignSelf: "initial" }}>TJUAV</h1>
+		<StyledLink to="/home" style={{ ...Heading, alignSelf: "initial" }}>
+			TJUAV
+		</StyledLink>
+
 		<LinksList>
 			<li>
-				<p style={Paragraph}>Competition</p>
+				<StyledLink to="/competition" style={Paragraph}>
+					Competition
+				</StyledLink>
 			</li>
 			<li>
-				<p style={Paragraph}>Members</p>
+				<StyledLink to="/members" style={Paragraph}>
+					Members
+				</StyledLink>
 			</li>
 			<li>
-				<p style={Paragraph}>Gallery</p>
+				<StyledLink to="/gallery" style={Paragraph}>
+					Gallery
+				</StyledLink>
 			</li>
 			<li>
-				<Button>Sponsor</Button>
+				<Button href="/home#sponsor">Sponsor</Button>
 			</li>
 		</LinksList>
 	</StyledHeader>
