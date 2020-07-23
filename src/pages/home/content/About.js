@@ -1,15 +1,15 @@
 import React from "react"
 import styled from "styled-components"
 import Image from "components/Image"
+import Grid from "components/Grid"
 import { Heading, Paragraph } from "theme/Styles"
-import { width, height } from "theme/Grid"
 import { dark } from "theme/Colors"
 
 const [w, h] = [`var(--w)`, `var(--h)`]
 
 // prettier-ignore
-const Container = styled.section`
-	grid-template:
+const Container = styled(Grid)`
+    grid-template:
 		".       .       .       .       .       .       .       .      .      .      .      .      " ${h}
 		".       header  header  header  header  header  header  header header header header .      " ${h}
 		".       content content content content content .       image  image  image  image  .      " ${h}
@@ -21,16 +21,7 @@ const Container = styled.section`
 		".       .       .       .       .       .       .       .      .      .      .      .      " ${h}
 		/${w}    ${w}    ${w}    ${w}    ${w}    ${w}    ${w}    ${w}   ${w}   ${w}   ${w}   ${w};
 
-	--columns: 12;
-    --rows: 9;
-	--w: ${width};
-    --h: ${height};
-    
-	background-color: ${dark};
-	position: relative;
-	gap: 1rem;
-	height: 100vh;
-	display: grid;
+    background-color: ${dark};
 `
 
 const About = ({ content, ...props }) => {

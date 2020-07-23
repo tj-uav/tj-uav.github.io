@@ -2,26 +2,21 @@ import React from "react"
 import styled from "styled-components"
 import Button from "components/Button"
 import Image from "components/Image"
+import Grid from "components/Grid"
 import { dark, darker } from "theme/Colors"
 import { Heading, Paragraph } from "theme/Styles"
 
 const w = `var(--w)`
 
 // prettier-ignore
-const Container = styled.section`
+const Container = styled(Grid)`
+	--columns: 4;
 	grid-template:
 		".          content    content   ."
 		/${w}       ${w}       ${w}      ${w};
 
-	--columns: 4;
-	--w: calc(100% * (1 / var(--columns)) - 1rem * (var(--columns) - 1) / var(--columns));
-
 	background: ${dark};
-	position: relative;
 	padding-top: 33vh;
-	height: 100vh;
-	display: grid;
-	gap: 1rem;
 
 	* {
 		position: relative;

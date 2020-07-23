@@ -1,14 +1,15 @@
 import React from "react"
 import styled from "styled-components"
 import Image from "components/Image"
+import Grid from "components/Grid"
 import { Subheading } from "theme/Styles"
-import { width, height } from "theme/Grid"
 import { darker } from "theme/Colors"
 
 const [w, h] = [`var(--w)`, `var(--h)`]
 
 // prettier-ignore
-const Container = styled.section`
+const Container = styled(Grid)`
+    --rows: 18;
 	grid-template: 
     ".     .     .     .     .     .     .     .     .     .     .     .     " ${h}
     ".     .     .     .     .     .     .     .     .     .     .     .     " ${h}
@@ -30,20 +31,11 @@ const Container = styled.section`
     ".     .     .     .     .     .     .     .     .     .     .     .     " ${h}
     /${w}  ${w}  ${w}  ${w}  ${w}  ${w}  ${w}  ${w}  ${w}  ${w}  ${w}  ${w};
 
-	--columns: 12;
-	--rows: 18;
-	--w: ${width};
-	--h: ${height};
-
     background-color: ${darker};
-	position: relative;
-	gap: 1rem;
-	height: 100vh;
-	display: grid;
 `
 
 const Hero = ({ content, ...props }) => (
-	<Container>
+	<Container {...props}>
 		<Image src={require("pages/home/assets/logo.svg")} style={{ gridArea: "logo" }} alt="TJUAV Logo" />
 		<h2 style={{ ...Subheading, gridArea: "text", alignSelf: "flex-end" }}>{content.description}</h2>
 		<div style={{ gridArea: "image" }}>

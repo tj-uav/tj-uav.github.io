@@ -1,14 +1,17 @@
 import React from "react"
 import styled from "styled-components"
 import TextareaAutosize from "react-textarea-autosize"
+import Grid from "components/Grid"
+import Button from "components/Button"
 import { dark, darker } from "theme/Colors"
 import { Heading, Paragraph } from "theme/Styles"
-import Button from "components/Button"
 
 const [w, h] = [`var(--w)`, `var(--h)`]
 
 // prettier-ignore
-const Container = styled.section`
+const Container = styled(Grid)`
+    --columns: 8;
+    --rows: 18;
 	grid-template: 
         ".       .       .       .       .       .       .       .       " ${h}
         ".       .       .       .       .       .       .       .       " ${h}
@@ -30,15 +33,7 @@ const Container = styled.section`
         ".       .       .       .       .       .       .       .       " ${h}
         /${w}    ${w}    ${w}    ${w}    ${w}    ${w}    ${w}    ${w};
 
-	--columns: 8;
-	--rows: 18;
-	--w: calc(100% * (1 / var(--columns)) - 1rem * (var(--columns) - 1) / var(--columns));
-	--h: calc(100% * (1 / var(--rows)) - 1rem * (var(--rows) - 1) / var(--rows));
-
 	background-color: ${darker};
-	height: 100vh;
-	display: grid;
-	gap: 1rem;
 `
 
 const ThemedLabel = styled.label(() => Paragraph)
