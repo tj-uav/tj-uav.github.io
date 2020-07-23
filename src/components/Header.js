@@ -2,10 +2,13 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 import Button from "./Button"
+import { width } from "./Grid"
 import { darker } from "theme/Colors"
 import { Heading, Paragraph } from "theme/Styles"
 
 const StyledHeader = styled.header`
+	--columns: 12;
+
 	position: absolute;
 	z-index: 1;
 	left: 0;
@@ -14,8 +17,8 @@ const StyledHeader = styled.header`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding-left: 7.5625rem;
-	padding-right: 7.5625rem;
+	padding-left: calc(${width} + 1rem);
+	padding-right: calc(${width} + 1rem);
 	height: 5.375rem;
 	background: ${darker};
 `
