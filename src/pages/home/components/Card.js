@@ -5,9 +5,17 @@ import Image from "components/Image"
 import { dark, darker } from "theme/Colors"
 import { Heading, Paragraph } from "theme/Styles"
 
-const StyledCard = styled.section`
-	/* 3 gaps (from 4 cols) * 16px gap = 48px */
-	grid-template-columns: repeat(4, calc(calc(100% - 48px) / 4));
+const w = `var(--w)`
+
+// prettier-ignore
+const Container = styled.section`
+	grid-template:
+		".          content    content   ."
+		/${w}       ${w}       ${w}      ${w};
+
+	--columns: 4;
+	--w: calc(100% * (1 / var(--columns)) - 1rem * (var(--columns) - 1) / var(--columns));
+
 	background: ${dark};
 	position: relative;
 	padding-top: 33vh;
@@ -23,13 +31,11 @@ const StyledCard = styled.section`
 	::after {
 		background-color: ${darker};
 		position: absolute;
+		height: 33vh;
 		content: "";
 		right: 0;
 		left: 0;
 		top: 0;
-
-		/* 297 / 900 = 0.33 */
-		height: 33vh;
 	}
 `
 
@@ -48,7 +54,7 @@ const StyledParagraph = styled(ThemedParagraph)`
 
 const StyledImage = styled(Image)`
 	transform: translate(0, -66%) scale(0.75);
-	width: initial !important;
+	width: initial;
 	height: auto;
 	position: absolute;
 	top: 0;
@@ -57,18 +63,19 @@ const StyledImage = styled(Image)`
 const Card = ({ data, ...props }) => {
 	const style = {}
 	if (data.img === "tjhsst.svg") style.transform = "translate(0, -66%) scale(0.95)"
+	const alt = data.img.substring(0, data.img.indexOf("."))
 
 	return (
-		<StyledCard {...props} style={{ ...props.style, gridColumn: "span 4" }}>
-			<div style={{ display: "flex", flexDirection: "column", gridColumn: "2 / 4" }}>
-				<StyledImage style={style} src={require(`./assets/${data.img}`)} alt="yeet" />
+		<Container {...props} style={{ ...props.style, gridColumn: "span 4" }}>
+			<div style={{ display: "flex", flexDirection: "column", gridArea: "content" }}>
+				<StyledImage style={style} src={require(`pages/home/assets/${data.img}`)} alt={alt} />
 				<StyledHeading>{data.heading}</StyledHeading>
 				<StyledParagraph>{data.content}</StyledParagraph>
 				<div style={{ textAlign: "center" }}>
 					<Button>{data.button}</Button>
 				</div>
 			</div>
-		</StyledCard>
+		</Container>
 	)
 }
 

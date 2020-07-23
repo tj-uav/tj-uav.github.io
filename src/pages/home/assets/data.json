@@ -30,7 +30,8 @@
 	},
 	"sponsor": {
 		"title": "Sponsors",
-		"description": "Put a brief summary of what our sponsors do for us here, along with a blurb to make organizations feel bad about not sponsoring us.  Sponsor us!"
+		"description": "Put a brief summary of what our sponsors do for us here, along with a blurb to make organizations feel bad about not sponsoring us.  Sponsor us!",
+		"imgs": [{ "file": "TJPF.png", "alt": "Thomas Jefferson Partnership Fund" }]
 	},
 	"contact": {
 		"title": "Contact"

@@ -8,6 +8,7 @@ export const Paragraph = {
 }
 
 export const Heading = {
+	alignSelf: "flex-end",
 	fontVariant: "small-caps",
 	fontFamily: "Montserrat",
 	fontWeight: 700,

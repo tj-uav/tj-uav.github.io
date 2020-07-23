@@ -34,26 +34,24 @@ const LinksList = styled.ul`
 	}
 `
 
-const Header = () => {
-	return (
-		<StyledHeader>
-			<h1 style={Heading}>TJUAV</h1>
-			<LinksList>
-				<li>
-					<p style={Paragraph}>Competition</p>
-				</li>
-				<li>
-					<p style={Paragraph}>Members</p>
-				</li>
-				<li>
-					<p style={Paragraph}>Gallery</p>
-				</li>
-				<li>
-					<Button>Sponsor</Button>
-				</li>
-			</LinksList>
-		</StyledHeader>
-	)
-}
+const Header = () => (
+	<StyledHeader>
+		<h1 style={{ ...Heading, alignSelf: "initial" }}>TJUAV</h1>
+		<LinksList>
+			<li>
+				<p style={Paragraph}>Competition</p>
+			</li>
+			<li>
+				<p style={Paragraph}>Members</p>
+			</li>
+			<li>
+				<p style={Paragraph}>Gallery</p>
+			</li>
+			<li>
+				<Button>Sponsor</Button>
+			</li>
+		</LinksList>
+	</StyledHeader>
+)
 
 export default Header

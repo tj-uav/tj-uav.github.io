@@ -3,8 +3,17 @@ import styled from "styled-components"
 import { darker } from "theme/Colors"
 import { Paragraph } from "theme/Styles"
 
-const StyledFooter = styled.footer`
-	grid-template-columns: repeat(12, calc(calc(100vw - ${11 * 16}px) / 12));
+const w = `var(--w)`
+
+// prettier-ignore
+const Container = styled.footer`
+    grid-template:
+        ".      footer footer footer footer footer footer footer footer footer footer .      "
+        /${w}   ${w}   ${w}   ${w}   ${w}   ${w}   ${w}   ${w}   ${w}   ${w}   ${w}   ${w};
+
+    --columns: 12;
+    --w: calc(100% * (1 / var(--columns)) - 1rem * (var(--columns) - 1) / var(--columns));
+
 	background-color: ${darker};
 	align-items: center;
 	position: absolute;
@@ -12,16 +21,17 @@ const StyledFooter = styled.footer`
 	display: grid;
 	width: 100vw;
 	bottom: 0;
+	gap: 1rem;
 `
 
 const Footer = () => (
-	<StyledFooter>
-		<p style={{ ...Paragraph, gridColumn: "2 / -2" }}>
+	<Container>
+		<p style={{ ...Paragraph, gridArea: "footer" }}>
 			Copyright &copy; TJUAV 2020.
 			<br />
 			All rights reserved.
 		</p>
-	</StyledFooter>
+	</Container>
 )
 
 export default Footer
