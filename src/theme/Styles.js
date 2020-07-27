@@ -22,10 +22,20 @@ export const Subheading = {
 	fontSize: "19px",
 }
 
-// export const Heading = styled.h1`
-//     font-variant: small-caps;
-//     font-family: Montserrat;
-//     font-weight: 700;
-//     font-size: 32px;
-//     color: ${text};
-// `
+const BreakpointsRaw = {
+	small: 220,
+	mobile: 480,
+	desktop: 768,
+}
+
+export const Breakpoints = Object.keys(BreakpointsRaw)
+	.map(key => ({ [key]: BreakpointsRaw[key] }))
+	.reduce(reducer, {})
+
+function reducer(obj, c) {
+	const [key, value] = Object.entries(c)[0]
+	return {
+		...obj,
+		[key]: `@media only screen and (min-width: ${value}px)`,
+	}
+}
