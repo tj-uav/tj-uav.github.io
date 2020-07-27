@@ -7,7 +7,7 @@ import { dark } from "theme/Colors"
 
 // prettier-ignore
 const Container = styled(Grid)`
-    grid-template-areas:
+	grid-template-areas:
 		".       .       .       .       .       .       .       .      .      .      .      .      "
 		".       header  header  header  header  header  header  header header header header .      "
 		".       content content content content content .       image  image  image  image  .      "
@@ -18,7 +18,7 @@ const Container = styled(Grid)`
 		".       .       .       .       .       .       .       .      .      .      .      .      "
 		".       .       .       .       .       .       .       .      .      .      .      .      ";
 
-    background-color: ${dark};
+	background-color: ${dark};
 `
 
 const About = ({ content, ...props }) => {

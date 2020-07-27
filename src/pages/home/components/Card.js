@@ -9,7 +9,7 @@ import { Heading, Paragraph } from "theme/Styles"
 // prettier-ignore
 const Container = styled(Grid)`
 	--columns: repeat(4, 1fr);
-    --rows: unset;
+	--rows: unset;
 	grid-template-areas:
 		".        content content .       ";
 
@@ -61,7 +61,11 @@ const Card = ({ data, ...props }) => {
 	return (
 		<Container {...props} style={{ ...props.style, gridColumn: "span 4" }}>
 			<div style={{ display: "flex", flexDirection: "column", gridArea: "content" }}>
-				<StyledImage style={style} src={require(`pages/home/assets/${data.img}`)} alt={alt} />
+				<StyledImage
+					style={style}
+					src={require(`pages/home/assets/${data.img}`)}
+					alt={alt}
+				/>
 				<StyledHeading>{data.heading}</StyledHeading>
 				<StyledParagraph>{data.content}</StyledParagraph>
 				<div style={{ textAlign: "center" }}>

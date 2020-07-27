@@ -12,12 +12,12 @@ const HeaderGrid = Grid.withComponent("header")
 const Container = styled(HeaderGrid)`
 	--rows: unset;
 	grid-template-areas: 
-        ".        logo    logo    content content content content content content content content .       ";
+		".        logo    logo    content content content content content content content content .       ";
 
 	background: ${darker};
-    align-items: center;
-    position: absolute;
-    height: 5.375rem;
+	align-items: center;
+	position: absolute;
+	height: 5.375rem;
 	z-index: 1;
 	right: 0;
 	left: 0;

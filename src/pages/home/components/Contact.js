@@ -8,27 +8,27 @@ import { Heading, Paragraph } from "theme/Styles"
 
 // prettier-ignore
 const Container = styled(Grid)`
-    --columns: repeat(8, 1fr);
-    --rows: repeat(18, 1fr);
+	--columns: repeat(8, 1fr);
+	--rows: repeat(18, 1fr);
 	grid-template-areas: 
-        ".       .       .       .       .       .       .       .       "
-        ".       .       .       .       .       .       .       .       "
-        ".       .       .       .       .       .       .       .       "
-        ".       heading heading heading heading heading heading .       "
-        ".       name    name    name    name    name    name    .       "
-        ".       box1    box1    box1    box1    box1    box1    .       "
-        ".       email   email   email   email   email   email   .       "
-        ".       box2    box2    box2    box2    box2    box2    .       "
-        ".       message message message message message message .       "
-        ".       box4    box4    box4    box4    box4    box4    .       "
-        ".       box4    box4    box4    box4    box4    box4    .       "
-        ".       box4    box4    box4    box4    box4    box4    .       "
-        ".       box4    box4    box4    box4    box4    box4    .       "
-        ".       box4    box4    box4    box4    box4    box4    .       "
-        ".       .       .       .       .       .       .       .       "
-        ".       .       .       .       .       .       .       .       "
-        ".       .       .       .       .       .       .       .       "
-        ".       .       .       .       .       .       .       .       ";
+		".       .       .       .       .       .       .       .       "
+		".       .       .       .       .       .       .       .       "
+		".       .       .       .       .       .       .       .       "
+		".       heading heading heading heading heading heading .       "
+		".       name    name    name    name    name    name    .       "
+		".       box1    box1    box1    box1    box1    box1    .       "
+		".       email   email   email   email   email   email   .       "
+		".       box2    box2    box2    box2    box2    box2    .       "
+		".       message message message message message message .       "
+		".       box4    box4    box4    box4    box4    box4    .       "
+		".       box4    box4    box4    box4    box4    box4    .       "
+		".       box4    box4    box4    box4    box4    box4    .       "
+		".       box4    box4    box4    box4    box4    box4    .       "
+		".       box4    box4    box4    box4    box4    box4    .       "
+		".       .       .       .       .       .       .       .       "
+		".       .       .       .       .       .       .       .       "
+		".       .       .       .       .       .       .       .       "
+		".       .       .       .       .       .       .       .       ";
 
 	background-color: ${darker};
 `

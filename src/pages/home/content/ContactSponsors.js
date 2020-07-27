@@ -18,7 +18,7 @@ const Container = styled(Grid)`
 		".       image   image   image   image   image   image   .      contact contact contact contact"
 		".       .       .       .       .       .       .       .      contact contact contact contact"
 		".       .       .       .       .       .       .       .      contact contact contact contact";
-    
+
 	background-color: ${dark};
 `
 
