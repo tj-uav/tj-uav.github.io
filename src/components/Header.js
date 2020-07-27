@@ -2,28 +2,30 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 import Button from "./Button"
-import { width } from "./Grid"
+import Grid from "./Grid"
 import { darker } from "theme/Colors"
 import { Heading, Paragraph } from "theme/Styles"
 
-const StyledHeader = styled.header`
-	--columns: 12;
+const HeaderGrid = Grid.withComponent("header")
 
-	position: absolute;
-	z-index: 1;
-	left: 0;
-	right: 0;
-	top: 0;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding-left: calc(${width} + 1rem);
-	padding-right: calc(${width} + 1rem);
-	height: 5.375rem;
+// prettier-ignore
+const Container = styled(HeaderGrid)`
+	--rows: unset;
+	grid-template-areas: 
+        ".        logo    logo    content content content content content content content content .       ";
+
 	background: ${darker};
+    align-items: center;
+    position: absolute;
+    height: 5.375rem;
+	z-index: 1;
+	right: 0;
+	left: 0;
+	top: 0;
 `
 
 const LinksList = styled.ul`
+	justify-self: flex-end;
 	list-style-type: none;
 	display: flex;
 
@@ -46,12 +48,12 @@ const StyledLink = styled(Link)`
 `
 
 const Header = () => (
-	<StyledHeader>
-		<StyledLink to="/home" style={{ ...Heading, alignSelf: "initial" }}>
+	<Container>
+		<StyledLink to="/home" style={{ ...Heading, alignSelf: "initial", gridArea: "logo" }}>
 			TJUAV
 		</StyledLink>
 
-		<LinksList>
+		<LinksList style={{ gridArea: "content" }}>
 			<li>
 				<StyledLink to="/competition" style={Paragraph}>
 					Competition
@@ -71,7 +73,7 @@ const Header = () => (
 				<Button href="/home#sponsor">Sponsor</Button>
 			</li>
 		</LinksList>
-	</StyledHeader>
+	</Container>
 )
 
 export default Header

@@ -5,31 +5,28 @@ import Grid from "components/Grid"
 import { Subheading } from "theme/Styles"
 import { darker } from "theme/Colors"
 
-const [w, h] = [`var(--w)`, `var(--h)`]
-
 // prettier-ignore
 const Container = styled(Grid)`
-    --rows: 18;
-	grid-template: 
-    ".     .     .     .     .     .     .     .     .     .     .     .     " ${h}
-    ".     .     .     .     .     .     .     .     .     .     .     .     " ${h}
-    ".     .     .     .     .     .     .     .     .     .     .     .     " ${h}
-    ".     .     .     .     .     .     .     .     .     .     .     .     " ${h}
-    ".     .     .     .     .     .     .     .     .     .     .     .     " ${h}
-    ".     logo  logo  logo  logo  logo  .     image image image image .     " ${h}
-    ".     logo  logo  logo  logo  logo  .     image image image image .     " ${h}
-    ".     logo  logo  logo  logo  logo  .     image image image image .     " ${h}
-    ".     .     .     .     .     .     .     image image image image .     " ${h}
-    ".     text  text  text  text  text  .     image image image image .     " ${h}
-    ".     text  text  text  text  text  .     image image image image .     " ${h}
-    ".     text  text  text  text  text  .     image image image image .     " ${h}
-    ".     text  text  text  text  text  .     image image image image .     " ${h}
-    ".     .     .     .     .     .     .     .     .     .     .     .     " ${h}
-    ".     .     .     .     .     .     .     .     .     .     .     .     " ${h}
-    ".     .     .     .     .     .     .     .     .     .     .     .     " ${h}
-    ".     .     .     .     .     .     .     .     .     .     .     .     " ${h}
-    ".     .     .     .     .     .     .     .     .     .     .     .     " ${h}
-    /${w}  ${w}  ${w}  ${w}  ${w}  ${w}  ${w}  ${w}  ${w}  ${w}  ${w}  ${w};
+    --rows: repeat(18, 1fr);
+	grid-template-areas: 
+    ".     .     .     .     .     .     .     .     .     .     .     .     "
+    ".     .     .     .     .     .     .     .     .     .     .     .     "
+    ".     .     .     .     .     .     .     .     .     .     .     .     "
+    ".     .     .     .     .     .     .     .     .     .     .     .     "
+    ".     .     .     .     .     .     .     .     .     .     .     .     "
+    ".     logo  logo  logo  logo  logo  .     image image image image .     "
+    ".     logo  logo  logo  logo  logo  .     image image image image .     "
+    ".     logo  logo  logo  logo  logo  .     image image image image .     "
+    ".     .     .     .     .     .     .     image image image image .     "
+    ".     text  text  text  text  text  .     image image image image .     "
+    ".     text  text  text  text  text  .     image image image image .     "
+    ".     text  text  text  text  text  .     image image image image .     "
+    ".     text  text  text  text  text  .     image image image image .     "
+    ".     .     .     .     .     .     .     .     .     .     .     .     "
+    ".     .     .     .     .     .     .     .     .     .     .     .     "
+    ".     .     .     .     .     .     .     .     .     .     .     .     "
+    ".     .     .     .     .     .     .     .     .     .     .     .     "
+    ".     .     .     .     .     .     .     .     .     .     .     .     ";
 
     background-color: ${darker};
 `

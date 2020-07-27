@@ -6,32 +6,29 @@ import Button from "components/Button"
 import { dark, darker } from "theme/Colors"
 import { Heading, Paragraph } from "theme/Styles"
 
-const [w, h] = [`var(--w)`, `var(--h)`]
-
 // prettier-ignore
 const Container = styled(Grid)`
-    --columns: 8;
-    --rows: 18;
-	grid-template: 
-        ".       .       .       .       .       .       .       .       " ${h}
-        ".       .       .       .       .       .       .       .       " ${h}
-        ".       .       .       .       .       .       .       .       " ${h}
-        ".       heading heading heading heading heading heading .       " ${h}
-        ".       name    name    name    name    name    name    .       " ${h}
-        ".       box1    box1    box1    box1    box1    box1    .       " ${h}
-        ".       email   email   email   email   email   email   .       " ${h}
-        ".       box2    box2    box2    box2    box2    box2    .       " ${h}
-        ".       message message message message message message .       " ${h}
-        ".       box4    box4    box4    box4    box4    box4    .       " ${h}
-        ".       box4    box4    box4    box4    box4    box4    .       " ${h}
-        ".       box4    box4    box4    box4    box4    box4    .       " ${h}
-        ".       box4    box4    box4    box4    box4    box4    .       " ${h}
-        ".       box4    box4    box4    box4    box4    box4    .       " ${h}
-        ".       .       .       .       .       .       .       .       " ${h}
-        ".       .       .       .       .       .       .       .       " ${h}
-        ".       .       .       .       .       .       .       .       " ${h}
-        ".       .       .       .       .       .       .       .       " ${h}
-        /${w}    ${w}    ${w}    ${w}    ${w}    ${w}    ${w}    ${w};
+    --columns: repeat(8, 1fr);
+    --rows: repeat(18, 1fr);
+	grid-template-areas: 
+        ".       .       .       .       .       .       .       .       "
+        ".       .       .       .       .       .       .       .       "
+        ".       .       .       .       .       .       .       .       "
+        ".       heading heading heading heading heading heading .       "
+        ".       name    name    name    name    name    name    .       "
+        ".       box1    box1    box1    box1    box1    box1    .       "
+        ".       email   email   email   email   email   email   .       "
+        ".       box2    box2    box2    box2    box2    box2    .       "
+        ".       message message message message message message .       "
+        ".       box4    box4    box4    box4    box4    box4    .       "
+        ".       box4    box4    box4    box4    box4    box4    .       "
+        ".       box4    box4    box4    box4    box4    box4    .       "
+        ".       box4    box4    box4    box4    box4    box4    .       "
+        ".       box4    box4    box4    box4    box4    box4    .       "
+        ".       .       .       .       .       .       .       .       "
+        ".       .       .       .       .       .       .       .       "
+        ".       .       .       .       .       .       .       .       "
+        ".       .       .       .       .       .       .       .       ";
 
 	background-color: ${darker};
 `
@@ -48,6 +45,7 @@ const Input = styled(ThemedInput)`
 	border-radius: 0.125rem;
 	padding: 0 0.5rem;
 	border: none;
+	width: 100%;
 `
 
 const ThemedTextarea = styled(TextareaAutosize)(() => Paragraph)
@@ -58,6 +56,7 @@ const Textarea = styled(ThemedTextarea)`
 	padding: 0 0.5rem;
 	resize: vertical;
 	border: none;
+	width: 100%;
 `
 
 const Contact = ({ content, ...props }) => {

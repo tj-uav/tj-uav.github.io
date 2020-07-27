@@ -6,21 +6,18 @@ import { dark } from "theme/Colors"
 import { Heading, Paragraph } from "theme/Styles"
 import Contact from "pages/home/components/Contact"
 
-const [w, h] = [`var(--w)`, `var(--h)`]
-
 // prettier-ignore
 const Container = styled(Grid)`
-	grid-template:
-		".       .       .       .       .       .       .       .      contact contact contact contact" ${h}
-		".       heading heading heading heading heading heading .      contact contact contact contact" ${h}
-		".       text    text    text    text    text    text    .      contact contact contact contact" ${h}
-		".       image   image   image   image   image   image   .      contact contact contact contact" ${h}
-		".       image   image   image   image   image   image   .      contact contact contact contact" ${h}
-		".       image   image   image   image   image   image   .      contact contact contact contact" ${h}
-		".       image   image   image   image   image   image   .      contact contact contact contact" ${h}
-		".       .       .       .       .       .       .       .      contact contact contact contact" ${h}
-		".       .       .       .       .       .       .       .      contact contact contact contact" ${h}
-		/${w}    ${w}    ${w}    ${w}    ${w}    ${w}    ${w}    ${w}   ${w}    ${w}    ${w}    ${w};
+	grid-template-areas:
+		".       .       .       .       .       .       .       .      contact contact contact contact"
+		".       heading heading heading heading heading heading .      contact contact contact contact"
+		".       text    text    text    text    text    text    .      contact contact contact contact"
+		".       image   image   image   image   image   image   .      contact contact contact contact"
+		".       image   image   image   image   image   image   .      contact contact contact contact"
+		".       image   image   image   image   image   image   .      contact contact contact contact"
+		".       image   image   image   image   image   image   .      contact contact contact contact"
+		".       .       .       .       .       .       .       .      contact contact contact contact"
+		".       .       .       .       .       .       .       .      contact contact contact contact";
     
 	background-color: ${dark};
 `

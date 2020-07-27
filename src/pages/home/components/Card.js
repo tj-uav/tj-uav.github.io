@@ -6,14 +6,12 @@ import Grid from "components/Grid"
 import { dark, darker } from "theme/Colors"
 import { Heading, Paragraph } from "theme/Styles"
 
-const w = `var(--w)`
-
 // prettier-ignore
 const Container = styled(Grid)`
-	--columns: 4;
-	grid-template:
-		".          content    content   ."
-		/${w}       ${w}       ${w}      ${w};
+	--columns: repeat(4, 1fr);
+    --rows: unset;
+	grid-template-areas:
+		".        content content .       ";
 
 	background: ${dark};
 	padding-top: 33vh;

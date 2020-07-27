@@ -5,21 +5,18 @@ import Grid from "components/Grid"
 import { Heading, Paragraph } from "theme/Styles"
 import { dark } from "theme/Colors"
 
-const [w, h] = [`var(--w)`, `var(--h)`]
-
 // prettier-ignore
 const Container = styled(Grid)`
-    grid-template:
-		".       .       .       .       .       .       .       .      .      .      .      .      " ${h}
-		".       header  header  header  header  header  header  header header header header .      " ${h}
-		".       content content content content content .       image  image  image  image  .      " ${h}
-		".       content content content content content .       image  image  image  image  .      " ${h}
-		".       content content content content content .       image  image  image  image  .      " ${h}
-		".       content content content content content .       image  image  image  image  .      " ${h}
-		".       content content content content content .       image  image  image  image  .      " ${h}
-		".       .       .       .       .       .       .       .      .      .      .      .      " ${h}
-		".       .       .       .       .       .       .       .      .      .      .      .      " ${h}
-		/${w}    ${w}    ${w}    ${w}    ${w}    ${w}    ${w}    ${w}   ${w}   ${w}   ${w}   ${w};
+    grid-template-areas:
+		".       .       .       .       .       .       .       .      .      .      .      .      "
+		".       header  header  header  header  header  header  header header header header .      "
+		".       content content content content content .       image  image  image  image  .      "
+		".       content content content content content .       image  image  image  image  .      "
+		".       content content content content content .       image  image  image  image  .      "
+		".       content content content content content .       image  image  image  image  .      "
+		".       content content content content content .       image  image  image  image  .      "
+		".       .       .       .       .       .       .       .      .      .      .      .      "
+		".       .       .       .       .       .       .       .      .      .      .      .      ";
 
     background-color: ${dark};
 `
