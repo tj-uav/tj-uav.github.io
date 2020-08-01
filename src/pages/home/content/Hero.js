@@ -2,13 +2,14 @@ import React from "react"
 import styled from "styled-components"
 import Image from "components/Image"
 import Grid from "components/Grid"
-import { Subheading, Breakpoints } from "theme/Styles"
+import { Subheading } from "theme/Styles"
+import { small, desktop } from "theme/Breakpoints"
 import { darker } from "theme/Colors"
 
 const Container = styled(Grid)`
 	background-color: ${darker};
 
-	${Breakpoints.small} {
+	${small} {
 		--rows: repeat(13, 2.1875rem) auto;
 		--columns: unset;
 
@@ -33,7 +34,7 @@ const Container = styled(Grid)`
 			" text  ";
 	}
 
-	${Breakpoints.desktop} {
+	${desktop} {
 		--rows: repeat(18, 1fr);
 		--columns: repeat(12, 1fr);
 

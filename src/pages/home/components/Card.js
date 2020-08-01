@@ -4,12 +4,13 @@ import Button from "components/Button"
 import Image from "components/Image"
 import Grid from "components/Grid"
 import { dark, darker } from "theme/Colors"
-import { Heading, Paragraph, Breakpoints } from "theme/Styles"
+import { Heading, Paragraph } from "theme/Styles"
+import { small, mobile, desktop } from "theme/Breakpoints"
 
 const Container = styled(Grid)`
 	background: ${dark};
 
-	${Breakpoints.small} {
+	${small} {
 		height: auto;
 		margin-top: 5rem;
 		padding-top: 10rem;
@@ -25,7 +26,7 @@ const Container = styled(Grid)`
 			".       .       .       ";
 	}
 
-	${Breakpoints.mobile} {
+	${mobile} {
 		padding-left: 0;
 		padding-right: 0;
 		--columns: repeat(4, 1fr);
@@ -35,7 +36,7 @@ const Container = styled(Grid)`
 			".        content content .       ";
 	}
 
-	${Breakpoints.desktop} {
+	${desktop} {
 		padding-top: 33vh;
 
 		/* --columns: repeat(4, 1fr); */
@@ -61,11 +62,11 @@ const Container = styled(Grid)`
 		background-color: ${darker};
 		position: absolute;
 
-		${Breakpoints.small} {
+		${small} {
 			height: 10rem;
 		}
 
-		${Breakpoints.desktop} {
+		${desktop} {
 			height: 33vh;
 		}
 

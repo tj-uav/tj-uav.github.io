@@ -3,13 +3,14 @@ import styled from "styled-components"
 import Image from "components/Image"
 import Grid from "components/Grid"
 import { dark } from "theme/Colors"
-import { Heading, Paragraph, Breakpoints } from "theme/Styles"
+import { Heading, Paragraph } from "theme/Styles"
+import { small, desktop } from "theme/Breakpoints"
 import Contact from "pages/home/components/Contact"
 
 const Container = styled(Grid)`
 	background-color: ${dark};
 
-	${Breakpoints.small} {
+	${small} {
 		--rows: repeat(2, 2.1875rem) auto auto 2.1875rem auto;
 		--columns: 1rem auto 1rem;
 		column-gap: 0;
@@ -25,7 +26,7 @@ const Container = styled(Grid)`
 		"contact contact contact"
 	}
 
-	${Breakpoints.desktop} {
+	${desktop} {
 		--rows: repeat(9, 1fr);
 		--columns: repeat(12, 1fr);
 

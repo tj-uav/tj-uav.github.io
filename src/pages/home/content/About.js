@@ -2,11 +2,12 @@ import React from "react"
 import styled from "styled-components"
 import Image from "components/Image"
 import Grid from "components/Grid"
-import { Heading, Paragraph, Breakpoints } from "theme/Styles"
+import { Heading, Paragraph } from "theme/Styles"
+import { small, desktop } from "theme/Breakpoints"
 import { dark, darker } from "theme/Colors"
 
 const Container = styled(Grid)`
-	${Breakpoints.small} {
+	${small} {
 		--rows: repeat(2, 2.1875rem) auto repeat(8, 2.1875rem);
 		--columns: none;
 
@@ -29,7 +30,7 @@ const Container = styled(Grid)`
 		".";
 	}
 
-	${Breakpoints.desktop} {
+	${desktop} {
 		background-color: ${dark};
 
 		--rows: repeat(9, 1fr);

@@ -4,7 +4,8 @@ import TextareaAutosize from "react-textarea-autosize"
 import Grid from "components/Grid"
 import Button from "components/Button"
 import { dark, darker } from "theme/Colors"
-import { Heading, Paragraph, Breakpoints } from "theme/Styles"
+import { Heading, Paragraph } from "theme/Styles"
+import { small, desktop } from "theme/Breakpoints"
 
 const Container = styled(Grid)`
 	background-color: ${darker};
@@ -12,7 +13,7 @@ const Container = styled(Grid)`
 	--columns: repeat(8, 1fr);
 	--rows: repeat(18, 1fr);
 
-	${Breakpoints.small} {
+	${small} {
 		--columns: 1rem repeat(6, 1fr) 1rem;
 		column-gap: 0;
 
@@ -38,7 +39,7 @@ const Container = styled(Grid)`
 		".       .       .       .       .       .       .       .       ";
 	}
 
-	${Breakpoints.desktop} {
+	${desktop} {
 		/* prettier-ignore */
 		grid-template-areas: 
 		".       .       .       .       .       .       .       .       "

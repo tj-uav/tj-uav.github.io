@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Grid from "components/Grid"
 import { darker } from "theme/Colors"
-import { Breakpoints } from "theme/Styles"
+import { small, mobile, desktop } from "theme/Breakpoints"
 import Card from "pages/home/components/Card"
 
 const DisplayedCards = ({ content, ...props }) =>
@@ -16,7 +16,7 @@ const Container = styled(Grid)`
 	--rows: repeat(3, auto);
 	--columns: unset;
 
-	${Breakpoints.small} {
+	${small} {
 		height: auto;
 
 		/* prettier-ignore */
@@ -26,7 +26,7 @@ const Container = styled(Grid)`
 			"card3";
 	}
 
-	${Breakpoints.mobile} {
+	${mobile} {
 		--columns: repeat(4, 1fr);
 
 		/* prettier-ignore */
@@ -36,7 +36,7 @@ const Container = styled(Grid)`
 			".     card3 card3 .     ";
 	}
 
-	${Breakpoints.desktop} {
+	${desktop} {
 		--columns: repeat(12, 1fr);
 		--rows: unset;
 
