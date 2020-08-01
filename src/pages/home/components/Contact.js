@@ -4,13 +4,43 @@ import TextareaAutosize from "react-textarea-autosize"
 import Grid from "components/Grid"
 import Button from "components/Button"
 import { dark, darker } from "theme/Colors"
-import { Heading, Paragraph } from "theme/Styles"
+import { Heading, Paragraph, Breakpoints } from "theme/Styles"
 
-// prettier-ignore
 const Container = styled(Grid)`
+	background-color: ${darker};
+
 	--columns: repeat(8, 1fr);
 	--rows: repeat(18, 1fr);
-	grid-template-areas: 
+
+	${Breakpoints.small} {
+		--columns: 1rem repeat(6, 1fr) 1rem;
+		column-gap: 0;
+
+		/* prettier-ignore */
+		grid-template-areas: 
+		".       .       .       .       .       .       .       .       "
+		".       heading heading heading heading heading heading .       "
+		".       name    name    name    name    name    name    .       "
+		".       box1    box1    box1    box1    box1    box1    .       "
+		".       box1    box1    box1    box1    box1    box1    .       "
+		".       email   email   email   email   email   email   .       "
+		".       box2    box2    box2    box2    box2    box2    .       "
+		".       box2    box2    box2    box2    box2    box2    .       "
+		".       message message message message message message .       "
+		".       box4    box4    box4    box4    box4    box4    .       "
+		".       box4    box4    box4    box4    box4    box4    .       "
+		".       box4    box4    box4    box4    box4    box4    .       "
+		".       box4    box4    box4    box4    box4    box4    .       "
+		".       box4    box4    box4    box4    box4    box4    .       "
+		".       .       .       .       .       .       .       .       "
+		".       .       .       .       .       .       .       .       "
+		".       .       .       .       .       .       .       .       "
+		".       .       .       .       .       .       .       .       ";
+	}
+
+	${Breakpoints.desktop} {
+		/* prettier-ignore */
+		grid-template-areas: 
 		".       .       .       .       .       .       .       .       "
 		".       .       .       .       .       .       .       .       "
 		".       .       .       .       .       .       .       .       "
@@ -29,8 +59,7 @@ const Container = styled(Grid)`
 		".       .       .       .       .       .       .       .       "
 		".       .       .       .       .       .       .       .       "
 		".       .       .       .       .       .       .       .       ";
-
-	background-color: ${darker};
+	}
 `
 
 const ThemedLabel = styled.label(() => Paragraph)

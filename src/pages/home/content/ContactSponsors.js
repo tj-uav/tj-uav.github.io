@@ -3,12 +3,37 @@ import styled from "styled-components"
 import Image from "components/Image"
 import Grid from "components/Grid"
 import { dark } from "theme/Colors"
-import { Heading, Paragraph } from "theme/Styles"
+import { Heading, Paragraph, Breakpoints } from "theme/Styles"
 import Contact from "pages/home/components/Contact"
 
-// prettier-ignore
 const Container = styled(Grid)`
-	grid-template-areas:
+	background-color: ${dark};
+
+	${Breakpoints.small} {
+		--rows: repeat(2, 2.1875rem) auto auto 2.1875rem auto;
+		--columns: 1rem auto 1rem;
+		column-gap: 0;
+		height: auto;
+
+		/* prettier-ignore */
+		grid-template-areas:
+		".       .       .      "
+		".       heading .      "
+		".       text    .      "
+		".       image   .      "
+		".       .       .      "
+		"contact contact contact"
+	}
+
+	${Breakpoints.desktop} {
+		--rows: repeat(9, 1fr);
+		--columns: repeat(12, 1fr);
+
+		height: 100vh;
+		gap: 1rem;
+
+		/* prettier-ignore */
+		grid-template-areas:
 		".       .       .       .       .       .       .       .      contact contact contact contact"
 		".       heading heading heading heading heading heading .      contact contact contact contact"
 		".       text    text    text    text    text    text    .      contact contact contact contact"
@@ -18,8 +43,7 @@ const Container = styled(Grid)`
 		".       image   image   image   image   image   image   .      contact contact contact contact"
 		".       .       .       .       .       .       .       .      contact contact contact contact"
 		".       .       .       .       .       .       .       .      contact contact contact contact";
-
-	background-color: ${dark};
+	}
 `
 
 const StyledImage = styled(Image)`

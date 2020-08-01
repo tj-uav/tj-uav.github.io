@@ -35,6 +35,10 @@ const Container = styled(Grid)`
 
 	${Breakpoints.desktop} {
 		--rows: repeat(18, 1fr);
+		--columns: repeat(12, 1fr);
+
+		height: 100vh;
+		padding: unset;
 
 		/* prettier-ignore */
 		grid-template-areas: 
