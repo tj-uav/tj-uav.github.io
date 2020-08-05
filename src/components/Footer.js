@@ -4,10 +4,8 @@ import Grid from "components/Grid"
 import { darker } from "theme/Colors"
 import { Paragraph } from "theme/Styles"
 
-const FooterGrid = Grid.withComponent("footer")
-
 // prettier-ignore
-const Container = styled(FooterGrid)`
+const Container = styled(Grid)`
     --columns: repeat(12, 1fr);
     --rows: unset;
     grid-template-areas:
@@ -22,7 +20,7 @@ const Container = styled(FooterGrid)`
 `
 
 const Footer = () => (
-	<Container>
+	<Container as="footer">
 		<p style={{ ...Paragraph, gridArea: "content" }}>
 			Copyright &copy; TJUAV 2020.
 			<br />
