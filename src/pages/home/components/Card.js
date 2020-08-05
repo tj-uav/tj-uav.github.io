@@ -5,12 +5,22 @@ import Image from "components/Image"
 import Grid from "components/Grid"
 import { dark, darker } from "theme/Colors"
 import { Heading, Paragraph } from "theme/Styles"
-import { small, mobile, desktop } from "theme/Breakpoints"
+import { mobile, tablet, desktop } from "theme/Breakpoints"
 
 const Container = styled(Grid)`
 	background: ${dark};
 
-	${small} {
+	--baseScale: 0.75;
+	--transform: translate(0, -66%) scale(var(--baseScale));
+	&:first-of-type {
+		--transform: translate(0, -66%) scale(calc(var(--baseScale) + 0.2));
+	}
+
+	img {
+		transform: var(--transform);
+	}
+
+	${mobile} {
 		height: auto;
 		margin-top: 5rem;
 		padding-top: 10rem;
@@ -26,7 +36,8 @@ const Container = styled(Grid)`
 			".       .       .       ";
 	}
 
-	${mobile} {
+	${tablet} {
+		margin-top: initial;
 		padding-left: 0;
 		padding-right: 0;
 		--columns: repeat(4, 1fr);
@@ -34,23 +45,31 @@ const Container = styled(Grid)`
 		/* prettier-ignore */
 		grid-template-areas:
 			".        content content .       ";
+
+		&:last-of-type {
+			margin-bottom: 2rem;
+		}
+		&:first-of-type {
+			margin-top: 2rem;
+		}
 	}
 
 	${desktop} {
+		height: 100%;
 		padding-top: 33vh;
+		--columns: 1rem 1fr 1fr 1rem;
+		column-gap: 0;
+		margin-top: 0 !important;
 
-		/* --columns: repeat(4, 1fr); */
 		--rows: unset;
 
-		/* prettier-ignore */
-		/* grid-template-areas:
-			".        content content .       "; */
+		--baseScale: 0.55;
+	}
 
-		&:first-of-type {
-			img {
-				transform: translate(0, -66%) scale(0.95);
-			}
-		}
+	@media only screen and (min-width: 1080px) {
+		--columns: repeat(4, 1fr);
+		gap: 1rem;
+		--baseScale: 0.75;
 	}
 
 	* {
@@ -62,7 +81,7 @@ const Container = styled(Grid)`
 		background-color: ${darker};
 		position: absolute;
 
-		${small} {
+		${mobile} {
 			height: 10rem;
 		}
 
@@ -92,7 +111,6 @@ const StyledParagraph = styled(ThemedParagraph)`
 `
 
 const StyledImage = styled(Image)`
-	transform: translate(0, -66%) scale(0.75);
 	position: absolute;
 	width: initial;
 	height: auto;
@@ -103,7 +121,7 @@ const Card = ({ data, ...props }) => {
 	const alt = data.img.substring(0, data.img.indexOf("."))
 
 	return (
-		<Container {...props} style={{ ...props.style, gridColumn: "span 4" }}>
+		<Container {...props} style={{ ...props.style }}>
 			<div style={{ display: "flex", flexDirection: "column", gridArea: "content" }}>
 				<StyledImage src={require(`pages/home/assets/${data.img}`)} alt={alt} />
 				<StyledHeading>{data.heading}</StyledHeading>

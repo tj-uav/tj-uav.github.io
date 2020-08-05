@@ -4,13 +4,13 @@ import Image from "components/Image"
 import Grid from "components/Grid"
 import { dark } from "theme/Colors"
 import { Heading, Paragraph } from "theme/Styles"
-import { small, desktop } from "theme/Breakpoints"
+import { mobile, tablet, desktop } from "theme/Breakpoints"
 import Contact from "pages/home/components/Contact"
 
 const Container = styled(Grid)`
 	background-color: ${dark};
 
-	${small} {
+	${mobile} {
 		--rows: repeat(2, 2.1875rem) auto auto 2.1875rem auto;
 		--columns: 1rem auto 1rem;
 		column-gap: 0;
@@ -23,7 +23,21 @@ const Container = styled(Grid)`
 		".       text    .      "
 		".       image   .      "
 		".       .       .      "
-		"contact contact contact"
+		"contact contact contact";
+	}
+
+	${tablet} {
+		--columns: repeat(8, 1fr);
+		gap: 1rem;
+
+		/* prettier-ignore */
+		grid-template-areas:
+		".       .       .       .       .       .       .       .      "
+		".       heading heading heading heading heading heading .      "
+		".       text    text    text    text    text    text    .      "
+		".       image   image   image   image   image   image   .      "
+		".       .       .       .       .       .       .       .      "
+		"contact contact contact contact contact contact contact contact";
 	}
 
 	${desktop} {

@@ -5,17 +5,16 @@ import Grid from "components/Grid"
 import Button from "components/Button"
 import { dark, darker } from "theme/Colors"
 import { Heading, Paragraph } from "theme/Styles"
-import { small, desktop } from "theme/Breakpoints"
+import { mobile, tablet, desktop } from "theme/Breakpoints"
 
 const Container = styled(Grid)`
 	background-color: ${darker};
 
-	--columns: repeat(8, 1fr);
-	--rows: repeat(18, 1fr);
-
-	${small} {
-		--columns: 1rem repeat(6, 1fr) 1rem;
+	${mobile} {
 		column-gap: 0;
+		height: auto;
+		--rows: repeat(18, 1fr);
+		--columns: 1rem repeat(6, 1fr) 1rem;
 
 		/* prettier-ignore */
 		grid-template-areas: 
@@ -39,7 +38,15 @@ const Container = styled(Grid)`
 		".       .       .       .       .       .       .       .       ";
 	}
 
+	${tablet} {
+		--columns: repeat(8, 1fr);
+		--rows: repeat(15, 1fr);
+		gap: 1rem;
+	}
+
 	${desktop} {
+		--columns: repeat(8, 1fr);
+
 		/* prettier-ignore */
 		grid-template-areas: 
 		".       .       .       .       .       .       .       .       "

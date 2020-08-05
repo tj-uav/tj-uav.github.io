@@ -3,13 +3,13 @@ import styled from "styled-components"
 import Image from "components/Image"
 import Grid from "components/Grid"
 import { Subheading } from "theme/Styles"
-import { small, desktop } from "theme/Breakpoints"
+import { mobile, tablet, desktop } from "theme/Breakpoints"
 import { darker } from "theme/Colors"
 
 const Container = styled(Grid)`
 	background-color: ${darker};
 
-	${small} {
+	${mobile} {
 		--rows: repeat(13, 2.1875rem) auto;
 		--columns: unset;
 
@@ -32,6 +32,27 @@ const Container = styled(Grid)`
 			" image "
 			" .     "
 			" text  ";
+	}
+
+	${tablet} {
+		--columns: repeat(8, 1fr);
+
+		/* prettier-ignore */
+		grid-template-areas:
+			" .      .      .      .      .      .      .      .      "
+			" .      .      .      .      .      .      .      .      "
+			" .      .      .      .      .      .      .      .      "
+			" .      logo   logo   logo   logo   logo   logo   .      "
+			" .      logo   logo   logo   logo   logo   logo   .      "
+			" .      .      .      .      .      .      .      .      "
+			" .      .      .      .      .      .      .      .      "
+			" .      image  image  image  image  image  image  .      "
+			" .      image  image  image  image  image  image  .      "
+			" .      image  image  image  image  image  image  .      "
+			" .      image  image  image  image  image  image  .      "
+			" .      image  image  image  image  image  image  .      "
+			" .      .      .      .      .      .      .      .      "
+			" .      text   text   text   text   text   text   .      ";
 	}
 
 	${desktop} {

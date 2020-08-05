@@ -3,31 +3,50 @@ import styled from "styled-components"
 import Image from "components/Image"
 import Grid from "components/Grid"
 import { Heading, Paragraph } from "theme/Styles"
-import { small, desktop } from "theme/Breakpoints"
+import { mobile, tablet, desktop } from "theme/Breakpoints"
 import { dark, darker } from "theme/Colors"
 
 const Container = styled(Grid)`
-	${small} {
+	background-color: ${darker};
+
+	${mobile} {
 		--rows: repeat(2, 2.1875rem) auto repeat(8, 2.1875rem);
 		--columns: none;
-
-		background-color: ${darker};
 		height: auto;
 		padding: 0 1rem;
 
 		/* prettier-ignore */
 		grid-template-areas:
-		"."
-		"header"
-		"content"
-		"image"
-		"image"
-		"image"
-		"image"
-		"image"
-		"image"
-		"image"
-		".";
+		" .       "
+		" header  "
+		" content "
+		" image   "
+		" image   "
+		" image   "
+		" image   "
+		" image   "
+		" image   "
+		" image   "
+		" .       ";
+	}
+
+	${tablet} {
+		--columns: repeat(8, 1fr);
+		padding: unset;
+
+		/* prettier-ignore */
+		grid-template-areas:
+		" .        .        .        .        .        .        .        .       "
+		" .        header   header   header   header   header   header   .       "
+		" .        content  content  content  content  content  content  .       "
+		" .        .        .        .        .        .        .        .       "
+		" .        image    image    image    image    image    image    .       "
+		" .        image    image    image    image    image    image    .       "
+		" .        image    image    image    image    image    image    .       "
+		" .        image    image    image    image    image    image    .       "
+		" .        image    image    image    image    image    image    .       "
+		" .        image    image    image    image    image    image    .       "
+		" .        .        .        .        .        .        .        .       ";
 	}
 
 	${desktop} {
@@ -35,7 +54,6 @@ const Container = styled(Grid)`
 
 		--rows: repeat(9, 1fr);
 		--columns: repeat(12, 1fr);
-		padding: unset;
 
 		/* prettier-ignore */
 		grid-template-areas:

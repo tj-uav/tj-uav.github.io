@@ -2,11 +2,13 @@ import React from "react"
 import styled from "styled-components"
 import Grid from "components/Grid"
 import { darker } from "theme/Colors"
-import { small, mobile, desktop } from "theme/Breakpoints"
+import { mobile, tablet, desktop } from "theme/Breakpoints"
 import Card from "pages/home/components/Card"
 
 const DisplayedCards = ({ content, ...props }) =>
-	content.map((card, i) => <Card {...props} data={card} key={i} />)
+	content.map((card, i) => (
+		<Card {...props} style={{ ...props.style, gridArea: `card${i + 1}` }} data={card} key={i} />
+	))
 
 const Container = styled(Grid)`
 	background-color: ${darker};
@@ -16,7 +18,7 @@ const Container = styled(Grid)`
 	--rows: repeat(3, auto);
 	--columns: unset;
 
-	${small} {
+	${mobile} {
 		height: auto;
 
 		/* prettier-ignore */
@@ -26,14 +28,17 @@ const Container = styled(Grid)`
 			"card3";
 	}
 
-	${mobile} {
-		--columns: repeat(4, 1fr);
+	${tablet} {
+		--columns: repeat(8, 1fr);
+		--rows: repeat(3, auto);
+
+		padding: unset;
 
 		/* prettier-ignore */
 		grid-template-areas:
-			".     card1 card1 .     "
-			".     card2 card2 .     "
-			".     card3 card3 .     ";
+			".     card1 card1 card1 card1 card1 card1 .     "
+			".     card2 card2 card2 card2 card2 card2 .     "
+			".     card3 card3 card3 card3 card3 card3 .     ";
 	}
 
 	${desktop} {
@@ -41,7 +46,6 @@ const Container = styled(Grid)`
 		--rows: unset;
 
 		height: 100vh;
-		padding: unset;
 
 		/* prettier-ignore */
 		grid-template-areas:
