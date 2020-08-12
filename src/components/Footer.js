@@ -13,7 +13,7 @@ const Container = styled(Grid)`
 
 	background-color: ${darker};
 	align-items: center;
-	position: absolute;
+	/* position: absolute; */
 	height: 5.375rem;
 	width: 100vw;
 	bottom: 0;
