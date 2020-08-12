@@ -5,7 +5,7 @@ import Button from "./Button"
 import Grid from "./Grid"
 import { dark, darker, text } from "theme/Colors"
 import { Heading, Paragraph } from "theme/Styles"
-import { mobile, desktop } from "theme/Breakpoints"
+import { mobile, tablet, desktop } from "theme/Breakpoints"
 
 const Container = styled(Grid)`
 	--rows: unset;
@@ -21,7 +21,8 @@ const Container = styled(Grid)`
 
 	${mobile} {
 		--rows: 100% auto;
-		row-gap: 0;
+		--columns: 1rem repeat(10, 1fr) 1rem;
+		gap: 0;
 
 		/* prettier-ignore */
 		grid-template-areas: 
@@ -29,7 +30,19 @@ const Container = styled(Grid)`
 			"content content content content content content content content content content content content ";
 	}
 
+	${tablet} {
+		--columns: 0 repeat(8, 1fr) 0;
+		column-gap: 1rem;
+
+		/* prettier-ignore */
+		grid-template-areas: 
+			".        .       logo    logo    .       .       .       burger  .       .      "
+			"content  content content content content content content content content content";
+	}
+
 	${desktop} {
+		--columns: repeat(12, 1fr);
+
 		/* prettier-ignore */
 		grid-template-areas: 
 			".       logo    logo    content content content content content content content content .       ";
@@ -91,6 +104,10 @@ const StyledBurger = styled.div`
 	grid-template-rows: repeat(3, 3px);
 	row-gap: 5px;
 	grid-area: burger;
+
+	${tablet} {
+		justify-self: flex-end;
+	}
 
 	${desktop} {
 		display: none;
