@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Grid from "components/Grid"
 import { dark, darker } from "theme/Colors"
-import { mobile, desktop } from "theme/Breakpoints"
+import { mobile, tablet, desktop } from "theme/Breakpoints"
 import { Subheading as SubheadingStyles, Heading as HeadingStyles } from "theme/Styles"
 
 import Officers from "./components/Officers"
@@ -30,29 +30,46 @@ const Heading = styled(ThemedHeading)`
 	grid-area: heading;
 `
 
-const fixedHeight = "2.1875rem"
 const Container = styled(Grid)`
 	z-index: -2;
 	height: initial;
 	background-color: ${darker};
 
 	${mobile} {
-		column-gap: 0;
+		/* column-gap: 0; */
+		--columns: 0 repeat(10, 1fr) 0;
+		--rows: 1fr;
 
-		grid-template:
-			". . . " ${fixedHeight}
-			". . . " ${fixedHeight}
-			". . . " ${fixedHeight}
-			". heading ." min-content
-			". subheading ." min-content
-			". . ." ${fixedHeight}
-			". image ." min-content
-			". . ." ${fixedHeight}
-			"officers officers officers" min-content
-			/ 1rem auto 1rem;
+		grid-template-areas:
+			".        .          .          .          .          .          .          .          .          .          .          .       "
+			".        .          .          .          .          .          .          .          .          .          .          .       "
+			".        .          .          .          .          .          .          .          .          .          .          .       "
+			".        heading    heading    heading    heading    heading    heading    heading    heading    heading    heading    .       "
+			".        subheading subheading subheading subheading subheading subheading subheading subheading subheading subheading .       "
+			".        .          .          .          .          .          .          .          .          .          .          .       "
+			".        image      image      image      image      image      image      image      image      image      image      .       "
+			".        .          .          .          .          .          .          .          .          .          .          .       "
+			"officers officers   officers   officers   officers   officers   officers   officers   officers   officers   officers   officers";
+	}
+
+	${tablet} {
+		--columns: 0 repeat(8, 1fr) 0;
+
+		grid-template-areas:
+			".        .          .          .          .          .          .          .          .          .       "
+			".        .          .          .          .          .          .          .          .          .       "
+			".        .          .          .          .          .          .          .          .          .       "
+			".        .          heading    heading    heading    heading    heading    heading    .          .       "
+			".        .          subheading subheading subheading subheading subheading subheading .          .       "
+			".        .          .          .          .          .          .          .          .          .       "
+			".        .          image      image      image      image      image      image      .          .       "
+			".        .          .          .          .          .          .          .          .          .       "
+			"officers officers   officers   officers   officers   officers   officers   officers   officers   officers";
 	}
 
 	${desktop} {
+		--columns: repeat(12, 1fr);
+
 		column-gap: 1rem;
 		min-height: 100vh;
 		grid-template-rows: repeat(7, calc(${1 / 9} * 100vh)) auto calc(${1 / 9} * 100vh);
@@ -68,7 +85,7 @@ const Container = styled(Grid)`
 			". officers   officers   officers   officers   officers .       image   image   image   image   ."
 			". officers   officers   officers   officers   officers .       .       .       .       .       ."
 			". officers   officers   officers   officers   officers .       .       .       .       .       ."
-			". .          .          .          .          .        .       .       .       .       .       .";
+			". officers   officers   officers   officers   officers .       .       .       .       .       .";
 
 		&::after {
 			content: "";

@@ -34,8 +34,8 @@ const Container = styled.div`
 	}
 
 	${tablet} {
-		grid-template-rows: unset;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: min-content;
+		grid-template-columns: 1fr 1fr;
 
 		/* prettier-ignore */
 		grid-template-areas: 
@@ -52,12 +52,17 @@ const Container = styled.div`
 `
 
 const Image = styled(RawImage)`
+	object-fit: cover;
 	grid-area: image;
 	min-height: 100%;
 	width: 100%;
-	object-fit: cover;
+
+	${desktop} {
+		height: 100%;
+	}
 `
 
 const Caption = styled(Paragraph)`
 	grid-area: caption;
+	overflow: hidden;
 `

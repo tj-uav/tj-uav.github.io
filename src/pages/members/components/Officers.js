@@ -84,19 +84,37 @@ const Container = styled(Grid)`
 	background: ${dark};
 
 	${mobile} {
-		padding: 0 1rem;
+		--rows: ${fixedHeight} auto auto ${fixedHeight};
+		--columns: 0 1fr 0;
+
+		grid-template-areas:
+			". .       ."
+			". heading ."
+			". content ."
+			". .       .";
+	}
+
+	${tablet} {
+		--rows: ${fixedHeight} auto auto ${fixedHeight};
+		--columns: 0 repeat(8, 1fr) 0;
+
+		grid-template-areas:
+			". . .       .       .       .       .       .       . ."
+			". . heading heading heading heading heading heading . ."
+			". . content content content content content content . ."
+			". . .       .       .       .       .       .       . .";
 	}
 
 	${desktop} {
-		padding: initial;
-	}
+		--rows: ${fixedHeight} auto auto ${fixedHeight};
+		--columns: 1fr;
 
-	grid-template:
-		"." ${fixedHeight}
-		"heading" min-content
-		"content" min-content
-		"image" min-content
-		"." ${fixedHeight};
+		grid-template-areas:
+			".      "
+			"heading"
+			"content"
+			".      ";
+	}
 `
 
 const Content = () => (
