@@ -1,5 +1,5 @@
 import React from "react"
-import { BrowserRouter as Router, Redirect, Switch, Route } from "react-router-dom"
+import { BrowserRouter as Router, Redirect, Switch, Route, useLocation } from "react-router-dom"
 import Header from "components/Header"
 import Footer from "components/Footer"
 import Home from "pages/home/Home"
@@ -10,6 +10,7 @@ const App = () => {
 	return (
 		<Router>
 			<GlobalFonts />
+			<Location />
 
 			<Header />
 
@@ -30,6 +31,18 @@ const App = () => {
 			<Footer />
 		</Router>
 	)
+}
+
+const Location = () => {
+	const location = useLocation()
+
+	React.useEffect(() => {
+		const title = location.pathname.match(/(?<=[/])([a-z])[a-z]*$/i)
+		const page = title[0].replace(title[1], title[1].toUpperCase())
+		document.title = `TJUAV | ${page}`
+	}, [location])
+
+	return null
 }
 
 export default App
