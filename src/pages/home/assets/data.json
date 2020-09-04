@@ -8,19 +8,19 @@
 				"heading": "Team at TJHSST",
 				"content": "We are a group of innovative high-schoolers from the Thomas Jefferson High School for Science and Technology, ranked #1 high school in the nation.",
 				"button": "More About Us",
-				"img": "tjhsst.svg"
+				"img": { "file": "tjhsst.svg", "alt": "TJHSST school logo." }
 			},
 			{
 				"heading": "Aerospace Geeks",
-				"content": "In addition to creating and flying unmanned aircraft for fun, we create a search and rescue UAV for the yearly and international AUVSI SUAS competition.",
+				"content": "In addition to creating and flying unmanned aircraft for fun, we create a search and rescue UAV for the yearly and international [AUVSI SUAS competition](https://www.auvsi-suas.org/).",
 				"button": "Learn More",
-				"img": "plane.svg"
+				"img": { "file": "plane.svg", "alt": "Plane." }
 			},
 			{
 				"heading": "UAV Enthusiasts",
 				"content": "Design and build.  Program and fly.  Crash and repeat.  We love every part of the process.",
 				"button": "Meet the Team",
-				"img": "drone.svg"
+				"img": { "file": "drone.svg", "alt": "Drone." }
 			}
 		]
 	},

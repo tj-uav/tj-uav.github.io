@@ -3,8 +3,8 @@ import styled from "styled-components"
 import Button from "components/Button"
 import Image from "components/Image"
 import Grid from "components/Grid"
-import { dark, darker } from "theme/Colors"
-import { Heading, Paragraph } from "theme/Styles"
+import { dark, darker, red } from "theme/Colors"
+import { Heading, Paragraph as RawParagraph } from "theme/Styles"
 import { mobile, tablet, desktop } from "theme/Breakpoints"
 
 const Container = styled(Grid)`
@@ -104,7 +104,7 @@ const StyledHeading = styled(ThemedHeading)`
 	align-self: center;
 `
 
-const ThemedParagraph = styled.p(() => Paragraph)
+const ThemedParagraph = styled.p(() => RawParagraph)
 const StyledParagraph = styled(ThemedParagraph)`
 	margin-bottom: 2rem;
 	text-align: center;
@@ -117,15 +117,43 @@ const StyledImage = styled(Image)`
 	top: 0;
 `
 
+const Link = styled(StyledParagraph)`
+	color: ${red};
+`
+
+const Paragraph = ({ data }) => {
+	if (data.before && data.after) {
+		return (
+			<StyledParagraph>
+				{data.before}
+				<Link as="a" href={data.link} target="_blank" rel="noopener noreferrer">
+					{data.label}
+				</Link>
+				{data.after}
+			</StyledParagraph>
+		)
+	} else {
+		return <StyledParagraph>{data.content}</StyledParagraph>
+	}
+}
+
 const Card = ({ data, ...props }) => {
-	const alt = data.img.substring(0, data.img.indexOf("."))
+	const { file, alt } = data.img
+	const match = /\[(?<label>[^)]+)\][(](?<link>[^)]+)[)]/.exec(data.content)
+	let label = match?.groups?.label
+	let link = match?.groups?.link
+
+	const [before, after] = link && label ? data.content.split(`[${label}](${link})`) : []
+
+	console.log(label, link)
+	console.log(before, after)
 
 	return (
 		<Container {...props} style={{ ...props.style }}>
 			<div style={{ display: "flex", flexDirection: "column", gridArea: "content" }}>
-				<StyledImage src={require(`pages/home/assets/${data.img}`)} alt={alt} />
+				<StyledImage src={require(`pages/home/assets/${file}`)} alt={alt} />
 				<StyledHeading>{data.heading}</StyledHeading>
-				<StyledParagraph>{data.content}</StyledParagraph>
+				<Paragraph data={{ before, after, link, label, content: data.content }} />
 				<div style={{ textAlign: "center" }}>
 					<Button>{data.button}</Button>
 				</div>
