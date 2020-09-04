@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { BrowserRouter as Router, Redirect, Switch, Route, useLocation } from "react-router-dom"
 import Header from "components/Header"
 import Footer from "components/Footer"
@@ -36,10 +36,18 @@ const App = () => {
 const Location = () => {
 	const location = useLocation()
 
-	React.useEffect(() => {
-		const title = location.pathname.match(/(?<=[/])([a-z])[a-z]*$/i)
-		const page = title[0].replace(title[1], title[1].toUpperCase())
-		document.title = `TJUAV | ${page}`
+	useEffect(() => {
+		try {
+			const [title, first] = /(?<=[/])(\w)\w*$/i.exec(location.pathname)
+			const page = title.replace(first, first.toUpperCase())
+			document.title = `TJUAV | ${page}`
+		} catch (e) {
+			if (e instanceof TypeError && e.message.includes("iterable")) {
+				return
+			} else {
+				console.error(e)
+			}
+		}
 	}, [location])
 
 	return null
