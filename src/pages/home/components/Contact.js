@@ -46,12 +46,13 @@ const Container = styled(Grid)`
 
 	${desktop} {
 		--columns: repeat(8, 1fr);
+		--rows: repeat(18, 1fr);
 
 		/* prettier-ignore */
 		grid-template-areas: 
 		".       .       .       .       .       .       .       .       "
 		".       .       .       .       .       .       .       .       "
-		".       .       .       .       .       .       .       .       "
+		".       heading heading heading heading heading heading .       "
 		".       heading heading heading heading heading heading .       "
 		".       name    name    name    name    name    name    .       "
 		".       box1    box1    box1    box1    box1    box1    .       "
