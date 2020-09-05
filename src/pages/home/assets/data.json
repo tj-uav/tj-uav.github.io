@@ -8,19 +8,28 @@
 				"heading": "Team at TJHSST",
 				"content": "We are a group of innovative high-schoolers from the Thomas Jefferson High School for Science and Technology, ranked #1 high school in the nation.",
 				"button": "More About Us",
-				"img": { "file": "tjhsst.svg", "alt": "TJHSST school logo." }
+				"image": {
+					"src": "tjhsst.svg",
+					"alt": "TJHSST school logo."
+				}
 			},
 			{
 				"heading": "Aerospace Geeks",
 				"content": "In addition to creating and flying unmanned aircraft for fun, we create a search and rescue UAV for the yearly and international [AUVSI SUAS competition](https://www.auvsi-suas.org/).",
 				"button": "Learn More",
-				"img": { "file": "plane.svg", "alt": "Plane." }
+				"image": {
+					"src": "plane.svg",
+					"alt": "Plane."
+				}
 			},
 			{
 				"heading": "UAV Enthusiasts",
 				"content": "Design and build.  Program and fly.  Crash and repeat.  We love every part of the process.",
 				"button": "Meet the Team",
-				"img": { "file": "drone.svg", "alt": "Drone." }
+				"image": {
+					"src": "drone.svg",
+					"alt": "Drone."
+				}
 			}
 		]
 	},
@@ -31,7 +40,12 @@
 	"sponsor": {
 		"title": "Sponsors",
 		"description": "Put a brief summary of what our sponsors do for us here, along with a blurb to make organizations feel bad about not sponsoring us.  Sponsor us!",
-		"imgs": [{ "file": "TJPF.png", "alt": "Thomas Jefferson Partnership Fund" }]
+		"images": [
+			{
+				"src": "TJPF.png",
+				"alt": "Thomas Jefferson Partnership Fund"
+			}
+		]
 	},
 	"contact": {
 		"title": "Contact"
