@@ -8,7 +8,7 @@ import GlobalFonts from "fonts/fonts"
 
 const App = () => {
 	return (
-		<Router>
+		<Router style={{ scrollBehavior: "smooth" }}>
 			<GlobalFonts />
 			<Location />
 

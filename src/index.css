@@ -9,3 +9,7 @@
 #root {
 	position: relative;
 }
+
+html {
+	scroll-behavior: smooth;
+}
