@@ -5,14 +5,12 @@ import { Paragraph as ParagraphStyles } from "theme/Styles"
 import { mobile, tablet, desktop } from "theme/Breakpoints"
 import { default as RawImage } from "components/Image"
 
+import { caption } from "../assets/data.json"
+
 const TeamImage = () => (
 	<Container>
 		<Image src={require("../assets/team.jpg")} alt="the team" border />
-		<Caption>
-			Pictured right to left, top to bottom: Niko Economos, Daniel Stefanescu, Ganesh Nanduru,
-			Liam West, ... , Marvin Fu. Not pictured: literally everyone else why didn’t people just
-			show up the first time
-		</Caption>
+		<Caption>{caption}</Caption>
 	</Container>
 )
 
@@ -54,12 +52,7 @@ const Container = styled.div`
 const Image = styled(RawImage)`
 	object-fit: cover;
 	grid-area: image;
-	min-height: 100%;
 	width: 100%;
-
-	${desktop} {
-		height: 100%;
-	}
 `
 
 const Caption = styled(Paragraph)`

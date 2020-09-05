@@ -8,59 +8,9 @@ import { Heading as HeadingStyles } from "theme/Styles"
 import { mobile, tablet, desktop } from "theme/Breakpoints"
 
 import Officer from "./Officer"
+import { officers } from "../assets/data.json"
 
 const fixedHeight = "2.1875rem"
-
-const data = [
-	{
-		name: "Srikar Gouru",
-		position: "President",
-		image: {
-			src: require("../assets/team.jpg"),
-			alt: "Srikar Gouru; President",
-		},
-	},
-	{
-		name: "Ganesh Nanduru",
-		position: "Vice President",
-		image: {
-			src: require("../assets/team.jpg"),
-			alt: "Ganesh Nanduru; Vice President",
-		},
-	},
-	{
-		name: "Niko Economos",
-		position: "Secretary",
-		image: {
-			src: require("../assets/team.jpg"),
-			alt: "Niko Economos; Secretary",
-		},
-	},
-	{
-		name: "Liam West",
-		position: "Treasurer",
-		image: {
-			src: require("../assets/team.jpg"),
-			alt: "Liam West; Treasurer",
-		},
-	},
-	{
-		name: "Jason Klein",
-		position: "Webmaster",
-		image: {
-			src: require("../assets/team.jpg"),
-			alt: "Jason Klein; Webmaster",
-		},
-	},
-	{
-		name: "Daniel Stefanescu",
-		position: "Publicist",
-		image: {
-			src: require("../assets/team.jpg"),
-			alt: "Daniel Stefanescu; Publicist",
-		},
-	},
-]
 
 const Officers = () => (
 	<Container as="section">
@@ -119,7 +69,7 @@ const Container = styled(Grid)`
 
 const Content = () => (
 	<ContentContainer>
-		{data.map((officer, i) => (
+		{officers.map((officer, i) => (
 			<Officer key={i} data={officer} />
 		))}
 	</ContentContainer>

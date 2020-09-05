@@ -4,13 +4,17 @@ import styled from "styled-components"
 import { Paragraph as ParagraphStyles } from "theme/Styles"
 import { darker } from "theme/Colors"
 
-const Officer = ({ data }) => (
-	<Container>
-		<Name>{data.name}</Name>
-		<Position>{data.position}</Position>
-		<Image src={data.image.src} alt={data.image.alt} />
-	</Container>
-)
+const Officer = ({ data }) => {
+	const { name, position, image } = data
+	const { src, alt } = image
+	return (
+		<Container>
+			<Name>{name}</Name>
+			<Position>{position}</Position>
+			<Image src={require(`../assets/${src}`)} alt={alt} />
+		</Container>
+	)
+}
 
 export default Officer
 

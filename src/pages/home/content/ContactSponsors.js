@@ -66,8 +66,8 @@ const StyledImage = styled(Image)`
 `
 
 const Sponsors = ({ content }) => {
-	const images = content.imgs.map((img, i) => {
-		const src = require(`pages/home/assets/${img.file}`)
+	const images = content.images.map((img, i) => {
+		const src = require(`pages/home/assets/${img.src}`)
 		return <StyledImage key={i} src={src} alt={img.alt} />
 	})
 

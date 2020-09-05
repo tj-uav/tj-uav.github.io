@@ -138,7 +138,7 @@ const Paragraph = ({ data }) => {
 }
 
 const Card = ({ data, ...props }) => {
-	const { file, alt } = data.img
+	const { src, alt } = data.image
 	const match = /\[(?<label>[^)]+)\][(](?<link>[^)]+)[)]/.exec(data.content)
 	let label = match?.groups?.label
 	let link = match?.groups?.link
@@ -151,7 +151,7 @@ const Card = ({ data, ...props }) => {
 	return (
 		<Container {...props} style={{ ...props.style }}>
 			<div style={{ display: "flex", flexDirection: "column", gridArea: "content" }}>
-				<StyledImage src={require(`pages/home/assets/${file}`)} alt={alt} />
+				<StyledImage src={require(`pages/home/assets/${src}`)} alt={alt} />
 				<StyledHeading>{data.heading}</StyledHeading>
 				<Paragraph data={{ before, after, link, label, content: data.content }} />
 				<div style={{ textAlign: "center" }}>
