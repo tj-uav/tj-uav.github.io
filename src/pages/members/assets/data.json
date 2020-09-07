@@ -1,53 +1,105 @@
 {
-	"officers": [
-		{
-			"name": "Srikar Gouru",
-			"position": "President",
-			"image": {
-				"src": "team.jpg",
-				"alt": "Srikar Gouru; President"
+	"main": {
+		"heading": "The Team",
+		"subheading": "short blurb here? Go into more detail as to what we do, but keep it to a reasonable length.",
+		"caption": "Pictured right to left, top to bottom: Niko Economos, Daniel Stefanescu, Ganesh Nanduru, Liam West, ... , Marvin Fu. Not pictured: literally everyone else why didn’t people just show up the first time"
+	},
+	"officers": {
+		"heading": "Officers",
+		"entries": [
+			{
+				"name": "Srikar Gouru",
+				"position": "President",
+				"image": {
+					"src": "team.jpg",
+					"alt": "Srikar Gouru; President"
+				}
+			},
+			{
+				"name": "Ganesh Nanduru",
+				"position": "Vice President",
+				"image": {
+					"src": "team.jpg",
+					"alt": "Ganesh Nanduru; Vice President"
+				}
+			},
+			{
+				"name": "Niko Economos",
+				"position": "Secretary",
+				"image": {
+					"src": "team.jpg",
+					"alt": "Niko Economos; Secretary"
+				}
+			},
+			{
+				"name": "Liam West",
+				"position": "Treasurer",
+				"image": {
+					"src": "team.jpg",
+					"alt": "Liam West; Treasurer"
+				}
+			},
+			{
+				"name": "Jason Klein",
+				"position": "Webmaster",
+				"image": {
+					"src": "team.jpg",
+					"alt": "Jason Klein; Webmaster"
+				}
+			},
+			{
+				"name": "Daniel Stefanescu",
+				"position": "Publicist",
+				"image": {
+					"src": "team.jpg",
+					"alt": "Daniel Stefanescu; Publicist"
+				}
 			}
-		},
-		{
-			"name": "Ganesh Nanduru",
-			"position": "Vice President",
-			"image": {
-				"src": "team.jpg",
-				"alt": "Ganesh Nanduru; Vice President"
+		]
+	},
+	"leads": {
+		"heading": "Team Leads",
+		"entries": [
+			{
+				"name": "Alex Black",
+				"position": "CV Team",
+				"image": {
+					"src": "team.jpg",
+					"alt": "placeholder alt text"
+				}
+			},
+			{
+				"name": "Ari Bobesh",
+				"position": "UGV Team",
+				"image": {
+					"src": "team.jpg",
+					"alt": "placeholder alt text"
+				}
+			},
+			{
+				"name": "Aryan Chinnala",
+				"position": "GCS Team",
+				"image": {
+					"src": "team.jpg",
+					"alt": "placeholder alt text"
+				}
+			},
+			{
+				"name": "Ganesh Nanduru",
+				"position": "Programming",
+				"image": {
+					"src": "team.jpg",
+					"alt": "placeholder alt text"
+				}
+			},
+			{
+				"name": "Kevin Gu",
+				"position": "CAD Team",
+				"image": {
+					"src": "team.jpg",
+					"alt": "placeholder alt text"
+				}
 			}
-		},
-		{
-			"name": "Niko Economos",
-			"position": "Secretary",
-			"image": {
-				"src": "team.jpg",
-				"alt": "Niko Economos; Secretary"
-			}
-		},
-		{
-			"name": "Liam West",
-			"position": "Treasurer",
-			"image": {
-				"src": "team.jpg",
-				"alt": "Liam West; Treasurer"
-			}
-		},
-		{
-			"name": "Jason Klein",
-			"position": "Webmaster",
-			"image": {
-				"src": "team.jpg",
-				"alt": "Jason Klein; Webmaster"
-			}
-		},
-		{
-			"name": "Daniel Stefanescu",
-			"position": "Publicist",
-			"image": {
-				"src": "team.jpg",
-				"alt": "Daniel Stefanescu; Publicist"
-			}
-		}
-	],
-	"caption": "Pictured right to left, top to bottom: Niko Economos, Daniel Stefanescu, Ganesh Nanduru, Liam West, ... , Marvin Fu. Not pictured: literally everyone else why didn’t people just show up the first time"
+		]
+	}
 }

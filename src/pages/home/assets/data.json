@@ -35,7 +35,11 @@
 	},
 	"about": {
 		"title": "About Us",
-		"description": "Thomas Jefferson Unmanned Aerial Vehicle (TJUAV) Team seeks to teach students about the basics of aeronautical design, flight, and programming. Students learn basic aviation, aircraft construction electrical engineering, and computer science through several side projects such as individual construction of radio controlled (RC) planes and lectures by team leads. We work with Unmanned Aerial Systems (UAS) such as fixed wing and multirotor aircraft, flight computers, computer vision, and other technologies to achieve autonomous flight, respond to ground station commands, and detect objects..."
+		"entries": [
+			"We are the Thomas Jefferson Unmanned Aerial Vehicle (TJUAV) Team, a group of curious and driven high-school students learning about the development and operation of unmanned aerial systems through experience and discovery.",
+			"We participate in the annual AUVSI SUAS competition, where we compete with an Unmanned Aerial Vehicle (UAV) against colleges from around the world.  In 2019, TJUAV placed 23rd overall out of over 75 teams, Visit [https://www.auvsi-suas.org/](https://www.auvsi-suas.org/) for more information.",
+			"Working on the airframe, designing electrical systems, engineering a ground vehicle, developing an autopilot system, transmitting data with an aircraft, and autonomously classifying images, we are in a constant positive feedback loop, uncovering new knowledge every day. "
+		]
 	},
 	"sponsor": {
 		"title": "Sponsors",
