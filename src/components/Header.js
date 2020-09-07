@@ -165,8 +165,8 @@ const Header = () => {
 
 			<LinksList hook={[active, setActive]} style={{ gridArea: "content" }}>
 				<LinkItem hook={[active, setActive]}>
-					<StyledLink to="/competition" style={Paragraph}>
-						Competition
+					<StyledLink to="/home" style={Paragraph}>
+						Home
 					</StyledLink>
 				</LinkItem>
 				<LinkItem hook={[active, setActive]}>
