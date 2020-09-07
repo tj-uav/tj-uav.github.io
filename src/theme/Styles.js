@@ -1,3 +1,5 @@
+import styled from "styled-components"
+
 import { text } from "./Colors"
 
 export const Paragraph = {
@@ -6,6 +8,8 @@ export const Paragraph = {
 	fontSize: "16px",
 	color: text,
 }
+
+export const StyledParagraph = styled.h1(() => Paragraph)
 
 export const Heading = {
 	alignSelf: "flex-end",
@@ -16,8 +20,12 @@ export const Heading = {
 	color: text,
 }
 
+export const StyledHeading = styled.h1(() => Heading)
+
 export const Subheading = {
 	...Paragraph,
 	fontWeight: 400,
 	fontSize: "19px",
 }
+
+export const StyledSubheading = styled.h2(() => Subheading)
