@@ -3,14 +3,13 @@ import styled from "styled-components"
 
 import { Paragraph as ParagraphStyles } from "theme/Styles"
 import { mobile, tablet, desktop } from "theme/Breakpoints"
-import { default as RawImage } from "components/Image"
-
-import { caption } from "../assets/data.json"
+import RawImage from "components/Image"
+import { main } from "pages/members/assets/data.json"
 
 const TeamImage = () => (
 	<Container>
-		<Image src={require("../assets/team.jpg")} alt="the team" border />
-		<Caption>{caption}</Caption>
+		<Image src={require("../../assets/team.jpg")} alt="the team" border />
+		<Caption>{main.caption}</Caption>
 	</Container>
 )
 
