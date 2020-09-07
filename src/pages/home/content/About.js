@@ -1,8 +1,11 @@
 import React from "react"
 import styled from "styled-components"
+
 import Image from "components/Image"
 import Grid from "components/Grid"
-import { Heading, Paragraph } from "theme/Styles"
+import Paragraph from "components/Paragraph"
+
+import { Heading } from "theme/Styles"
 import { mobile, tablet, desktop } from "theme/Breakpoints"
 import { dark, darker } from "theme/Colors"
 
@@ -76,9 +79,11 @@ const About = ({ content, ...props }) => {
 			<h1 {...props} style={{ ...Heading, gridArea: "header" }}>
 				{content.title}
 			</h1>
-			<p {...props} style={{ ...Paragraph, gridArea: "content" }}>
-				{content.description}
-			</p>
+			<div style={{ gridArea: "content" }}>
+				{content.entries.map((entry, i) => (
+					<Paragraph key={i}>{entry}</Paragraph>
+				))}
+			</div>
 			<aside {...props} style={{ gridArea: "image" }}>
 				<Image border src={require("pages/home/assets/img2.jpeg")} style={imgStyle} />
 			</aside>
