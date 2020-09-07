@@ -4,11 +4,11 @@ import styled from "styled-components"
 import { Paragraph as ParagraphStyles } from "theme/Styles"
 import { darker } from "theme/Colors"
 
-const Officer = ({ data }) => {
+const Officer = ({ data, ...props }) => {
 	const { name, position, image } = data
 	const { src, alt } = image
 	return (
-		<Container>
+		<Container {...props}>
 			<Name>{name}</Name>
 			<Position>{position}</Position>
 			<Image src={require(`../assets/${src}`)} alt={alt} />
@@ -30,7 +30,7 @@ const Container = styled.div`
 		". .        . image" 0.5rem
 		". name1    . image" min-content
 		". name2    . image" min-content
-		". position . image" min-content
+		". position . image" auto
 		". .        . image" 0.5rem
 		/ 0.5rem auto auto 45%;
 `

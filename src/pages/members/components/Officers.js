@@ -6,15 +6,15 @@ import Grid from "components/Grid"
 import { dark } from "theme/Colors"
 import { Heading as HeadingStyles } from "theme/Styles"
 import { mobile, tablet, desktop } from "theme/Breakpoints"
+import { officers } from "pages/members/assets/data.json"
 
 import Officer from "./Officer"
-import { officers } from "../assets/data.json"
 
 const fixedHeight = "2.1875rem"
 
 const Officers = () => (
 	<Container as="section">
-		<Heading>Officers</Heading>
+		<Heading>{officers.heading}</Heading>
 		<Content />
 	</Container>
 )
@@ -69,7 +69,7 @@ const Container = styled(Grid)`
 
 const Content = () => (
 	<ContentContainer>
-		{officers.map((officer, i) => (
+		{officers.entries.map((officer, i) => (
 			<Officer key={i} data={officer} />
 		))}
 	</ContentContainer>
