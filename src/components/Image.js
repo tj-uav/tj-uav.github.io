@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { blue } from "theme/Colors"
 
 const StyledImage = styled.img`
-	border: 1rem solid ${blue};
+	border: 0.25rem solid ${blue};
 `
 
 const Image = ({ src, alt, border, ...props }) => {
