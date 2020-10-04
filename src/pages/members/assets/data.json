@@ -2,7 +2,12 @@
 	"main": {
 		"heading": "The Team",
 		"subheading": "short blurb here? Go into more detail as to what we do, but keep it to a reasonable length.",
-		"caption": "Pictured right to left, top to bottom: Niko Economos, Daniel Stefanescu, Ganesh Nanduru, Liam West, ... , Marvin Fu. Not pictured: literally everyone else why didn’t people just show up the first time"
+		"caption": [
+			"Pictured left to right, top row: Niko Economos, Daniel Stefanescu, Ganesh Nanduru, Liam West, Ronith Reddy, Ron Nachum, Aaryan Dave",
+			"Second row: James Huang, Caleb Arulandu, Kevin Gu, Patrick Zhang, Jason Chen, Jack Blair, Cyril Sharma, Alexander Black",
+			"Third row: Jacob Consalvi, Aryan Chinnala, Lohit Balakumar, Srikar Gouru, Ari Bobesh, Audhav, Durai, Jason Yi, Ankit Khandelwal",
+			"Bottom row: Jon Paolo Recta, Max Zhang, Jack Williamson, Suruchi Sen, Hari Shanmugaraja, Marvin Fu."
+		]
 	},
 	"officers": {
 		"heading": "Officers",

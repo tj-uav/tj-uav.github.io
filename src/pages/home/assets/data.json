@@ -1,6 +1,6 @@
 {
 	"hero": {
-		"description": "A student-run team that designs, builds, and operates a custom search and rescue unmanned aerial system (copied from CUAir lol). Help us achieve our dreams by sponsoring us!"
+		"description": "A student-run team that designs, builds, and operates a custom search and rescue unmanned aerial system (copied from CUAir lol). Help us achieve our dreams by [sponsoring us!](/home#sponsor)."
 	},
 	"info": {
 		"cards": [
@@ -15,7 +15,7 @@
 			},
 			{
 				"heading": "Aerospace Geeks",
-				"content": "In addition to creating and flying unmanned aircraft for fun, we create a search and rescue UAV for the yearly and international [AUVSI SUAS competition](https://www.auvsi-suas.org/).",
+				"content": "In addition to developing and flying unmanned aircraft for fun, we create a search and rescue UAV for the annual [AUVSI SUAS competition](https://www.auvsi-suas.org/).",
 				"button": "Learn More",
 				"image": {
 					"src": "plane.svg",
