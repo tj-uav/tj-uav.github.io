@@ -174,11 +174,11 @@ const Header = () => {
 						Members
 					</StyledLink>
 				</LinkItem>
-				<LinkItem hook={[active, setActive]}>
+				{/* <LinkItem hook={[active, setActive]}>
 					<StyledLink to="/gallery" style={Paragraph}>
 						Gallery
 					</StyledLink>
-				</LinkItem>
+				</LinkItem> */}
 				<LinkItem hook={[active, setActive]}>
 					<Button href="/home#sponsor">Sponsor</Button>
 				</LinkItem>
