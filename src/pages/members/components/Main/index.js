@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { StyledHeading, StyledSubheading } from "theme/Styles"
 
 import TeamImage from "./TeamImage"
+import Caption from "./TeamCaption"
 import { main } from "../../assets/data.json"
 
 export default function Main() {
@@ -14,6 +15,7 @@ export default function Main() {
 			<Heading>{heading}</Heading>
 			<Subheading>{subheading}</Subheading>
 			<TeamImage />
+			<Caption />
 		</>
 	)
 }

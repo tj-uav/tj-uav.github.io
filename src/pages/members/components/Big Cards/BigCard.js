@@ -1,28 +1,33 @@
 import React from "react"
 import styled from "styled-components"
 
-import { Paragraph as ParagraphStyles } from "theme/Styles"
+import { StyledParagraph as Paragraph } from "theme/Styles"
+import { mobile, tablet } from "theme/Breakpoints"
 import { darker } from "theme/Colors"
 
-const Officer = ({ data, ...props }) => {
+const BigCard = ({ data, ...props }) => {
 	const { name, position, image } = data
 	const { src, alt } = image
 	return (
 		<Container {...props}>
 			<Name>{name}</Name>
 			<Position>{position}</Position>
-			<Image src={require(`../assets/${src}`)} alt={alt} />
+			<Image src={require(`../../assets/${src}`)} alt={alt} />
 		</Container>
 	)
 }
 
-export default Officer
-
-const ThemedParagraph = styled.p(() => ParagraphStyles)
-const Paragraph = styled(ThemedParagraph)``
+export default BigCard
 
 const Container = styled.div`
-	background: ${darker};
+	${mobile} {
+		background: ${({ bg_color }) => bg_color ?? darker};
+	}
+
+	${tablet} {
+		background: ${darker};
+	}
+
 	border-radius: 0.2rem;
 	position: relative;
 	display: grid;
@@ -32,7 +37,7 @@ const Container = styled.div`
 		". name2    . image" min-content
 		". position . image" auto
 		". .        . image" 0.5rem
-		/ 0.5rem auto auto 45%;
+		/ 1rem auto auto 45%;
 `
 
 const Name = ({ children }) => {
@@ -47,6 +52,7 @@ const Name = ({ children }) => {
 }
 
 const Position = styled(Paragraph)`
+	margin-top: auto;
 	grid-area: position;
 	opacity: 0.5;
 `

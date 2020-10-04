@@ -23,47 +23,76 @@ export default styled(Grid)`
 			".        subheading subheading subheading subheading subheading subheading subheading subheading subheading subheading .       "
 			".        .          .          .          .          .          .          .          .          .          .          .       "
 			".        image      image      image      image      image      image      image      image      image      image      .       "
+			".        caption    caption    caption    caption    caption    caption    caption    caption    caption    caption    .       "
 			".        .          .          .          .          .          .          .          .          .          .          .       "
-			"officers officers   officers   officers   officers   officers   officers   officers   officers   officers   officers   officers";
+			"officers officers   officers   officers   officers   officers   officers   officers   officers   officers   officers   officers"
+			"leads    leads      leads      leads      leads      leads      leads      leads      leads      leads      leads      leads   ";
+
+		&::after {
+			content: "";
+			position: absolute;
+			grid-column: 0 / -1;
+			grid-row: officers;
+			width: 100%;
+			height: 100%;
+			background: ${dark};
+			z-index: -1;
+		}
 	}
 
 	${tablet} {
-		--columns: 0 repeat(8, 1fr) 0;
-		/* --rows: repeat(10, 1fr); */
+		--columns: 0 1fr 1fr 1fr 1fr 0 1fr 1fr 1fr 1fr 0;
 
 		grid-template-areas:
-			".        .          .          .          .          .          .          .          .          .       "
-			".        .          .          .          .          .          .          .          .          .       "
-			".        .          .          .          .          .          .          .          .          .       "
-			".        .          heading    heading    heading    heading    heading    heading    .          .       "
-			".        .          subheading subheading subheading subheading subheading subheading .          .       "
-			".        .          .          .          .          .          .          .          .          .       "
-			".        .          image      image      image      image      image      image      .          .       "
-			".        .          .          .          .          .          .          .          .          .       "
-			"officers officers   officers   officers   officers   officers   officers   officers   officers   officers";
-		/* "leads    leads      leads      leads      leads      leads      leads      leads      leads      leads   "; */
+			".        .          .          .          .          .          .          .          .          .          .       "
+			".        .          .          .          .          .          .          .          .          .          .       "
+			".        .          .          .          .          .          .          .          .          .          .       "
+			".        .          heading    heading    heading    heading    heading    heading    heading    .          .       "
+			".        .          subheading subheading subheading subheading subheading subheading subheading .          .       "
+			".        .          .          .          .          .          .          .          .          .          .       "
+			".        .          image      image      image      image      image      image      image      .          .       "
+			".        .          caption    caption    caption    caption    caption    caption    caption    .          .       "
+			".        .          .          .          .          .          .          .          .          .          .       "
+			".        .          officers   officers   officers   .          leads      leads      leads      .          .       ";
+
+		&::after {
+			content: "";
+			position: absolute;
+			grid-column: 0 / -1;
+			grid-row: officers / -1;
+			width: 100%;
+			height: 100%;
+			background: ${dark};
+			z-index: -1;
+		}
 	}
 
 	${desktop} {
-		--columns: repeat(12, 1fr);
+		--columns: repeat(13, 1fr);
 
 		column-gap: 1rem;
 		min-height: 100vh;
-		grid-template-rows: repeat(7, calc(${1 / 9} * 100vh)) auto calc(${1 / 9} * 100vh) auto;
-		grid-template-columns: repeat(12, 1fr);
+		/* grid-template-rows: repeat(5, minmax(calc(${1 /
+		9} * 100vh), min-content)) repeat(2, calc(${1 / 9} * 100vh)) auto calc(${1 /
+		9} * 100vh) auto; */
+		/* grid-template-columns: repeat(12, 1fr); */
 
 		/* prettier-ignore */
-		grid-template-areas:
-			". .          .          .          .          .        .       .       .       .       .       .    "
-			". heading    heading    heading    heading    heading  heading heading heading heading heading .    "
-			". subheading subheading subheading subheading .        .       image   image   image   image   .    "
-			". .          .          .          .          .        .       image   image   image   image   .    "
-			". officers   officers   officers   officers   officers .       image   image   image   image   .    "
-			". officers   officers   officers   officers   officers .       image   image   image   image   .    "
-			". officers   officers   officers   officers   officers .       .       .       .       .       .    "
-			". officers   officers   officers   officers   officers .       .       .       .       .       .    "
-			". officers   officers   officers   officers   officers .       .       .       .       .       .    ";
-		/* "leads        leads      leads      leads      leads    leads   leads   leads   leads   leads   leads" */
+		grid-template:
+			". .          .          .          .          .          .          .          .          .          .          .          . " calc(${1 /
+		9} * 100vh)
+			". heading    heading    heading    heading    heading    heading    heading    heading    heading    heading    heading    . " calc(${1 /
+		9} * 100vh)
+			". subheading subheading subheading subheading subheading subheading subheading subheading subheading subheading subheading .    " min-content
+			". image      image      image      image      image      image      image      caption    caption    caption    caption    . " min-content
+			". image      image      image      image      image      image      image      caption    caption    caption    caption    . " min-content
+			". .          .          .          .          .          .          .          .          .          .          .          . " calc(${1 /
+		9} * 100vh)
+			". officers   officers   officers   officers   officers   .          leads      leads      leads      leads      leads      . " min-content
+			". officers   officers   officers   officers   officers   .          leads      leads      leads      leads      leads      . " min-content
+			". officers   officers   officers   officers   officers   .          leads      leads      leads      leads      leads      . " min-content
+			". officers   officers   officers   officers   officers   .          leads      leads      leads      leads      leads      . " min-content
+			/ 1fr 1fr 1fr 1fr 1fr 1fr 2rem 1fr 1fr 1fr 1fr 1fr 1fr;
 
 		&::after {
 			content: "";

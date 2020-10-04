@@ -1,24 +1,17 @@
 import React from "react"
 import styled from "styled-components"
 
-import { dark } from "theme/Colors"
+import Card from "./BigCard"
 
-import Officer from "../Officer"
-import { leads } from "pages/members/assets/data.json"
-
-const Content = () => (
+const Content = ({ entries, bg_color }) => (
 	<Container>
-		{leads.entries.map((lead, i) => (
-			<Lead key={i} data={lead} />
+		{entries.map((lead, i) => (
+			<Card key={i} data={lead} bg_color={bg_color} />
 		))}
 	</Container>
 )
 
 export default Content
-
-const Lead = styled(Officer)`
-	background-color: ${dark};
-`
 
 const Container = styled.div`
 	--rows: unset;
