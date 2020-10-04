@@ -3,9 +3,9 @@ import styled from "styled-components"
 
 import Image from "components/Image"
 import Grid from "components/Grid"
-import Paragraph from "components/Paragraph"
+import Parser from "components/Parser"
 
-import { Heading } from "theme/Styles"
+import { Heading, StyledParagraph as Paragraph } from "theme/Styles"
 import { mobile, tablet, desktop } from "theme/Breakpoints"
 import { dark, darker } from "theme/Colors"
 
@@ -81,7 +81,9 @@ const About = ({ content, ...props }) => {
 			</h1>
 			<div style={{ gridArea: "content" }}>
 				{content.entries.map((entry, i) => (
-					<Paragraph key={i}>{entry}</Paragraph>
+					<Parser Component={Paragraph} key={i}>
+						{entry}
+					</Parser>
 				))}
 			</div>
 			<aside {...props} style={{ gridArea: "image" }}>

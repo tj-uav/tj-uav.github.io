@@ -4,10 +4,10 @@ import styled from "styled-components"
 import Button from "components/Button"
 import Image from "components/Image"
 import Grid from "components/Grid"
-import { default as ParsingParagraph } from "components/Paragraph"
+import Parser from "components/Parser"
 
 import { dark, darker } from "theme/Colors"
-import { Heading } from "theme/Styles"
+import { Heading, StyledParagraph } from "theme/Styles"
 import { mobile, tablet, desktop } from "theme/Breakpoints"
 
 const Container = styled(Grid)`
@@ -107,7 +107,7 @@ const StyledHeading = styled(ThemedHeading)`
 	align-self: center;
 `
 
-const Paragraph = styled(ParsingParagraph)`
+const Paragraph = styled(StyledParagraph)`
 	margin-bottom: 2rem;
 	text-align: center;
 `
@@ -128,7 +128,7 @@ export default function Card({ data, ...props }) {
 			<div style={{ display: "flex", flexDirection: "column", gridArea: "content" }}>
 				<StyledImage src={require(`pages/home/assets/${src}`)} alt={alt} />
 				<StyledHeading>{heading}</StyledHeading>
-				<Paragraph>{content}</Paragraph>
+				<Parser Component={Paragraph}>{content}</Parser>
 				<div style={{ textAlign: "center" }}>
 					<Button>{button}</Button>
 				</div>

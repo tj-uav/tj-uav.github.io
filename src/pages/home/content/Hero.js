@@ -1,10 +1,13 @@
 import React from "react"
 import styled from "styled-components"
-import Image from "components/Image"
-import Grid from "components/Grid"
+
 import { Subheading } from "theme/Styles"
 import { mobile, tablet, desktop } from "theme/Breakpoints"
 import { darker } from "theme/Colors"
+
+import Parser from "components/Parser"
+import Image from "components/Image"
+import Grid from "components/Grid"
 
 const Container = styled(Grid)`
 	background-color: ${darker};
@@ -63,7 +66,7 @@ const Container = styled(Grid)`
 		padding: unset;
 
 		/* prettier-ignore */
-		grid-template-areas: 
+		grid-template-areas:
 		".     .     .     .     .     .     .     .     .     .     .     .     "
 		".     .     .     .     .     .     .     .     .     .     .     .     "
 		".     .     .     .     .     .     .     .     .     .     .     .     "
@@ -111,7 +114,7 @@ const HeroContainer = styled.div`
 const Hero = ({ content, ...props }) => (
 	<Container {...props}>
 		<Image {...logoProps} />
-		<StyledSubheading>{content.description}</StyledSubheading>
+		<Parser Component={StyledSubheading}>{content.description}</Parser>
 		<HeroContainer>
 			<Image {...heroProps} />
 		</HeroContainer>
