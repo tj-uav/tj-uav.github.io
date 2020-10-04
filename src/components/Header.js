@@ -25,7 +25,7 @@ const Container = styled(Grid)`
 		gap: 0;
 
 		/* prettier-ignore */
-		grid-template-areas: 
+		grid-template-areas:
 			".       logo    logo    .       .       .       .       .       .       .       burger  .       "
 			"content content content content content content content content content content content content ";
 	}
@@ -35,7 +35,7 @@ const Container = styled(Grid)`
 		column-gap: 1rem;
 
 		/* prettier-ignore */
-		grid-template-areas: 
+		grid-template-areas:
 			".        .       logo    logo    .       .       .       burger  .       .      "
 			"content  content content content content content content content content content";
 	}
@@ -44,7 +44,7 @@ const Container = styled(Grid)`
 		--columns: repeat(12, 1fr);
 
 		/* prettier-ignore */
-		grid-template-areas: 
+		grid-template-areas:
 			".       logo    logo    content content content content content content content content .       ";
 	}
 `
@@ -86,7 +86,7 @@ const LinkItem = styled.li.attrs(props => ({
 	},
 }))`
 	justify-content: center;
-	margin: 1rem auto;
+	margin: 2rem auto;
 	display: flex;
 `
 
