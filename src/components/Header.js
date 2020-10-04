@@ -100,12 +100,13 @@ const StyledLink = styled(Link)`
 `
 
 const StyledBurger = styled.div`
-	width: 1.5rem;
-	height: 1.5rem;
-	display: grid;
 	grid-template-rows: repeat(3, 3px);
-	row-gap: 5px;
 	grid-area: burger;
+	cursor: pointer;
+	height: 1.5rem;
+	width: 1.5rem;
+	display: grid;
+	row-gap: 5px;
 
 	${tablet} {
 		justify-self: flex-end;

@@ -8,6 +8,7 @@ const StyledButton = styled.a`
 	padding: 0.25rem 1rem;
 	text-decoration: none;
 	background: ${red};
+	cursor: pointer;
 	color: ${text};
 
 	:hover {
