@@ -17,25 +17,19 @@ const Container = styled(Grid)`
 		--columns: 1rem repeat(6, 1fr) 1rem;
 
 		/* prettier-ignore */
-		grid-template-areas: 
+		grid-template-areas:
 		".       .       .       .       .       .       .       .       "
 		".       heading heading heading heading heading heading .       "
 		".       name    name    name    name    name    name    .       "
 		".       box1    box1    box1    box1    box1    box1    .       "
-		".       box1    box1    box1    box1    box1    box1    .       "
 		".       email   email   email   email   email   email   .       "
-		".       box2    box2    box2    box2    box2    box2    .       "
 		".       box2    box2    box2    box2    box2    box2    .       "
 		".       message message message message message message .       "
 		".       box4    box4    box4    box4    box4    box4    .       "
 		".       box4    box4    box4    box4    box4    box4    .       "
 		".       box4    box4    box4    box4    box4    box4    .       "
 		".       box4    box4    box4    box4    box4    box4    .       "
-		".       box4    box4    box4    box4    box4    box4    .       "
-		".       .       .       .       .       .       .       .       "
-		".       .       .       .       .       .       .       .       "
-		".       .       .       .       .       .       .       .       "
-		".       .       .       .       .       .       .       .       ";
+		".       box4    box4    box4    box4    box4    box4    .       ";
 	}
 
 	${tablet} {
@@ -49,7 +43,7 @@ const Container = styled(Grid)`
 		--rows: repeat(18, 1fr);
 
 		/* prettier-ignore */
-		grid-template-areas: 
+		grid-template-areas:
 		".       .       .       .       .       .       .       .       "
 		".       .       .       .       .       .       .       .       "
 		".       heading heading heading heading heading heading .       "
