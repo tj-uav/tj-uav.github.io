@@ -5,7 +5,7 @@ import Image from "components/Image"
 import Grid from "components/Grid"
 import Parser from "components/Parser"
 
-import { Heading, StyledParagraph as Paragraph } from "theme/Styles"
+import { StyledHeading, StyledParagraph } from "theme/Styles"
 import { mobile, tablet, desktop } from "theme/Breakpoints"
 import { dark, darker } from "theme/Colors"
 
@@ -72,13 +72,19 @@ const Container = styled(Grid)`
 	}
 `
 
+const Heading = styled(StyledHeading)`
+	grid-area: header;
+`
+
+const Paragraph = styled(StyledParagraph)`
+	margin-bottom: 1.5rem;
+`
+
 const About = ({ content, ...props }) => {
 	const imgStyle = { width: "100%", height: "100%", objectFit: "cover" }
 	return (
 		<Container>
-			<h1 {...props} style={{ ...Heading, gridArea: "header" }}>
-				{content.title}
-			</h1>
+			<Heading>{content.title}</Heading>
 			<div style={{ gridArea: "content" }}>
 				{content.entries.map((entry, i) => (
 					<Parser Component={Paragraph} key={i}>

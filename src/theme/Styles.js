@@ -9,7 +9,7 @@ export const Paragraph = {
 	color: text,
 }
 
-export const StyledParagraph = styled.h1(() => Paragraph)
+export const StyledParagraph = styled.p(() => Paragraph)
 
 export const Heading = {
 	alignSelf: "flex-end",

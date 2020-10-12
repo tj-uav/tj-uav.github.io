@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Image from "components/Image"
 import Grid from "components/Grid"
 import { dark } from "theme/Colors"
-import { Heading, Paragraph } from "theme/Styles"
+import { StyledHeading as Heading, StyledParagraph as Paragraph } from "theme/Styles"
 import { mobile, tablet, desktop } from "theme/Breakpoints"
 import Contact from "pages/home/components/Contact"
 
@@ -73,8 +73,8 @@ const Sponsors = ({ content }) => {
 
 	return (
 		<>
-			<h1 style={{ ...Heading, gridArea: "heading" }}>{content.title}</h1>
-			<p style={{ ...Paragraph, gridArea: "text" }}>{content.description}</p>
+			<Heading style={{ gridArea: "heading" }}>{content.title}</Heading>
+			<Paragraph style={{ gridArea: "text" }}>{content.description}</Paragraph>
 			<div style={{ gridArea: "image" }}>{images}</div>
 		</>
 	)
