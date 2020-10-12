@@ -16,7 +16,7 @@
 				"name": "Srikar Gouru",
 				"position": "President",
 				"image": {
-					"src": "team.jpg",
+					"src": "srikar.jpg",
 					"alt": "Srikar Gouru; President"
 				}
 			},
@@ -24,7 +24,7 @@
 				"name": "Ganesh Nanduru",
 				"position": "Vice President",
 				"image": {
-					"src": "team.jpg",
+					"src": "ganesh.jpg",
 					"alt": "Ganesh Nanduru; Vice President"
 				}
 			},
@@ -32,7 +32,7 @@
 				"name": "Niko Economos",
 				"position": "Secretary",
 				"image": {
-					"src": "team.jpg",
+					"src": "niko.jpg",
 					"alt": "Niko Economos; Secretary"
 				}
 			},
@@ -40,7 +40,7 @@
 				"name": "Liam West",
 				"position": "Treasurer",
 				"image": {
-					"src": "team.jpg",
+					"src": "liam.jpg",
 					"alt": "Liam West; Treasurer"
 				}
 			},
@@ -48,7 +48,7 @@
 				"name": "Jason Klein",
 				"position": "Webmaster",
 				"image": {
-					"src": "team.jpg",
+					"src": "jasonk.jpg",
 					"alt": "Jason Klein; Webmaster"
 				}
 			},
@@ -56,7 +56,7 @@
 				"name": "Daniel Stefanescu",
 				"position": "Publicist",
 				"image": {
-					"src": "team.jpg",
+					"src": "daniel.jpg",
 					"alt": "Daniel Stefanescu; Publicist"
 				}
 			}
@@ -69,7 +69,7 @@
 				"name": "Alex Black",
 				"position": "CV Team",
 				"image": {
-					"src": "team.jpg",
+					"src": "alex.jpg",
 					"alt": "placeholder alt text"
 				}
 			},
@@ -77,7 +77,7 @@
 				"name": "Ari Bobesh",
 				"position": "UGV Team",
 				"image": {
-					"src": "team.jpg",
+					"src": "ari.jpg",
 					"alt": "placeholder alt text"
 				}
 			},
@@ -85,7 +85,7 @@
 				"name": "Aryan Chinnala",
 				"position": "GCS Team",
 				"image": {
-					"src": "team.jpg",
+					"src": "aryan.jpg",
 					"alt": "placeholder alt text"
 				}
 			},
@@ -93,7 +93,7 @@
 				"name": "Ganesh Nanduru",
 				"position": "Programming",
 				"image": {
-					"src": "team.jpg",
+					"src": "ganesh.jpg",
 					"alt": "placeholder alt text"
 				}
 			},
@@ -101,7 +101,7 @@
 				"name": "Kevin Gu",
 				"position": "CAD Team",
 				"image": {
-					"src": "team.jpg",
+					"src": "kevin.jpg",
 					"alt": "placeholder alt text"
 				}
 			}
