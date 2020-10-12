@@ -38,7 +38,8 @@ const Location = () => {
 
 	useEffect(() => {
 		try {
-			const [title, first] = /(?<=[/])(\w)\w*$/i.exec(location.pathname)
+			// eslint-disable-next-line no-unused-vars
+			const [whole, title, first] = /\/((\w)\w*)$/i.exec(location.pathname)
 			const page = title.replace(first, first.toUpperCase())
 			document.title = `TJUAV | ${page}`
 		} catch (e) {
