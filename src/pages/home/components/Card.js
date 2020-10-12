@@ -116,6 +116,7 @@ const StyledImage = styled(Image)`
 	position: absolute;
 	width: initial;
 	height: auto;
+	max-height: 200px;
 	top: 0;
 `
 

@@ -14,7 +14,7 @@ const Container = styled(Grid)`
 
 	${mobile} {
 		--rows: repeat(13, 2.1875rem) auto;
-		--columns: unset;
+		--columns: 1fr;
 
 		height: initial;
 		padding: 0 1rem;
@@ -90,9 +90,24 @@ const Container = styled(Grid)`
 
 const logoProps = {
 	src: require("pages/home/assets/logo.svg"),
-	style: { gridArea: "logo" },
 	alt: "TJUAV Logo",
 }
+
+const StyledImage = styled(Image)`
+	grid-area: logo;
+	margin: 0 auto;
+	${mobile} {
+		max-width: 80vw;
+	}
+
+	${tablet} {
+		max-width: 70vw;
+	}
+
+	${desktop} {
+		max-width: 40vw;
+	}
+`
 
 const heroProps = {
 	src: require("pages/home/assets/img1.jpeg"),
@@ -113,7 +128,7 @@ const HeroContainer = styled.div`
 
 const Hero = ({ content, ...props }) => (
 	<Container {...props}>
-		<Image {...logoProps} />
+		<StyledImage {...logoProps} />
 		<Parser Component={StyledSubheading}>{content.description}</Parser>
 		<HeroContainer>
 			<Image {...heroProps} />

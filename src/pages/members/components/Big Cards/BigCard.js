@@ -67,4 +67,5 @@ const Image = styled.img`
 	overflow: hidden;
 	border-top-right-radius: 0.2rem;
 	border-bottom-right-radius: 0.2rem;
+	max-height: 100px;
 `

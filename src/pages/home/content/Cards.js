@@ -16,7 +16,7 @@ const Container = styled(Grid)`
 	padding-right: 1rem;
 
 	--rows: repeat(3, auto);
-	--columns: unset;
+	--columns: 1fr;
 
 	${mobile} {
 		height: auto;

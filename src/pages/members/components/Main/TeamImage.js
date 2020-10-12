@@ -12,4 +12,5 @@ const Image = styled(RawImage)`
 	width: 100%;
 	height: 100%;
 	min-height: 300px;
+	max-height: 500px;
 `
