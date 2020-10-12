@@ -1,40 +1,40 @@
 import React from "react"
-// import styled from "styled-components"
-
-// import { Paragraph as ParagraphStyles } from "theme/Styles"
 import { red } from "theme/Colors"
 
-// const Paragraph = styled(styled.p(() => ParagraphStyles))`
-// 	margin-bottom: 1rem;
-// `
-
-// const Link = styled(Paragraph)`
-// 	color: ${red};
-// `
-
 export default ({ Component, children, ...props }) => {
-	console.log(children)
-	const match = /\[(?<label>[^)]+)\][(](?<link>[^)]+)[)]/.exec(children)
-	const label = match?.groups?.label
-	const link = match?.groups?.link
+	// let relative = false
 
-	const [before, after] = link && label ? children.split(`[${label}](${link})`) : []
-	if (!(before && after)) return <Component {...props}>{children}</Component>
-	let relative = !/^(https|www)/.test(link)
+	const linkRegex = /\[([^)]+)\]\(([^)]+)\)/g
+	const matches = children.match(linkRegex)
+	if (!matches) return <Component {...props}>{children}</Component>
+	const splitRegex = new RegExp(
+		matches.map(s => s.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&")).join("|")
+	)
+	const results = Array.from(children.matchAll(linkRegex)).map(([whole, label, link]) => [
+		whole,
+		label,
+		link,
+	])
 
 	return (
 		<Component {...props}>
-			{before}
-			<Component
-				as="a"
-				href={link}
-				target={relative ? "" : "_blank"}
-				rel={relative ? "" : "noopener noreferrer"}
-				style={{ color: red }}
-			>
-				{label}
-			</Component>
-			{after}
+			{children.split(splitRegex).flatMap((str, i) => [
+				str,
+				results[i] ? (
+					<Component
+						as="a"
+						href={results[i][2]}
+						target={!/^(https|www)/.test(results[i][2]) ? "" : "_blank"}
+						rel={!/^(https|www)/.test(results[i][2]) ? "" : "noopener noreferrer"}
+						style={{ color: red }}
+						key={i}
+					>
+						{results[i][1]}
+					</Component>
+				) : (
+					""
+				),
+			])}
 		</Component>
 	)
 }
