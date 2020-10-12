@@ -5,7 +5,7 @@ import { StyledParagraph } from "theme/Styles"
 import { main } from "pages/members/assets/data.json"
 
 const TeamCaption = () => (
-	<Caption>
+	<Caption as="div">
 		{main.caption.map((str, i) => (
 			<p key={i}>
 				{i !== 0 && <br />}
