@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Image from "components/Image"
 import Grid from "components/Grid"
+import Parser from "components/Parser"
 import { dark } from "theme/Colors"
 import { StyledHeading as Heading, StyledParagraph as Paragraph } from "theme/Styles"
 import { mobile, tablet, desktop } from "theme/Breakpoints"
@@ -74,7 +75,11 @@ const Sponsors = ({ content }) => {
 	return (
 		<>
 			<Heading style={{ gridArea: "heading" }}>{content.title}</Heading>
-			<Paragraph style={{ gridArea: "text" }}>{content.description}</Paragraph>
+			<Paragraph style={{ gridArea: "text" }}>
+				<Parser absolute={true} Component={Paragraph}>
+					{content.description}
+				</Parser>
+			</Paragraph>
 			<div style={{ gridArea: "image" }}>{images}</div>
 		</>
 	)
