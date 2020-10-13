@@ -70,7 +70,7 @@
 				"position": "CV Team",
 				"image": {
 					"src": "alex.jpg",
-					"alt": "placeholder alt text"
+					"alt": "Alex Black; CV Team lead"
 				}
 			},
 			{
@@ -78,7 +78,7 @@
 				"position": "UGV Team",
 				"image": {
 					"src": "ari.jpg",
-					"alt": "placeholder alt text"
+					"alt": "Ari Bobesh; UGV Team lead"
 				}
 			},
 			{
@@ -86,7 +86,7 @@
 				"position": "GCS Team",
 				"image": {
 					"src": "aryan.jpg",
-					"alt": "placeholder alt text"
+					"alt": "Aryan Chinnala; GCS Team lead"
 				}
 			},
 			{
@@ -94,7 +94,7 @@
 				"position": "Programming",
 				"image": {
 					"src": "ganesh.jpg",
-					"alt": "placeholder alt text"
+					"alt": "Ganesh Nanduru; Programming lead"
 				}
 			},
 			{
@@ -102,7 +102,7 @@
 				"position": "CAD Team",
 				"image": {
 					"src": "kevin.jpg",
-					"alt": "placeholder alt text"
+					"alt": "Kevin Gu; CAD Team lead"
 				}
 			}
 		]
