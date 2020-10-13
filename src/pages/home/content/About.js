@@ -83,13 +83,13 @@ const Paragraph = styled(StyledParagraph)`
 const About = ({ content, ...props }) => {
 	const imgStyle = { width: "100%", height: "100%", objectFit: "cover" }
 	return (
-		<Container>
+		<Container id="about">
 			<Heading>{content.title}</Heading>
 			<div style={{ gridArea: "content" }}>
 				{content.entries.map((entry, i) => (
-					<Parser Component={Paragraph} key={i}>
-						{entry}
-					</Parser>
+					<Paragraph key={i}>
+						<Parser Component={Paragraph}>{entry}</Parser>
+					</Paragraph>
 				))}
 			</div>
 			<aside {...props} style={{ gridArea: "image" }}>

@@ -13,7 +13,7 @@ const Container = styled(Grid)`
 	${mobile} {
 		column-gap: 0;
 		height: auto;
-		--rows: repeat(18, 1fr);
+		--rows: repeat(12, 1fr);
 		--columns: 1rem repeat(6, 1fr) 1rem;
 
 		/* prettier-ignore */

@@ -1,12 +1,10 @@
 import React from "react"
 import { red } from "theme/Colors"
 
-export default ({ Component, children, ...props }) => {
-	// let relative = false
-
+export default function Parser({ Component, children, color = red }) {
 	const linkRegex = /\[([^)]+)\]\(([^)]+)\)/g
 	const matches = children.match(linkRegex)
-	if (!matches) return <Component {...props}>{children}</Component>
+	if (!matches) return <>{children}</>
 	const splitRegex = new RegExp(
 		matches.map(s => s.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&")).join("|")
 	)
@@ -17,7 +15,7 @@ export default ({ Component, children, ...props }) => {
 	])
 
 	return (
-		<Component {...props}>
+		<>
 			{children.split(splitRegex).flatMap((str, i) => [
 				str,
 				results[i] ? (
@@ -26,7 +24,7 @@ export default ({ Component, children, ...props }) => {
 						href={results[i][2]}
 						target={!/^(https|www)/.test(results[i][2]) ? "" : "_blank"}
 						rel={!/^(https|www)/.test(results[i][2]) ? "" : "noopener noreferrer"}
-						style={{ color: red }}
+						style={{ color }}
 						key={i}
 					>
 						{results[i][1]}
@@ -35,6 +33,6 @@ export default ({ Component, children, ...props }) => {
 					""
 				),
 			])}
-		</Component>
+		</>
 	)
 }

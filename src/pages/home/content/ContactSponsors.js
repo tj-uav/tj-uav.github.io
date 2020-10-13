@@ -81,7 +81,7 @@ const Sponsors = ({ content }) => {
 }
 
 const ContactSponsors = ({ content, ...props }) => (
-	<Container {...props}>
+	<Container id="sponsor" {...props}>
 		<Sponsors content={content.sponsor} />
 		<Contact content={content.contact} style={{ gridArea: "contact" }} />
 	</Container>

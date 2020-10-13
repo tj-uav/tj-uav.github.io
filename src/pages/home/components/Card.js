@@ -7,7 +7,7 @@ import Grid from "components/Grid"
 import Parser from "components/Parser"
 
 import { dark, darker } from "theme/Colors"
-import { Heading, StyledParagraph } from "theme/Styles"
+import { StyledHeading, StyledParagraph } from "theme/Styles"
 import { mobile, tablet, desktop } from "theme/Breakpoints"
 
 const Container = styled(Grid)`
@@ -99,8 +99,7 @@ const Container = styled(Grid)`
 	}
 `
 
-const ThemedHeading = styled.h1(() => Heading)
-const StyledHeading = styled(ThemedHeading)`
+const Heading = styled(StyledHeading)`
 	margin-top: 6.875rem;
 	margin-bottom: 1rem;
 	text-align: center;
@@ -128,11 +127,15 @@ export default function Card({ data, ...props }) {
 		<Container {...props} style={{ ...props.style }}>
 			<div style={{ display: "flex", flexDirection: "column", gridArea: "content" }}>
 				<StyledImage src={require(`pages/home/assets/${src}`)} alt={alt} />
-				<StyledHeading>{heading}</StyledHeading>
-				<Parser Component={Paragraph}>{content}</Parser>
-				<div style={{ textAlign: "center" }}>
-					<Button>{button}</Button>
-				</div>
+				<Heading>{heading}</Heading>
+				<Paragraph>
+					<Parser Component={Paragraph}>{content}</Parser>
+				</Paragraph>
+				<Paragraph>
+					<Parser color="#fff" Component={Button}>
+						{button}
+					</Parser>
+				</Paragraph>
 			</div>
 		</Container>
 	)

@@ -129,7 +129,9 @@ const HeroContainer = styled.div`
 const Hero = ({ content, ...props }) => (
 	<Container {...props}>
 		<StyledImage {...logoProps} />
-		<Parser Component={StyledSubheading}>{content.description}</Parser>
+		<StyledSubheading>
+			<Parser Component={StyledSubheading}>{content.description}</Parser>
+		</StyledSubheading>
 		<HeroContainer>
 			<Image {...heroProps} />
 		</HeroContainer>
