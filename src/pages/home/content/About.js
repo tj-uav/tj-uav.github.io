@@ -93,7 +93,11 @@ const About = ({ content, ...props }) => {
 				))}
 			</div>
 			<aside {...props} style={{ gridArea: "image" }}>
-				<Image border src={require("pages/home/assets/img2.jpeg")} style={imgStyle} />
+				<Image
+					border
+					src={require("pages/home/assets/img2.jpeg").default}
+					style={imgStyle}
+				/>
 			</aside>
 		</Container>
 	)

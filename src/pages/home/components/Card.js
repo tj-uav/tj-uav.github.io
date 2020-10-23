@@ -126,7 +126,7 @@ export default function Card({ data, ...props }) {
 	return (
 		<Container {...props} style={{ ...props.style }}>
 			<div style={{ display: "flex", flexDirection: "column", gridArea: "content" }}>
-				<StyledImage src={require(`pages/home/assets/${src}`)} alt={alt} />
+				<StyledImage src={require(`pages/home/assets/${src}`).default} alt={alt} />
 				<Heading>{heading}</Heading>
 				<Paragraph>
 					<Parser Component={Paragraph}>{content}</Parser>

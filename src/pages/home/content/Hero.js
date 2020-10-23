@@ -89,7 +89,7 @@ const Container = styled(Grid)`
 `
 
 const logoProps = {
-	src: require("pages/home/assets/logo.svg"),
+	src: require("pages/home/assets/logo.svg").default,
 	alt: "TJUAV Logo",
 }
 
@@ -110,7 +110,7 @@ const StyledImage = styled(Image)`
 `
 
 const heroProps = {
-	src: require("pages/home/assets/img1.jpeg"),
+	src: require("pages/home/assets/img1.jpeg").default,
 	style: { width: "100%", height: "100%", objectFit: "cover" },
 	alt: "The team",
 	border: true,

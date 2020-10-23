@@ -3,7 +3,9 @@ import styled from "styled-components"
 
 import RawImage from "components/Image"
 
-const TeamImage = () => <Image src={require("../../assets/team.jpg")} alt="the team" border />
+const TeamImage = () => (
+	<Image src={require("../../assets/team.jpg").default} alt="the team" border />
+)
 export default TeamImage
 
 const Image = styled(RawImage)`
