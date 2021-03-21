@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/static/css/main.eef7e5cc.chunk.css",
+    "main.js": "/static/js/main.e4a9a270.chunk.js",
+    "main.js.map": "/static/js/main.e4a9a270.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.7c65a9a0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.7c65a9a0.js.map",
+    "static/js/2.4865a158.chunk.js": "/static/js/2.4865a158.chunk.js",
+    "static/js/2.4865a158.chunk.js.map": "/static/js/2.4865a158.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.eef7e5cc.chunk.css.map": "/static/css/main.eef7e5cc.chunk.css.map",
+    "static/js/2.4865a158.chunk.js.LICENSE.txt": "/static/js/2.4865a158.chunk.js.LICENSE.txt",
+    "static/media/Montserrat-Bold.079ca05d.ttf": "/static/media/Montserrat-Bold.079ca05d.ttf",
+    "static/media/Montserrat-Regular.3cd78665.ttf": "/static/media/Montserrat-Regular.3cd78665.ttf",
+    "static/media/Poppins-Light.f41b63c0.ttf": "/static/media/Poppins-Light.f41b63c0.ttf",
+    "static/media/Poppins-Regular.8081832f.ttf": "/static/media/Poppins-Regular.8081832f.ttf",
+    "static/media/alex.jpg": "/static/media/alex.4f28e904.jpg",
+    "static/media/ari.jpg": "/static/media/ari.59141904.jpg",
+    "static/media/aryan.jpg": "/static/media/aryan.b5857ff1.jpg",
+    "static/media/daniel.jpg": "/static/media/daniel.0dacc2d7.jpg",
+    "static/media/drone.svg": "/static/media/drone.7661ca00.svg",
+    "static/media/ganesh.jpg": "/static/media/ganesh.d938bcba.jpg",
+    "static/media/img1.jpeg": "/static/media/img1.eaa31837.jpeg",
+    "static/media/img2.jpeg": "/static/media/img2.462ebabd.jpeg",
+    "static/media/jasonk.jpg": "/static/media/jasonk.874d8c44.jpg",
+    "static/media/kevin.jpg": "/static/media/kevin.9a31a0a1.jpg",
+    "static/media/liam.jpg": "/static/media/liam.2db240b2.jpg",
+    "static/media/logo.svg": "/static/media/logo.022a1bfe.svg",
+    "static/media/niko.jpg": "/static/media/niko.2795a2de.jpg",
+    "static/media/plane.svg": "/static/media/plane.c2769c7c.svg",
+    "static/media/srikar.jpg": "/static/media/srikar.c6823fd3.jpg",
+    "static/media/team.jpg": "/static/media/team.8d85bd3e.jpg",
+    "static/media/tjhsst.svg": "/static/media/tjhsst.e233da4b.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7c65a9a0.js",
+    "static/js/2.4865a158.chunk.js",
+    "static/css/main.eef7e5cc.chunk.css",
+    "static/js/main.e4a9a270.chunk.js"
+  ]
+}
