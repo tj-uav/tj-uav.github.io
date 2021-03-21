@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/index.css"],"names":[],"mappings":"AAAA,iBAGC,QAAS,CACT,SAAU,CACV,qBACD,CAEA,MACC,iBACD,CAEA,KACC,sBACD","file":"main.eef7e5cc.chunk.css","sourcesContent":["*,\n::before,\n::after {\n\tmargin: 0;\n\tpadding: 0;\n\tbox-sizing: border-box;\n}\n\n#root {\n\tposition: relative;\n}\n\nhtml {\n\tscroll-behavior: smooth;\n}\n"]}
