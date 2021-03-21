@@ -121,7 +121,7 @@ The site is deployed on [GitHub Pages](https://docs.github.com/en/github/working
     # make sure `origin` is the remote, and `main` is the branch you want to push to
     git push origin main
     ```
-    > Note: Sice the directory is pushed to the [`gh-pages`](https://github.com/tj-uav/tj-uav.github.io/tree/gh-pages) branch, it should never end up in the [`main`](https://github.com/tj-uav/tj-uav.github.io/tree/main) branch.
+    > Note: The build directory is going to be on the [`main`](https://github.com/tj-uav/tj-uav.github.io/tree/main) branch in the GitHub repo.
 
 ## Available Scripts
 
