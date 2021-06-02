@@ -99,6 +99,15 @@ const StyledLink = styled(Link)`
 	}
 `
 
+const StyledExternalLink = styled.a`
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	:hover {
+		text-decoration: underline;
+	}
+`
+
 const StyledBurger = styled.div`
 	grid-template-rows: repeat(3, 3px);
 	grid-area: burger;
@@ -176,6 +185,11 @@ const Header = () => {
 					<StyledLink to="/members" style={Paragraph}>
 						Members
 					</StyledLink>
+				</LinkItem>
+				<LinkItem hook={[active, setActive]}>
+					<StyledExternalLink href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="blank" style={Paragraph}>
+						Documentation
+					</StyledExternalLink>
 				</LinkItem>
 				{/* <LinkItem hook={[active, setActive]}>
 					<StyledLink to="/gallery" style={Paragraph}>
