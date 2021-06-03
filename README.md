@@ -97,11 +97,7 @@ The following is an outline of the directory structure of the repository generat
 
 The site is deployed on [GitHub Pages](https://docs.github.com/en/github/working-with-github-pages/getting-started-with-github-pages), which means that the content of the directory must somehow be at the top level of the branch of the repository. In order to do this, follow the steps presented in [this StackOverflow post](https://stackoverflow.com/questions/359424/detach-move-subdirectory-into-separate-git-repository/17864475#17864475):
 
-1. Create a git remote `gh-pages` which points towards `git@github.com:tj-uav/tj-uav.github.io.git`. You should only have to do this once on each device.
-
-    ```sh
-    git remote add gh-pages git@github.com:tj-uav/tj-uav.github.io.git
-    ```
+Once you have saved all of the changes you made to files in the src directory, test the page by running `npm run dev` in the terminal and opening it in the browser: [localhost:3000](localhost:3000). When you're ready to deploy the changes, follow the instructions below.
 
 1. Run `npm run build` to compile all of the jsx and generate the build directory. Then commit the changes in the [`build`](build/) directory. If you don't commit the changes, the next step will deploy an outdated version (it will deploy whatever was last committed).
 
