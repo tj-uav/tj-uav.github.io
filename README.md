@@ -95,7 +95,8 @@ The following is an outline of the directory structure of the repository generat
 
 ## Deployment
 
-The site is deployed on [GitHub Pages](https://docs.github.com/en/github/working-with-github-pages/getting-started-with-github-pages), which means that the content of the directory must somehow be at the top level of the branch of the repository. In order to do this, follow the steps presented in [this StackOverflow post](https://stackoverflow.com/questions/359424/detach-move-subdirectory-into-separate-git-repository/17864475#17864475):
+The site is deployed on [GitHub Pages](https://docs.github.com/en/github/working-with-github-pages/getting-started-with-github-pages), which means that the content of the directory must somehow be at the top level of the master or gh-pages branch of the repository, we have chosen to use the gh-pages branch so that all of our code can be in the main branch.
+
 
 Once you have saved all of the changes you made to files in the src directory, test the page by running `npm run dev` in the terminal and opening it in the browser: [localhost:3000](localhost:3000). When you're ready to deploy the changes, follow the instructions below.
 
