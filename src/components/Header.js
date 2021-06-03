@@ -187,7 +187,7 @@ const Header = () => {
 					</StyledLink>
 				</LinkItem>
 				<LinkItem hook={[active, setActive]}>
-					<StyledExternalLink href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="blank" style={Paragraph}>
+					<StyledExternalLink href="https://app.gitbook.com/@tjuav/s/tjuav/" target="blank" style={Paragraph}>
 						Documentation
 					</StyledExternalLink>
 				</LinkItem>
