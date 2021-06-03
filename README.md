@@ -97,22 +97,37 @@ The following is an outline of the directory structure of the repository generat
 
 The site is deployed on [GitHub Pages](https://docs.github.com/en/github/working-with-github-pages/getting-started-with-github-pages), which means that the content of the directory must somehow be at the top level of the branch of the repository. In order to do this, follow the steps presented in [this StackOverflow post](https://stackoverflow.com/questions/359424/detach-move-subdirectory-into-separate-git-repository/17864475#17864475):
 
-1. Run `npm run build` to generate the directory and commit the changes to the [`build/`](build/) directory.
-1. Create a git remote `gh-pages` which points towards `git@github.com:tj-uav/tj-uav.github.io.git`. You should only have to do this the first time.
+1. Create a git remote `gh-pages` which points towards `git@github.com:tj-uav/tj-uav.github.io.git`. You should only have to do this the first time on each device.
 
     ```sh
     git remote add gh-pages git@github.com:tj-uav/tj-uav.github.io.git
     ```
 
-1. From the root of the main part of the repo (where this README file is located)
+1. Run `npm run build` to compile all of the jsx and generate the build directory. Then commit the changes to the [`build/`](build/) directory. If you don't commit the changes, the next step will deploy an outdated version (it will deploy whatever was last committed).
 
-    ```sh
-    #                        remote---v        v---branch name
-    git subtree push --prefix build gh-pages gh-pages
+	```sh
+	npm run build
+    git add build
+	git commit -m "Some descriptive commit message"
     ```
 
-1. The contents of the directory should now be the root of the [`gh-pages`](https://github.com/tj-uav/tj-uav.github.io/tree/gh-pages) branch. Double check that GitHub Pages is serving from that branch by going into settings > GitHub Pages > Source and select [`gh-pages`](https://github.com/tj-uav/tj-uav.github.io/tree/gh-pages) as the branch (you might have to be an admin in order to do this, and it _shouldn't_ change.)
-1. Don't forget to push your changes to the [`main`](https://github.com/tj-uav/tj-uav.github.io/tree/main) branch! (using the `origin` remote)
+1. From the root of the main part of the repo (where this README file is located) run the command below. You can run this every time you want to deploy new changes. It will merge any changes from the subdirectory of the current branch (which will probably be `main`) to the root of the target branch. The target branch should be `gh-pages` because that's where the site is deployed from. [Stackoverflow post about this command](https://stackoverflow.com/a/32617297/15015834)
+
+    ```sh
+    #        subdirectory name---v                v---target branch
+    git subtree split --prefix build --branch gh-pages
+    ```
+
+1. Now, the updated `gh-pages` branch is ready to push; the last command only merged and committed to the `gh-pages` branch locally, it did not push the changes to GitHub. Navigate to `gh-pages` and push the changes.
+
+	```sh
+	git checkout gh-pages
+	git push
+    ```
+
+1. The contents of the `build` directory should now be the root of the [`gh-pages`](https://github.com/tj-uav/tj-uav.github.io/tree/gh-pages) branch. Double check that GitHub Pages is serving from that branch by going into settings > GitHub Pages > Source and select [`gh-pages`](https://github.com/tj-uav/tj-uav.github.io/tree/gh-pages) as the branch (you might have to be an admin in order to do this, and it _shouldn't_ change.)
+
+1. Don't forget to push your changes to the [`main`](https://github.com/tj-uav/tj-uav.github.io/tree/main) branch so you don't lose your work! (using the `origin` remote)
     ```sh
     git push origin main
     ```
