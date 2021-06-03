@@ -103,7 +103,7 @@ The site is deployed on [GitHub Pages](https://docs.github.com/en/github/working
     git remote add gh-pages git@github.com:tj-uav/tj-uav.github.io.git
     ```
 
-1. Run `npm run build` to compile all of the jsx and generate the build directory. Then commit the changes to the [`build/`](build/) directory. If you don't commit the changes, the next step will deploy an outdated version (it will deploy whatever was last committed).
+1. Run `npm run build` to compile all of the jsx and generate the build directory. Then commit the changes in the [`build`](build/) directory. If you don't commit the changes, the next step will deploy an outdated version (it will deploy whatever was last committed).
 
 	```sh
 	npm run build
@@ -118,14 +118,14 @@ The site is deployed on [GitHub Pages](https://docs.github.com/en/github/working
     git subtree split --prefix build --branch gh-pages
     ```
 
-1. Now, the updated `gh-pages` branch is ready to push; the last command only merged and committed to the `gh-pages` branch locally, it did not push the changes to GitHub. Navigate to `gh-pages` and push the changes.
+1. Now, the updated `gh-pages` branch is ready to push; the last command only merged and committed to the `gh-pages` branch locally, but it did not push the changes to GitHub. Navigate to `gh-pages` and push the changes.
 
 	```sh
 	git checkout gh-pages
-	git push
+	git push origin main
     ```
 
-1. The contents of the `build` directory should now be the root of the [`gh-pages`](https://github.com/tj-uav/tj-uav.github.io/tree/gh-pages) branch. Double check that GitHub Pages is serving from that branch by going into settings > GitHub Pages > Source and select [`gh-pages`](https://github.com/tj-uav/tj-uav.github.io/tree/gh-pages) as the branch (you might have to be an admin in order to do this, and it _shouldn't_ change.)
+1. The contents of the [`build`](build/) directory should now be the root of the [`gh-pages`](https://github.com/tj-uav/tj-uav.github.io/tree/gh-pages) branch. Double check that GitHub Pages is serving from that branch by going into settings > GitHub Pages > Source and select [`gh-pages`](https://github.com/tj-uav/tj-uav.github.io/tree/gh-pages) as the branch (you might have to be an admin in order to do this, and it _shouldn't_ change.)
 
 1. Don't forget to push your changes to any JSX or other files to the [`main`](https://github.com/tj-uav/tj-uav.github.io/tree/main) branch so you don't lose your work! (using the `origin` remote) 
     ```sh
