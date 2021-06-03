@@ -117,7 +117,7 @@ Once you have saved all of the changes you made to files in the src directory, t
 
 1. Now, the updated `gh-pages` branch is ready to push; the last command only merged and committed to the `gh-pages` branch locally, but it did not push the changes to GitHub. Navigate to `gh-pages` and push the changes.
 
-	```sh
+    ```sh
 	git checkout gh-pages
 	git push origin main
     ```
@@ -126,11 +126,8 @@ Once you have saved all of the changes you made to files in the src directory, t
 
 1. After anywhere from a few seconds to a few minutes, the changes should be deployed and visible on the website.
 
-Don't forget to push your changes to any JSX or other files to the [`main`](https://github.com/tj-uav/tj-uav.github.io/tree/main) branch so you don't lose your work! (using the `origin` remote) 
-    ```sh
-    git push origin main
-    ```
-    > Note: The build directory is going to be on the [`main`](https://github.com/tj-uav/tj-uav.github.io/tree/main) branch in the GitHub repo.
+Don't forget to push your changes to any JSX or other files to the [`main`](https://github.com/tj-uav/tj-uav.github.io/tree/main) branch so you don't lose your work! 
+
 
 ## Available Scripts
 
