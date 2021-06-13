@@ -119,7 +119,7 @@ Once you have saved all of the changes you made to files in the src directory, t
 
     ```sh
 	git checkout gh-pages
-	git push origin main
+	git push origin gh-pages
     ```
 
 1. The contents of the [`build`](build/) directory should now be the root of the [`gh-pages`](https://github.com/tj-uav/tj-uav.github.io/tree/gh-pages) branch. Double check that GitHub Pages is serving from that branch by going into settings > GitHub Pages > Source and select [`gh-pages`](https://github.com/tj-uav/tj-uav.github.io/tree/gh-pages) as the branch (you might have to be an admin in order to do this, and it _shouldn't_ change.)
