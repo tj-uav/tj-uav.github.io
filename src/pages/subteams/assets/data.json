@@ -1,0 +1,11 @@
+{
+	"teams": [
+		{
+			"name": "Mechanical team",
+			"description": "The mechanical team is responsible for building the plane",
+			"icon": "plane.svg",
+			"subteams":[
+			]
+		}
+	]
+}

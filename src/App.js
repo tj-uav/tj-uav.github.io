@@ -4,6 +4,7 @@ import Header from "components/Header"
 import Footer from "components/Footer"
 import Home from "pages/home/Home"
 import Members from "pages/members/Members"
+import Subteams from "pages/subteams/Subteams.js"
 import GlobalFonts from "fonts/fonts"
 
 const App = () => {
@@ -21,6 +22,10 @@ const App = () => {
 
 				<Route exact path="/members">
 					<Members />
+				</Route>
+				
+				<Route exact path="/subteams">
+					<Subteams />
 				</Route>
 
 				<Route exact path="/">
