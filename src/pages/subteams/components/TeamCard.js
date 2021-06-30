@@ -1,17 +1,21 @@
 import { dark } from "theme/Colors"
-import { StyledHeading, StyledParagraph } from "theme/Styles.js"
+import { StyledHeading, StyledParagraph, Subheading } from "theme/Styles.js"
 import SubteamCard from "./SubteamCard"
 import React from 'react';
+import {HorizontalContainer} from "theme/Components.js"
 
 function TeamCard(props){
 	var teamData = props.data
 
 	return(
 		<CardContainer color={dark}>
-			<TitleText>
+			<HorizontalContainer>
 				<CardIcon src={require("../assets/"+teamData.icon.filename).default} alt={teamData.icon.alt}/>
-				{teamData.name}
-			</TitleText>
+				
+				<TitleText>
+					{teamData.name}
+				</TitleText>
+			</HorizontalContainer>
 			<DescriptionText>
 				{teamData.description}
 			</DescriptionText>
@@ -25,7 +29,7 @@ export const CardContainer = function(props){
 	var styleObject = {
 		"padding":"10px",
 		"backgroundColor":props.color,
-		"width":"96%",
+		"width":"98%",
 		"marginLeft":"auto",
 		"marginRight":"auto",
 		"marginTop":"3vh",  // 100vh = height of viewport
@@ -64,10 +68,12 @@ function TitleText(props){
 function CardIcon(props){
 	var styleObject = {
 		"gridArea":"icon",
-		"height":"1em",
+		"height":"2em",
 		"margin":"auto 8px"
 	}
-	return <img src={props.src} alt={props.alt} style={styleObject}/>
+	return (
+		<img src={props.src} alt={props.alt} style={styleObject}/>
+	);
 }
 
 // POSSIBLE GRID CONTAINER

@@ -2,10 +2,10 @@
 	"teams": [
 		{
 			"name": "Mechanical team",
-			"description": "The \"mech\" team is responsible for designing and building the plane",
+			"description": "The \"mech\" team is responsible for designing and building the plane and UGV.",
 			"icon": {
 				"filename":"plane.svg",
-				"alt":"Mech team icon"
+				"alt":"Mech icon"
 			},
 			"subteams":[
 				{
@@ -20,10 +20,10 @@
 		},
 		{
 			"name": "Programming team",
-			"description": "The programming team is responsible for implementing all programming related aspects of the competition",
+			"description": "The programming team is responsible for implementing all programming related aspects of the competition.",
 			"icon": {
-				"filename":"plane.svg",
-				"alt":"Mech team icon"
+				"filename":"programmingIcon.svg",
+				"alt":"Programming icon"
 			},
 			"subteams":[
 			]
@@ -32,8 +32,8 @@
 			"name": "Electronics team",
 			"description": "The electronics team sets up all of the electronics for the plane and works closely with the mechanical team.",
 			"icon": {
-				"filename":"plane.svg",
-				"alt":"Mech team icon"
+				"filename":"electronicsIcon.svg",
+				"alt":"Electronics icon"
 			},
 			"subteams":[
 			]
