@@ -1,6 +1,5 @@
 import { dark } from "theme/Colors"
 import { StyledHeading, StyledParagraph } from "theme/Styles.js"
-import { HorizontalContainer } from "theme/Components.js"
 import SubteamCard from "./SubteamCard"
 import React from 'react';
 
@@ -8,32 +7,29 @@ function TeamCard(props){
 	var teamData = props.data
 
 	return(
-		<CardContainer>
-			<HorizontalContainer>
-				<CardIcon src={require("../assets/"+teamData.icon).default}/>
-				<TitleText>
-					{teamData.name}
-				</TitleText>
-			</HorizontalContainer>
+		<CardContainer color={dark}>
+			<TitleText>
+				<CardIcon src={require("../assets/"+teamData.icon.filename).default} alt={teamData.icon.alt}/>
+				{teamData.name}
+			</TitleText>
 			<DescriptionText>
 				{teamData.description}
 			</DescriptionText>
-			<div>
-				{(teamData.subteams).map( (value) => <SubteamCard data={value} key={value.name}/>)}
-			</div>
+			{(teamData.subteams).map( (value) => <SubteamCard data={value} key={value.name}/>)}
 		</CardContainer>
 	)
 }
 
-function CardContainer(props){
+export const CardContainer = function(props){
 
 	var styleObject = {
-		"backgroundColor":dark,
-		"width":"90%",
-		"marginLeft":"5%",
-		"marginRight":"5%",
-		"marginTop":".05vm",  // 1vm = height of viewport
-		"marginBottom":".05vm"
+		"padding":"10px",
+		"backgroundColor":props.color,
+		"width":"96%",
+		"marginLeft":"auto",
+		"marginRight":"auto",
+		"marginTop":"3vh",  // 100vh = height of viewport
+		"borderRadius":"30px"
 	}
 
 	return (
@@ -43,24 +39,52 @@ function CardContainer(props){
 	)
 }
 
-function DescriptionText(props){
+export function DescriptionText(props){
+	var styleObject = {
+		"gridArea":"text"
+	}
 	return (
-		<StyledParagraph>
+		<StyledParagraph style={styleObject}>
 			{props.children}
 		</StyledParagraph>
 	)
 }
 
 function TitleText(props){
+	var styleObject = {
+		"gridArea":"title"
+	}
 	return (
-		<StyledHeading>
+		<StyledHeading style={styleObject}>
 			{props.children}
 		</StyledHeading>
 	)
 }
 
-function CardIcon(){
-	return <div />
+function CardIcon(props){
+	var styleObject = {
+		"gridArea":"icon",
+		"height":"1em",
+		"margin":"auto 8px"
+	}
+	return <img src={props.src} alt={props.alt} style={styleObject}/>
 }
+
+// POSSIBLE GRID CONTAINER
+// const Container = styled(Grid)`
+// 	background-color: ${dark};
+// 	border-radius: 20px;
+
+// 	--rows: repeat(5, 2.1875rem) auto;
+// 	height: initial;
+// 	padding: 0 1rem;
+// 	--columns: repeat(8, 1fr);
+
+// 	/* prettier-ignore */
+// 	grid-template-areas:
+// 		" icon   title  title  title  title  title  title  title  "
+// 		" text   text   text   text   text   text   text   text   "
+// 		" sub    sub    sub    sub    sub    sub    sub    sub    ";
+// `
 
 export default TeamCard

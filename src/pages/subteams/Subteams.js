@@ -1,7 +1,7 @@
 import {teams} from "./assets/data.json"
 import TeamCard from "./components/TeamCard.js"
 import { darker } from "theme/Colors"
-import React from 'react';
+import React from "react"
 
 function Subteams(){
 	return(
@@ -15,7 +15,9 @@ function PageContainer(props){
 	var styleObject = {
 		"width":"100%",
 		"height":"100%",
-		"backgroundColor":darker
+		"paddingTop":"16vh", //This is to account for the absolute-positioned header
+		"backgroundColor":darker,
+		"position":"static"
 	}
 
 	// props.children is an array of child elements that is passed automatically (behind the scenes)
@@ -25,5 +27,7 @@ function PageContainer(props){
 		</div>
 	)
 }
+
+
 
 export default Subteams

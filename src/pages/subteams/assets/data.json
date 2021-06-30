@@ -2,8 +2,39 @@
 	"teams": [
 		{
 			"name": "Mechanical team",
-			"description": "The mechanical team is responsible for building the plane",
-			"icon": "plane.svg",
+			"description": "The \"mech\" team is responsible for designing and building the plane",
+			"icon": {
+				"filename":"plane.svg",
+				"alt":"Mech team icon"
+			},
+			"subteams":[
+				{
+					"name":"UGV Team",
+					"description":"The UGV team designs and builds the Unmanned Ground Vehicle for the competition."
+				},
+				{
+					"name":"CAD Team",
+					"description":"The CAD Team uses Computer Assisted Design (CAD) programs such as a Fusion 360 to design the plane virtually."
+				}
+			]
+		},
+		{
+			"name": "Programming team",
+			"description": "The programming team is responsible for implementing all programming related aspects of the competition",
+			"icon": {
+				"filename":"plane.svg",
+				"alt":"Mech team icon"
+			},
+			"subteams":[
+			]
+		},
+		{
+			"name": "Electronics team",
+			"description": "The electronics team sets up all of the electronics for the plane and works closely with the mechanical team.",
+			"icon": {
+				"filename":"plane.svg",
+				"alt":"Mech team icon"
+			},
 			"subteams":[
 			]
 		}
