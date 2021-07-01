@@ -8,12 +8,13 @@ import Subteams from "pages/subteams/Subteams.js"
 import GlobalFonts from "fonts/fonts"
 
 const App = () => {
+	var headerHeight ="5.375rem"; //this variable is needed because the header is absolutely positioned
 	return (
 		<Router style={{ scrollBehavior: "smooth" }}>
 			<GlobalFonts />
 			<Location />
 
-			<Header />
+			<Header headerHeight={headerHeight}/>
 
 			<Switch>
 				<Route exact path="/home">
@@ -25,7 +26,7 @@ const App = () => {
 				</Route>
 				
 				<Route exact path="/subteams">
-					<Subteams />
+					<Subteams headerHeight={headerHeight}/>
 				</Route>
 
 				<Route exact path="/">

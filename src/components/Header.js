@@ -13,7 +13,7 @@ const Container = styled(Grid)`
 	background: ${darker};
 	align-items: center;
 	position: absolute;
-	height: 5.375rem;
+	height: ${props => props.height}; /* This is a fancy way of passing arguments to a literal */
 	z-index: 1;
 	right: 0;
 	left: 0;
@@ -165,11 +165,11 @@ const InnerBurger = styled.div`
 	transform-origin: center;
 `
 
-const Header = () => {
+const Header = (props) => {
 	const [active, setActive] = useState(false)
 
 	return (
-		<Container active={active} as="header">
+		<Container active={active} as="header" height={props.headerHeight}>
 			<StyledLink to="/home" style={{ ...Heading, alignSelf: "initial", gridArea: "logo" }}>
 				TJUAV
 			</StyledLink>
