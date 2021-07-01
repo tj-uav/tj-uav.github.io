@@ -1,5 +1,5 @@
 import { dark } from "theme/Colors"
-import { StyledHeading, StyledParagraph, Subheading } from "theme/Styles.js"
+import { StyledHeading, StyledParagraph, Heading } from "theme/Styles.js"
 import SubteamCard from "./SubteamCard"
 import React from 'react';
 import {HorizontalContainer} from "theme/Components.js"
@@ -66,9 +66,10 @@ function TitleText(props){
 }
 
 function CardIcon(props){
+	var iconHeight = Heading.fontSize;
 	var styleObject = {
 		"gridArea":"icon",
-		"height":"2em",
+		"height":iconHeight,
 		"margin":"auto 8px"
 	}
 	return (
