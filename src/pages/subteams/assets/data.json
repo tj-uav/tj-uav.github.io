@@ -2,7 +2,7 @@
 	"teams": [
 		{
 			"name": "Mechanical team",
-			"description": "The \"mech\" team is responsible for designing and building the plane and UGV. This team gets to use their hands the most and be creative when designing the plane.",
+			"description": "The \"mech\" team is responsible for designing and building all of the unmanned vehicles. This team employs their creativity to design them and their hands to construct them. ",
 			"icon": {
 				"filename":"plane.svg",
 				"alt":"Mech icon"
@@ -10,17 +10,21 @@
 			"subteams":[
 				{
 					"name":"UGV Team",
-					"description":"The UGV team designs and builds the Unmanned Ground Vehicle (UGV) and all related mechanisms for the competition. After the vehicle is dropped mid-flight, it has to land and carry out tasks"
+					"description":"The UGV team designs and builds the Unmanned Ground Vehicle (UGV) and all related mechanisms for the competition. After the vehicle is dropped from the main plane mid-flight, it has to land safely and carry out tasks."
 				},
 				{
-					"name":"CAD Team",
-					"description":"The CAD Team uses Computer Aided Design (CAD) software such as Fusion 360 to design the plane virtually."
+					"name":"Plane Team",
+					"description":"The Plane team designs and builds the main UAV for the AUVSI SUAS competition."
+				},
+				{
+					"name":"Testing Plane Team",
+					"description":"The Testing Plane team designs and builds a smaller, less complex UAV that the programming team can use for testing before deploying any programs to the main UAV. The testing plane can also be used to collect flight footage (before the main UAV is ready) for the Computer Vision team to use."
 				}
 			]
 		},
 		{
 			"name": "Programming team",
-			"description": "The programming team sets up the autopilot software and utilizes cutting-edge algorithms to implement all programming related aspects of the competition (which are mostly computer vision tasks).",
+			"description": "The programming team sets up the autopilot software and utilizes cutting-edge algorithms to implement all programming related aspects of the competition.",
 			"icon": {
 				"filename":"programmingIcon.svg",
 				"alt":"Programming icon"
@@ -28,7 +32,7 @@
 			"subteams":[
 				{
 					"name":"GCS Team",
-					"description":"The Ground Communication Systems (GCS) Team sets up the comms software and hardware that allows the plane to receive instructions and send back data to the groundstation."
+					"description":"The Ground Control Station (GCS) Team programs the flight computer onboard the main UAV and sets up the comms technology that allows the plane to receive instructions and send back telemetry and other data to the groundstation."
 				},
 				{
 					"name":"CV Team",
@@ -38,7 +42,7 @@
 		},
 		{
 			"name": "Electronics team",
-			"description": "This team sets up all of the electronics for the plane. They work closely with the mechanical team to set up the power systems and also with the programming team to integrate the autopilot and any cameras or other tech needed.",
+			"description": "This team sets up all of the electronics for the plane. However, there are no members dedicated solely to the electronics team since the work is generally split between the Mech and Programming team which select the electronics that best suit their needs.",
 			"icon": {
 				"filename":"electronicsIcon.svg",
 				"alt":"Electronics icon"
