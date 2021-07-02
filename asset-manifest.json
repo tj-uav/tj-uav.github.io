@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.6ba00690.chunk.css",
-    "main.js": "/static/js/main.79b64144.chunk.js",
-    "main.js.map": "/static/js/main.79b64144.chunk.js.map",
+    "main.js": "/static/js/main.395422c4.chunk.js",
+    "main.js.map": "/static/js/main.395422c4.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.7c65a9a0.js",
     "runtime-main.js.map": "/static/js/runtime-main.7c65a9a0.js.map",
     "static/js/2.cbf0e4fd.chunk.js": "/static/js/2.cbf0e4fd.chunk.js",
@@ -19,7 +19,7 @@
     "static/media/aryan.jpg": "/static/media/aryan.b5857ff1.jpg",
     "static/media/daniel.jpg": "/static/media/daniel.0dacc2d7.jpg",
     "static/media/drone.svg": "/static/media/drone.a6dbf5f9.svg",
-    "static/media/electronicsIcon.svg": "/static/media/electronicsIcon.abfc8d71.svg",
+    "static/media/electronicsIcon.svg": "/static/media/electronicsIcon.feff3488.svg",
     "static/media/ganesh.jpg": "/static/media/ganesh.d938bcba.jpg",
     "static/media/img1.jpeg": "/static/media/img1.eaa31837.jpeg",
     "static/media/img2.jpeg": "/static/media/img2.462ebabd.jpeg",
@@ -29,7 +29,7 @@
     "static/media/logo.svg": "/static/media/logo.793ff409.svg",
     "static/media/niko.jpg": "/static/media/niko.2795a2de.jpg",
     "static/media/plane.svg": "/static/media/plane.022f13df.svg",
-    "static/media/programmingIcon.svg": "/static/media/programmingIcon.77252e33.svg",
+    "static/media/programmingIcon.svg": "/static/media/programmingIcon.188fd596.svg",
     "static/media/srikar.jpg": "/static/media/srikar.c6823fd3.jpg",
     "static/media/team.jpg": "/static/media/team.8d85bd3e.jpg",
     "static/media/tjhsst.svg": "/static/media/tjhsst.fe7236e6.svg"
@@ -38,6 +38,6 @@
     "static/js/runtime-main.7c65a9a0.js",
     "static/js/2.cbf0e4fd.chunk.js",
     "static/css/main.6ba00690.chunk.css",
-    "static/js/main.79b64144.chunk.js"
+    "static/js/main.395422c4.chunk.js"
   ]
 }
