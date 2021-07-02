@@ -1,0 +1,3 @@
+# When you do git checkout gh-pages, you are bringing the node_modules directory with you (since it's in the main branch's .gitignore so from git's perspective, it's not there at all)
+# this file will be incorporated into the build directory and prevent you from accidentally pushing node_modules alongside the rest of the gh-pages branch 
+node_modules
