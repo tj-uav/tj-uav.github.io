@@ -11,7 +11,9 @@ app.get("/*", (req, res) => {
 	res.sendFile(path.join(__dirname, "build", "index.html"))
 })
 
-app.listen(process.env.PORT || 8000)
+app.listen(process.env.PORT || 8000, function() {
+    console.log("Express server started");
+});
 
 // const port = process.env.PORT || "8080"
 // app.set("port", port)

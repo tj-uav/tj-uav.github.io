@@ -4,15 +4,17 @@ import Header from "components/Header"
 import Footer from "components/Footer"
 import Home from "pages/home/Home"
 import Members from "pages/members/Members"
+import Subteams from "pages/subteams/Subteams.js"
 import GlobalFonts from "fonts/fonts"
 
 const App = () => {
+	var headerHeight ="5.375rem"; //this variable is needed because the header is absolutely positioned
 	return (
 		<Router style={{ scrollBehavior: "smooth" }}>
 			<GlobalFonts />
 			<Location />
 
-			<Header />
+			<Header headerHeight={headerHeight}/>
 
 			<Switch>
 				<Route exact path="/home">
@@ -21,6 +23,10 @@ const App = () => {
 
 				<Route exact path="/members">
 					<Members />
+				</Route>
+				
+				<Route exact path="/subteams">
+					<Subteams headerHeight={headerHeight}/>
 				</Route>
 
 				<Route exact path="/">
