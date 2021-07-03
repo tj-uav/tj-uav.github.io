@@ -32,11 +32,11 @@
 			"subteams":[
 				{
 					"name":"GCS Team",
-					"description":"The Ground Control Station (GCS) Team programs the flight computer onboard the main UAV and sets up the comms technology that allows the plane to receive instructions and send back telemetry and other data to the groundstation."
+					"description":"The Ground Control Station (GCS) Team programs the flight computer onboard the main UAV, programs the groundstation, and sets up the comms technology that allows the plane to receive instructions and send back telemetry and other data to the groundstation."
 				},
 				{
 					"name":"CV Team",
-					"description":"The Computer Vision (CV) Team implements all computer vision related tasks for the competition such as obstacle avoidance, image stitching, and object detection."
+					"description":"The Computer Vision (CV) Team implements all computer vision related tasks for the competition such as image stitching, object detection, and object classification."
 				}
 			]
 		},
