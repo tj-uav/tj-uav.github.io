@@ -18,10 +18,8 @@ Once you have saved all of the changes you made to files in the src directory, t
     ```
 1. If this is not your first time deploying the changes from your device, you will need to delete the old version of your gh-pages branch (which will contain the build folder from the last time you deployed). Otherwise there will be an error saying "Branch 'gh-pages' is not an ancestor of commit ..." when you try to overwrite it in the next step. This is because the old gh-pages branch is completely unrelated to the new one in terms of commits, so Git won't want to merge the build folder to it.
 
-**You don't need to run this command if it's your first time deploying from your device**
-	```sh
-    git branch -D gh-pages
-    ```
+NOTE: You don't need to run this command if it's your first time deploying from your device
+`git branch -D gh-pages`
 
 1. From the root of the main part of the repo (where this README file is located) run the command below. You can run this every time you want to deploy new changes. It will merge any changes from the subdirectory of the current branch (which will probably be `main`) to the root of the target branch. The target branch should be `gh-pages` because that's where the site is deployed from. [Stackoverflow post about this command](https://stackoverflow.com/a/32617297/15015834)
 
