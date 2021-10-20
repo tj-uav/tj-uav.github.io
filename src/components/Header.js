@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
-import Button from "./Button"
+//import Button from "./Button"
 import Grid from "./Grid"
 import { dark, darker, text } from "theme/Colors"
 import { Heading, Paragraph } from "theme/Styles"
@@ -201,10 +201,10 @@ const Header = (props) => {
 						Gallery
 					</StyledLink>
 				</LinkItem> */}
-				<LinkItem hook={[active, setActive]}>
+				{/*<LinkItem hook={[active, setActive]}>
 					<Button href="/home#sponsor">Sponsor</Button>
-				</LinkItem>
-			</LinksList>
+				</LinkItem>*/}
+			</LinksList> 
 		</Container>
 	)
 }

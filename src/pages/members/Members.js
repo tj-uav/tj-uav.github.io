@@ -1,18 +1,15 @@
 import React from "react"
 
-import Container from "./components/Container"
-import Officers from "./components/Big Cards/Officers"
-import Leads from "./components/Big Cards/Leads"
-import Main from "./components/Main/index.js"
+import Header from "./components/Header.js"
+import Leadership from "./components/Leadership.js"
 
-const Members = () => (
-	<>
-		<Container>
-			<Main />
-			<Officers />
-			<Leads />
-		</Container>
-	</>
-)
+export default function Members(){
+	
+	return(
+		<>
+			<Header />
+			<Leadership/>
+		</>
+	)
+}
 
-export default Members
