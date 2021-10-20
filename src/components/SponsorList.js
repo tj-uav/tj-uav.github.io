@@ -3,6 +3,8 @@ import { darker } from "theme/Colors"
 import { HorizontalContainer } from "theme/Components.js"
 import { title,sponsors } from "./SponsorAssets/sponsors.json"
 
+// pass a scale property to increase the size of sponsor icons
+// props.scale = <scale factor>
 function SponsorList(props){
 	return(
 		<Container>

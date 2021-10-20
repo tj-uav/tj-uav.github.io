@@ -12,7 +12,7 @@ const BigCard = ({ data, ...props }) => {
 		<Container {...props}>
 			<Name>{name}</Name>
 			<Position>{position}</Position>
-			<Image src={require(`../../assets/${src}`).default} alt={alt} style={{objectFit:"cover"}}/>
+			<Image src={require(`../../assets/${src}`).default} alt={alt} />
 		</Container>
 	)
 }

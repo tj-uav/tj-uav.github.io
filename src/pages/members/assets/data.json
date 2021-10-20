@@ -1,63 +1,54 @@
 {
-	"main": {
-		"heading": "2019-2020 UAV Team",
-		"subheading": "Interested. Active. Engaged. All of these describe the members of our team, who love working together and learning new things.",
-		"caption": [
-			"Pictured left to right, top row: Niko Economos, Daniel Stefanescu, Ganesh Nanduru, Liam West, Ronith Reddy, Ron Nachum, Aaryan Dave.",
-			"Second row: James Huang, Caleb Arulandu, Kevin Gu, Patrick Zhang, Jason Chen, Jack Blair, Cyril Sharma, Alexander Black.",
-			"Third row: Jacob Consalvi, Aryan Chinnala, Lohit Balakumar, Srikar Gouru, Ari Bobesh, Audhav, Durai, Jason Yi, Ankit Khandelwal.",
-			"Bottom row: Jon Paolo Recta, Max Zhang, Jack Williamson, Suruchi Sen, Hari Shanmugaraja, Marvin Fu."
-		]
-	},
+	"title":"2021-2022 UAV Leadership",
 	"officers": {
 		"heading": "Officers",
 		"entries": [
 			{
-				"name": "Srikar Gouru",
-				"position": "President",
+				"name": "Ari Bobesh",
+				"position": "Co-President",
 				"image": {
-					"src": "srikar.jpg",
-					"alt": "Srikar Gouru; President"
-				}
-			},
-			{
-				"name": "Ganesh Nanduru",
-				"position": "Vice President",
-				"image": {
-					"src": "ganesh.jpg",
-					"alt": "Ganesh Nanduru; Vice President"
-				}
-			},
-			{
-				"name": "Niko Economos",
-				"position": "Secretary",
-				"image": {
-					"src": "niko.jpg",
-					"alt": "Niko Economos; Secretary"
+					"src": "ari.jpg",
+					"alt": "Ari Bobesh; Co-President"
 				}
 			},
 			{
 				"name": "Liam West",
+				"position": "Co-President",
+				"image": {
+					"src": "default.jpg",
+					"alt": "Liam West; Co-President"
+				}
+			},
+			{
+				"name": "Mia Brashear",
+				"position": "Secretary",
+				"image": {
+					"src": "default.jpg",
+					"alt": "Mia Brashear; Secretary"
+				}
+			},
+			{
+				"name": "Taylor Nguyen",
 				"position": "Treasurer",
 				"image": {
-					"src": "liam.jpg",
-					"alt": "Liam West; Treasurer"
+					"src": "default.jpg",
+					"alt": "Taylor Nguyen; Treasurer"
 				}
 			},
 			{
-				"name": "Jason Klein",
+				"name": "Nicolas Makovnik",
 				"position": "Webmaster",
 				"image": {
-					"src": "jasonk.jpg",
-					"alt": "Jason Klein; Webmaster"
+					"src": "default.jpg",
+					"alt": "Nicolas Makovnik; Webmaster"
 				}
 			},
 			{
-				"name": "Daniel Stefanescu",
-				"position": "Publicist",
+				"name": "Viraj Bala",
+				"position": "Historian",
 				"image": {
-					"src": "daniel.jpg",
-					"alt": "Daniel Stefanescu; Publicist"
+					"src": "default.jpg",
+					"alt": "Viraj Bala; Historian"
 				}
 			}
 		]
@@ -66,43 +57,19 @@
 		"heading": "Team Leads",
 		"entries": [
 			{
-				"name": "Alex Black",
-				"position": "CV Team",
+				"name": "Alan Hsu",
+				"position": "Electronics Lead",
 				"image": {
-					"src": "alex.jpg",
-					"alt": "Alex Black; CV Team lead"
+					"src": "default.jpg",
+					"alt": "Alan Hsu; Electronics Team lead"
 				}
 			},
 			{
-				"name": "Ari Bobesh",
-				"position": "UGV Team",
+				"name": "Audhav Durai",
+				"position": "Programming Lead",
 				"image": {
-					"src": "ari.jpg",
-					"alt": "Ari Bobesh; UGV Team lead"
-				}
-			},
-			{
-				"name": "Aryan Chinnala",
-				"position": "GCS Team",
-				"image": {
-					"src": "aryan.jpg",
-					"alt": "Aryan Chinnala; GCS Team lead"
-				}
-			},
-			{
-				"name": "Ganesh Nanduru",
-				"position": "Programming",
-				"image": {
-					"src": "ganesh.jpg",
-					"alt": "Ganesh Nanduru; Programming lead"
-				}
-			},
-			{
-				"name": "Kevin Gu",
-				"position": "CAD Team",
-				"image": {
-					"src": "kevin.jpg",
-					"alt": "Kevin Gu; CAD Team lead"
+					"src": "default.jpg",
+					"alt": "Audhav Durai; Programming Team lead"
 				}
 			}
 		]

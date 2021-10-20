@@ -181,12 +181,11 @@ const Header = (props) => {
 						Home
 					</StyledLink>
 				</LinkItem>
-				{/* ADD THIS BACK ONCE THE MEMBERS PAGE IS UP TO DATE
 				<LinkItem hook={[active, setActive]}>
 					<StyledLink to="/members" style={Paragraph}>
 						Members
 					</StyledLink>
-				</LinkItem> */}
+				</LinkItem> 
 				<LinkItem hook={[active, setActive]}>
 					<StyledLink to="/subteams" style={Paragraph}>
 						Subteams
