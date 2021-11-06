@@ -1,6 +1,6 @@
 {
 	"hero": {
-		"description": "We build RC aircraft to learn about the various aspects of programming and aerospace engineering, and are currently developing a plane for a mock search-and-rescue mission.  Interested TJ students should fill out [this form](https://forms.gle/C2RwzcRhizUrYHGQ8).  Help us achieve our dreams by [sponsoring us](/home#sponsor)!"
+		"description": "We build RC aircraft to learn about the various aspects of programming and aerospace engineering, and are currently developing a plane for a mock search-and-rescue mission.  Interested TJ students should fill out [this form](https://forms.gle/C2RwzcRhizUrYHGQ8).  Help us achieve our dreams by [sponsoring us](/sponsorship-packet.pdf)!"
 	},
 	"info": {
 		"cards": [
@@ -16,7 +16,7 @@
 			{
 				"heading": "Aerospace Geeks",
 				"content": "In addition to developing and flying unmanned aircraft for fun, we create a search-and-rescue UAV for the annual [AUVSI SUAS competition](https://www.auvsi-suas.org/).",
-				"button": "[Learn More](/home)",
+				"button": "[Learn More](/subteams)",
 				"image": {
 					"src": "plane.svg",
 					"alt": "Plane."
