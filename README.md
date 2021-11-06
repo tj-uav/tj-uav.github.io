@@ -42,6 +42,17 @@ Once you have saved all of the changes you made to files in the src directory, t
 
 Don't forget to push your changes to any JSX or other files to the [`main`](https://github.com/tj-uav/tj-uav.github.io/tree/main) branch so you don't lose your work! 
 
+*Consolidated deployment script*
+
+	```sh
+	npm run build
+    git add build
+	git commit -m "Built latest src changes"
+    git branch -D gh-pages
+    git subtree split --prefix build --branch gh-pages
+	git checkout gh-pages
+	git push origin gh-pages --force
+    ```
 
 ## Available Scripts
 
