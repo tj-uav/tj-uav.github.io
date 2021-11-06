@@ -5,19 +5,14 @@ import { StyledParagraph as Paragraph } from "theme/Styles"
 import { mobile, tablet } from "theme/Breakpoints"
 import { darker } from "theme/Colors"
 
-const BigCard = ({data, ...props}) => {
+const BigCard = ({ data, ...props }) => {
 	const { name, position, image } = data
 	const { src, alt } = image
-
-	const containerStyles = {
-		marginBottom: "6px"
-	}//containerStyles
-
 	return (
-		<Container {...props} style={containerStyles}>
+		<Container {...props}>
 			<Name>{name}</Name>
 			<Position>{position}</Position>
-			<Image src={require(`../../assets/${src}`).default} alt={alt} style={{objectFit:"cover"}}/>
+			<Image src={require(`../../assets/${src}`).default} alt={alt} />
 		</Container>
 	)
 }

@@ -5,13 +5,14 @@ import { dark } from "theme/Colors"
 import { StyledHeading } from "theme/Styles"
 import { leads } from "pages/members/assets/data.json"
 
+import Container from "./Container"
 import Content from "./Content"
 
 const Leads = () => (
-	<>
+	<Container as="section" area="leads">
 		<Heading>{leads.heading}</Heading>
 		<Content entries={leads.entries} bg_color={dark} />
-	</>
+	</Container>
 )
 
 const Heading = styled(StyledHeading)`

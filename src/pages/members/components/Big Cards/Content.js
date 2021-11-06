@@ -1,45 +1,23 @@
 import React from "react"
-import { isDesktop } from "theme/Breakpoints"
-import { darker } from "theme/Colors"
-import { HorizontalContainer } from "theme/Components"
+import styled from "styled-components"
 
 import Card from "./BigCard"
 
-export default function Content(props){
-	var entries = props.entries
-	const bg_color = (props["bg_color"])? props.bg_color : darker
-	var cards = entries.map((lead, i) => (<Card key={i} data={lead} bg_color={bg_color} />));
-	if(isDesktop()){
-		var splitIndex = (cards.length+1)/2;
-		var oddCards = cards.slice(0,splitIndex);
-		var evenCards = cards.slice(splitIndex);
-		
-		const separatorStyles = {
-			"width":"46%",
-			"marginLeft":"2%",
-			"marginRight":"2%"
-		}
-		return (
-			<HorizontalContainer>
-				<div style={separatorStyles}>
-					{oddCards}
-				</div>
-				<div style={separatorStyles}>
-					{evenCards}
-				</div>
-			</HorizontalContainer>
-		)
-	}// if desktop
-	else{
-		const columnStyles = {
-			"width":"92%",
-			"marginLeft":"4%",
-			"marginRight":"4%"
-		}
-		return (
-			<div style={columnStyles}>
-				{cards}
-			</div>
-		)
-	}//else smaller screen
-}
+const Content = ({ entries, bg_color }) => (
+	<Container>
+		{entries.map((lead, i) => (
+			<Card key={i} data={lead} bg_color={bg_color} />
+		))}
+	</Container>
+)
+
+export default Content
+
+const Container = styled.div`
+	--rows: unset;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+	grid-auto-rows: min-content;
+	gap: 1rem;
+	grid-area: content;
+`

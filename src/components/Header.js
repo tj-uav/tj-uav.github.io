@@ -7,6 +7,8 @@ import { dark, darker, text } from "theme/Colors"
 import { Heading, Paragraph } from "theme/Styles"
 import { mobile, tablet, desktop } from "theme/Breakpoints"
 
+import Button from "./Button"
+
 const Container = styled(Grid)`
 	--rows: unset;
 
@@ -191,19 +193,14 @@ const Header = (props) => {
 						Subteams
 					</StyledLink>
 				</LinkItem>
-				<LinkItem hook={[active, setActive]}>
-					<StyledExternalLink href="https://app.gitbook.com/@tjuav/s/tjuav/" target="blank" style={Paragraph}>
-						Documentation
-					</StyledExternalLink>
-				</LinkItem>
 				{/* <LinkItem hook={[active, setActive]}>
 					<StyledLink to="/gallery" style={Paragraph}>
 						Gallery
 					</StyledLink>
 				</LinkItem> */}
-				{/*<LinkItem hook={[active, setActive]}>
-					<Button href="/home#sponsor">Sponsor</Button>
-				</LinkItem>*/}
+				<LinkItem hook={[active, setActive]}>
+					<Button href="/sponsorship-packet.pdf">Sponsorship Info</Button>
+				</LinkItem>
 			</LinksList> 
 		</Container>
 	)

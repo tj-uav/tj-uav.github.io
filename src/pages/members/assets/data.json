@@ -1,5 +1,12 @@
 {
-	"title":"2021-2022 UAV Leadership",
+	"main": {
+		"heading": "UAV Team",
+		"subheading": "Interested. Active. Engaged. All of these describe the members of our team, who love working together and learning new things.",
+		"caption": [
+			"Some of the 2020-2021 team standing behind the Avalon V1",
+			"Pictured left to right: Ari Bobesh, Jacob Consalvi, Niko Economos, Kevin Gu, Ganesh Nanduru, Laim West, Viraj Bala, Mia Brashear"
+		]
+	},
 	"officers": {
 		"heading": "Officers",
 		"entries": [
@@ -15,7 +22,7 @@
 				"name": "Liam West",
 				"position": "Co-President",
 				"image": {
-					"src": "default.jpg",
+					"src": "liam.png",
 					"alt": "Liam West; Co-President"
 				}
 			},
@@ -23,7 +30,7 @@
 				"name": "Mia Brashear",
 				"position": "Secretary",
 				"image": {
-					"src": "default.jpg",
+					"src": "mia.jpeg",
 					"alt": "Mia Brashear; Secretary"
 				}
 			},
@@ -39,7 +46,7 @@
 				"name": "Nicolas Makovnik",
 				"position": "Webmaster",
 				"image": {
-					"src": "default.jpg",
+					"src": "nicolas.jpg",
 					"alt": "Nicolas Makovnik; Webmaster"
 				}
 			},
@@ -47,7 +54,7 @@
 				"name": "Viraj Bala",
 				"position": "Historian",
 				"image": {
-					"src": "default.jpg",
+					"src": "viraj.jpg",
 					"alt": "Viraj Bala; Historian"
 				}
 			}
@@ -74,4 +81,5 @@
 			}
 		]
 	}
+
 }

@@ -17,7 +17,14 @@ export default styled(Grid)`
 
 		grid-template-areas:
 			".        .          .          .          .          .          .          .          .          .          .          .       "
+			".        .          .          .          .          .          .          .          .          .          .          .       "
+			".        .          .          .          .          .          .          .          .          .          .          .       "
 			".        heading    heading    heading    heading    heading    heading    heading    heading    heading    heading    .       "
+			".        subheading subheading subheading subheading subheading subheading subheading subheading subheading subheading .       "
+			".        .          .          .          .          .          .          .          .          .          .          .       "
+			".        image      image      image      image      image      image      image      image      image      image      .       "
+			".        caption    caption    caption    caption    caption    caption    caption    caption    caption    caption    .       "
+			".        .          .          .          .          .          .          .          .          .          .          .       "
 			"officers officers   officers   officers   officers   officers   officers   officers   officers   officers   officers   officers"
 			"leads    leads      leads      leads      leads      leads      leads      leads      leads      leads      leads      leads   ";
 
@@ -38,7 +45,14 @@ export default styled(Grid)`
 
 		grid-template-areas:
 			".        .          .          .          .          .          .          .          .          .          .       "
+			".        .          .          .          .          .          .          .          .          .          .       "
+			".        .          .          .          .          .          .          .          .          .          .       "
 			".        .          heading    heading    heading    heading    heading    heading    heading    .          .       "
+			".        .          subheading subheading subheading subheading subheading subheading subheading .          .       "
+			".        .          .          .          .          .          .          .          .          .          .       "
+			".        .          image      image      image      image      image      image      image      .          .       "
+			".        .          caption    caption    caption    caption    caption    caption    caption    .          .       "
+			".        .          .          .          .          .          .          .          .          .          .       "
 			".        .          officers   officers   officers   .          leads      leads      leads      .          .       ";
 
 		&::after {
@@ -68,6 +82,11 @@ export default styled(Grid)`
 			". .          .          .          .          .          .          .          .          .          .          .          . " calc(${1 /
 		9} * 100vh)
 			". heading    heading    heading    heading    heading    heading    heading    heading    heading    heading    heading    . " calc(${1 /
+		9} * 100vh)
+			". subheading subheading subheading subheading subheading subheading subheading subheading subheading subheading subheading .    " min-content
+			". image      image      image      image      image      image      image      caption    caption    caption    caption    . " min-content
+			". image      image      image      image      image      image      image      caption    caption    caption    caption    . " min-content
+			". .          .          .          .          .          .          .          .          .          .          .          . " calc(${1 /
 		9} * 100vh)
 			". officers   officers   officers   officers   officers   .          leads      leads      leads      leads      leads      . " min-content
 			". officers   officers   officers   officers   officers   .          leads      leads      leads      leads      leads      . " min-content
