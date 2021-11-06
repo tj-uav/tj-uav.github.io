@@ -20,7 +20,7 @@ Once you have saved all of the changes you made to files in the src directory, t
 
     ```sh
     #NOTE: This command is unnecessary if it's your first time deploying from your device
-    git branch -D gh-pages`
+    git branch -D gh-pages
     ```
 
 1. From the root of the main part of the repo (where this README file is located) run the command below. You can run this every time you want to deploy new changes. It will merge any changes from the subdirectory of the current branch (which will probably be `main`) to the root of the target branch. The target branch should be `gh-pages` because that's where the site is deployed from. [Stackoverflow post about this command](https://stackoverflow.com/a/32617297/15015834)
