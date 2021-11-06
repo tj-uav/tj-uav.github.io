@@ -1,11 +1,13 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { Link } from "react-router-dom"
-import Button from "./Button"
+//import Button from "./Button"
 import Grid from "./Grid"
 import { dark, darker, text } from "theme/Colors"
 import { Heading, Paragraph } from "theme/Styles"
 import { mobile, tablet, desktop } from "theme/Breakpoints"
+
+import Button from "./Button"
 
 const Container = styled(Grid)`
 	--rows: unset;
@@ -181,21 +183,15 @@ const Header = (props) => {
 						Home
 					</StyledLink>
 				</LinkItem>
-				{/* ADD THIS BACK ONCE THE MEMBERS PAGE IS UP TO DATE
 				<LinkItem hook={[active, setActive]}>
 					<StyledLink to="/members" style={Paragraph}>
 						Members
 					</StyledLink>
-				</LinkItem> */}
+				</LinkItem> 
 				<LinkItem hook={[active, setActive]}>
 					<StyledLink to="/subteams" style={Paragraph}>
 						Subteams
 					</StyledLink>
-				</LinkItem>
-				<LinkItem hook={[active, setActive]}>
-					<StyledExternalLink href="https://app.gitbook.com/@tjuav/s/tjuav/" target="blank" style={Paragraph}>
-						Documentation
-					</StyledExternalLink>
 				</LinkItem>
 				{/* <LinkItem hook={[active, setActive]}>
 					<StyledLink to="/gallery" style={Paragraph}>
@@ -203,9 +199,9 @@ const Header = (props) => {
 					</StyledLink>
 				</LinkItem> */}
 				<LinkItem hook={[active, setActive]}>
-					<Button href="/home#sponsor">Sponsor</Button>
+					<Button href="/sponsorship-packet.pdf">Sponsorship Info</Button>
 				</LinkItem>
-			</LinksList>
+			</LinksList> 
 		</Container>
 	)
 }

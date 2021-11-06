@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import { BrowserRouter as Router, Redirect, Switch, Route, useLocation } from "react-router-dom"
 import Header from "components/Header"
 import Footer from "components/Footer"
+import SponsorList from "components/SponsorList"
 import Home from "pages/home/Home"
 import Members from "pages/members/Members"
 import Subteams from "pages/subteams/Subteams.js"
@@ -34,6 +35,7 @@ const App = () => {
 				</Route>
 			</Switch>
 
+			<SponsorList />
 			<Footer />
 		</Router>
 	)
