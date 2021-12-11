@@ -101,14 +101,22 @@ const StyledLink = styled(Link)`
 	}
 `
 
-const StyledExternalLink = styled.a`
-	display: flex;
-	align-items: center;
-	text-decoration: none;
-	:hover {
-		text-decoration: underline;
-	}
-`
+// to = external url to open in a new tab
+function StyledExternalLink(props){
+	const RawLinkObject = styled.a`
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+		:hover {
+			text-decoration: underline;
+		}
+	`
+	return (
+		<RawLinkObject href={props.to} target="blank" style={Paragraph}>
+			{props.children}
+		</RawLinkObject>
+	)
+}
 
 const StyledBurger = styled.div`
 	grid-template-rows: repeat(3, 3px);
@@ -194,7 +202,7 @@ const Header = (props) => {
 					</StyledLink>
 				</LinkItem>
 				<LinkItem hook={[active, setActive]}>
-					<StyledExternalLink to="https://tjuav.gitbook.io/tjuav/" style={Paragraph}>
+					<StyledExternalLink to="https://tjuav.gitbook.io/tjuav/">
 						Documentation
 					</StyledExternalLink>
 				</LinkItem>
@@ -204,7 +212,7 @@ const Header = (props) => {
 					</StyledLink>
 				</LinkItem> */}
 				<LinkItem hook={[active, setActive]}>
-					<Button href="/sponsorship-packet.pdf">Sponsorship Info</Button>
+					<Button href="/sponsorship-packet.pdf" target="blank">Sponsorship Info</Button>
 				</LinkItem>
 			</LinksList> 
 		</Container>
