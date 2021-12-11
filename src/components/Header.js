@@ -193,6 +193,11 @@ const Header = (props) => {
 						Subteams
 					</StyledLink>
 				</LinkItem>
+				<LinkItem hook={[active, setActive]}>
+					<StyledExternalLink to="https://tjuav.gitbook.io/tjuav/" style={Paragraph}>
+						Documentation
+					</StyledExternalLink>
+				</LinkItem>
 				{/* <LinkItem hook={[active, setActive]}>
 					<StyledLink to="/gallery" style={Paragraph}>
 						Gallery
