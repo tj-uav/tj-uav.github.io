@@ -22,9 +22,9 @@ const Container = styled(Grid)`
 const Footer = () => (
 	<Container as="footer">
 		<p style={{ ...Paragraph, gridArea: "content" }}>
-			Copyright &copy; TJUAV 2020.
+			Copyright &copy; TJUAV 2021.
 			<br />
-			All rights reserved.
+			Contributors: Jason Klein '22, Nicolas Makovnik '23
 		</p>
 	</Container>
 )

@@ -66,7 +66,10 @@ function Logo(props){
 	var styleObject = {
 		"objectFit":"contain",
 		"height": heightVH+"vh",
-		"margin":"2vh"
+		"marginRight":"4vh",
+		"marginBottom":"2vh",
+		"marginTop":"2vh",
+		"maxWidth":"100%"
 	}
 	return (
 		<img src={imageSource} alt={props.alt} style={styleObject}/>
