@@ -2,8 +2,12 @@
 	"title":"Our Sponsors",
 	"sponsors":[
 		{
-			"image":"TJPF.png",
-			"alt":"Thomas Jefferson Partnership Fund"
+			"image":"apc.jpg",
+			"alt":"APC Propellers Logo"
+		},
+		{
+			"image":"millenium_bordered.jpg",
+			"alt":"Millenium Enterprise"
 		}
 	]
 }
