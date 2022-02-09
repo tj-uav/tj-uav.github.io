@@ -13,7 +13,7 @@ function SponsorList(props){
 			</Caption>
 			<HorizontalContainer>
 				{sponsors.map((element) => {
-					return <Logo key={element.alt} filePath={element.image} alt={element.alt} scale={"logoScale" in props ? props.logoScale : 1}/>
+					return <Logo jsonData={element} key={element.alt} scale={"logoScale" in props ? props.logoScale : 1} />
 				})}
 			</HorizontalContainer>
 		</Container>
@@ -57,7 +57,7 @@ function Container(props){
 }//Container
 
 function Logo(props){
-	var imageSource = require("./SponsorAssets/"+props.filePath).default
+	var imageSource = require("./SponsorAssets/"+props.jsonData.image).default
 	var scaleFactor = 1
 	if("scale" in props){
 		scaleFactor = props.scale
@@ -71,7 +71,16 @@ function Logo(props){
 		"marginTop":"2vh",
 		"maxWidth":"100%"
 	}
-	return (
-		<img src={imageSource} alt={props.alt} style={styleObject}/>
-	);
+	var returnObject = null;
+	if("link" in props.jsonData){
+		returnObject = (
+			<a href={props.jsonData.link} target="_blank" rel="noreferrer">
+				<img src={imageSource} alt={props.jsonData.alt} style={styleObject}/>
+			</a>
+		)
+	}//if
+	else{
+		returnObject = <img src={imageSource} alt={props.jsonData.alt} style={styleObject}/>
+	}//else
+	return returnObject;
 }

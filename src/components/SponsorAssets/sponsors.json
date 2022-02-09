@@ -2,12 +2,14 @@
 	"title":"Our Sponsors",
 	"sponsors":[
 		{
-			"image":"apc.jpg",
-			"alt":"APC Propellers Logo"
+			"image":"millenium_bordered.jpg",
+			"alt":"Millenium Enterprise",
+			"link":"https://me-sys.com/"
 		},
 		{
-			"image":"millenium_bordered.jpg",
-			"alt":"Millenium Enterprise"
+			"image":"apc.jpg",
+			"alt":"APC Propellers Logo",
+			"link":"https://www.apcprop.com/"
 		}
 	]
 }
