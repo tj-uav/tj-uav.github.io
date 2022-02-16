@@ -3,13 +3,18 @@
 	"sponsors":[
 		{
 			"image":"millenium_bordered.jpg",
-			"alt":"Millenium Enterprise",
+			"alt":"Millenium Enterprise Logo",
 			"link":"https://me-sys.com/"
 		},
 		{
 			"image":"apc.jpg",
 			"alt":"APC Propellers Logo",
 			"link":"https://www.apcprop.com/"
+		},
+		{
+			"image":"TJPF.png",
+			"alt":"Thomas Jefferson Partnership Fund Logo",
+			"link":"https://www.tjpartnershipfund.org/"
 		}
 	]
 }
