@@ -1,0 +1,11 @@
+{
+	"description": "Images and videos of our recent accomplishments and flights.",
+	"content": [
+		{
+			"type": "image",
+			"caption": "Recent flight",
+			"src": "avalon_photo.jpeg",
+			"alt": "Image of TJUAV's latest plane"
+		}
+	]
+}
