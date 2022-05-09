@@ -1,11 +1,26 @@
 {
+	"title": "Gallery",
 	"description": "Images and videos of our recent accomplishments and flights.",
 	"content": [
 		{
-			"type": "image",
-			"caption": "Recent flight",
-			"src": "avalon_photo.jpeg",
-			"alt": "Image of TJUAV's latest plane"
+			"title": "Recent flight",
+			"description": "SOME stuff here",
+			"triangle_aspect_ratio": 8,
+			"media_info":{
+				"type": "image",
+				"src": "avalon_photo.jpeg",
+				"alt": "Image of TJUAV's latest plane"
+			}
+		},
+		{
+			"title": "The Team",
+			"description": "som more stuff",
+			"triangle_aspect_ratio": 20,
+			"media_info":{
+				"type": "image",
+				"src": "team.jpg",
+				"alt": "Image of team"
+			}
 		}
 	]
 }

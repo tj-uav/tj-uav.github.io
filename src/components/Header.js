@@ -206,11 +206,11 @@ const Header = (props) => {
 						Documentation
 					</StyledExternalLink>
 				</LinkItem>
-				{/* <LinkItem hook={[active, setActive]}>
+				<LinkItem hook={[active, setActive]}>
 					<StyledLink to="/gallery" style={Paragraph}>
 						Gallery
 					</StyledLink>
-				</LinkItem> */}
+				</LinkItem>
 				<LinkItem hook={[active, setActive]}>
 					<Button href="/sponsorship-packet.pdf" target="blank">Sponsorship Info</Button>
 				</LinkItem>

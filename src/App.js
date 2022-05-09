@@ -6,10 +6,11 @@ import SponsorList from "components/SponsorList"
 import Home from "pages/home/Home"
 import Members from "pages/members/Members"
 import Subteams from "pages/subteams/Subteams.js"
+import Gallery from "pages/gallery/Gallery"
 import GlobalFonts from "fonts/fonts"
 
 const App = () => {
-	var headerHeight ="5.375rem"; //this variable is needed because the header is absolutely positioned
+	const headerHeight ="5.375rem";
 	return (
 		<Router style={{ scrollBehavior: "smooth" }}>
 			<GlobalFonts />
@@ -27,7 +28,13 @@ const App = () => {
 				</Route>
 				
 				<Route exact path="/subteams">
-					<Subteams headerHeight={headerHeight}/>
+					<HeaderPlaceholder height={headerHeight}/>
+					<Subteams />
+				</Route>
+
+				<Route exact path="/gallery">
+					<HeaderPlaceholder height={headerHeight}/>
+					<Gallery/>
 				</Route>
 
 				<Route exact path="/">
@@ -38,6 +45,15 @@ const App = () => {
 			<SponsorList />
 			<Footer />
 		</Router>
+	)
+}
+
+// Basically, the header is removed from the page so elements won't snap below it,
+// insert this before a page that does not use grid containers to make sure the header isn't covering anything
+function HeaderPlaceholder({height, ...props}){
+	 //this variable is needed because the header is absolutely positioned
+	return(
+		<div style={{height:height, width:"100%"}}/>
 	)
 }
 

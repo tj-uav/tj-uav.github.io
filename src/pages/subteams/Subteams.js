@@ -15,7 +15,6 @@ function PageContainer(props){
 	var styleObject = {
 		"width":"100%",
 		"height":"100%",
-		"paddingTop": ("headerHeight" in props)? props.headerHeight : "16vh", 
 		"backgroundColor":darker,
 		"position":"static"
 	}
