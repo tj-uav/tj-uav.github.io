@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { StyledParagraph as Paragraph } from "theme/Styles"
-import { mobile, tablet } from "theme/Breakpoints"
+import { desktop, mobile, tablet, isMobile } from "theme/Breakpoints"
 import { darker } from "theme/Colors"
 
 const BigCard = ({ data, ...props }) => {
@@ -22,33 +22,48 @@ export default BigCard
 const Container = styled.div`
 	${mobile} {
 		background: ${({ bg_color }) => bg_color ?? darker};
+		grid-template:
+			". .        . image" 0.5rem
+			". .        . image" min-content
+			". name     . image" min-content
+			". .        . image" 0.5rem
+			". position . image" auto
+			". .        . image" 0.5rem
+        / 1rem auto  auto auto;
 	}
 
 	${tablet} {
 		background: ${darker};
+		grid-template:
+			". .        . image" 1rem
+			". name     . image" min-content
+			". name     . image" min-content
+			". position . image" auto
+			". .        . image" 0.5rem
+		/ 1rem auto  auto 45%;
+	}
+
+	${desktop} {
+		grid-template:
+			". .        . image" 0.75rem
+			". name     . image" min-content
+			". name     . image" min-content
+			". position . image" auto
+			". .        . image" 0.5rem
+		/ 1rem auto  auto 45%;
 	}
 
 	border-radius: 0.2rem;
 	position: relative;
 	display: grid;
-	grid-template:
-		". .        . image" 0.5rem
-		". name1    . image" min-content
-		". name2    . image" min-content
-		". position . image" auto
-		". .        . image" 0.5rem
-		/ 1rem auto auto 45%;
 `
 
 const Name = ({ children }) => {
-	const split = children.split(" ")
-	return split.map((s, i) => (
-		<Paragraph
-			key={i}
-			style={{ gridArea: `name${i + 1}` }}
-			children={s.replace(/^./, s.charAt(0).toUpperCase())}
-		/>
-	))
+	return (
+		<Paragraph style={{ "grid-area": "name", "margin-right": "1em", "font-size": isMobile() ? "1.25rem" : "1em" }}>
+			{children}
+		</Paragraph>
+	)
 }
 
 const Position = styled(Paragraph)`
@@ -58,8 +73,8 @@ const Position = styled(Paragraph)`
 `
 
 const Image = styled.img`
-	width: 100%;
 	height: 100%;
+	width: 100%;
 	display: block;
 	background: gray;
 	grid-area: image;
@@ -67,5 +82,5 @@ const Image = styled.img`
 	overflow: hidden;
 	border-top-right-radius: 0.2rem;
 	border-bottom-right-radius: 0.2rem;
-	max-height: 100px;
+	max-height: 120px;
 `

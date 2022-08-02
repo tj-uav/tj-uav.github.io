@@ -3,59 +3,59 @@
 		"heading": "UAV Team",
 		"subheading": "Interested. Active. Engaged. All of these describe the members of our team, who love working together and learning new things.",
 		"caption": [
-			"Some of the 2020-2021 team standing behind the Avalon V1",
-			"Pictured left to right: Ari Bobesh, Jacob Consalvi, Niko Economos, Kevin Gu, Ganesh Nanduru, Liam West, Viraj Bala, Mia Brashear"
+			"Some of the 2020-2021 team standing behind the Avalon Mk. 3.5",
+			"Pictured left to right: Mr. Szczur, Ari Bobesh, Nicolas Makovnik, Rachit Raval, Alan Hsu, Krishnan Shankar, Liam West, Shihao Cao, Mia Brashear."
 		]
 	},
 	"officers": {
 		"heading": "Officers",
 		"entries": [
 			{
-				"name": "Ari Bobesh",
+				"name": "Nicolas Makovnik",
 				"position": "Co-President",
 				"image": {
-					"src": "ari.jpg",
-					"alt": "Ari Bobesh; Co-President"
+					"src": "nicolas.jpg",
+					"alt": "Nicolas Makovnik; Co-President"
 				}
 			},
 			{
-				"name": "Liam West",
+				"name": "Viraj Bala",
 				"position": "Co-President",
 				"image": {
-					"src": "liam.png",
-					"alt": "Liam West; Co-President"
+					"src": "viraj.jpg",
+					"alt": "Viraj Bala; Co-President"
 				}
 			},
 			{
 				"name": "Mia Brashear",
 				"position": "Secretary",
 				"image": {
-					"src": "mia.jpeg",
+					"src": "mia.jpg",
 					"alt": "Mia Brashear; Secretary"
 				}
 			},
 			{
-				"name": "Taylor Nguyen",
+				"name": "Rachit Raval",
 				"position": "Treasurer",
 				"image": {
-					"src": "default.jpg",
-					"alt": "Taylor Nguyen; Treasurer"
+					"src": "rachit.jpg",
+					"alt": "Rachit Raval; Treasurer"
 				}
 			},
 			{
-				"name": "Nicolas Makovnik",
+				"name": "William Black",
 				"position": "Webmaster",
 				"image": {
-					"src": "nicolas.jpg",
-					"alt": "Nicolas Makovnik; Webmaster"
+					"src": "william.jpg",
+					"alt": "William Black; Webmaster"
 				}
 			},
 			{
-				"name": "Viraj Bala",
+				"name": "Rohan Ramprasad",
 				"position": "Historian",
 				"image": {
-					"src": "viraj.jpg",
-					"alt": "Viraj Bala; Historian"
+					"src": "rohan.jpg",
+					"alt": "Rohan Ramprasad; Historian"
 				}
 			}
 		]
@@ -67,16 +67,16 @@
 				"name": "Alan Hsu",
 				"position": "Electronics Lead",
 				"image": {
-					"src": "default.jpg",
+					"src": "alan.png",
 					"alt": "Alan Hsu; Electronics Team lead"
 				}
 			},
 			{
-				"name": "Audhav Durai",
+				"name": "Krishnan Shankar",
 				"position": "Programming Lead",
 				"image": {
 					"src": "default.jpg",
-					"alt": "Audhav Durai; Programming Team lead"
+					"alt": "Krishnan Shankar; Programming Team lead"
 				}
 			}
 		]

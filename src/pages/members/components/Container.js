@@ -83,7 +83,7 @@ export default styled(Grid)`
 		9} * 100vh)
 			". heading    heading    heading    heading    heading    heading    heading    heading    heading    heading    heading    . " calc(${1 /
 		9} * 100vh)
-			". subheading subheading subheading subheading subheading subheading subheading subheading subheading subheading subheading .    " min-content
+			". subheading subheading subheading subheading subheading subheading subheading subheading subheading subheading subheading . " min-content
 			". image      image      image      image      image      image      image      caption    caption    caption    caption    . " min-content
 			". image      image      image      image      image      image      image      caption    caption    caption    caption    . " min-content
 			". .          .          .          .          .          .          .          .          .          .          .          . " calc(${1 /
@@ -92,7 +92,7 @@ export default styled(Grid)`
 			". officers   officers   officers   officers   officers   .          leads      leads      leads      leads      leads      . " min-content
 			". officers   officers   officers   officers   officers   .          leads      leads      leads      leads      leads      . " min-content
 			". officers   officers   officers   officers   officers   .          leads      leads      leads      leads      leads      . " min-content
-			/ 1fr 1fr 1fr 1fr 1fr 1fr 2rem 1fr 1fr 1fr 1fr 1fr 1fr;
+		/  1fr 1fr        1fr        1fr        1fr        1fr        2rem       1fr        1fr        1fr        1fr        1fr        1fr;
 
 		&::after {
 			content: "";
