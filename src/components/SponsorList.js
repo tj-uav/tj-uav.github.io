@@ -1,3 +1,5 @@
+import styled from "styled-components"
+
 import { Subheading } from "theme/Styles.js"
 import { darker } from "theme/Colors"
 import { HorizontalContainer } from "theme/Components.js"
@@ -5,8 +7,8 @@ import Sponsors from "./SponsorAssets/sponsors.json"
 
 // pass a scale property to increase the size of sponsor icons
 // props.scale = <scale factor>
-function SponsorList(props){
-	return(
+const SponsorList = (props) => {
+	return (
 		<Container>
 			<Caption>
 				{Sponsors.title}
@@ -18,69 +20,60 @@ function SponsorList(props){
 			</HorizontalContainer>
 		</Container>
 	)
-}//SponsorList
-export default SponsorList
+}
 
-
-function Caption(props){
-	var additionalStyles = {
-		"display":"inline",
-		"marginRight":"auto",
-		"marginLeft":"auto"
-	}
-	var styleObject = {
-		...additionalStyles,
-		...Subheading
-	}
-
+const Caption = (props) => {
 	return (
-		<h2 style={styleObject}>
+		<StyledCaption style={Subheading}>
 			{props.children}
-		</h2>
+		</StyledCaption>
 	)
-}//Caption
+}
 
+const StyledCaption = styled.h2`
+	display: inline;
+	marginRight: auto;
+	marginLeft: auto;
+`
 
-function Container(props){
-	var styleObject = {
-		backgroundColor : darker,
-		padding: "3vh 8vw",
-		marginTop:"2vh"
-	}
-	
+const Container = (props) => {
 	return (
-		<div style={styleObject}>
+		<StyledContainer>
 			{props.children}
-		</div>
+		</StyledContainer>
 	)
 
-}//Container
+}
 
-function Logo(props){
-	var imageSource = require("./SponsorAssets/"+props.jsonData.image)
-	var scaleFactor = 1
-	if("scale" in props){
-		scaleFactor = props.scale
-	}//if
-	var heightVH = 15 * scaleFactor
-	var styleObject = {
-		"objectFit":"contain",
-		"height": heightVH+"vh",
-		"marginRight":"4vh",
-		"marginBottom":"2vh",
-		"marginTop":"2vh",
-		"maxWidth":"100%"
-	}
-	var returnObject = null;
-	if("link" in props.jsonData){
-		returnObject = (
+const StyledContainer = styled.div`
+	background-color: ${darker};
+	padding: 3vh 8vw;
+	margin-top: 2vh;
+`
+
+const Logo = (props) => {
+	let imageSource = require("./SponsorAssets/" + props.jsonData.image)
+
+	if ("link" in props.jsonData) {
+		return (
 			<a href={props.jsonData.link} target="_blank" rel="noreferrer">
-				<img src={imageSource} alt={props.jsonData.alt} style={styleObject}/>
+				<StyledImage src={imageSource} alt={props.jsonData.alt} scale={props.scale ?? 1} />
 			</a>
 		)
-	}//if
-	else{
-		returnObject = <img src={imageSource} alt={props.jsonData.alt} style={styleObject}/>
-	}//else
-	return returnObject;
+	} else {
+		return (
+			<StyledImage src={imageSource} alt={props.jsonData.alt} scale={props.scale ?? 1} />
+		)
+	}
 }
+
+const StyledImage = styled.img`
+	object-fit: contain;
+	height: ${props => props.scale * 15}vh;
+	margin-right: 4vh;
+	margin-bottom: 2vh;
+	margin-top: 2vh;
+	max-width: 100%;
+`
+
+export default SponsorList

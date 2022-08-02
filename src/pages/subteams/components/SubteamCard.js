@@ -1,9 +1,9 @@
-import {blue} from "theme/Colors.js"
-import {StyledSubheading} from "theme/Styles.js"
+import { blue } from "theme/Colors.js"
+import { StyledSubheading } from "theme/Styles.js"
 
-import {DescriptionText, CardContainer} from "./TeamCard.js"
+import { DescriptionText, CardContainer } from "./TeamCard.js"
 
-function SubteamCard(props){
+const SubteamCard = (props) => {
 	var subteamData = props.data
 	return(
 		<CardContainer color={blue}>
@@ -17,11 +17,9 @@ function SubteamCard(props){
 	)
 }
 
-function Title(props){
-	var styleObject = {
-	}
+const Title = (props) => {
 	return (
-		<StyledSubheading style={styleObject}>
+		<StyledSubheading>
 			{props.children}
 		</StyledSubheading>
 	)

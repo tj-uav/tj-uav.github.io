@@ -119,7 +119,7 @@ const StyledImage = styled(Image)`
 	top: 0;
 `
 
-export default function Card({ data, ...props }) {
+const Card = ({ data, ...props }) => {
 	const { heading, content, button, image } = data
 	const { src, alt } = image
 
@@ -140,3 +140,5 @@ export default function Card({ data, ...props }) {
 		</Container>
 	)
 }
+
+export default Card

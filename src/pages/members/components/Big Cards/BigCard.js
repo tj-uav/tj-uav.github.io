@@ -17,8 +17,6 @@ const BigCard = ({ data, ...props }) => {
 	)
 }
 
-export default BigCard
-
 const Container = styled.div`
 	${mobile} {
 		background: ${({ bg_color }) => bg_color ?? darker};
@@ -84,3 +82,5 @@ const Image = styled.img`
 	border-bottom-right-radius: 0.2rem;
 	max-height: 120px;
 `
+
+export default BigCard

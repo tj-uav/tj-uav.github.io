@@ -1,7 +1,7 @@
 import React from "react"
 import { red } from "theme/Colors"
 
-export default function Parser({ Component, children, color = red, absolute }) {
+const Parser = ({ Component, children, color = red, absolute }) => {
 	const linkRegex = /\[([^)]+)\]\(([^)]+)\)/g
 	const matches = children.match(linkRegex)
 	if (!matches) return <>{children}</>
@@ -42,3 +42,5 @@ export default function Parser({ Component, children, color = red, absolute }) {
 		</>
 	)
 }
+
+export default Parser

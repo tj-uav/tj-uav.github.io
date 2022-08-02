@@ -102,21 +102,22 @@ const StyledLink = styled(Link)`
 `
 
 // to = external url to open in a new tab
-function StyledExternalLink(props){
-	const RawLinkObject = styled.a`
-		display: flex;
-		align-items: center;
-		text-decoration: none;
-		:hover {
-			text-decoration: underline;
-		}
-	`
+const StyledExternalLink = (props) => {
 	return (
 		<RawLinkObject href={props.to} target="blank" style={Paragraph}>
 			{props.children}
 		</RawLinkObject>
 	)
 }
+
+const RawLinkObject = styled.a`
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	:hover {
+		text-decoration: underline;
+	}
+`
 
 const StyledBurger = styled.div`
 	grid-template-rows: repeat(3, 3px);
@@ -155,7 +156,7 @@ const Burger = ({ hook, ...props }) => {
 
 const InnerBurger = styled.div`
 	${props => {
-		if (props.active)
+		if (props.active) {
 			switch (props.location) {
 				case "center":
 					return "transform: scaleX(0);"
@@ -166,6 +167,7 @@ const InnerBurger = styled.div`
 				default:
 					return ""
 			}
+		}
 	}}
 
 	width: 100%;

@@ -15,9 +15,9 @@ const TeamCaption = () => (
 	</Caption>
 )
 
-export default TeamCaption
-
 const Caption = styled(StyledParagraph)`
 	grid-area: caption;
 	overflow: hidden;
 `
+
+export default TeamCaption

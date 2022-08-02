@@ -7,7 +7,7 @@ const StyledImage = styled.img`
 `
 
 const Image = ({ src, alt, border, ...props }) => {
-	if (border)
+	if (border) {
 		return (
 			<StyledImage
 				{...props}
@@ -16,10 +16,11 @@ const Image = ({ src, alt, border, ...props }) => {
 				alt={alt}
 			/>
 		)
-	else
+	} else {
 		return (
 			<img {...props} src={src} style={{ /* width: "100%", */ ...props.style }} alt={alt} />
 		)
+	}
 }
 
 export default Image

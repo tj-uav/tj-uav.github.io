@@ -2,31 +2,31 @@ import Data from "./assets/data.json"
 import TeamCard from "./components/TeamCard.js"
 import { darker } from "theme/Colors"
 import React from "react"
+import styled from "styled-components"
 
-function Subteams(props){
+const Subteams = (props) => {
 	return(
 		<PageContainer headerHeight={props.headerHeight}>
-			{Data.teams.map( (value) => <TeamCard data={value} key={value.name} /> )}
+			{Data.teams.map((value) => (
+				<TeamCard data={value} key={value.name} />
+			))}
 		</PageContainer>
 	)
 }
 
-function PageContainer(props){
-	var styleObject = {
-		"width":"100%",
-		"height":"100%",
-		"backgroundColor":darker,
-		"position":"static"
-	}
-
-	// props.children is an array of child elements that is passed automatically (behind the scenes)
+const PageContainer = (props) => {
 	return (
-		<div style={styleObject}>
+		<StyledPageContainer>
 			{props.children}
-		</div>
+		</StyledPageContainer>
 	)
 }
 
-
+const StyledPageContainer = styled.div`
+	width: 100%;
+	height: 100%;
+	backgroundColor: ${darker};
+	position: static;
+`
 
 export default Subteams

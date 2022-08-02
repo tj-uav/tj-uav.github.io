@@ -11,8 +11,6 @@ const Content = ({ entries, bg_color }) => (
 	</Container>
 )
 
-export default Content
-
 const Container = styled.div`
 	--rows: unset;
 	display: grid;
@@ -21,3 +19,5 @@ const Container = styled.div`
 	gap: 1rem;
 	grid-area: content;
 `
+
+export default Content

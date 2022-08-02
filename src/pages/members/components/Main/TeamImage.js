@@ -3,10 +3,11 @@ import styled from "styled-components"
 
 import RawImage from "components/Image"
 
+import Team from "../../assets/team.jpg"
+
 const TeamImage = () => (
-	<Image src={require("../../assets/team.jpg")} alt="the team" border />
+	<Image src={Team} alt="the team" border />
 )
-export default TeamImage
 
 const Image = styled(RawImage)`
 	object-fit: cover;
@@ -17,3 +18,5 @@ const Image = styled(RawImage)`
 	min-height: 300px;
 	max-height: 500px;
 `
+
+export default TeamImage

@@ -7,7 +7,7 @@ import TeamImage from "./TeamImage"
 import Caption from "./TeamCaption"
 import Data from "../../assets/data.json"
 
-export default function Main() {
+const Main = () => {
 	const { heading, subheading } = Data.main
 
 	return (
@@ -23,6 +23,9 @@ export default function Main() {
 const Heading = styled(StyledHeading)`
 	grid-area: heading;
 `
+
 const Subheading = styled(StyledSubheading)`
 	grid-area: subheading;
 `
+
+export default Main

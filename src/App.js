@@ -46,10 +46,10 @@ const App = () => {
 
 // Basically, the header is removed from the page so elements won't snap below it,
 // insert this before a page that does not use grid containers to make sure the header isn't covering anything
-function HeaderPlaceholder({height, ...props}){
-	 //this variable is needed because the header is absolutely positioned
+const HeaderPlaceholder = ({ height, ...props }) => {
+	// this variable is needed because the header is absolutely positioned
 	return(
-		<div style={{height:height, width:"100%"}}/>
+		<div style={{ height: height, width: "100%" }} />
 	)
 }
 

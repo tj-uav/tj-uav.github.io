@@ -13,7 +13,6 @@ const Container = styled(Grid)`
 
 	background-color: ${darker};
 	align-items: center;
-	/* position: absolute; */
 	height: 5.375rem;
 	width: 100%;
 	bottom: 0;
@@ -22,7 +21,7 @@ const Container = styled(Grid)`
 const Footer = () => (
 	<Container as="footer">
 		<p style={{ ...Paragraph, gridArea: "content" }}>
-			Copyright &copy; TJUAV 2021.
+			Copyright &copy; TJUAV 2022.
 			<br />
 			Contributors: William Black '25, Nicolas Makovnik '23, Jason Klein '22
 		</p>

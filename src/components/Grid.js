@@ -1,6 +1,5 @@
 import styled from "styled-components"
 
-// extend with `styled(Grid)`
 const Grid = styled.section`
 	--columns: repeat(12, 1fr); /* defaults, these cascade down */
 	--rows: repeat(9, 1fr); /* defaults, these cascade down */
