@@ -5,10 +5,10 @@ import { StyledHeading, StyledSubheading } from "theme/Styles"
 
 import TeamImage from "./TeamImage"
 import Caption from "./TeamCaption"
-import { main } from "../../assets/data.json"
+import Data from "../../assets/data.json"
 
 export default function Main() {
-	const { heading, subheading } = main
+	const { heading, subheading } = Data.main
 
 	return (
 		<>

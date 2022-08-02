@@ -2,11 +2,11 @@ import React from "react"
 import styled from "styled-components"
 
 import { StyledParagraph } from "theme/Styles"
-import { main } from "pages/members/assets/data.json"
+import Data from "pages/members/assets/data.json"
 
 const TeamCaption = () => (
 	<Caption as="div">
-		{main.caption.map((str, i) => (
+		{Data.main.caption.map((str, i) => (
 			<p key={i}>
 				{i !== 0 && <br />}
 				{str}

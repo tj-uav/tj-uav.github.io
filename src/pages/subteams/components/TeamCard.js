@@ -10,7 +10,7 @@ function TeamCard(props){
 	return(
 		<CardContainer color={dark}>
 			<HorizontalContainer>
-				<CardIcon src={require("../assets/"+teamData.icon.filename).default} alt={teamData.icon.alt}/>
+				<CardIcon src={require("../assets/"+teamData.icon.filename)} alt={teamData.icon.alt}/>
 				
 				<TitleText>
 					{teamData.name}

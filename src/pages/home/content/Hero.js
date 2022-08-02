@@ -9,6 +9,9 @@ import Parser from "components/Parser"
 import Image from "components/Image"
 import Grid from "components/Grid"
 
+import Img1 from "../assets/img1.jpeg"
+import Logo from "../assets/logo.svg"
+
 const Container = styled(Grid)`
 	background-color: ${darker};
 
@@ -89,7 +92,7 @@ const Container = styled(Grid)`
 `
 
 const logoProps = {
-	src: require("pages/home/assets/logo.svg").default,
+	src: Logo,
 	alt: "TJUAV Logo",
 }
 
@@ -110,7 +113,7 @@ const StyledImage = styled(Image)`
 `
 
 const heroProps = {
-	src: require("pages/home/assets/img1.jpeg").default,
+	src: Img1,
 	style: { width: "100%", height: "100%", objectFit: "cover" },
 	alt: "The team",
 	border: true,

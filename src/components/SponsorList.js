@@ -1,7 +1,7 @@
 import { Subheading } from "theme/Styles.js"
 import { darker } from "theme/Colors"
 import { HorizontalContainer } from "theme/Components.js"
-import { title,sponsors } from "./SponsorAssets/sponsors.json"
+import Sponsors from "./SponsorAssets/sponsors.json"
 
 // pass a scale property to increase the size of sponsor icons
 // props.scale = <scale factor>
@@ -9,10 +9,10 @@ function SponsorList(props){
 	return(
 		<Container>
 			<Caption>
-				{title}
+				{Sponsors.title}
 			</Caption>
 			<HorizontalContainer>
-				{sponsors.map((element) => {
+				{Sponsors.sponsors.map((element) => {
 					return <Logo jsonData={element} key={element.alt} scale={"logoScale" in props ? props.logoScale : 1} />
 				})}
 			</HorizontalContainer>
@@ -57,7 +57,7 @@ function Container(props){
 }//Container
 
 function Logo(props){
-	var imageSource = require("./SponsorAssets/"+props.jsonData.image).default
+	var imageSource = require("./SponsorAssets/"+props.jsonData.image)
 	var scaleFactor = 1
 	if("scale" in props){
 		scaleFactor = props.scale

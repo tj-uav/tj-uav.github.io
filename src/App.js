@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { BrowserRouter as Router, Redirect, Switch, Route, useLocation } from "react-router-dom"
+import { BrowserRouter as Router, Navigate, Routes, Route, useLocation } from "react-router-dom"
 import Header from "components/Header"
 import Footer from "components/Footer"
 import SponsorList from "components/SponsorList"
@@ -17,24 +17,26 @@ const App = () => {
 
 			<Header headerHeight={headerHeight}/>
 
-			<Switch>
-				<Route exact path="/home">
+			<Routes>
+				<Route exact path="/home" element={
 					<Home />
-				</Route>
+				} />
 
-				<Route exact path="/members">
+				<Route exact path="/members" element={
 					<Members />
-				</Route>
+				} />
 				
-				<Route exact path="/subteams">
-					<HeaderPlaceholder height={headerHeight}/>
-					<Subteams />
-				</Route>
+				<Route exact path="/subteams" element={
+					<>
+						<HeaderPlaceholder height={headerHeight} />
+						<Subteams />
+					</>
+				} />
 
-				<Route exact path="/">
-					<Redirect to="/home" />
-				</Route>
-			</Switch>
+				<Route exact path="/" element={
+					<Navigate to="/home" />
+				} />
+			</Routes>
 
 			<SponsorList />
 			<Footer />

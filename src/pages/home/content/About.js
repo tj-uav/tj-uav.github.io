@@ -9,6 +9,8 @@ import { StyledHeading, StyledParagraph } from "theme/Styles"
 import { mobile, tablet, desktop } from "theme/Breakpoints"
 import { dark, darker } from "theme/Colors"
 
+import Img2 from "../assets/img2.jpeg"
+
 const Container = styled(Grid)`
 	background-color: ${darker};
 
@@ -95,7 +97,7 @@ const About = ({ content, ...props }) => {
 			<aside {...props} style={{ gridArea: "image" }}>
 				<Image
 					border
-					src={require("pages/home/assets/img2.jpeg").default}
+					src={Img2}
 					style={imgStyle}
 				/>
 			</aside>

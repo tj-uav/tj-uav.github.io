@@ -1,4 +1,4 @@
-import {teams} from "./assets/data.json"
+import Data from "./assets/data.json"
 import TeamCard from "./components/TeamCard.js"
 import { darker } from "theme/Colors"
 import React from "react"
@@ -6,7 +6,7 @@ import React from "react"
 function Subteams(props){
 	return(
 		<PageContainer headerHeight={props.headerHeight}>
-			{teams.map( (value) => <TeamCard data={value} key={value.name} /> )}
+			{Data.teams.map( (value) => <TeamCard data={value} key={value.name} /> )}
 		</PageContainer>
 	)
 }
