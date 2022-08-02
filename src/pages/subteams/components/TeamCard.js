@@ -27,13 +27,13 @@ function TeamCard(props){
 export const CardContainer = function(props){
 
 	var styleObject = {
-		"padding":"10px",
+		"padding":"1em",
 		"backgroundColor":props.color,
 		"width":"98%",
 		"marginLeft":"auto",
 		"marginRight":"auto",
 		"marginTop":"3vh",  // 100vh = height of viewport
-		"borderRadius":"30px"
+		"borderRadius":"12px"
 	}
 
 	return (
@@ -45,7 +45,8 @@ export const CardContainer = function(props){
 
 export function DescriptionText(props){
 	var styleObject = {
-		"gridArea":"text"
+		"gridArea":"text",
+		marginTop: "0.75em"
 	}
 	return (
 		<StyledParagraph style={styleObject}>
