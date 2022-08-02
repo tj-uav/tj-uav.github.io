@@ -24,7 +24,7 @@ const Footer = () => (
 		<p style={{ ...Paragraph, gridArea: "content" }}>
 			Copyright &copy; TJUAV 2021.
 			<br />
-			Contributors: Jason Klein '22, Nicolas Makovnik '23
+			Contributors: William Black '25, Nicolas Makovnik '23, Jason Klein '22
 		</p>
 	</Container>
 )
