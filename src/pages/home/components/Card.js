@@ -125,7 +125,7 @@ export default function Card({ data, ...props }) {
 
 	return (
 		<Container {...props} style={{ ...props.style }}>
-			<div style={{ display: "flex", flexDirection: "column", gridArea: "content" }}>
+			<div style={{ display: "flex", flexDirection: "column", gridArea: "content", alignItems: "center" }}>
 				<StyledImage src={require(`pages/home/assets/${src}`).default} alt={alt} />
 				<Heading>{heading}</Heading>
 				<Paragraph>
