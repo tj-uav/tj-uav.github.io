@@ -6,7 +6,6 @@ import SponsorList from "components/SponsorList"
 import Home from "pages/home/Home"
 import Members from "pages/members/Members"
 import Subteams from "pages/subteams/Subteams.js"
-import Gallery from "pages/gallery/Gallery"
 import GlobalFonts from "fonts/fonts"
 
 const App = () => {
@@ -30,11 +29,6 @@ const App = () => {
 				<Route exact path="/subteams">
 					<HeaderPlaceholder height={headerHeight}/>
 					<Subteams />
-				</Route>
-
-				<Route exact path="/gallery">
-					<HeaderPlaceholder height={headerHeight}/>
-					<Gallery/>
 				</Route>
 
 				<Route exact path="/">
