@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 1102 288" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+<svg width="100%" height="100%" viewBox="0 0 1102 288" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlnsSerif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
     <rect id="Artboard1" x="0" y="0" width="1101.77" height="287.746" style="fill:none;"/>
     <clipPath id="_clip1">
-        <rect id="Artboard11" serif:id="Artboard1" x="0" y="0" width="1101.77" height="287.746"/>
+        <rect id="Artboard11" serifId="Artboard1" x="0" y="0" width="1101.77" height="287.746"/>
     </clipPath>
     <g clip-path="url(#_clip1)">
-        <rect id="Black-Sticker" serif:id="Black Sticker" x="0" y="0" width="1329" height="633" style="fill:none;"/>
-        <g id="Black-Sticker1" serif:id="Black Sticker" transform="matrix(1,0,0,1,-118.145,-168.919)">
+        <rect id="Black-Sticker" serifId="Black Sticker" x="0" y="0" width="1329" height="633" style="fill:none;"/>
+        <g id="Black-Sticker1" serifId="Black Sticker" transform="matrix(1,0,0,1,-118.145,-168.919)">
             <path d="M1153.95,239.198L1115.16,239.198L1083.75,272.664L1044.58,272.664L871.885,456.665L427.06,456.629L357.923,383.098L373.896,348.502L302.743,272.664L254.292,272.664L222.881,239.198L184.109,239.198L118.145,168.919L1219.91,168.919C1197.92,192.345 1175.94,215.772 1153.95,239.198Z" style="fill:white;"/>
             <path id="outline" d="M1148.97,227.698L1110.18,227.698L1078.77,261.164L1039.6,261.164L866.907,445.164L432.033,445.13L371.617,380.874L387.586,346.286L307.722,261.164L259.27,261.164L227.859,227.698L189.087,227.698L144.711,180.419L1193.35,180.419L1148.97,227.698Z"/>
             <g id="Letters">
                 <path d="M1143.99,216.198L508.923,216.198L489.252,258.838L478.04,283.123L438.287,369.295L405.667,334.54L429.388,283.123L440.6,258.838L460.271,216.198L194.065,216.198L171.277,191.919L1166.78,191.919L1143.99,216.198Z" style="fill:rgb(204,19,0);fill-rule:nonzero;"/>
                 <path d="M241.46,225.385L1096.58,225.385L1073.79,249.664L552.816,249.664L548.474,258.838L536.994,283.123L465.798,433.624L436.91,433.623L385.309,378.652L401.284,344.052L440.683,386.03L503.62,249.664L264.248,249.664L241.46,225.385Z" style="fill:rgb(48,106,191);fill-rule:nonzero;"/>
             </g>
-            <g id="White-Line" serif:id="White Line">
+            <g id="White-Line" serifId="White Line">
                 <path d="M430.473,258.838L419.274,283.123L344.094,283.123L321.309,258.838L430.473,258.838Z" style="fill:white;fill-rule:nonzero;"/>
                 <path d="M1025.98,258.838L1003.2,283.123L547.143,283.123L558.636,258.838L1025.98,258.838Z" style="fill:white;fill-rule:nonzero;"/>
             </g>
