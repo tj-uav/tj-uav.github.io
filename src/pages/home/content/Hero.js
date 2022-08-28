@@ -9,7 +9,7 @@ import Parser from "components/Parser"
 import Image from "components/Image"
 import Grid from "components/Grid"
 
-import Img1 from "../assets/img1.jpeg"
+import Img1 from "../assets/team.jpg"
 import Logo from "../assets/logo.svg"
 
 const Container = styled(Grid)`
@@ -74,19 +74,16 @@ const Container = styled(Grid)`
 		".     .     .     .     .     .     .     .     .     .     .     .     "
 		".     .     .     .     .     .     .     .     .     .     .     .     "
 		".     .     .     .     .     .     .     .     .     .     .     .     "
-		".     .     .     .     .     .     .     .     .     .     .     .     "
+		".     .     .     .     .     .     .     image image image image .     "
 		".     logo  logo  logo  logo  logo  .     image image image image .     "
 		".     logo  logo  logo  logo  logo  .     image image image image .     "
-		".     logo  logo  logo  logo  logo  .     image image image image .     "
+		".     .     .     .     .     .     .     image image image image .     "
+		".     .     .     .     .     .     .     image image image image .     "
 		".     .     .     .     .     .     .     image image image image .     "
 		".     .     .     .     .     .     .     image image image image .     "
 		".     text  text  text  text  text  .     image image image image .     "
 		".     text  text  text  text  text  .     image image image image .     "
 		".     text  text  text  text  text  .     image image image image .     "
-		".     text  text  text  text  text	 .     .     .     .     .     .     "
-		".     .     .     .     .     .     .     .     .     .     .     .     "
-		".     .     .     .     .     .     .     .     .     .     .     .     "
-		".     .     .     .     .     .     .     .     .     .     .     .     "
 		".     .     .     .     .     .     .     .     .     .     .     .     ";
 	}
 `
@@ -108,7 +105,7 @@ const StyledImage = styled(Image)`
 	}
 
 	${desktop} {
-		max-width: 40vw;
+		max-width: 35vw;
 	}
 `
 
@@ -125,7 +122,7 @@ const StyledSubheading = styled(ThemedSubheading)`
 	grid-area: text;
 `
 
-const HeroContainer = styled.div`
+const ImageContainer = styled.div`
 	grid-area: image;
 `
 
@@ -133,11 +130,18 @@ const Hero = ({ content, ...props }) => (
 	<Container {...props}>
 		<StyledImage {...logoProps} />
 		<StyledSubheading>
-			<Parser Component={StyledSubheading}>{content.description}</Parser>
+			{content.description.map(d => {
+				return (
+					<div>
+						<Parser Component={StyledSubheading}>{d}</Parser>
+						<br />
+					</div>
+				)
+			})}
 		</StyledSubheading>
-		<HeroContainer>
+		<ImageContainer>
 			<Image {...heroProps} />
-		</HeroContainer>
+		</ImageContainer>
 	</Container>
 )
 

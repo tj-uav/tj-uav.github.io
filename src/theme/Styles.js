@@ -13,9 +13,8 @@ export const StyledParagraph = styled.p(() => Paragraph)
 
 export const Heading = {
 	alignSelf: "flex-end",
-	fontVariant: "small-caps",
-	fontFamily: "Montserrat",
-	fontWeight: 700,
+	fontFamily: "Poppins",
+	fontWeight: "bold",
 	fontSize: "32px",
 	color: text,
 }
