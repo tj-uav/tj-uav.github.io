@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.25e6dccc.css",
-    "main.js": "/static/js/main.69779f24.js",
+    "main.js": "/static/js/main.bf1cf400.js",
     "static/media/alan.png": "/static/media/alan.3e252cf548aa18305904.png",
     "static/media/viraj.jpg": "/static/media/viraj.b79741db0c228dd73f78.jpg",
     "static/media/team.jpg": "/static/media/team.185c3e7a6725d0046c8a.jpg",
@@ -20,6 +20,7 @@
     "static/media/Poppins-Regular.ttf": "/static/media/Poppins-Regular.8081832fc5cfbf634aa6.ttf",
     "static/media/flying.jpg": "/static/media/flying.f851cfd899aef6f22b8f.jpg",
     "static/media/millenium_bordered.jpg": "/static/media/millenium_bordered.5d5e606fa3e8cf531882.jpg",
+    "static/media/TJAB.jpg": "/static/media/TJAB.e12a96fd5620b67f6be1.jpg",
     "static/media/apc.jpg": "/static/media/apc.448cba1a52a4accaa04a.jpg",
     "static/media/rohan.jpg": "/static/media/rohan.53486590ac6c66aa9003.jpg",
     "static/media/default.jpg": "/static/media/default.c45ebad408aa4230c5dc.jpg",
@@ -29,10 +30,10 @@
     "static/media/programmingIcon.svg": "/static/media/programmingIcon.191bf2f04b0f929685d8.svg",
     "index.html": "/index.html",
     "main.25e6dccc.css.map": "/static/css/main.25e6dccc.css.map",
-    "main.69779f24.js.map": "/static/js/main.69779f24.js.map"
+    "main.bf1cf400.js.map": "/static/js/main.bf1cf400.js.map"
   },
   "entrypoints": [
     "static/css/main.25e6dccc.css",
-    "static/js/main.69779f24.js"
+    "static/js/main.bf1cf400.js"
   ]
 }
