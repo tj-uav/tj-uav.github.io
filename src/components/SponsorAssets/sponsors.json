@@ -15,6 +15,11 @@
 			"image":"apc.jpg",
 			"alt":"APC Propellers Logo",
 			"link":"https://www.apcprop.com/"
+		},
+		{
+			"image":"TJAB.jpg",
+			"alt":"TJ Academic Boosters Logo",
+			"link":"https://aboosters.sites.tjhsst.edu/"
 		}
 	]
 }
