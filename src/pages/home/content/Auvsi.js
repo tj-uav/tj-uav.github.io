@@ -13,14 +13,14 @@ import Parser from "components/Parser"
 const Auvsi = () => {
 	return (
 		<StyledContainer>
-			<Heading>We went to AUVSI SUAS!</Heading>
+			<Heading>Back Again at AUVSI SUAS</Heading>
 			<StyledImage src={AuvsiImage} border={true} alt="Our plane flying." />
 			<div style={{ gridArea: "text" }}>
 				<Text>
-					<Parser Component={Text}>TJUAV went to the annual AUVSI SUAS competition held in 2022! This is our second time going, and we've made multiple improvements, such as a custom built plane, and a customized ground station built from scratch.</Parser>
+					<Parser Component={Text}>TJUAV went to the annual AUVSI SUAS competition held in 2023! This was our third time going, and we've made multiple improvements, reiterating on our custom designed and built plane, accompanied by our ground station built from scratch by years of effort by our programming team.</Parser>
 				</Text>
 				<Text>
-					<Parser Component={Text}>We only made 23rd place - actually an improvement; we didn't gain any points from the mission demonstration due to a small but impactful bug. Next year TJUAV wants to experiment with carbon fiber, as well as computer vision integration to exceed at the next AUVSI SUAS competition.</Parser>
+					<Parser Component={Text}>This year TJUAV made 14th place, right behind Purdue university, and ahead of multiple teams from the US, Canada, and around the world - competing against the likes of the University of Calgary and others. Furthermore, this was a nine place improvement over our placement of 23rd in the 2022 AUVSI SUAS Competition. Next year TJUAV wants to experiment with carbon fiber, refine our well-functioning groundstation, as well as integrate computer vision to exceed at the next AUVSI SUAS competition.</Parser>
 				</Text>
 			</div>
 		</StyledContainer>

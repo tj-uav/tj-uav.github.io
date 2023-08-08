@@ -22,7 +22,7 @@ const Interest = () => {
 					<Parser Component={Text}>Mechanical work includes CAD and manufacturing plane parts. Programming involves frontend and backend web development for the ground station, as well as integration with plane electronics, and computer vision. Electronics comes at a crux between the two.</Parser>
 				</Text>
 				<Text>
-					<Parser Component={Text}>If you want to learn more, please fill out this [form](https://forms.gle/jFthBrNKXNNtuNLW6) (noncommittal). We will contact you with further updates as we start onboarding you into the team.</Parser>
+					<Parser Component={Text}>If you want to learn more, please fill out this [form](https://forms.gle/rSsnpkTaH5A9V7Jo6) (noncommittal). We will contact you with further updates as we start onboarding you into the team.</Parser>
 				</Text>
 			</div>
 		</StyledContainer>
