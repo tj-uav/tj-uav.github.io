@@ -25,14 +25,14 @@ export default styled(Grid)`
 			".        image      image      image      image      image      image      image      image      image      image      .       "
 			".        caption    caption    caption    caption    caption    caption    caption    caption    caption    caption    .       "
 			".        .          .          .          .          .          .          .          .          .          .          .       "
-			"officers officers   officers   officers   officers   officers   officers   officers   officers   officers   officers   officers"
-			"leads    leads      leads      leads      leads      leads      leads      leads      leads      leads      leads      leads   ";
+			"members  members    members    members    members    members    members    members    members    members    members    members "
+			"alumni   alumni     alumni     alumni     alumni     alumni     alumni     alumni     alumni     alumni     alumni     alumni  ";
 
 		&::after {
 			content: "";
 			position: absolute;
 			grid-column: 0 / -1;
-			grid-row: officers;
+			grid-row: members ;
 			width: 100%;
 			height: 100%;
 			background: ${dark};
@@ -53,13 +53,13 @@ export default styled(Grid)`
 			".        .          image      image      image      image      image      image      image      .          .       "
 			".        .          caption    caption    caption    caption    caption    caption    caption    .          .       "
 			".        .          .          .          .          .          .          .          .          .          .       "
-			".        .          officers   officers   officers   .          leads      leads      leads      .          .       ";
+			".        .          members    members    members    .          alumni     alumni     alumni     .          .       ";
 
 		&::after {
 			content: "";
 			position: absolute;
 			grid-column: 0 / -1;
-			grid-row: officers / -1;
+			grid-row: members  / -1;
 			width: 100%;
 			height: 100%;
 			background: ${dark};
@@ -88,17 +88,17 @@ export default styled(Grid)`
 			". image      image      image      image      image      image      image      caption    caption    caption    caption    . " min-content
 			". .          .          .          .          .          .          .          .          .          .          .          . " calc(${1 /
 		9} * 100vh)
-			". officers   officers   officers   officers   officers   .          leads      leads      leads      leads      leads      . " min-content
-			". officers   officers   officers   officers   officers   .          leads      leads      leads      leads      leads      . " min-content
-			". officers   officers   officers   officers   officers   .          leads      leads      leads      leads      leads      . " min-content
-			". officers   officers   officers   officers   officers   .          leads      leads      leads      leads      leads      . " min-content
+			". members    members    members    members    members    .          alumni     alumni     alumni     alumni     alumni     . " min-content
+			". members    members    members    members    members    .          alumni     alumni     alumni     alumni     alumni     . " min-content
+			". members    members    members    members    members    .          alumni     alumni     alumni     alumni     alumni     . " min-content
+			". members    members    members    members    members    .          alumni     alumni     alumni     alumni     alumni     . " min-content
 		/  1fr 1fr        1fr        1fr        1fr        1fr        2rem       1fr        1fr        1fr        1fr        1fr        1fr;
 
 		&::after {
 			content: "";
 			position: absolute;
 			grid-column: 0 / -1;
-			grid-row: officers / -1;
+			grid-row: members  / -1;
 			width: 100%;
 			height: 100%;
 			background: ${dark};

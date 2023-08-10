@@ -2,15 +2,15 @@ import React from "react"
 
 import Main from "./components/Main"
 import Container from "./components/Container"
-import Officers from "./components/Big Cards/Officers"
-import Leads from "./components/Big Cards/Leads"
+import MemberCards from "./components/Big Cards/Members"
+import Alumni from "./components/Big Cards/Alumni"
 
 const Members = () => (
 	<>
 		<Container>
 			<Main />
-			<Officers />
-			<Leads />
+			<MemberCards />
+			<Alumni />
 		</Container>
 	</>
 )

@@ -68,6 +68,7 @@ const Position = styled(Paragraph)`
 	margin-top: auto;
 	grid-area: position;
 	opacity: 0.5;
+	margin-right: 15px;
 `
 
 const Image = styled.img`

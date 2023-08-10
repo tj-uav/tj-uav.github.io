@@ -7,39 +7,23 @@
 			"Pictured left to right: Mr. Szczur, Ari Bobesh, Nicolas Makovnik, Rachit Raval, Alan Hsu, Krishnan Shankar, Liam West, Shihao Cao, Mia Brashear."
 		]
 	},
-	"officers": {
-		"heading": "Officers",
+	"members": {
+		"heading": "Members",
 		"entries": [
 			{
-				"name": "Nicolas Makovnik",
-				"position": "Co-President",
+				"name": "Krishnan Shankar",
+				"position": "President",
 				"image": {
-					"src": "nicolas.jpg",
-					"alt": "Nicolas Makovnik; Co-President"
+					"src": "krishnan.png",
+					"alt": "Krishnan Shankar; President"
 				}
 			},
 			{
-				"name": "Viraj Bala",
-				"position": "Co-President",
-				"image": {
-					"src": "viraj.jpg",
-					"alt": "Viraj Bala; Co-President"
-				}
-			},
-			{
-				"name": "Mia Brashear",
+				"name": "Sophia Lu",
 				"position": "Secretary",
 				"image": {
-					"src": "mia.jpg",
-					"alt": "Mia Brashear; Secretary"
-				}
-			},
-			{
-				"name": "Rachit Raval",
-				"position": "Treasurer",
-				"image": {
-					"src": "rachit.jpg",
-					"alt": "Rachit Raval; Treasurer"
+					"src": "sophia.png",
+					"alt": "Sophia Lu; Secretary"
 				}
 			},
 			{
@@ -51,35 +35,154 @@
 				}
 			},
 			{
+				"name": "Evan Cafaro",
+				"position": "Mechanical Lead",
+				"image": {
+					"src": "evan.png",
+					"alt": "Evan Cafaro; Mechanical Team lead"
+				}
+			},
+			{
+				"name": "Joshua Pikner",
+				"position": "Programming Lead",
+				"image": {
+					"src": "default.jpg",
+					"alt": "Joshua Pikner; Programming Team lead"
+				}
+			},
+			{
+				"name": "Khoi Dinh",
+				"position": "Computer Vision Lead",
+				"image": {
+					"src": "khoi.png",
+					"alt": "Khoi Dinh; Computer Vision Team lead"
+				}
+			},
+			{
+				"name": "Winston Chin",
+				"position": "Electronics Lead",
+				"image": {
+					"src": "winston.png",
+					"alt": "Winston Chin; Electronics Team lead"
+				}
+			},
+			{
+				"name": "Niels-Oliver DeChaine",
+				"position": "Lead Pilot",
+				"image": {
+					"src": "niels-oliver.png",
+					"alt": "Niels-Oliver DeChaine; Lead Pilot"
+				}
+			},
+			{
 				"name": "Rohan Ramprasad",
-				"position": "Historian",
+				"position": "Mechanical Team",
 				"image": {
 					"src": "rohan.jpg",
-					"alt": "Rohan Ramprasad; Historian"
+					"alt": "Rohan Ramprasad; Mechanical Team"
 				}
 			}
 		]
 	},
-	"leads": {
-		"heading": "Team Leads",
+	"alumni": {
+		"heading": "Alumni",
 		"entries": [
 			{
 				"name": "Alan Hsu",
-				"position": "Electronics Lead",
+				"position": "Mechanics, Electronics, Electronics Lead",
 				"image": {
 					"src": "alan.png",
 					"alt": "Alan Hsu; Electronics Team lead"
 				}
 			},
 			{
-				"name": "Krishnan Shankar",
-				"position": "Programming Lead",
+				"name": "Nicolas Makovnik",
+				"position": "Mechanics, Co-President",
 				"image": {
-					"src": "krishnan.png",
-					"alt": "Krishnan Shankar; Programming Team lead"
+					"src": "nicolas.jpg",
+					"alt": "Nicolas Makovnik; Co-President"
+				}
+			},
+			{
+				"name": "Viraj Bala",
+				"position": "Mechanics, Co-President",
+				"image": {
+					"src": "viraj.jpg",
+					"alt": "Viraj Bala; Co-President"
+				}
+			},
+			{
+				"name": "Mia Brashear",
+				"position": "Mechanics, Secretary",
+				"image": {
+					"src": "mia.jpg",
+					"alt": "Mia Brashear; Secretary"
+				}
+			},
+			{
+				"name": "Rachit Raval",
+				"position": "Mechanics, Treasurer",
+				"image": {
+					"src": "rachit.jpg",
+					"alt": "Rachit Raval; Mechanical Team; Treasurer"
+				}
+			},
+			{
+				"name": "Abhi Repala",
+				"position": "Mechanical Team",
+				"image": {
+					"src": "abhi.png",
+					"alt": "Abhi Repala; Mechanical Team"
+				}
+			},
+			{
+				"name": "Ronel Sahoo",
+				"position": "Mechanical Team",
+				"image": {
+					"src": "ronel.png",
+					"alt": "Ronel Sahoo; Mechanical Team"
+				}
+			},
+			{
+				"name": "Neel Sharma",
+				"position": "Mechanical Team",
+				"image": {
+					"src": "neel.png",
+					"alt": "Neel Sharma; Mechanical Team"
+				}
+			},
+			{
+				"name": "Jerry Mao",
+				"position": "Mechanical Team",
+				"image": {
+					"src": "jerry.png",
+					"alt": "Jerry Mao; Mechanical Team"
+				}
+			},
+			{
+				"name": "Liam West",
+				"position": "Mechanics, Co-President",
+				"image": {
+					"src": "liam.png",
+					"alt": "Liam West; Mechanical Team, Co-President"
+				}
+			},
+			{
+				"name": "Ari Bobesh",
+				"position": "Mechanics, Co-President",
+				"image": {
+					"src": "ari.jpg",
+					"alt": "Ari Bobesh; Mechanical Team, Co-President"
+				}
+			},
+			{
+				"name": "Aarush Sivanesan",
+				"position": "Electronics Team",
+				"image": {
+					"src": "default.jpg",
+					"alt": "Aarush Sivanesan; Electronics Team"
 				}
 			}
 		]
 	}
-
 }
