@@ -1,12 +1,22 @@
 {
   "files": {
     "main.css": "/static/css/main.25e6dccc.css",
-    "main.js": "/static/js/main.bf1cf400.js",
+    "main.js": "/static/js/main.7d4c3756.js",
+    "static/media/sophia.png": "/static/media/sophia.69cf9a95e6d02da8fab6.png",
+    "static/media/winston.png": "/static/media/winston.6eb33dd33ceacdf29731.png",
+    "static/media/khoi.png": "/static/media/khoi.d0d5f7920430c4f2cf13.png",
+    "static/media/jerry.png": "/static/media/jerry.766b9ad049644a1745fc.png",
     "static/media/alan.png": "/static/media/alan.3e252cf548aa18305904.png",
-    "static/media/viraj.jpg": "/static/media/viraj.b79741db0c228dd73f78.jpg",
     "static/media/team.jpg": "/static/media/team.185c3e7a6725d0046c8a.jpg",
+    "static/media/ronel.png": "/static/media/ronel.084e7da5a9c3b3cb47fe.png",
+    "static/media/viraj.jpg": "/static/media/viraj.b79741db0c228dd73f78.jpg",
+    "static/media/liam.png": "/static/media/liam.2b46517369b75afcd69f.png",
+    "static/media/auvsi.jpg": "/static/media/auvsi.bfebf0890ce87bdd63e9.jpg",
+    "static/media/niels-oliver.png": "/static/media/niels-oliver.a07435ff8ace09a61dba.png",
+    "static/media/abhi.png": "/static/media/abhi.a89ccae112bc05c6dfc2.png",
     "static/media/krishnan.png": "/static/media/krishnan.3834c4258a179e4b835d.png",
-    "static/media/auvsi.jpg": "/static/media/auvsi.e659fb5a36ab57832a77.jpg",
+    "static/media/ari.jpg": "/static/media/ari.6ae700ef2165b39b1d03.jpg",
+    "static/media/evan.png": "/static/media/evan.2d577b47ad84a29aba3a.png",
     "static/media/img2.jpeg": "/static/media/img2.7e5dcb9f7a4240002ba0.jpeg",
     "static/media/mia.jpg": "/static/media/mia.700564953dfe0eff535c.jpg",
     "static/media/william.jpg": "/static/media/william.090276f5134837c90ecf.jpg",
@@ -18,6 +28,7 @@
     "static/media/TJPF.png": "/static/media/TJPF.d73c0eac3ab015bbac1f.png",
     "static/media/Poppins-Light.ttf": "/static/media/Poppins-Light.f41b63c0bb0963ace821.ttf",
     "static/media/Poppins-Regular.ttf": "/static/media/Poppins-Regular.8081832fc5cfbf634aa6.ttf",
+    "static/media/neel.png": "/static/media/neel.efc6681b5174e1549919.png",
     "static/media/flying.jpg": "/static/media/flying.f851cfd899aef6f22b8f.jpg",
     "static/media/millenium_bordered.jpg": "/static/media/millenium_bordered.5d5e606fa3e8cf531882.jpg",
     "static/media/TJAB.jpg": "/static/media/TJAB.e12a96fd5620b67f6be1.jpg",
@@ -30,10 +41,10 @@
     "static/media/programmingIcon.svg": "/static/media/programmingIcon.191bf2f04b0f929685d8.svg",
     "index.html": "/index.html",
     "main.25e6dccc.css.map": "/static/css/main.25e6dccc.css.map",
-    "main.bf1cf400.js.map": "/static/js/main.bf1cf400.js.map"
+    "main.7d4c3756.js.map": "/static/js/main.7d4c3756.js.map"
   },
   "entrypoints": [
     "static/css/main.25e6dccc.css",
-    "static/js/main.bf1cf400.js"
+    "static/js/main.7d4c3756.js"
   ]
 }
