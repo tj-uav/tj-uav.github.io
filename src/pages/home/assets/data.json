@@ -9,7 +9,7 @@
 			{
 				"heading": "Team at TJHSST",
 				"content": "We are a group of innovative high-schoolers from the Thomas Jefferson High School for Science and Technology, currently ranked as the #1 high school in the nation.",
-				"button": "[More About Us](/home#about)",
+				"button": "[More About Us](/#about)",
 				"image": {
 					"src": "tjhsst.svg",
 					"alt": "TJHSST school logo."

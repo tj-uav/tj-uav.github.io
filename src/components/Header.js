@@ -182,14 +182,14 @@ const Header = (props) => {
 
 	return (
 		<Container active={active} as="header" height={props.headerHeight}>
-			<StyledLink to="/home" style={{ ...Heading, alignSelf: "initial", gridArea: "logo" }}>
+			<StyledLink to="/" style={{ ...Heading, alignSelf: "initial", gridArea: "logo" }}>
 				TJUAV
 			</StyledLink>
 			<Burger hook={[active, setActive]} />
 
 			<LinksList hook={[active, setActive]} style={{ gridArea: "content" }}>
 				<LinkItem hook={[active, setActive]}>
-					<StyledLink to="/home" style={Paragraph}>
+					<StyledLink to="/" style={Paragraph}>
 						Home
 					</StyledLink>
 				</LinkItem>

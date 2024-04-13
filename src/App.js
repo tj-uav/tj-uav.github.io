@@ -18,7 +18,7 @@ const App = () => {
 			<Header headerHeight={headerHeight}/>
 
 			<Routes>
-				<Route exact path="/home" element={
+				<Route exact path="/" element={
 					<Home />
 				} />
 
@@ -33,8 +33,8 @@ const App = () => {
 					</>
 				} />
 
-				<Route exact path="/" element={
-					<Navigate to="/home" />
+				<Route exact path="/home" element={
+					<Navigate to="/" />
 				} />
 			</Routes>
 
