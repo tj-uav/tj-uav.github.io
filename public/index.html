@@ -14,6 +14,19 @@
 	<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 	<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 	<title>TJUAV</title>
+
+	<script type="text/javascript">
+		// Special redirect functionality
+		// github.tjuav.org -> github.com/tj-uav
+		const host = window.location.hostname;
+		const regexp = /(www\.)?github\.tjuav\.org$/;
+
+		console.log(host);
+
+		if (regexp.test(host)) {
+			window.location.href = 'https://github.com/tj-uav'
+		}
+	</script>
 </head>
 
 <body>
