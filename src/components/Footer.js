@@ -23,7 +23,7 @@ const Footer = () => (
 		<p style={{ ...Paragraph, gridArea: "content" }}>
 			Copyright &copy; TJUAV 2022.
 			<br />
-			Contributors: Aneesh Peri '26, Aarya Srikanth '26, William Black '25, Nicolas Makovnik '23, Jason Klein '22
+			Contributors: Aneesh Peri '26,Aarya Srikanth '26, William Black '25, Nicolas Makovnik '23, Jason Klein '22
 		</p>
 	</Container>
 )

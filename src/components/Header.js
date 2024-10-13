@@ -209,7 +209,7 @@ const Header = (props) => {
 					</StyledExternalLink>
 				</LinkItem>
 				<LinkItem hook={[active, setActive]}>
-					<Button href="/SponsorShip-Packet.pdf" target="blank">Sponsorship Info</Button>
+					<Button href="/sponsorship-packet.pdf" target="blank">Sponsorship Info</Button>
 				</LinkItem>
 			</LinksList> 
 		</Container>
