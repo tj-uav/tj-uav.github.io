@@ -11,27 +11,19 @@
 		"heading": "Members",
 		"entries": [
 			{
-				"name": "Krishnan Shankar",
-				"position": "President",
-				"image": {
-					"src": "krishnan.png",
-					"alt": "Krishnan Shankar; President"
-				}
-			},
-			{
-				"name": "Sophia Lu",
-				"position": "Secretary",
-				"image": {
-					"src": "sophia.png",
-					"alt": "Sophia Lu; Secretary"
-				}
-			},
-			{
 				"name": "William Black",
-				"position": "Webmaster",
+				"position": "Co-President",
 				"image": {
 					"src": "william.jpg",
 					"alt": "William Black; Webmaster"
+				}
+			},
+			{
+				"name": "Niels-Oliver DeChaine",
+				"position": "Co-President",
+				"image": {
+					"src": "niels-oliver.png",
+					"alt": "Niels-Oliver DeChaine; Lead Pilot"
 				}
 			},
 			{
@@ -41,39 +33,7 @@
 					"src": "evan.png",
 					"alt": "Evan Cafaro; Mechanical Team lead"
 				}
-			},
-			{
-				"name": "Joshua Pikner",
-				"position": "Programming Lead",
-				"image": {
-					"src": "default.jpg",
-					"alt": "Joshua Pikner; Programming Team lead"
-				}
-			},
-			{
-				"name": "Khoi Dinh",
-				"position": "Computer Vision Lead",
-				"image": {
-					"src": "khoi.png",
-					"alt": "Khoi Dinh; Computer Vision Team lead"
-				}
-			},
-			{
-				"name": "Winston Chin",
-				"position": "Electronics Lead",
-				"image": {
-					"src": "winston.png",
-					"alt": "Winston Chin; Electronics Team lead"
-				}
-			},
-			{
-				"name": "Niels-Oliver DeChaine",
-				"position": "Lead Pilot",
-				"image": {
-					"src": "niels-oliver.png",
-					"alt": "Niels-Oliver DeChaine; Lead Pilot"
-				}
-			},
+			},				
 			{
 				"name": "Rohan Ramprasad",
 				"position": "Mechanical Team",
@@ -110,7 +70,7 @@
 					"src": "viraj.jpg",
 					"alt": "Viraj Bala; Co-President"
 				}
-			},
+			},	
 			{
 				"name": "Mia Brashear",
 				"position": "Mechanics, Secretary",
@@ -181,6 +141,54 @@
 				"image": {
 					"src": "default.jpg",
 					"alt": "Aarush Sivanesan; Electronics Team"
+				}
+			},
+			{
+				"name": "Krishnan Shankar",
+				"position": "President",
+				"image": {
+					"src": "krishnan.png",
+					"alt": "Krishnan Shankar; President"
+				}
+			},
+			{
+				"name": "Sophia Lu",
+				"position": "Secretary",
+				"image": {
+					"src": "sophia.png",
+					"alt": "Sophia Lu; Secretary"
+				}
+			},
+			{
+				"name": "Joshua Pikner",
+				"position": "Programming Lead",
+				"image": {
+					"src": "default.jpg",
+					"alt": "Joshua Pikner; Programming Team lead"
+				}
+			},
+			{
+				"name": "Winston Chin",
+				"position": "Electronics Lead",
+				"image": {
+					"src": "winston.png",
+					"alt": "Winston Chin; Electronics Team lead"
+				}
+			},
+			{
+				"name": "Khoi Dinh",
+				"position": "Computer Vision Lead",
+				"image": {
+					"src": "khoi.png",
+					"alt": "Khoi Dinh; Computer Vision Team lead"
+				}
+			},
+			{
+				"name": "Rohan Ramprasad",
+				"position": "Mechanical Team",
+				"image": {
+					"src": "rohan.jpg",
+					"alt": "Rohan Ramprasad; Mechanical Team"
 				}
 			}
 		]
