@@ -33,13 +33,61 @@
 					"src": "evan.png",
 					"alt": "Evan Cafaro; Mechanical Team lead"
 				}
-			},				
+			},			
 			{
-				"name": "Rohan Ramprasad",
-				"position": "Mechanical Team",
+				"name": "Aneesh Peri",
+				"position": "Secretary",
 				"image": {
-					"src": "rohan.jpg",
-					"alt": "Rohan Ramprasad; Mechanical Team"
+					"src": "default.jpg",
+					"alt": "Aneesh Peri; Secretary"
+				}
+			},	
+			{
+				"name": "Aarya Srikanth",
+				"position": "Webmaster",
+				"image": {
+					"src": "default.jpg",
+					"alt": "Aarya Srikanth; Webmaster"
+				}
+			},
+			{
+				"name": "Ritwik Sinha",
+				"position": "Historian",
+				"image": {
+					"src": "default.jpg",
+					"alt": "Ritwik Sinha; Historian"
+				}
+			},
+			{
+				"name": "Jacob Percy",
+				"position": "Drop Lead",
+				"image": {
+					"src": "default.jpg",
+					"alt": "Drop Lead"
+				}
+			},
+			{
+				"name": "Ryan Kim",
+				"position": "Electronics Lead",
+				"image": {
+					"src": "default.jpg",
+					"alt": "Electronics Lead"
+				}
+			},
+			{
+				"name": "Aniketh Luchmapurkar",
+				"position": "Programming Lead",
+				"image": {
+					"src": "default.jpg",
+					"alt": "Programming Lead"
+				}
+			},
+			{
+				"name": "Ishan Ajwani",
+				"position": "Outreach Lead",
+				"image": {
+					"src": "default.jpg",
+					"alt": "Outreach Lead"
 				}
 			}
 		]
