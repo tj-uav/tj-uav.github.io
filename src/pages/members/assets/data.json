@@ -12,7 +12,6 @@
 		"heading": "Members",
 		"entries": [
 			{
-<<<<<<< HEAD
 				"name": "Niels-Oliver DeChaine",
 				"position": "Co-President",
 				"image": {
@@ -21,8 +20,6 @@
 				}
 			},
 			{
-=======
->>>>>>> 5b0dd8998b5232545c0e4ce2689852ce431b9dd4
 				"name": "William Black",
 				"position": "Co-President",
 				"image": {
@@ -45,56 +42,12 @@
 					"src": "evan.png",
 					"alt": "Evan Cafaro; Mechanical Team lead"
 				}
-			},			
+			},				
 			{
-				"name": "Aneesh Peri",
-				"position": "Secretary",
-				"image": {
-					"src": "default.jpg",
-					"alt": "Aneesh Peri; Secretary"
-				}
-			},	
-			{
-				"name": "Aarya Srikanth",
-				"position": "Webmaster",
-				"image": {
-					"src": "default.jpg",
-					"alt": "Aarya Srikanth; Webmaster"
-				}
-			},
-			{
-<<<<<<< HEAD
-=======
-				"name": "Ritwik Sinha",
-				"position": "Historian",
-				"image": {
-					"src": "default.jpg",
-					"alt": "Ritwik Sinha; Historian"
-				}
-			},
-			{
-				"name": "Jacob Percy",
-				"position": "Drop Lead",
-				"image": {
-					"src": "default.jpg",
-					"alt": "Drop Lead"
-				}
-			},
-			{
-				"name": "Ryan Ke",
-				"position": "Electronics Lead",
-				"image": {
-					"src": "default.jpg",
-					"alt": "Electronics Lead"
-				}
-			},
-			{
->>>>>>> 5b0dd8998b5232545c0e4ce2689852ce431b9dd4
 				"name": "Aniketh Luchmapurkar",
 				"position": "Programming Lead",
 				"image": {
 					"src": "default.jpg",
-<<<<<<< HEAD
 					"alt": "Aniketh Luchmapurkar; Programming Lead"
 				}
 			},
@@ -182,16 +135,12 @@
 				"image": {
 					"src": "default.jpg",
 					"alt": "Sebastian Toro; Programming Team"
-=======
-					"alt": "Programming Lead"
->>>>>>> 5b0dd8998b5232545c0e4ce2689852ce431b9dd4
 				}
 			},
 			{
 				"name": "Ishan Ajwani",
 				"position": "Outreach Lead",
 				"image": {
-<<<<<<< HEAD
 					"src": "khoi.png",
 					"alt": "Khoi Dinh; Computer Vision Team lead"
 				}
@@ -210,10 +159,6 @@
 				"image": {
 					"src": "rohan.jpg",
 					"alt": "Rohan Ramprasad; Mechanical Team"
-=======
-					"src": "default.jpg",
-					"alt": "Outreach Lead"
->>>>>>> 5b0dd8998b5232545c0e4ce2689852ce431b9dd4
 				}
 			},
 			{
