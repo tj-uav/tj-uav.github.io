@@ -21,7 +21,7 @@ const Sponsoring = () => {
 					<Parser Component={Text}>To get a deeper look at what we do here at TJUAV, you can look at our [other pages](/subteams), or take a look at our [sponsorship packet](/sponsorship-packet.pdf), which contains important information such as what funding is used for, and previous accomplishments.</Parser>
 				</Text>
 				<Text>
-					<Parser Component={Text}>We really appreciate your interest! TJUAV plans to massively expand our design and mission goals at the 2024 AUVSI SUAS!</Parser>
+					<Parser Component={Text}>We really appreciate your interest! TJUAV plans to massively expand our design and mission goals at the 2025 Robonation SUAS!</Parser>
 				</Text>
 			</div>
 		</StyledContainer>

@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import RawImage from "components/Image"
 
-import Team from "../../assets/team.jpg"
+import Team from "../../assets/teamupdated.jpg"
 
 const TeamImage = () => (
 	<Image src={Team} alt="the team" border />

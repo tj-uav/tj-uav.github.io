@@ -3,32 +3,25 @@
 		"heading": "UAV Team",
 		"subheading": "Interested. Active. Engaged. All of these describe the members of our team, who love working together and learning new things.",
 		"caption": [
-			"Some of the 2020-2021 team standing behind the Avalon Mk. 3.5",
-			"Pictured left to right: Mr. Szczur, Ari Bobesh, Nicolas Makovnik, Rachit Raval, Alan Hsu, Krishnan Shankar, Liam West, Shihao Cao, Mia Brashear."
+			"Some of the 2023-2024 team standing behind the Avalon Mk. 11",
+			"Back Row (Pictured Left to Right): Ryan Ke, William Black, Niels-Oliver DeChaine, Ritwik Sinha, Aneesh Peri, Arthur Prudius, Mr. Szczur, Sebastian Toro, Abhi Repala, Jerry Mao, Rhea Goswami, Jack Williamson",
+			"Front Row (Pictured Left to Right): Aarya Srikanth, Jacob Percy, Krishnan Shankar, Evan Cafaro, Aniketh Luchmapurkar"
 		]
 	},
 	"members": {
 		"heading": "Members",
 		"entries": [
 			{
-				"name": "Krishnan Shankar",
-				"position": "President",
+				"name": "Niels-Oliver DeChaine",
+				"position": "Co-President",
 				"image": {
-					"src": "krishnan.png",
-					"alt": "Krishnan Shankar; President"
-				}
-			},
-			{
-				"name": "Sophia Lu",
-				"position": "Secretary",
-				"image": {
-					"src": "sophia.png",
-					"alt": "Sophia Lu; Secretary"
+					"src": "niels-oliver.png",
+					"alt": "Niels-Oliver DeChaine; Lead Pilot"
 				}
 			},
 			{
 				"name": "William Black",
-				"position": "Webmaster",
+				"position": "Co-President",
 				"image": {
 					"src": "william.jpg",
 					"alt": "William Black; Webmaster"
@@ -43,11 +36,97 @@
 				}
 			},
 			{
-				"name": "Joshua Pikner",
+				"name": "Aniketh Luchmapurkar",
 				"position": "Programming Lead",
 				"image": {
 					"src": "default.jpg",
-					"alt": "Joshua Pikner; Programming Team lead"
+					"alt": "Aniketh Luchmapurkar; Programming Lead"
+				}
+			},
+			{
+				"name": "Aarya Srikanth",
+				"position": "Programming, Webmaster",
+				"image": {
+					"src": "default.jpg",
+					"alt": "Aarya Srikanth; Webmaster"
+				}
+			},
+			{
+				"name": "Ritwik Sinha",
+				"position": "Mechanics, Historian",
+				"image": {
+					"src": "default.jpg",
+					"alt": "Ritwik Sinha; Historian"
+				}
+			},
+			{
+				"name": "Ishan Ajwani",
+				"position": "Outreach Lead",
+				"image": {
+					"src": "default.jpg",
+					"alt": "Ishan Ajwani; Outreach Lead"
+				}
+			},
+			{
+				"name": "Aneesh Peri",
+				"position": "Mechanics, Secretary",
+				"image": {
+					"src": "default.jpg",
+					"alt": "Aneesh Peri; Secretary"
+				}
+			},
+			{
+				"name": "Jacob Percy",
+				"position": "Drop Mech Lead",
+				"image": {
+					"src": "default.jpg",
+					"alt": "Jacob Percy; Drop Mech Lead"
+				}
+			},
+			{
+				"name": "Ryan Ke",
+				"position": "Electronics Lead",
+				"image": {
+					"src": "default.jpg",
+					"alt": "Ryan Ke; Electronics Lead"
+				}
+			}
+
+		]
+	},
+	"alumni": {
+		"heading": "Alumni",
+		"entries": [
+			{
+				"name": "Krishnan Shankar",
+				"position": "President",
+				"image": {
+					"src": "krishnan.png",
+					"alt": "Krishnan Shankar; President"
+				}
+			},
+			{
+				"name": "Arhthur Prudis",
+				"position": "Electronics Lead",
+				"image": {
+					"src": "default.jpg",
+					"alt": "Arthur Prudis; Electronics Lead"
+				}
+			},
+			{
+				"name": "Sophia Lu",
+				"position": "Secretary",
+				"image": {
+					"src": "sophia.png",
+					"alt": "Sophia Lu; Secretary"
+				}
+			},
+			{
+				"name": "Sebastian Toro",
+				"position": "Programming Team",
+				"image": {
+					"src": "default.jpg",
+					"alt": "Sebastian Toro; Programming Team"
 				}
 			},
 			{
@@ -59,19 +138,11 @@
 				}
 			},
 			{
-				"name": "Winston Chin",
-				"position": "Electronics Lead",
+				"name": "Joshua Pikner",
+				"position": "Programming Lead",
 				"image": {
-					"src": "winston.png",
-					"alt": "Winston Chin; Electronics Team lead"
-				}
-			},
-			{
-				"name": "Niels-Oliver DeChaine",
-				"position": "Lead Pilot",
-				"image": {
-					"src": "niels-oliver.png",
-					"alt": "Niels-Oliver DeChaine; Lead Pilot"
+					"src": "default.jpg",
+					"alt": "Joshua Pikner; Programming Team lead"
 				}
 			},
 			{
@@ -81,12 +152,15 @@
 					"src": "rohan.jpg",
 					"alt": "Rohan Ramprasad; Mechanical Team"
 				}
-			}
-		]
-	},
-	"alumni": {
-		"heading": "Alumni",
-		"entries": [
+			},
+			{
+				"name": "Winston Chin",
+				"position": "Electronics Lead",
+				"image": {
+					"src": "winston.png",
+					"alt": "Winston Chin; Electronics Team lead"
+				}
+			},
 			{
 				"name": "Alan Hsu",
 				"position": "Mechanics, Electronics, Electronics Lead",
