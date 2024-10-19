@@ -204,6 +204,11 @@ const Header = (props) => {
 					</StyledLink>
 				</LinkItem>
 				<LinkItem hook={[active, setActive]}>
+					<StyledLink to="" style={Paragraph}>
+						Contact
+					</StyledLink>
+				</LinkItem>
+				<LinkItem hook={[active, setActive]}>
 					<StyledExternalLink to="https://tjuav.gitbook.io/tjuav/">
 						Documentation
 					</StyledExternalLink>
