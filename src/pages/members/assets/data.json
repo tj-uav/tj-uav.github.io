@@ -55,7 +55,7 @@
 				"name": "Ritwik Sinha",
 				"position": "Mechanics, Historian",
 				"image": {
-					"src": "default.jpg",
+					"src": "ritwik.jpg",
 					"alt": "Ritwik Sinha; Historian"
 				}
 			},
@@ -106,7 +106,7 @@
 				}
 			},
 			{
-				"name": "Arhthur Prudis",
+				"name": "Arthur Prudis",
 				"position": "Electronics Lead",
 				"image": {
 					"src": "default.jpg",
@@ -127,14 +127,6 @@
 				"image": {
 					"src": "default.jpg",
 					"alt": "Sebastian Toro; Programming Team"
-				}
-			},
-			{
-				"name": "Ishan Ajwani",
-				"position": "Outreach Lead",
-				"image": {
-					"src": "khoi.png",
-					"alt": "Khoi Dinh; Computer Vision Team lead"
 				}
 			},
 			{
@@ -257,52 +249,13 @@
 					"alt": "Aarush Sivanesan; Electronics Team"
 				}
 			},
-			{
-				"name": "Krishnan Shankar",
-				"position": "President",
-				"image": {
-					"src": "krishnan.png",
-					"alt": "Krishnan Shankar; President"
-				}
-			},
-			{
-				"name": "Sophia Lu",
-				"position": "Secretary",
-				"image": {
-					"src": "sophia.png",
-					"alt": "Sophia Lu; Secretary"
-				}
-			},
-			{
-				"name": "Joshua Pikner",
-				"position": "Programming Lead",
-				"image": {
-					"src": "default.jpg",
-					"alt": "Joshua Pikner; Programming Team lead"
-				}
-			},
-			{
-				"name": "Winston Chin",
-				"position": "Electronics Lead",
-				"image": {
-					"src": "winston.png",
-					"alt": "Winston Chin; Electronics Team lead"
-				}
-			},
+
 			{
 				"name": "Khoi Dinh",
 				"position": "Computer Vision Lead",
 				"image": {
 					"src": "khoi.png",
 					"alt": "Khoi Dinh; Computer Vision Team lead"
-				}
-			},
-			{
-				"name": "Rohan Ramprasad",
-				"position": "Mechanical Team",
-				"image": {
-					"src": "rohan.jpg",
-					"alt": "Rohan Ramprasad; Mechanical Team"
 				}
 			}
 		]
