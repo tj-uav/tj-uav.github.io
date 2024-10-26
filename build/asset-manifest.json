@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.25e6dccc.css",
-    "main.js": "/static/js/main.37e9186e.js",
+    "main.js": "/static/js/main.5180b694.js",
     "static/media/sophia.png": "/static/media/sophia.69cf9a95e6d02da8fab6.png",
     "static/media/winston.png": "/static/media/winston.6eb33dd33ceacdf29731.png",
     "static/media/khoi.png": "/static/media/khoi.d0d5f7920430c4f2cf13.png",
@@ -36,6 +36,7 @@
     "static/media/TJAB.jpg": "/static/media/TJAB.e12a96fd5620b67f6be1.jpg",
     "static/media/apc.jpg": "/static/media/apc.448cba1a52a4accaa04a.jpg",
     "static/media/rohan.jpg": "/static/media/rohan.53486590ac6c66aa9003.jpg",
+    "static/media/ritwik.jpg": "/static/media/ritwik.f0c87c015208f25bd9ea.jpg",
     "static/media/default.jpg": "/static/media/default.c45ebad408aa4230c5dc.jpg",
     "static/media/logo.svg": "/static/media/logo.8e71c6ed504e6c6683b9c8c71ec3fe86.svg",
     "static/media/electronicsIcon.svg": "/static/media/electronicsIcon.ed7f3c6ad1ffe810bfb1.svg",
@@ -43,10 +44,10 @@
     "static/media/programmingIcon.svg": "/static/media/programmingIcon.5e94b131a98ff5a96447.svg",
     "index.html": "/index.html",
     "main.25e6dccc.css.map": "/static/css/main.25e6dccc.css.map",
-    "main.37e9186e.js.map": "/static/js/main.37e9186e.js.map"
+    "main.5180b694.js.map": "/static/js/main.5180b694.js.map"
   },
   "entrypoints": [
     "static/css/main.25e6dccc.css",
-    "static/js/main.37e9186e.js"
+    "static/js/main.5180b694.js"
   ]
 }
