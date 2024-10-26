@@ -28,14 +28,6 @@
 				}
 			},
 			{
-				"name": "Niels-Oliver DeChaine",
-				"position": "Co-President",
-				"image": {
-					"src": "niels-oliver.png",
-					"alt": "Niels-Oliver DeChaine; Lead Pilot"
-				}
-			},
-			{
 				"name": "Evan Cafaro",
 				"position": "Mechanical Lead",
 				"image": {
@@ -55,7 +47,7 @@
 				"name": "Aarya Srikanth",
 				"position": "Programming, Webmaster",
 				"image": {
-					"src": "default.jpg",
+					"src": "aarya.png",
 					"alt": "Aarya Srikanth; Webmaster"
 				}
 			},
