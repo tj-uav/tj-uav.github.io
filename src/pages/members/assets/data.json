@@ -39,7 +39,7 @@
 				"name": "Aniketh Luchmapurkar",
 				"position": "Programming Lead",
 				"image": {
-					"src": "default.jpg",
+					"src": "aniketh.png",
 					"alt": "Aniketh Luchmapurkar; Programming Lead"
 				}
 			},
@@ -71,7 +71,7 @@
 				"name": "Aneesh Peri",
 				"position": "Mechanics, Secretary",
 				"image": {
-					"src": "default.jpg",
+					"src": "aneesh.png",
 					"alt": "Aneesh Peri; Secretary"
 				}
 			},
@@ -79,7 +79,7 @@
 				"name": "Jacob Percy",
 				"position": "Drop Mech Lead",
 				"image": {
-					"src": "default.jpg",
+					"src": "jacob.jpg",
 					"alt": "Jacob Percy; Drop Mech Lead"
 				}
 			},
@@ -87,7 +87,7 @@
 				"name": "Ryan Ke",
 				"position": "Electronics Lead",
 				"image": {
-					"src": "default.jpg",
+					"src": "ryan.jpg",
 					"alt": "Ryan Ke; Electronics Lead"
 				}
 			}
@@ -106,7 +106,7 @@
 				}
 			},
 			{
-				"name": "Arthur Prudis",
+				"name": "Arthur Prudius",
 				"position": "Electronics Lead",
 				"image": {
 					"src": "default.jpg",
