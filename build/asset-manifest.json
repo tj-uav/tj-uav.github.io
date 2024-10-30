@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.25e6dccc.css",
-    "main.js": "/static/js/main.40074e7b.js",
+    "main.js": "/static/js/main.69d9569b.js",
     "static/media/sophia.png": "/static/media/sophia.69cf9a95e6d02da8fab6.png",
     "static/media/winston.png": "/static/media/winston.6eb33dd33ceacdf29731.png",
     "static/media/khoi.png": "/static/media/khoi.d0d5f7920430c4f2cf13.png",
@@ -13,6 +13,7 @@
     "static/media/jacob.jpg": "/static/media/jacob.d071567aa037b0181568.jpg",
     "static/media/viraj.jpg": "/static/media/viraj.b79741db0c228dd73f78.jpg",
     "static/media/aniketh.png": "/static/media/aniketh.1939082768c7c87113f1.png",
+    "static/media/ish.jpg": "/static/media/ish.aa11c45d7b2744d705d9.jpg",
     "static/media/team.jpg": "/static/media/team.718e83e6880e75a64ae3.jpg",
     "static/media/niels-oliver.png": "/static/media/niels-oliver.a07435ff8ace09a61dba.png",
     "static/media/abhi.png": "/static/media/abhi.a89ccae112bc05c6dfc2.png",
@@ -23,6 +24,7 @@
     "static/media/evan.png": "/static/media/evan.2d577b47ad84a29aba3a.png",
     "static/media/img2.jpeg": "/static/media/img2.7e5dcb9f7a4240002ba0.jpeg",
     "static/media/mia.jpg": "/static/media/mia.700564953dfe0eff535c.jpg",
+    "static/media/ishan.png": "/static/media/ishan.3a346c0495704c306846.png",
     "static/media/william.jpg": "/static/media/william.090276f5134837c90ecf.jpg",
     "static/media/Montserrat-Regular.ttf": "/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
     "static/media/Montserrat-Bold.ttf": "/static/media/Montserrat-Bold.079ca05d3ded9bc107ab.ttf",
@@ -48,10 +50,10 @@
     "static/media/programmingIcon.svg": "/static/media/programmingIcon.5e94b131a98ff5a96447.svg",
     "index.html": "/index.html",
     "main.25e6dccc.css.map": "/static/css/main.25e6dccc.css.map",
-    "main.40074e7b.js.map": "/static/js/main.40074e7b.js.map"
+    "main.69d9569b.js.map": "/static/js/main.69d9569b.js.map"
   },
   "entrypoints": [
     "static/css/main.25e6dccc.css",
-    "static/js/main.40074e7b.js"
+    "static/js/main.69d9569b.js"
   ]
 }
