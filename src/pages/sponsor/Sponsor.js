@@ -1,5 +1,3 @@
-
-
 function Sponsor(props){
 
 	
