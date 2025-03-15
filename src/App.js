@@ -7,6 +7,7 @@ import Home from "pages/home/Home"
 import Members from "pages/members/Members"
 import Subteams from "pages/subteams/Subteams.js"
 import Blogs from "pages/blogs/blogs.js"
+import Contact from "pages/contact/Contact.js"
 import GlobalFonts from "fonts/fonts"
 
 const App = () => {
@@ -31,6 +32,12 @@ const App = () => {
 					<>
 						<HeaderPlaceholder height={headerHeight} />
 						<Subteams />
+					</>
+				} />
+				<Route exact path="/contact" element={
+					<>
+						<HeaderPlaceholder height={headerHeight} />
+						<Contact />
 					</>
 				} />
 

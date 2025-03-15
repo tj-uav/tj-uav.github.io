@@ -204,7 +204,7 @@ const Header = (props) => {
 					</StyledLink>
 				</LinkItem>
 				<LinkItem hook={[active, setActive]}>
-					<StyledLink to="" style={Paragraph}>
+					<StyledLink to="/contact" style={Paragraph}>
 						Contact
 					</StyledLink>
 				</LinkItem>
