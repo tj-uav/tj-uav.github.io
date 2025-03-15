@@ -214,6 +214,11 @@ const Header = (props) => {
 					</StyledExternalLink>
 				</LinkItem>
 				<LinkItem hook={[active, setActive]}>
+					<StyledLink to="/blogs" style={Paragraph}>
+						Blogs
+					</StyledLink>
+				</LinkItem>
+				<LinkItem hook={[active, setActive]}>
 					<Button href="/sponsorship-packet.pdf" target="blank">Sponsorship Info</Button>
 				</LinkItem>
 			</LinksList> 
