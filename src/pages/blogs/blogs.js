@@ -1,66 +1,48 @@
+"use client"
+
+import { useState, useEffect } from "react"
 import styled from "styled-components"
-import Grid from "components/Grid"
 import { darker } from "theme/Colors"
 import { Heading, Paragraph } from "theme/Styles"
+import BlogsForm from "./BlogsForm"
 
-// Sample Blogs posts data - you can move this to content/posts.js later
-const BlogsPosts = [
-  {
-    id: 1,
-    title: "TJUAV Competition Success",
-    date: "March 10, 2024",
-    excerpt: "Our team's recent achievements at the national drone competition.",
-    imageUrl: "/placeholder.svg?height=300&width=500",
-  },
-  {
-    id: 2,
-    title: "New Drone Design Unveiled",
-    date: "March 5, 2024",
-    excerpt: "Introducing our latest drone design featuring improved aerodynamics.",
-    imageUrl: "/placeholder.svg?height=300&width=500",
-  },
-  {
-    id: 3,
-    title: "Join TJUAV: 2024 Recruitment",
-    date: "March 1, 2024",
-    excerpt: "Learn how you can become part of our innovative drone team.",
-    imageUrl: "/placeholder.svg?height=300&width=500",
-  },
-]
-
-const Container = styled(Grid)`
-  --columns: repeat(12, 1fr);
-  --rows: auto;
-  grid-template-areas:
-    ".       title   title   title   title   title   title   title   title   title   title   .      "
-    ".       content content content content content content content content content content .      ";
-
+const Container = styled.div`
   background-color: ${darker};
-  padding: 2rem 0;
-  min-height: 100vh;
+  padding: 4rem 0;
+  min-height: calc(100vh - 5.375rem);
+  margin-top: 5.375rem;
+`
+
+const ContentWrapper = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+`
+
+const PageTitle = styled.h1`
+  ${Heading}
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
 `
 
 const BlogsGrid = styled.div`
-  grid-area: content;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
+  margin-bottom: 4rem;
 `
 
 const BlogsCard = styled.article`
   background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   overflow: hidden;
-  transition: transform 0.2s ease;
-
-  &:hover {
-    transform: translateY(-4px);
-  }
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 `
 
 const BlogsImage = styled.img`
   width: 100%;
-  height: 200px;
+  max-height: 400px;
   object-fit: cover;
 `
 
@@ -74,23 +56,57 @@ const BlogsDate = styled.p`
   margin-bottom: 0.5rem;
 `
 
+const BlogsTitle = styled.h2`
+  ${Heading}
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+`
+
+const BlogsText = styled.p`
+  ${Paragraph}
+  white-space: pre-wrap;
+  line-height: 1.6;
+`
+
 const Blogs = () => {
+  const [posts, setPosts] = useState(() => {
+    const savedPosts = localStorage.getItem("BlogsPosts")
+    return savedPosts ? JSON.parse(savedPosts) : []
+  })
+
+  useEffect(() => {
+    localStorage.setItem("BlogsPosts", JSON.stringify(posts))
+  }, [posts])
+
+  const handleNewPost = (post) => {
+    const newPost = {
+      ...post,
+      id: Date.now(), // Add unique ID for each post
+      timestamp: new Date().toLocaleString(),
+    }
+    setPosts((prevPosts) => [newPost, ...prevPosts])
+  }
+
   return (
     <Container>
-      <h1 style={{ ...Heading, gridArea: "title", textAlign: "center", marginBottom: "2rem" }}>TJUAV Blogs</h1>
+      <ContentWrapper>
+        <PageTitle>TJUAV Blogs</PageTitle>
 
-      <BlogsGrid>
-        {BlogsPosts.map((post) => (
-          <BlogsCard key={post.id}>
-            <BlogsImage src={post.imageUrl} alt={post.title} />
-            <BlogsContent>
-              <BlogsDate>{post.date}</BlogsDate>
-              <h2 style={{ ...Heading, fontSize: "1.5rem", marginBottom: "1rem" }}>{post.title}</h2>
-              <p style={{ ...Paragraph }}>{post.excerpt}</p>
-            </BlogsContent>
-          </BlogsCard>
-        ))}
-      </BlogsGrid>
+        <BlogsGrid>
+          <BlogsForm onSubmit={handleNewPost} />
+
+          {posts.map((post) => (
+            <BlogsCard key={post.id}>
+              {post.image && <BlogsImage src={post.image} alt={post.title} />}
+              <BlogsContent>
+                <BlogsDate>{post.timestamp}</BlogsDate>
+                <BlogsTitle>{post.title}</BlogsTitle>
+                <BlogsText>{post.content}</BlogsText>
+              </BlogsContent>
+            </BlogsCard>
+          ))}
+        </BlogsGrid>
+      </ContentWrapper>
     </Container>
   )
 }
