@@ -1,332 +1,242 @@
-"use client"
-
-import { useState } from "react"
-import styled from "styled-components"
-import TextareaAutosize from "react-textarea-autosize"
-import Grid from "components/Grid"
-import Button from "components/Button"
-import { dark, darker } from "theme/Colors"
-import { Heading, Paragraph } from "theme/Styles"
-import { mobile, tablet, desktop } from "theme/Breakpoints"
-import ContactInfo from "./components/ContactInfo"
-import { Mail, User, MessageSquare, Send, CheckCircle } from "./components/Icons"
-
-const Container = styled(Grid)`
-  background-color: ${darker};
-  border-radius: 8px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-  overflow: hidden;
-
-  ${mobile} {
-    column-gap: 0;
-    height: auto;
-    --rows: repeat(14, auto);
-    --columns: 1.5rem repeat(6, 1fr) 1.5rem;
-
-    /* prettier-ignore */
-    grid-template-areas:
-      ".       .       .       .       .       .       .       .       "
-      ".       heading heading heading heading heading heading .       "
-      ".       subhead subhead subhead subhead subhead subhead .       "
-      ".       name    name    name    name    name    name    .       "
-      ".       box1    box1    box1    box1    box1    box1    .       "
-      ".       email   email   email   email   email   email   .       "
-      ".       box2    box2    box2    box2    box2    box2    .       "
-      ".       message message message message message message .       "
-      ".       box4    box4    box4    box4    box4    box4    .       "
-      ".       box4    box4    box4    box4    box4    box4    .       "
-      ".       box4    box4    box4    box4    box4    box4    .       "
-      ".       button  button  button  button  button  button  .       "
-      ".       status  status  status  status  status  status  .       "
-      ".       .       .       .       .       .       .       .       ";
-  }
-
-  ${tablet} {
-    --columns: 1.5rem repeat(6, 1fr) 1.5rem;
-    --rows: repeat(14, auto);
-    gap: 1rem;
-  }
-
-  ${desktop} {
-    --columns: 1.5rem repeat(3, 1fr) 0.5fr repeat(3, 1fr) 1.5rem;
-    --rows: repeat(12, auto);
-
-    /* prettier-ignore */
-    grid-template-areas:
-      ".       .       .       .       .       .       .       .       .       "
-      ".       heading heading heading heading heading heading heading .       "
-      ".       subhead subhead subhead subhead subhead subhead subhead .       "
-      ".       name    name    name    .       info    info    info    .       "
-      ".       box1    box1    box1    .       info    info    info    .       "
-      ".       email   email   email   .       info    info    info    .       "
-      ".       box2    box2    box2    .       info    info    info    .       "
-      ".       message message message .       info    info    info    .       "
-      ".       box4    box4    box4    .       info    info    info    .       "
-      ".       box4    box4    box4    .       info    info    info    .       "
-      ".       button  button  status  .       info    info    info    .       "
-      ".       .       .       .       .       .       .       .       .       ";
-  }
-`
-
-const FormSection = styled.div`
-  position: relative;
-  margin-bottom: 1.5rem;
-`
-
-const ThemedLabel = styled.label(() => Paragraph)
-const Label = styled(ThemedLabel)`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  color: #f0f0f0;
-`
-
-const ThemedInput = styled.input(() => Paragraph)
-const Input = styled(ThemedInput)`
-  background-color: ${dark};
-  border-radius: 4px;
-  padding: 0.75rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  width: 100%;
-  transition: all 0.2s ease;
+export default function Contact() {
+	const containerStyle = {
+	  maxWidth: '1200px',
+	  margin: '0 auto',
+	  padding: '48px 16px',
+	  fontFamily: 'system-ui, -apple-system, sans-serif',
+	  backgroundColor: '#1D242A',
+	  color: 'white'
+	};
   
-  &:focus {
-    outline: none;
-    border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05);
-  }
+	const headingStyle = {
+	  fontSize: '30px',
+	  fontWeight: 'bold',
+	  marginBottom: '32px',
+	  color: 'white'
+	};
   
-  &.error {
-    border-color: #ff5757;
-  }
-`
-
-const ThemedTextarea = styled(TextareaAutosize)(() => Paragraph)
-const Textarea = styled(ThemedTextarea)`
-  background-color: ${dark};
-  border-radius: 4px;
-  min-height: ${16 * 6}pt;
-  padding: 0.75rem 1rem;
-  resize: vertical;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  width: 100%;
-  transition: all 0.2s ease;
+	const gridStyle = {
+	  display: 'grid',
+	  gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+	  gap: '32px'
+	};
   
-  &:focus {
-    outline: none;
-    border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05);
-  }
+	const formStyle = {
+	  display: 'flex',
+	  flexDirection: 'column',
+	  gap: '24px'
+	};
   
-  &.error {
-    border-color: #ff5757;
-  }
-`
-
-const ErrorMessage = styled.div`
-  color: #ff5757;
-  font-size: 0.85rem;
-  margin-top: 0.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-`
-
-const SubmitButton = styled(Button)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  width: auto;
-  transition: transform 0.2s ease;
+	const inputGroupStyle = {
+	  display: 'flex',
+	  flexDirection: 'column',
+	  gap: '4px'
+	};
   
-  &:hover:not(:disabled) {
-    transform: translateY(-2px);
-  }
+	const labelStyle = {
+	  fontSize: '14px',
+	  fontWeight: '500',
+	  marginBottom: '4px',
+	  color: 'white'
+	};
   
-  &:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
+	const inputStyle = {
+	  width: '100%',
+	  padding: '8px 16px',
+	  border: '1px solid #2D343A',
+	  borderRadius: '4px',
+	  fontSize: '16px',
+	  backgroundColor: '#1D242A',
+	  color: 'white'
+	};
+  
+	const textareaStyle = {
+	  ...inputStyle,
+	  minHeight: '120px',
+	  resize: 'vertical'
+	};
+  
+	const buttonStyle = {
+	  backgroundColor: '#2563eb',
+	  color: 'white',
+	  padding: '10px 16px',
+	  border: 'none',
+	  borderRadius: '4px',
+	  fontSize: '16px',
+	  fontWeight: '500',
+	  cursor: 'pointer',
+	  width: '100%'
+	};
+  
+	const infoBoxStyle = {
+	  backgroundColor: '#1D242A',
+	  borderRadius: '8px',
+	  padding: '24px',
+	  boxShadow: '0 1px 3px rgba(0,0,0,0.3)',
+	  border: '1px solid #2D343A'
+	};
+  
+	const infoHeadingStyle = {
+	  fontSize: '22px',
+	  fontWeight: '600',
+	  marginBottom: '16px',
+	  color: 'white'
+	};
+  
+	const infoItemStyle = {
+	  display: 'flex',
+	  gap: '12px',
+	  marginBottom: '16px'
+	};
+  
+	const infoItemHeadingStyle = {
+	  fontWeight: '500',
+	  marginBottom: '4px',
+	  color: 'white'
+	};
+  
+	const infoTextStyle = {
+	  color: '#A0AEC0'
+	};
+  
+	const socialLinkStyle = {
+	  color: '#A0AEC0',
+	  textDecoration: 'none',
+	  display: 'flex',
+	  alignItems: 'center',
+	  marginBottom: '8px',
+	  transition: 'color 0.2s ease'
+	};
+  
+	const socialIconStyle = {
+	  marginRight: '10px'
+	};
+  
+	const dividerStyle = {
+	  height: '1px',
+	  backgroundColor: '#2D343A',
+	  margin: '24px 0'
+	};
+  
+	return (
+	  <div style={containerStyle}>
+		<h1 style={headingStyle}>Contact Us</h1>
+		
+		<div style={gridStyle}>
+		  <div>
+			{/* Form section */}
+			<form action="https://formspree.io/f/xwploplr" method="POST" style={formStyle}>
+			  <div style={inputGroupStyle}>
+				<label htmlFor="name" style={labelStyle}>
+				  Name
+				</label>
+				<input
+				  id="name"
+				  name="name"
+				  type="text"
+				  required
+				  style={inputStyle}
+				/>
+			  </div>
+  
+			  <div style={inputGroupStyle}>
+				<label htmlFor="email" style={labelStyle}>
+				  Email
+				</label>
+				<input
+				  id="email"
+				  name="email"
+				  type="email"
+				  required
+				  style={inputStyle}
+				/>
+			  </div>
+  
+			  <div style={inputGroupStyle}>
+				<label htmlFor="message" style={labelStyle}>
+				  Message
+				</label>
+				<textarea
+				  id="message"
+				  name="message"
+				  rows={5}
+				  required
+				  style={textareaStyle}
+				/>
+			  </div>
+  
+			  {/* This hidden field will forward emails to alexlenlakers@gmail.com */}
+			  <input type="hidden" name="_replyto" value="alexlenlakers@gmail.com" />
+  
+			  {/* This ensures emails are sent to your specified address */}
+			  <input type="hidden" name="_cc" value="alexlenlakers@gmail.com" />
+  
+			  <button
+				type="submit"
+				style={buttonStyle}
+			  >
+				Send Message
+			  </button>
+			</form>
+		  </div>
+		  
+		  <div style={infoBoxStyle}>
+			<h2 style={infoHeadingStyle}>Get in Touch</h2>
+			
+			<div style={infoItemStyle}>
+			  <div style={{marginTop: '4px'}}>
+				{/* Email icon */}
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+				  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+				  <polyline points="22,6 12,13 2,6"></polyline>
+				</svg>
+			  </div>
+			  <div>
+				<h3 style={infoItemHeadingStyle}>Email</h3>
+				<p style={infoTextStyle}>tjhsstuav@gmail.com</p>
+			  </div>
+			</div>
+			
+			<div style={infoItemStyle}>
+			  <div style={{marginTop: '4px'}}>
+				{/* Location icon */}
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+				  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+				  <circle cx="12" cy="10" r="3"></circle>
+				</svg>
+			  </div>
+			  <div>
+				<h3 style={infoItemHeadingStyle}>Address</h3>
+				<p style={infoTextStyle}>
+				  6650 Braddock Rd<br />
+				  Alexandria, VA 22312
+				</p>
+			  </div>
+			</div>
+			
+			<div style={dividerStyle}></div>
+			
+			<h3 style={{...infoItemHeadingStyle, fontSize: '18px', marginBottom: '12px'}}>Connect With Us</h3>
+			
+			<div>
+			  <a href="https://github.com/tj-uav" target="_blank" rel="noopener noreferrer" style={socialLinkStyle}>
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={socialIconStyle}>
+				  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+				</svg>
+				GitHub: tj-uav
+			  </a>
+			  
+			  <a href="https://www.instagram.com/tjuav/" target="_blank" rel="noopener noreferrer" style={socialLinkStyle}>
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={socialIconStyle}>
+				  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+				  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+				  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+				</svg>
+				Instagram: @tjuav
+			  </a>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	);
   }
-`
-
-const StatusMessage = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #4caf50;
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
-  opacity: ${(props) => (props.visible ? 1 : 0)};
-  transform: translateY(${(props) => (props.visible ? 0 : "10px")});
-  transition: all 0.3s ease;
-`
-
-const Title = styled.h1`
-  ${Heading};
-  margin-bottom: 0.5rem;
-`
-
-const Subtitle = styled.p`
-  ${Paragraph};
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-`
-
-const Contact = ({ content = {}, ...props }) => {
-  console.log("Contact component rendering", { content, props })
-
-  // Add default content if none is provided
-  const defaultContent = {
-    title: "Get in Touch",
-    subtitle: "Have a question or want to work together? Drop us a message!",
-  }
-
-  const contentToUse = content || defaultContent
-
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  })
-
-  const [errors, setErrors] = useState({})
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
-
-  const validate = () => {
-    const newErrors = {}
-
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required"
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required"
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Email address is invalid"
-    }
-
-    if (!formData.message.trim()) {
-      newErrors.message = "Message is required"
-    }
-
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
-  }
-
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }))
-
-    // Clear error when typing
-    if (errors[name]) {
-      setErrors((prev) => ({
-        ...prev,
-        [name]: undefined,
-      }))
-    }
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-
-    if (validate()) {
-      setIsSubmitting(true)
-
-      // Simulate API call
-      setTimeout(() => {
-        setIsSubmitting(false)
-        setIsSubmitted(true)
-
-        // Reset form after 3 seconds
-        setTimeout(() => {
-          setFormData({ name: "", email: "", message: "" })
-          setIsSubmitted(false)
-        }, 3000)
-      }, 1500)
-    }
-  }
-
-  return (
-    <Container as="form" onSubmit={handleSubmit} {...props}>
-      <Title style={{ gridArea: "heading" }}>{contentToUse.title || "Get in Touch"}</Title>
-      <Subtitle style={{ gridArea: "subhead" }}>
-        {contentToUse.subtitle || "Have a question or want to work together? Drop us a message!"}
-      </Subtitle>
-
-      <Label style={{ gridArea: "name" }}>
-        <User size={16} />
-        Name
-      </Label>
-      <div style={{ gridArea: "box1" }}>
-        <Input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          className={errors.name ? "error" : ""}
-          aria-label="Name"
-        />
-        {errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}
-      </div>
-
-      <Label style={{ gridArea: "email" }}>
-        <Mail size={16} />
-        Email
-      </Label>
-      <div style={{ gridArea: "box2" }}>
-        <Input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          className={errors.email ? "error" : ""}
-          aria-label="Email"
-        />
-        {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
-      </div>
-
-      <Label style={{ gridArea: "message" }}>
-        <MessageSquare size={16} />
-        Message
-      </Label>
-      <div style={{ gridArea: "box4" }}>
-        <Textarea
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          className={errors.message ? "error" : ""}
-          aria-label="Message"
-        />
-        {errors.message && <ErrorMessage>{errors.message}</ErrorMessage>}
-      </div>
-
-      <div style={{ gridArea: "button" }}>
-        <SubmitButton type="submit" disabled={isSubmitting}>
-          {isSubmitting ? "Sending..." : "Send Message"}
-          <Send size={16} />
-        </SubmitButton>
-      </div>
-
-      <StatusMessage style={{ gridArea: "status" }} visible={isSubmitted}>
-        <CheckCircle size={16} />
-        Message sent successfully!
-      </StatusMessage>
-
-      <div style={{ gridArea: "info" }}>
-        <ContactInfo />
-      </div>
-    </Container>
-  )
-}
-
-export default Contact
-
