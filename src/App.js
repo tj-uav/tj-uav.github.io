@@ -8,6 +8,7 @@ import SponsorList from "components/SponsorList"
 import Home from "pages/home/Home"
 import Members from "pages/members/Members"
 import Subteams from "pages/subteams/Subteams"
+import Search from "pages/search/Search.js"
 import Blogs from "pages/blogs/blogs"
 import Contact from "pages/contact/Contact"
 import GlobalFonts from "fonts/fonts"
@@ -23,6 +24,7 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<Home />} />
+		<Route exact path="/search" element={ <Search/>}/>
         <Route path="/members" element={<Members />} />
         <Route
           path="/subteams"
@@ -87,4 +89,3 @@ const Location = () => {
 }
 
 export default App
-

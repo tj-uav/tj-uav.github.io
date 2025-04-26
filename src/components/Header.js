@@ -1,21 +1,18 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import { Link } from "react-router-dom"
-//import Button from "./Button"
+import { Link, useNavigate } from "react-router-dom" 
 import Grid from "./Grid"
 import { dark, darker, text } from "theme/Colors"
 import { Heading, Paragraph } from "theme/Styles"
 import { mobile, tablet, desktop } from "theme/Breakpoints"
-
 import Button from "./Button"
 
 const Container = styled(Grid)`
 	--rows: unset;
-
 	background: ${darker};
 	align-items: center;
 	position: absolute;
-	height: ${props => props.height}; /* This is a fancy way of passing arguments to a literal */
+	height: ${props => props.height};
 	z-index: 1;
 	right: 0;
 	left: 0;
@@ -26,7 +23,6 @@ const Container = styled(Grid)`
 		--columns: 1rem repeat(10, 1fr) 1rem;
 		gap: 0;
 
-		/* prettier-ignore */
 		grid-template-areas:
 			".       logo    logo    .       .       .       .       .       .       .       burger  .       "
 			"content content content content content content content content content content content content ";
@@ -36,7 +32,6 @@ const Container = styled(Grid)`
 		--columns: 0 repeat(8, 1fr) 0;
 		column-gap: 1rem;
 
-		/* prettier-ignore */
 		grid-template-areas:
 			".        .       logo    logo    .       .       .       burger  .       .      "
 			"content  content content content content content content content content content";
@@ -45,7 +40,6 @@ const Container = styled(Grid)`
 	${desktop} {
 		--columns: repeat(12, 1fr);
 
-		/* prettier-ignore */
 		grid-template-areas:
 			".       logo    logo    content content content content content content content content .       ";
 	}
@@ -61,7 +55,6 @@ const StyledLinksList = styled.ul`
 	justify-self: flex-end;
 	list-style-type: none;
 	width: 100%;
-
 	background: ${dark};
 
 	${desktop} {
@@ -73,7 +66,6 @@ const StyledLinksList = styled.ul`
 			&:not(:first-of-type) {
 				margin-left: 1rem;
 			}
-
 			&:not(:last-of-type) {
 				margin-right: 1rem;
 			}
@@ -96,12 +88,12 @@ const StyledLink = styled(Link)`
 	display: flex;
 	align-items: center;
 	text-decoration: none;
+
 	:hover {
 		text-decoration: underline;
 	}
 `
 
-// to = external url to open in a new tab
 const StyledExternalLink = (props) => {
 	return (
 		<RawLinkObject href={props.to} target="blank" style={Paragraph}>
@@ -114,6 +106,7 @@ const RawLinkObject = styled.a`
 	display: flex;
 	align-items: center;
 	text-decoration: none;
+
 	:hover {
 		text-decoration: underline;
 	}
@@ -131,7 +124,6 @@ const StyledBurger = styled.div`
 	${tablet} {
 		justify-self: flex-end;
 	}
-
 	${desktop} {
 		display: none;
 	}
@@ -179,13 +171,57 @@ const InnerBurger = styled.div`
 
 const Header = (props) => {
 	const [active, setActive] = useState(false)
+	const [searchQuery, setSearchQuery] = useState("")
+	const navigate = useNavigate()
+
+	const handleSearch = (e) => {
+		e.preventDefault()
+		navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`) 
+	}
 
 	return (
 		<Container active={active} as="header" height={props.headerHeight}>
 			<StyledLink to="/" style={{ ...Heading, alignSelf: "initial", gridArea: "logo" }}>
 				TJUAV
 			</StyledLink>
+
 			<Burger hook={[active, setActive]} />
+
+			<form
+				onSubmit={handleSearch}
+				style={{
+					gridArea: "content",
+					display: "flex",
+					alignItems: "center",
+					marginRight: "1rem",
+				}}
+			>
+				<input
+					type="text"
+					placeholder="Search..."
+					value={searchQuery}
+					onChange={(e) => setSearchQuery(e.target.value)}
+					style={{
+						padding: "0.5rem",
+						borderRadius: "4px",
+						border: "1px solid #ccc",
+						marginRight: "0.5rem",
+					}}
+				/>
+				<button
+					type="submit"
+					style={{
+						padding: "0.5rem 1rem",
+						borderRadius: "4px",
+						backgroundColor: "#007BFF",
+						color: "#fff",
+						border: "none",
+						cursor: "pointer",
+					}}
+				>
+					Search {}
+				</button>
+			</form>
 
 			<LinksList hook={[active, setActive]} style={{ gridArea: "content" }}>
 				<LinkItem hook={[active, setActive]}>
