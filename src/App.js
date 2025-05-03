@@ -1,5 +1,4 @@
 "use client"
-
 import { useEffect } from "react"
 import { BrowserRouter as Router, Navigate, Routes, Route, useLocation } from "react-router-dom"
 import Header from "components/Header"
@@ -19,44 +18,20 @@ const App = () => {
     <Router>
       <GlobalFonts />
       <Location />
-
       <Header headerHeight={headerHeight} />
-
+      
+      {/* HeaderPlaceholder on all routes for consistent spacing */}
+      <HeaderPlaceholder height={headerHeight} />
+      
       <Routes>
         <Route path="/" element={<Home />} />
-		<Route exact path="/search" element={ <Search/>}/>
+        <Route exact path="/search" element={<Search />} />
         <Route path="/members" element={<Members />} />
-        <Route
-          path="/subteams"
-          element={
-            <>
-              <HeaderPlaceholder height={headerHeight} />
-              <Subteams />
-            </>
-          }
-        />
-        <Route
-          path="/contact"
-          element={
-            <>
-              <HeaderPlaceholder height={headerHeight} />
-              <Contact />
-            </>
-          }
-        />
+        <Route path="/subteams" element={<Subteams />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/home" element={<Navigate to="/" />} />
-
-        <Route
-          path="/blogs"
-          element={
-            <>
-              <HeaderPlaceholder height={headerHeight} />
-              <Blogs />
-            </>
-          }
-        />
+        <Route path="/blogs" element={<Blogs />} />
       </Routes>
-
       <SponsorList />
       <Footer />
     </Router>
@@ -69,7 +44,6 @@ const HeaderPlaceholder = ({ height }) => {
 
 const Location = () => {
   const location = useLocation()
-
   useEffect(() => {
     try {
       const match = /\/((\w)\w*)$/i.exec(location.pathname)
@@ -84,7 +58,6 @@ const Location = () => {
       console.error(e)
     }
   }, [location])
-
   return null
 }
 
