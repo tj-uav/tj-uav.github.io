@@ -57,6 +57,7 @@ const StyledSubteamCard = styled.div`
 `
 
 const CardTitle = styled.h4`
+  font-family: Poppins;
   font-size: 1.1rem;
   font-weight: 600;
   color: ${(props) => props.colors.text};
@@ -67,6 +68,7 @@ const CardTitle = styled.h4`
 
 const CardDescription = styled.p`
   color: ${(props) => props.colors.textLight};
+  font-family: Poppins;
   font-size: 0.95rem;
   line-height: 1.5;
   margin: 0;

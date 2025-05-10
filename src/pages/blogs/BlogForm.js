@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import styled from "styled-components"
-import { addDoc, collection, serverTimestamp } from "firebase/firestore"
+import { addDoc, collection } from "firebase/firestore"
 import { db } from "../../firebase/firebase"
 
 // Cosmic blue-purple color palette
@@ -52,7 +52,6 @@ const BlogForm = ({ isOpen, onClose }) => {
       const docRef = await addDoc(blogsCollectionRef, {
         title,
         content,
-        createdAt: serverTimestamp(),
       })
 
       console.log("Document written with ID: ", docRef.id)
@@ -110,14 +109,12 @@ const BlogForm = ({ isOpen, onClose }) => {
                 id="content"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
-                placeholder="Write your blog content here... (Press Enter twice for a new paragraph)"
+                placeholder="Write your blog content here..."
                 rows={8}
                 required
               />
-              <FormHint>Tip: Press Enter twice to create a new paragraph.</FormHint>
             </FormGroup>
           </FormContent>
-
           <FormFooter>
             <SubmitButton type="submit" disabled={isSubmitting}>
               {isSubmitting ? "Publishing..." : "Publish Post"}
@@ -194,6 +191,7 @@ const ModalHeader = styled.div`
 
 const ModalTitle = styled.h3`
   margin: 0;
+  font-family: Poppins;
   font-size: 1.25rem;
   font-weight: 600;
   color: ${colors.text};
@@ -205,6 +203,7 @@ const CloseButton = styled.button`
   border: none;
   color: ${colors.textLight};
   font-size: 1.5rem;
+  font-family: Poppins;
   cursor: pointer;
   transition: color 0.2s ease;
   line-height: 1;
@@ -231,6 +230,7 @@ const FormGroup = styled.div`
 const FormLabel = styled.label`
   display: block;
   margin-bottom: 0.75rem;
+  font-family: Poppins;
   font-size: 0.95rem;
   font-weight: 500;
   color: ${colors.textLight};
@@ -243,6 +243,7 @@ const FormInput = styled.input`
   border: 1px solid rgba(157, 78, 221, 0.3);
   border-radius: 6px;
   color: ${colors.text};
+  font-family: Poppins;
   font-size: 1rem;
   transition: all 0.2s ease;
   
@@ -264,6 +265,7 @@ const FormTextarea = styled.textarea`
   border: 1px solid rgba(157, 78, 221, 0.3);
   border-radius: 6px;
   color: ${colors.text};
+  font-family: Poppins;
   font-size: 1rem;
   transition: all 0.2s ease;
   min-height: 150px;
@@ -283,6 +285,7 @@ const FormTextarea = styled.textarea`
 
 const FormHint = styled.small`
   color: ${colors.secondary};
+  font-family: Poppins;
   font-size: 0.8rem;
   margin-top: 0.5rem;
   display: block;
@@ -302,6 +305,7 @@ const SubmitButton = styled.button`
   border: none;
   border-radius: 6px;
   padding: 0.75rem 1.5rem;
+  font-family: Poppins;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -364,6 +368,7 @@ const ErrorButton = styled.button`
   border: none;
   border-radius: 50px;
   padding: 0.5rem 2rem;
+  font-family: Poppins;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;

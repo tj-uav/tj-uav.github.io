@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import styled from "styled-components"
 import { db } from "../../firebase/firebase"
-import { collection, onSnapshot, orderBy, query } from "firebase/firestore"
+import { collection, onSnapshot, query } from "firebase/firestore"
 
 // Cosmic blue-purple color palette
 const colors = {
@@ -26,28 +26,56 @@ const BlogList = () => {
   const [blogs, setBlogs] = useState([])
   const [loading, setLoading] = useState(true)
   const [selectedBlog, setSelectedBlog] = useState(null)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
-    const blogsRef = collection(db, "blogs")
-    const q = query(blogsRef, orderBy("createdAt", "desc"))
+    let isMounted = true
+    
+    try {
+      const blogsRef = collection(db, "blogs")
+      const q = query(blogsRef)
 
-    const unsubscribe = onSnapshot(
-      q,
-      (snapshot) => {
-        const blogsData = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }))
-        setBlogs(blogsData)
-        setLoading(false)
-      },
-      (error) => {
-        console.error("Error fetching blogs:", error)
-        setLoading(false)
-      },
-    )
+      const unsubscribe = onSnapshot(
+        q,
+        (snapshot) => {
+          if (!isMounted) return
+          
+          const blogsData = snapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }))
+          
+          setBlogs(blogsData)
+          setLoading(false)
+        },
+        (error) => {
+          if (!isMounted) return
+          
+          console.error("Error fetching blogs:", error)
+          setError("Failed to load blogs. Please try again later.")
+          setLoading(false)
+        }
+      )
 
-    return () => unsubscribe()
+      // Set a timeout to handle cases where Firebase might be slow to respond
+      const timeoutId = setTimeout(() => {
+        if (isMounted && loading) {
+          setLoading(false)
+        }
+      }, 5000) // 5 second timeout
+
+      return () => {
+        isMounted = false
+        clearTimeout(timeoutId)
+        unsubscribe()
+      }
+    } catch (err) {
+      if (isMounted) {
+        console.error("Error setting up blogs listener:", err)
+        setError("Failed to connect to the blog service.")
+        setLoading(false)
+      }
+    }
   }, [])
 
   const openBlogDetail = (blog) => {
@@ -66,6 +94,10 @@ const BlogList = () => {
     return <LoadingContainer>Loading blogs...</LoadingContainer>
   }
 
+  if (error) {
+    return <ErrorContainer>{error}</ErrorContainer>
+  }
+
   return (
     <BlogListContainer>
       <SectionTitle>Latest Blog Posts</SectionTitle>
@@ -81,15 +113,6 @@ const BlogList = () => {
               <BlogContent>
                 <BlogCardTitle>{blog.title}</BlogCardTitle>
                 <BlogCardText>{blog.content}</BlogCardText>
-                <BlogCardDate>
-                  {blog.createdAt
-                    ? new Date(blog.createdAt.seconds * 1000).toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })
-                    : "No date"}
-                </BlogCardDate>
               </BlogContent>
             </BlogCard>
           ))}
@@ -115,16 +138,6 @@ const BlogList = () => {
             <BlogDetailContent>
               <BlogDetailTitle>{selectedBlog.title}</BlogDetailTitle>
 
-              <BlogDetailDate>
-                {selectedBlog.createdAt
-                  ? new Date(selectedBlog.createdAt.seconds * 1000).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })
-                  : "No date"}
-              </BlogDetailDate>
-
               <BlogDetailText>
                 {selectedBlog.content
                   .split("\n")
@@ -144,6 +157,7 @@ const BlogListContainer = styled.div`
 `
 
 const SectionTitle = styled.h2`
+  font-family: Poppins;
   font-size: 1.75rem;
   margin-bottom: 1.5rem;
   color: ${colors.text};
@@ -231,6 +245,7 @@ const BlogContent = styled.div`
 `
 
 const BlogCardTitle = styled.h3`
+  font-family: Poppins;
   font-size: 1.25rem;
   font-weight: 600;
   margin: 0 0 1rem 0;
@@ -239,24 +254,19 @@ const BlogCardTitle = styled.h3`
 `
 
 const BlogCardText = styled.p`
-  margin: 0 0 1rem 0;
+  margin: 0;
   line-height: 1.6;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
   color: ${colors.textLight};
+  font-family: Poppins;
   font-size: 0.95rem;
 `
 
-const BlogCardDate = styled.small`
-  color: ${colors.secondary};
-  font-size: 0.875rem;
-  display: block;
-  margin-top: auto;
-`
-
 const NoBlogsMessage = styled.div`
+  font-family: Poppins;
   text-align: center;
   padding: 3rem;
   background: linear-gradient(145deg, ${colors.cardBackground}, ${colors.background});
@@ -268,6 +278,7 @@ const NoBlogsMessage = styled.div`
 `
 
 const LoadingContainer = styled.div`
+  font-family: Poppins;
   text-align: center;
   padding: 2rem;
   font-size: 1.25rem;
@@ -289,6 +300,19 @@ const LoadingContainer = styled.div`
     40% { content: ".."; }
     60%, 100% { content: "..."; }
   }
+`
+
+const ErrorContainer = styled.div`
+  font-family: Poppins;
+  text-align: center;
+  padding: 2rem;
+  margin: 2rem 0;
+  background: linear-gradient(145deg, #2a1a3e, #1a1a2e);
+  border-radius: 12px;
+  color: #ff8fa3;
+  border: 1px solid rgba(255, 143, 163, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  font-size: 1.25rem;
 `
 
 const ModalOverlay = styled.div`
@@ -348,6 +372,7 @@ const BlogDetailModal = styled.div`
 `
 
 const CloseButton = styled.button`
+  font-family: Poppins;
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -389,9 +414,10 @@ const BlogDetailContent = styled.div`
 `
 
 const BlogDetailTitle = styled.h2`
+  font-family: Poppins;
   font-size: 2rem;
   font-weight: 700;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.5rem 0;
   line-height: 1.2;
   color: ${colors.text};
   
@@ -400,25 +426,8 @@ const BlogDetailTitle = styled.h2`
   }
 `
 
-const BlogDetailDate = styled.div`
-  color: ${colors.secondary};
-  font-size: 1rem;
-  margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  
-  &:before {
-    content: "";
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background-color: ${colors.primary};
-    border-radius: 50%;
-    margin-right: 0.75rem;
-  }
-`
-
 const BlogDetailText = styled.div`
+  font-family: Poppins;
   font-size: 1.125rem;
   line-height: 1.7;
   color: ${colors.textLight};

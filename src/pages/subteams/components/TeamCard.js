@@ -130,6 +130,7 @@ const CardIcon = styled.img`
 `
 
 const TitleText = styled.h2`
+  font-family: Poppins;
   font-size: 1.5rem;
   font-weight: 600;
   color: ${(props) => props.colors.text};
@@ -154,6 +155,7 @@ const CardContent = styled.div`
 
 const DescriptionText = styled.p`
   color: ${(props) => props.colors.textLight};
+  font-family: Poppins;
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
@@ -164,6 +166,7 @@ const SubteamsContainer = styled.div`
 `
 
 const SubteamsHeading = styled.h3`
+  font-family: Poppins;
   font-size: 1.1rem;
   color: ${(props) => props.colors.text};
   margin-bottom: 1rem;

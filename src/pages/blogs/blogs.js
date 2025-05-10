@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import styled from "styled-components"
 import BlogForm from "./BlogForm"
 import BlogList from "./BlogList"
@@ -25,13 +25,19 @@ const colors = {
   highlight: "rgba(157, 78, 221, 0.15)", // Subtle purple highlight
 }
 
-const CORRECT_PASSWORD = "1234"
+// Use a hardcoded password for development - in production this should be secured
+const CORRECT_PASSWORD = process.env.REACT_APP_PASSWORD
 
 const BlogsPage = () => {
   const [isBlogModalOpen, setIsBlogModalOpen] = useState(false)
   const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false)
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
+  
+  // Log to verify the modal state changes
+  useEffect(() => {
+    console.log("Blog modal state:", isBlogModalOpen)
+  }, [isBlogModalOpen])
 
   const openPasswordModal = () => {
     setPassword("")
@@ -55,7 +61,10 @@ const BlogsPage = () => {
     }
   }
 
-  const closeBlogModal = () => setIsBlogModalOpen(false)
+  const closeBlogModal = () => {
+    console.log("Closing blog modal")
+    setIsBlogModalOpen(false)
+  }
 
   return (
     <PageContainer>
@@ -128,6 +137,7 @@ const ContentContainer = styled.div`
 `
 
 const HeroSection = styled.div`
+  font-family: Poppins;
   text-align: center;
   padding: 2rem 1rem 3rem;
   max-width: 800px;
@@ -135,6 +145,7 @@ const HeroSection = styled.div`
 `
 
 const HeroTitle = styled.h1`
+  font-family: Poppins;
   font-size: 2.5rem;
   font-weight: 700;
   color: ${colors.text};
@@ -155,6 +166,7 @@ const HeroTitle = styled.h1`
 `
 
 const HeroSubtitle = styled.p`
+  font-family: Poppins;
   font-size: 1.2rem;
   color: ${colors.textLight};
   max-width: 600px;
@@ -174,6 +186,7 @@ const AddButton = styled.button`
   background: linear-gradient(135deg, #ff4d4d, #f9004d);
   border: none;
   color: white;
+  font-family: Poppins;
   font-size: 24px;
   display: flex;
   align-items: center;
@@ -247,6 +260,7 @@ const ModalHeader = styled.div`
 
 const ModalTitle = styled.h3`
   margin: 0;
+  font-family: Poppins;
   font-size: 1.25rem;
   font-weight: 600;
   color: ${colors.text};
@@ -257,6 +271,7 @@ const CloseButton = styled.button`
   background: none;
   border: none;
   color: ${colors.textLight};
+  font-family: Poppins;
   font-size: 1.5rem;
   cursor: pointer;
   transition: color 0.2s ease;
@@ -280,6 +295,7 @@ const FormGroup = styled.div`
 const FormLabel = styled.label`
   display: block;
   margin-bottom: 0.75rem;
+  font-family: Poppins;
   font-size: 0.95rem;
   font-weight: 500;
   color: ${colors.textLight};
@@ -292,6 +308,7 @@ const FormInput = styled.input`
   border: 1px solid rgba(157, 78, 221, 0.3);
   border-radius: 6px;
   color: ${colors.text};
+  font-family: Poppins;
   font-size: 1rem;
   transition: all 0.2s ease;
   
@@ -308,6 +325,7 @@ const FormInput = styled.input`
 
 const ErrorMessage = styled.div`
   color: #ff4d4d;
+  font-family: Poppins;
   font-size: 0.85rem;
   margin-top: 0.75rem;
   padding: 0.5rem;
@@ -328,6 +346,7 @@ const ButtonGroup = styled.div`
 const Button = styled.button`
   padding: 0.6rem 1.25rem;
   border-radius: 6px;
+  font-family: Poppins;
   font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;

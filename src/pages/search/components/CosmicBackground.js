@@ -4,10 +4,10 @@ import { memo, useMemo } from "react";
 // Reduced animation complexity
 const pulse = keyframes`
   0% {
-    opacity: 0.3;
+	opacity: 0.3;
   }
   100% {
-    opacity: 0.6;
+	opacity: 0.6;
   }
 `;
 
@@ -60,57 +60,57 @@ const Nebula = styled.div`
 const CosmicBackground = memo(() => {
   // Generate stars and nebulae only once using useMemo
   const { stars, nebulae } = useMemo(() => {
-    // Reduced number of stars
-    const generatedStars = Array.from({ length: 30 }, (_, i) => ({
-      id: `star-${i}`,
-      size: Math.random() * 2 + 1,
-      color: i % 3 === 0 ? "#9d4edd" : i % 3 === 1 ? "#5e60ce" : "#5390d9",
-      top: Math.random() * 100,
-      left: Math.random() * 100,
-      opacity: Math.random() * 0.5 + 0.3,
-      duration: Math.random() * 3 + 2,
-    }));
-    
-    // Reduced number and size of nebulae
-    const generatedNebulae = Array.from({ length: 3 }, (_, i) => ({
-      id: `nebula-${i}`,
-      size: Math.random() * 200 + 150,
-      color: i % 2 === 0 ? "rgba(157, 78, 221, 0.15)" : "rgba(94, 96, 206, 0.15)",
-      top: Math.random() * 100,
-      left: Math.random() * 100,
-      opacity: Math.random() * 0.15 + 0.05,
-      blur: Math.random() * 30 + 20,
-    }));
-    
-    return { stars: generatedStars, nebulae: generatedNebulae };
+	// Reduced number of stars
+	const generatedStars = Array.from({ length: 30 }, (_, i) => ({
+	  id: `star-${i}`,
+	  size: Math.random() * 2 + 1,
+	  color: i % 3 === 0 ? "#9d4edd" : i % 3 === 1 ? "#5e60ce" : "#5390d9",
+	  top: Math.random() * 100,
+	  left: Math.random() * 100,
+	  opacity: Math.random() * 0.5 + 0.3,
+	  duration: Math.random() * 3 + 2,
+	}));
+	
+	// Reduced number and size of nebulae
+	const generatedNebulae = Array.from({ length: 3 }, (_, i) => ({
+	  id: `nebula-${i}`,
+	  size: Math.random() * 200 + 150,
+	  color: i % 2 === 0 ? "rgba(157, 78, 221, 0.15)" : "rgba(94, 96, 206, 0.15)",
+	  top: Math.random() * 100,
+	  left: Math.random() * 100,
+	  opacity: Math.random() * 0.15 + 0.05,
+	  blur: Math.random() * 30 + 20,
+	}));
+	
+	return { stars: generatedStars, nebulae: generatedNebulae };
   }, []);
 
   return (
-    <BackgroundContainer>
-      {nebulae.map((nebula) => (
-        <Nebula
-          key={nebula.id}
-          size={nebula.size}
-          color={nebula.color}
-          top={nebula.top}
-          left={nebula.left}
-          opacity={nebula.opacity}
-          blur={nebula.blur}
-        />
-      ))}
-      {stars.map((star) => (
-        <Star
-          key={star.id}
-          size={star.size}
-          color={star.color}
-          top={star.top}
-          left={star.left}
-          opacity={star.opacity}
-          duration={star.duration}
-        />
-      ))}
-      <GradientOverlay />
-    </BackgroundContainer>
+	<BackgroundContainer>
+	  {nebulae.map((nebula) => (
+		<Nebula
+		  key={nebula.id}
+		  size={nebula.size}
+		  color={nebula.color}
+		  top={nebula.top}
+		  left={nebula.left}
+		  opacity={nebula.opacity}
+		  blur={nebula.blur}
+		/>
+	  ))}
+	  {stars.map((star) => (
+		<Star
+		  key={star.id}
+		  size={star.size}
+		  color={star.color}
+		  top={star.top}
+		  left={star.left}
+		  opacity={star.opacity}
+		  duration={star.duration}
+		/>
+	  ))}
+	  <GradientOverlay />
+	</BackgroundContainer>
   );
 });
 

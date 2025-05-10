@@ -28,7 +28,8 @@ const Subteams = (props) => {
       <ParticleBackground colors={["#9d4edd", "#5e60ce", "#5390d9"]} />
       <HeroSection>
         <HeroTitle>Our Teams</HeroTitle>
-        <HeroSubtitle>Specialized groups working together to push the boundaries of aerospace innovation</HeroSubtitle>
+        <HeroSubtitle>Here are our subteams of mechanical, programming, and 
+			electronics!</HeroSubtitle>
       </HeroSection>
       <TeamsContainer>
         {Data.teams.map((value) => (
@@ -47,6 +48,7 @@ const PageContainer = styled.div`
 `
 
 const HeroSection = styled.div`
+  font-family: Poppins;
   text-align: center;
   padding: 2rem 1rem 3rem;
   max-width: 800px;
@@ -54,6 +56,7 @@ const HeroSection = styled.div`
 `
 
 const HeroTitle = styled.h1`
+  font-family: Poppins;
   font-size: 2.5rem;
   font-weight: 700;
   color: ${colors.text};
@@ -74,6 +77,7 @@ const HeroTitle = styled.h1`
 `
 
 const HeroSubtitle = styled.p`
+  font-family: Poppins;
   font-size: 1.2rem;
   color: ${colors.textLight};
   max-width: 600px;

@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import { StyledParagraph as Paragraph } from "theme/Styles"
 import { desktop, mobile, tablet, isMobile } from "theme/Breakpoints"
-import { darker } from "theme/Colors"
+import { gray } from "theme/Colors"
 
 const BigCard = ({ data, ...props }) => {
 	const { name, position, image } = data
@@ -19,7 +19,7 @@ const BigCard = ({ data, ...props }) => {
 
 const Container = styled.div`
 	${mobile} {
-		background: ${({ bg_color }) => bg_color ?? darker};
+		background: ${({ bg_color }) => bg_color ?? gray};
 		grid-template:
 			". .        . image" 0.5rem
 			". .        . image" min-content
@@ -31,7 +31,7 @@ const Container = styled.div`
 	}
 
 	${tablet} {
-		background: ${darker};
+		background: ${gray};
 		grid-template:
 			". .        . image" 1rem
 			". name     . image" min-content
