@@ -31,11 +31,8 @@ const pulse = keyframes`
   }
 `
 
-const Container = styled(Grid)`
-  --rows: unset;
+const Container = styled.header`
   background: rgba(10, 15, 30, 0.92);
-  align-items: center;
-  position: absolute;
   height: ${props => props.height || "60px"};
   z-index: 10;
   right: 0;
@@ -45,37 +42,50 @@ const Container = styled(Grid)`
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(13, 110, 253, 0.2);
   border-radius: 0 0 12px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  position: absolute;
 
-  ${mobile} {
-    --rows: 100% auto;
-    --columns: 1rem repeat(10, 1fr) 1rem;
-    gap: 0;
-
-    grid-template-areas:
-      ".       logo    logo    .       .       .       .       .       .       .       burger  .       "
-      "content content content content content content content content content content content content ";
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+    padding: 0.5rem 1rem;
   }
+`
 
-  ${tablet} {
-    --columns: 0 repeat(8, 1fr) 0;
-    column-gap: 1rem;
+const LogoContainer = styled.div`
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+`
 
-    grid-template-areas:
-      ".        .       logo    logo    .       .       .       burger  .       .      "
-      "content  content content content content content content content content content";
+const SearchContainer = styled.div`
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 1rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 0.5rem 0;
+    order: 2;
   }
+`
 
-  ${desktop} {
-    --columns: repeat(12, 1fr);
-    
-    grid-template-areas:
-      ".       logo    logo    content content content content content content content content .       ";
-    display: flex;
-    align-items: center;
+const RightContainer = styled.div`
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
     justify-content: space-between;
-    padding: 0 1rem;
-    min-width: 100%;
-    overflow-x: visible;
+    order: 1;
   }
 `
 
@@ -85,36 +95,29 @@ const LinksList = ({ hook, ...props }) => {
 }
 
 const StyledLinksList = styled.ul`
-  display: ${props => (props.active ? "initial" : "none")};
-  justify-self: flex-end;
+  display: ${props => (props.active ? "flex" : "none")};
+  flex-direction: column;
   list-style-type: none;
   width: 100%;
   background: rgba(15, 20, 35, 0.95);
-  padding: 0;
+  padding: 1rem;
   margin: 0;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   border-radius: 0 0 8px 8px;
   border: 1px solid rgba(13, 110, 253, 0.2);
   border-top: none;
   z-index: 5;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
 
   ${desktop} {
-    width: initial;
-    background: transparent;
-    display: flex;
-    border: none;
-    box-shadow: none;
-    margin-right: 200px; /* Make room for search bar */
-    font-size: 0.9rem;
-
-    li {
-      &:not(:first-of-type) {
-        margin-left: 0.6rem;
-      }
-      &:not(:last-of-type) {
-        margin-right: 0.6rem;
-      }
-    }
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 250px;
+    left: auto;
   }
 `
 
@@ -125,9 +128,10 @@ const LinkItem = styled.li.attrs(props => ({
   },
 }))`
   justify-content: center;
-  margin: 1rem auto;
+  margin: 0.75rem auto;
   display: flex;
   position: relative;
+  width: 100%;
   
   &:hover::after {
     content: "";
@@ -201,20 +205,12 @@ const RawLinkObject = styled.a`
 
 const StyledBurger = styled.div`
   grid-template-rows: repeat(3, 3px);
-  grid-area: burger;
   cursor: pointer;
   height: 1.5rem;
   width: 1.5rem;
   display: grid;
   row-gap: 5px;
-  z-index: 20;
-
-  ${tablet} {
-    justify-self: flex-end;
-  }
-  ${desktop} {
-    display: none;
-  }
+  margin-left: 0.5rem;
 `
 
 const Burger = ({ hook, ...props }) => {
@@ -259,44 +255,21 @@ const InnerBurger = styled.div`
 `
 
 const SearchForm = styled.form`
-  grid-area: content;
   display: flex;
   align-items: center;
-  margin-right: 0.5rem;
-  max-width: 180px;
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  
-  ${desktop} {
-    position: absolute;
-    right: 1rem;
-    transform: translateY(-50%);
-    margin-left: auto;
-  }
-  
-  @media (max-width: 768px) {
-    margin-top: 1rem;
-    width: 100%;
-    max-width: 100%;
-    padding: 0 1rem;
-    position: relative;
-    right: 0;
-    transform: none;
-  }
+  width: 100%;
 `
 
 const SearchInput = styled.input`
-  padding: 0.3rem 0.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 20px 0 0 20px;
   border: 1px solid rgba(13, 110, 253, 0.4);
   border-right: none;
   background: rgba(15, 20, 35, 0.6);
   color: white;
   outline: none;
-  width: 120px;
-  font-size: 0.75rem;
+  width: 100%;
+  font-size: 0.85rem;
   transition: all 0.3s ease;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
   
@@ -312,14 +285,14 @@ const SearchInput = styled.input`
 `
 
 const SearchButton = styled.button`
-  padding: 0.3rem 0.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 0 20px 20px 0;
   background: linear-gradient(90deg, rgba(13, 110, 253, 0.8), rgba(23, 92, 204, 0.8));
   color: white;
   border: 1px solid rgba(13, 110, 253, 0.4);
   cursor: pointer;
   font-weight: 500;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   transition: all 0.3s ease;
   
   &:hover {
@@ -333,11 +306,27 @@ const EnhancedButton = styled(Button)`
   border: 1px solid rgba(220, 53, 69, 0.4);
   box-shadow: 0 0 10px rgba(220, 53, 69, 0.3);
   transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
   
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 0 15px rgba(220, 53, 69, 0.5);
     background: linear-gradient(90deg, rgba(220, 53, 69, 1), rgba(178, 34, 52, 1));
+  }
+
+  @media (max-width: 992px) {
+    display: none;
+  }
+`
+
+const MobileEnhancedButton = styled(EnhancedButton)`
+  display: none;
+  margin: 0 auto;
+  
+  @media (max-width: 992px) {
+    display: flex;
   }
 `
 
@@ -352,26 +341,35 @@ const Header = (props) => {
   }
 
   return (
-    <Container active={active} as="header" height={props.headerHeight}>
-      <LogoLink to="/" style={{ ...Heading, alignSelf: "initial", gridArea: "logo" }}>
-        TJUAV
-      </LogoLink>
+    <Container height={props.headerHeight}>
+      <LogoContainer>
+        <LogoLink to="/" style={Heading}>
+          TJUAV
+        </LogoLink>
+      </LogoContainer>
 
-      <Burger hook={[active, setActive]} />
+      <SearchContainer>
+        <SearchForm onSubmit={handleSearch}>
+          <SearchInput
+            type="text"
+            placeholder="Search..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <SearchButton type="submit">
+            Search
+          </SearchButton>
+        </SearchForm>
+      </SearchContainer>
 
-      <SearchForm onSubmit={handleSearch}>
-        <SearchInput
-          type="text"
-          placeholder="Search..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-        <SearchButton type="submit">
-          Search
-        </SearchButton>
-      </SearchForm>
+      <RightContainer>
+        <EnhancedButton href="/sponsorship-packet.pdf" target="blank">
+          Sponsorship Info
+        </EnhancedButton>
+        <Burger hook={[active, setActive]} />
+      </RightContainer>
 
-      <LinksList hook={[active, setActive]} style={{ gridArea: "content" }}>
+      <LinksList hook={[active, setActive]}>
         <LinkItem hook={[active, setActive]}>
           <StyledLink to="/" style={Paragraph}>
             Home
@@ -403,7 +401,9 @@ const Header = (props) => {
           </StyledLink>
         </LinkItem>
         <LinkItem hook={[active, setActive]}>
-          <EnhancedButton href="/sponsorship-packet.pdf" target="blank">Sponsorship Info</EnhancedButton>
+          <MobileEnhancedButton href="/sponsorship-packet.pdf" target="blank">
+            Sponsorship Info
+          </MobileEnhancedButton>
         </LinkItem>
       </LinksList> 
     </Container>
