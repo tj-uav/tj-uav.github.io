@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import styled from "styled-components"
 import { db } from "../../firebase/firebase"
 import { collection, onSnapshot, query, doc, deleteDoc } from "firebase/firestore"
+import flightDaysData from "./assets/data.json"
 
 // Cosmic blue-purple color palette
 const colors = {
@@ -34,6 +35,9 @@ const BlogList = ({ isAuthenticated = false, onAuthRequest }) => {
     let isMounted = true
     
     try {
+      // Start with flight days from data.json
+      const flightDayBlogs = flightDaysData.flightDays || [];
+      
       const blogsRef = collection(db, "blogs")
       const q = query(blogsRef)
 
@@ -42,19 +46,43 @@ const BlogList = ({ isAuthenticated = false, onAuthRequest }) => {
         (snapshot) => {
           if (!isMounted) return
           
-          const blogsData = snapshot.docs.map((doc) => ({
+          const firestoreBlogs = snapshot.docs.map((doc) => ({
             id: doc.id,
             ...doc.data(),
           }))
           
-          setBlogs(blogsData)
+          // Combine both data sources
+          // Use a Map to avoid duplicates in case a blog from Firestore has the same ID as a flight day
+          const blogMap = new Map();
+          
+          // Add flight days first
+          flightDayBlogs.forEach(blog => {
+            blogMap.set(blog.id, blog);
+          });
+          
+          // Then add Firestore blogs (they will override if same ID exists)
+          firestoreBlogs.forEach(blog => {
+            blogMap.set(blog.id, blog);
+          });
+          
+          // Convert Map back to array
+          const combinedBlogs = Array.from(blogMap.values());
+          
+          // Sort by timestamp (newest first)
+          combinedBlogs.sort((a, b) => {
+            return new Date(b.timestamp) - new Date(a.timestamp);
+          });
+          
+          setBlogs(combinedBlogs)
           setLoading(false)
         },
         (error) => {
           if (!isMounted) return
           
           console.error("Error fetching blogs:", error)
-          setError("Failed to load blogs. Please try again later.")
+          // Still show the flight day blogs even if Firestore fails
+          setBlogs(flightDayBlogs)
+          setError("Failed to load dynamic blogs. Showing local flight data only.")
           setLoading(false)
         }
       )
@@ -62,6 +90,7 @@ const BlogList = ({ isAuthenticated = false, onAuthRequest }) => {
       // Set a timeout to handle cases where Firebase might be slow to respond
       const timeoutId = setTimeout(() => {
         if (isMounted && loading) {
+          setBlogs(flightDayBlogs)
           setLoading(false)
         }
       }, 5000) // 5 second timeout
@@ -74,7 +103,10 @@ const BlogList = ({ isAuthenticated = false, onAuthRequest }) => {
     } catch (err) {
       if (isMounted) {
         console.error("Error setting up blogs listener:", err)
-        setError("Failed to connect to the blog service.")
+        // Still show the flight day blogs even if there's an error
+        const flightDayBlogs = flightDaysData.flightDays || [];
+        setBlogs(flightDayBlogs)
+        setError("Failed to connect to the blog service. Showing local flight data only.")
         setLoading(false)
       }
     }
@@ -107,6 +139,12 @@ const BlogList = ({ isAuthenticated = false, onAuthRequest }) => {
   const handleDeleteClick = (e, blog) => {
     e.stopPropagation() // Prevent opening the blog detail
     
+    // Don't allow deletion of flight day blogs from data.json
+    if (blog.id.startsWith('flight_')) {
+      console.log("Flight day blogs cannot be deleted")
+      return
+    }
+    
     if (isAuthenticated) {
       // If already authenticated, show confirmation dialog
       setConfirmDeleteBlog(blog)
@@ -118,22 +156,22 @@ const BlogList = ({ isAuthenticated = false, onAuthRequest }) => {
   }
 
   const confirmDelete = async () => {
-  if (!confirmDeleteBlog) return
-  
-  try {
-    // Close the delete confirmation dialog immediately
-    setConfirmDeleteBlog(null)
+    if (!confirmDeleteBlog) return
     
-    // Delete the blog from Firestore in the background
-    await deleteDoc(doc(db, "blogs", confirmDeleteBlog.id))
-    
-    // Show a brief success message (could be implemented with a toast notification)
-    console.log(`Blog "${confirmDeleteBlog.title}" deleted successfully`)
-  } catch (error) {
-    console.error("Error deleting blog:", error)
-    setError(`Failed to delete blog: ${error.message}`)
+    try {
+      // Close the delete confirmation dialog immediately
+      setConfirmDeleteBlog(null)
+      
+      // Delete the blog from Firestore in the background
+      await deleteDoc(doc(db, "blogs", confirmDeleteBlog.id))
+      
+      // Show a brief success message (could be implemented with a toast notification)
+      console.log(`Blog "${confirmDeleteBlog.title}" deleted successfully`)
+    } catch (error) {
+      console.error("Error deleting blog:", error)
+      setError(`Failed to delete blog: ${error.message}`)
+    }
   }
-}
 
   const cancelDelete = () => {
     setConfirmDeleteBlog(null)
@@ -141,10 +179,6 @@ const BlogList = ({ isAuthenticated = false, onAuthRequest }) => {
 
   if (loading) {
     return <LoadingContainer>Loading blogs...</LoadingContainer>
-  }
-
-  if (error) {
-    return <ErrorContainer>{error}</ErrorContainer>
   }
 
   return (
@@ -163,12 +197,15 @@ const BlogList = ({ isAuthenticated = false, onAuthRequest }) => {
                 <BlogCardTitle>{blog.title}</BlogCardTitle>
                 <BlogCardText>{blog.content}</BlogCardText>
               </BlogContent>
-              <DeleteButton 
-                onClick={(e) => handleDeleteClick(e, blog)}
-                aria-label="Delete blog"
-              >
-                <TrashIcon />
-              </DeleteButton>
+              {/* Only show delete button for non-flight day blogs */}
+              {!blog.id.startsWith('flight_') && (
+                <DeleteButton 
+                  onClick={(e) => handleDeleteClick(e, blog)}
+                  aria-label="Delete blog"
+                >
+                  <TrashIcon />
+                </DeleteButton>
+              )}
             </BlogCard>
           ))}
         </BlogGrid>
@@ -177,6 +214,9 @@ const BlogList = ({ isAuthenticated = false, onAuthRequest }) => {
           <p>No blogs available. Be the first to create a post!</p>
         </NoBlogsMessage>
       )}
+
+      {/* Display error message if present */}
+      {error && <ErrorNotification>{error}</ErrorNotification>}
 
       {/* Blog Detail Modal */}
       {selectedBlog && (
@@ -392,6 +432,17 @@ const BlogCardText = styled.p`
   color: ${colors.textLight};
   font-family: Poppins;
   font-size: 0.95rem;
+`
+
+const ErrorNotification = styled.div`
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: rgba(255, 77, 77, 0.1);
+  border-left: 4px solid ${colors.danger};
+  color: ${colors.text};
+  border-radius: 4px;
+  font-family: Poppins;
+  font-size: 0.9rem;
 `
 
 const NoBlogsMessage = styled.div`

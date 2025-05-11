@@ -1,0 +1,32 @@
+{
+  "flightDays": [
+    {
+      "id": "flight_20250327",
+      "title": "Flight Day: March 27th",
+      "content": "Weren't able to fly that day due to Ground Station not connecting to the plane that day and having to debug the issue. Also, when the motor started and the propeller started to spin, the motor was shaving against the propeller and causing issues.",
+      "timestamp": "2025-03-27T10:00:00.000Z",
+      "blogId": "blog_1616792400000_abcdef1"
+    },
+    {
+      "id": "flight_20250412",
+      "title": "Flight Day: April 12th",
+      "content": "Weren't able to get in the air this time as well, couldn't get the plane off because of weight issues.",
+      "timestamp": "2025-04-12T10:00:00.000Z",
+      "blogId": "blog_1618218000000_abcdef2"
+    },
+    {
+      "id": "flight_20250417",
+      "title": "Flight Day: April 17th",
+      "content": "Were finally able to get in the air but landing was very rough and ended up bending the landing gear and spar.",
+      "timestamp": "2025-04-17T10:00:00.000Z",
+      "blogId": "blog_1618650000000_abcdef3"
+    },
+    {
+      "id": "flight_20250502",
+      "title": "Flight Day: May 2nd",
+      "content": "Unfortunately landing very hard again, which caused our new spar to bend again and also our landing gear.",
+      "timestamp": "2025-05-02T10:00:00.000Z",
+      "blogId": "blog_1619949600000_abcdef4"
+    }
+  ]
+}
