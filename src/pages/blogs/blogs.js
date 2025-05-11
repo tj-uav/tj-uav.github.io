@@ -33,15 +33,24 @@ const BlogsPage = () => {
   const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false)
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [authAction, setAuthAction] = useState(null) // Store the action requiring auth
+  const [blogToDelete, setBlogToDelete] = useState(null) // Store blog to delete if auth is requested for deletion
   
   // Log to verify the modal state changes
   useEffect(() => {
     console.log("Blog modal state:", isBlogModalOpen)
   }, [isBlogModalOpen])
 
-  const openPasswordModal = () => {
+  const openPasswordModal = (action = "create", blog = null) => {
     setPassword("")
     setError("")
+    setAuthAction(action)
+    
+    if (action === "delete") {
+      setBlogToDelete(blog)
+    }
+    
     setIsPasswordModalOpen(true)
   }
 
@@ -49,13 +58,22 @@ const BlogsPage = () => {
     setIsPasswordModalOpen(false)
     setPassword("")
     setError("")
+    // We're keeping authAction and blogToDelete since we need them after authentication
   }
 
   const handlePasswordSubmit = (e) => {
     e.preventDefault()
     if (password === CORRECT_PASSWORD) {
+      setIsAuthenticated(true)
       setIsPasswordModalOpen(false)
-      setIsBlogModalOpen(true)
+      
+      // Handle different auth actions
+      if (authAction === "create") {
+        setIsBlogModalOpen(true)
+      }
+      // No need for explicit handling of delete action here 
+      // The BlogList component will handle showing the confirmation dialog
+      // via the useEffect that watches for isAuthenticated changes
     } else {
       setError("Incorrect password. Access denied.")
     }
@@ -64,6 +82,20 @@ const BlogsPage = () => {
   const closeBlogModal = () => {
     console.log("Closing blog modal")
     setIsBlogModalOpen(false)
+  }
+  
+  // Handler for auth requests from child components
+  const handleAuthRequest = (action, blog = null) => {
+    if (isAuthenticated) {
+      // If already authenticated, directly perform the action
+      if (action === "create") {
+        setIsBlogModalOpen(true)
+      }
+      // For delete action, BlogList will handle it once it knows authentication status
+    } else {
+      // Request authentication with the specific action
+      openPasswordModal(action, blog)
+    }
   }
 
   return (
@@ -77,7 +109,10 @@ const BlogsPage = () => {
         </HeroSection>
 
         <AddButtonContainer>
-          <AddButton onClick={openPasswordModal} aria-label="Add new blog post">
+          <AddButton 
+            onClick={() => handleAuthRequest("create")} 
+            aria-label="Add new blog post"
+          >
             <PlusIcon>+</PlusIcon>
           </AddButton>
         </AddButtonContainer>
@@ -115,7 +150,10 @@ const BlogsPage = () => {
         )}
 
         <BlogForm isOpen={isBlogModalOpen} onClose={closeBlogModal} />
-        <BlogList />
+        <BlogList 
+          isAuthenticated={isAuthenticated} 
+          onAuthRequest={handleAuthRequest} 
+        />
       </ContentContainer>
     </PageContainer>
   )

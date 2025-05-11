@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import styled from "styled-components"
 import { db } from "../../firebase/firebase"
-import { collection, onSnapshot, query } from "firebase/firestore"
+import { collection, onSnapshot, query, doc, deleteDoc } from "firebase/firestore"
 
 // Cosmic blue-purple color palette
 const colors = {
@@ -20,13 +20,15 @@ const colors = {
   textLight: "#a2a8d3", // Light purple-blue text
   border: "#38305f", // Medium purple for borders
   highlight: "rgba(157, 78, 221, 0.15)", // Subtle purple highlight
+  danger: "#ff4d4d", // Red for delete actions
 }
 
-const BlogList = () => {
+const BlogList = ({ isAuthenticated = false, onAuthRequest }) => {
   const [blogs, setBlogs] = useState([])
   const [loading, setLoading] = useState(true)
   const [selectedBlog, setSelectedBlog] = useState(null)
   const [error, setError] = useState(null)
+  const [confirmDeleteBlog, setConfirmDeleteBlog] = useState(null)
 
   useEffect(() => {
     let isMounted = true
@@ -78,6 +80,15 @@ const BlogList = () => {
     }
   }, [])
 
+  // NEW EFFECT: Show deletion confirmation immediately after authentication
+  useEffect(() => {
+    // When authentication status changes to true and we have a blog to delete
+    if (isAuthenticated && blogToDelete) {
+      setConfirmDeleteBlog(blogToDelete);
+      setBlogToDelete(null);
+    }
+  }, [isAuthenticated]);
+
   const openBlogDetail = (blog) => {
     setSelectedBlog(blog)
     // Prevent scrolling when modal is open
@@ -88,6 +99,44 @@ const BlogList = () => {
     setSelectedBlog(null)
     // Re-enable scrolling
     document.body.style.overflow = "auto"
+  }
+
+  // Track blog to delete when requesting authentication
+  const [blogToDelete, setBlogToDelete] = useState(null);
+
+  const handleDeleteClick = (e, blog) => {
+    e.stopPropagation() // Prevent opening the blog detail
+    
+    if (isAuthenticated) {
+      // If already authenticated, show confirmation dialog
+      setConfirmDeleteBlog(blog)
+    } else {
+      // If not authenticated, request authentication
+      setBlogToDelete(blog) // Store the blog to delete
+      onAuthRequest("delete", blog)
+    }
+  }
+
+  const confirmDelete = async () => {
+  if (!confirmDeleteBlog) return
+  
+  try {
+    // Close the delete confirmation dialog immediately
+    setConfirmDeleteBlog(null)
+    
+    // Delete the blog from Firestore in the background
+    await deleteDoc(doc(db, "blogs", confirmDeleteBlog.id))
+    
+    // Show a brief success message (could be implemented with a toast notification)
+    console.log(`Blog "${confirmDeleteBlog.title}" deleted successfully`)
+  } catch (error) {
+    console.error("Error deleting blog:", error)
+    setError(`Failed to delete blog: ${error.message}`)
+  }
+}
+
+  const cancelDelete = () => {
+    setConfirmDeleteBlog(null)
   }
 
   if (loading) {
@@ -114,6 +163,12 @@ const BlogList = () => {
                 <BlogCardTitle>{blog.title}</BlogCardTitle>
                 <BlogCardText>{blog.content}</BlogCardText>
               </BlogContent>
+              <DeleteButton 
+                onClick={(e) => handleDeleteClick(e, blog)}
+                aria-label="Delete blog"
+              >
+                <TrashIcon />
+              </DeleteButton>
             </BlogCard>
           ))}
         </BlogGrid>
@@ -147,9 +202,54 @@ const BlogList = () => {
           </BlogDetailModal>
         </ModalOverlay>
       )}
+
+      {/* Delete Confirmation Modal */}
+      {confirmDeleteBlog && (
+        <ModalOverlay onClick={cancelDelete}>
+          <DeleteConfirmModal onClick={(e) => e.stopPropagation()}>
+            <ModalHeader>
+              <ModalTitle>Confirm Delete</ModalTitle>
+              <CloseButton onClick={cancelDelete}>&times;</CloseButton>
+            </ModalHeader>
+            <ConfirmContent>
+              <p>Are you sure you want to delete the blog post:</p>
+              <p><strong>"{confirmDeleteBlog.title}"</strong>?</p>
+              <p>This action cannot be undone.</p>
+              
+              <ButtonGroup>
+                <DeleteConfirmButton onClick={confirmDelete}>
+                  Delete
+                </DeleteConfirmButton>
+                <CancelButton onClick={cancelDelete}>
+                  Cancel
+                </CancelButton>
+              </ButtonGroup>
+            </ConfirmContent>
+          </DeleteConfirmModal>
+        </ModalOverlay>
+      )}
     </BlogListContainer>
   )
 }
+
+// TrashIcon component
+const TrashIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M3 6h18"></path>
+    <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+    <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+  </svg>
+);
 
 // Styled Components
 const BlogListContainer = styled.div`
@@ -216,6 +316,35 @@ const BlogCard = styled.div`
   
   &:hover:before {
     opacity: 1;
+  }
+`
+
+const DeleteButton = styled.button`
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(26, 26, 46, 0.8);
+  border: 1px solid ${colors.border};
+  color: ${colors.danger};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0;
+  transition: all 0.2s ease;
+  
+  ${BlogCard}:hover & {
+    opacity: 1;
+  }
+  
+  &:hover {
+    background-color: ${colors.danger};
+    color: white;
+    transform: scale(1.1);
   }
 `
 
@@ -368,6 +497,93 @@ const BlogDetailModal = styled.div`
   &::-webkit-scrollbar-thumb {
     background: rgba(157, 78, 221, 0.5);
     border-radius: 4px;
+  }
+`
+
+const DeleteConfirmModal = styled.div`
+  background: linear-gradient(145deg, ${colors.cardBackground}, ${colors.background});
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+              0 0 0 1px rgba(255, 255, 255, 0.1),
+              0 0 30px rgba(157, 78, 221, 0.2);
+  border: 1px solid ${colors.danger};
+  animation: modalAppear 0.3s ease-out;
+`
+
+const ModalHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(157, 78, 221, 0.2);
+  background: rgba(15, 52, 96, 0.5);
+`
+
+const ModalTitle = styled.h3`
+  margin: 0;
+  font-family: Poppins;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: ${colors.text};
+  letter-spacing: 0.5px;
+`
+
+const ConfirmContent = styled.div`
+  padding: 1.5rem;
+  font-family: Poppins;
+  color: ${colors.text};
+  
+  p {
+    margin: 0.5rem 0;
+    line-height: 1.5;
+  }
+  
+  strong {
+    color: ${colors.danger};
+  }
+`
+
+const ButtonGroup = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+`
+
+const DeleteConfirmButton = styled.button`
+  background: linear-gradient(135deg, ${colors.danger}, #ff1a1a);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-family: Poppins;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 77, 77, 0.4);
+  }
+`
+
+const CancelButton = styled.button`
+  background: transparent;
+  color: ${colors.textLight};
+  border: 1px solid rgba(162, 168, 211, 0.3);
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-family: Poppins;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: rgba(162, 168, 211, 0.1);
+    color: ${colors.text};
   }
 `
 

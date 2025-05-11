@@ -28,6 +28,7 @@ const BlogForm = ({ isOpen, onClose }) => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState(null)
   const [successMessage, setSuccessMessage] = useState("")
+  const [debugInfo, setDebugInfo] = useState(null)
 
   // Reset form fields when modal is opened
   useEffect(() => {
@@ -37,46 +38,62 @@ const BlogForm = ({ isOpen, onClose }) => {
       setError(null)
       setSuccessMessage("")
       setIsSubmitting(false)
+      setDebugInfo(null)
     }
   }, [isOpen])
+
+  // Debug function to verify Firebase database connection
+  const checkFirebaseConnection = () => {
+    try {
+      const connectionInfo = {
+        dbExists: !!db,
+        dbType: db ? typeof db : 'undefined',
+        firestoreProps: db ? Object.keys(db) : [],
+        envVars: {
+          apiKey: process.env.REACT_APP_FIREBASE_API_KEY ? "Set" : "Not set",
+          projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID ? "Set" : "Not set",
+          appId: process.env.REACT_APP_FIREBASE_APP_ID ? "Set" : "Not set"
+        }
+      }
+      setDebugInfo(connectionInfo)
+      return connectionInfo
+    } catch (error) {
+      setDebugInfo({ error: error.message })
+      return { error: error.message }
+    }
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (isSubmitting) return
-
-    // Close the form immediately when the publish button is clicked
-    onClose()
-
+    
+    // CHANGE: Close modal immediately after clicking Publish
+    onClose();
+    
+    setIsSubmitting(true)
+    setError(null)
+    setSuccessMessage("")
+    
     try {
-      setIsSubmitting(true)
-      
-      // The rest of the submission logic continues in the background
-      // Check if the database connection is working
-      if (!db) {
-        throw new Error("Database connection not established")
-      }
-
-      // Log the data being submitted for debugging
-      console.log("Submitting blog post:", { title, content })
-
       // Create a reference to the blogs collection
       const blogsCollectionRef = collection(db, "blogs")
-      console.log("Collection reference created:", blogsCollectionRef)
-
-      // Add the document
-      const docRef = await addDoc(blogsCollectionRef, {
+      
+      // Add the document with all necessary fields
+      const blogData = {
         title,
         content,
         timestamp: new Date().toISOString(),
-      })
-
-      console.log("Document written with ID: ", docRef.id)
+        blogId: `blog_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`
+      }
       
-      // No need to show success message or further UI updates
-      // since the form is already closed
+      // Add the document
+      await addDoc(blogsCollectionRef, blogData)
+      
+      // Reset form fields
+      setTitle("")
+      setContent("")
     } catch (error) {
       console.error("Error adding blog post:", error)
-      // We won't be able to show errors either since the form is closed
     } finally {
       setIsSubmitting(false)
     }
@@ -94,7 +111,7 @@ const BlogForm = ({ isOpen, onClose }) => {
   if (!isOpen) return null
 
   return (
-    <ModalOverlay onClick={onClose}>
+    <ModalOverlay onClick={(e) => e.target === e.currentTarget && onClose()}>
       <FormModal onClick={(e) => e.stopPropagation()}>
         {error && (
           <ErrorContainer>
@@ -307,14 +324,6 @@ const FormTextarea = styled.textarea`
   &::placeholder {
     color: rgba(162, 168, 211, 0.5);
   }
-`
-
-const FormHint = styled.small`
-  color: ${colors.secondary};
-  font-family: Poppins;
-  font-size: 0.8rem;
-  margin-top: 0.5rem;
-  display: block;
 `
 
 const FormFooter = styled.div`
