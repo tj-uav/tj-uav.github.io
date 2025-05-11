@@ -17,7 +17,7 @@ const PageContainer = styled.div`
   position: relative;
 `
 
-// Colors for particles (matching the ones from Members.js)
+// Colors for particles
 const particleColors = ["#9d4edd", "#5e60ce", "#5390d9"]
 
 const Home = () => {

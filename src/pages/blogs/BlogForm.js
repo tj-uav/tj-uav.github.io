@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import styled from "styled-components"
 import { addDoc, collection } from "firebase/firestore"
 import { db } from "../../firebase/firebase"
@@ -27,15 +27,30 @@ const BlogForm = ({ isOpen, onClose }) => {
   const [content, setContent] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState(null)
+  const [successMessage, setSuccessMessage] = useState("")
+
+  // Reset form fields when modal is opened
+  useEffect(() => {
+    if (isOpen) {
+      setTitle("")
+      setContent("")
+      setError(null)
+      setSuccessMessage("")
+      setIsSubmitting(false)
+    }
+  }, [isOpen])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (isSubmitting) return
 
+    // Close the form immediately when the publish button is clicked
+    onClose()
+
     try {
       setIsSubmitting(true)
-      setError(null)
-
+      
+      // The rest of the submission logic continues in the background
       // Check if the database connection is working
       if (!db) {
         throw new Error("Database connection not established")
@@ -52,17 +67,16 @@ const BlogForm = ({ isOpen, onClose }) => {
       const docRef = await addDoc(blogsCollectionRef, {
         title,
         content,
+        timestamp: new Date().toISOString(),
       })
 
       console.log("Document written with ID: ", docRef.id)
-
-      // Clear form and close modal on success
-      setTitle("")
-      setContent("")
-      onClose()
+      
+      // No need to show success message or further UI updates
+      // since the form is already closed
     } catch (error) {
       console.error("Error adding blog post:", error)
-      setError(error.message || "Failed to add blog post. Please try again.")
+      // We won't be able to show errors either since the form is closed
     } finally {
       setIsSubmitting(false)
     }
@@ -70,6 +84,11 @@ const BlogForm = ({ isOpen, onClose }) => {
 
   const closeErrorMessage = () => {
     setError(null)
+  }
+
+  const closeSuccessMessage = () => {
+    setSuccessMessage("")
+    onClose() // Close the modal when OK is clicked on success message
   }
 
   if (!isOpen) return null
@@ -82,6 +101,13 @@ const BlogForm = ({ isOpen, onClose }) => {
             <ErrorMessage>{error}</ErrorMessage>
             <ErrorButton onClick={closeErrorMessage}>OK</ErrorButton>
           </ErrorContainer>
+        )}
+        
+        {successMessage && (
+          <SuccessContainer>
+            <SuccessMessage>{successMessage}</SuccessMessage>
+            <SuccessButton onClick={closeSuccessMessage}>OK</SuccessButton>
+          </SuccessContainer>
         )}
 
         <ModalHeader>
@@ -357,9 +383,42 @@ const ErrorContainer = styled.div`
   }
 `
 
+const SuccessContainer = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(26, 46, 36, 0.95);
+  border: 1px solid #4dff77;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  z-index: 1100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 20px rgba(77, 255, 119, 0.2);
+  max-width: 80%;
+  animation: successAppear 0.3s ease-out;
+  
+  @keyframes successAppear {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+`
+
 const ErrorMessage = styled.p`
   margin: 0 0 1rem 0;
   color: white;
+`
+
+const SuccessMessage = styled.p`
+  margin: 0 0 1rem 0;
+  color: white;
+  font-weight: 500;
 `
 
 const ErrorButton = styled.button`
@@ -376,6 +435,23 @@ const ErrorButton = styled.button`
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(212, 192, 94, 0.4);
+  }
+`
+
+const SuccessButton = styled.button`
+  background: linear-gradient(135deg, #4dbb7a, #2f9e64);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 0.5rem 2rem;
+  font-family: Poppins;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(47, 158, 100, 0.4);
   }
 `
 
