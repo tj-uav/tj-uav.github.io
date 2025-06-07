@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b5559466.css",
-    "main.js": "/static/js/main.1e519dfb.js",
+    "main.js": "/static/js/main.a3ee174d.js",
     "static/media/sophia.png": "/static/media/sophia.69cf9a95e6d02da8fab6.png",
     "static/media/winston.png": "/static/media/winston.6eb33dd33ceacdf29731.png",
     "static/media/khoi.png": "/static/media/khoi.d0d5f7920430c4f2cf13.png",
@@ -39,7 +39,6 @@
     "static/media/neel.png": "/static/media/neel.efc6681b5174e1549919.png",
     "static/media/flying.jpg": "/static/media/flying.f851cfd899aef6f22b8f.jpg",
     "static/media/aneesh.png": "/static/media/aneesh.55073322e96ca2373997.png",
-    "static/media/millenium_bordered.jpg": "/static/media/millenium_bordered.5d5e606fa3e8cf531882.jpg",
     "static/media/TJAB.jpg": "/static/media/TJAB.e12a96fd5620b67f6be1.jpg",
     "static/media/apc.jpg": "/static/media/apc.448cba1a52a4accaa04a.jpg",
     "static/media/rohan.jpg": "/static/media/rohan.53486590ac6c66aa9003.jpg",
@@ -50,10 +49,10 @@
     "static/media/programmingIcon.svg": "/static/media/programmingIcon.5e94b131a98ff5a96447.svg",
     "index.html": "/index.html",
     "main.b5559466.css.map": "/static/css/main.b5559466.css.map",
-    "main.1e519dfb.js.map": "/static/js/main.1e519dfb.js.map"
+    "main.a3ee174d.js.map": "/static/js/main.a3ee174d.js.map"
   },
   "entrypoints": [
     "static/css/main.b5559466.css",
-    "static/js/main.1e519dfb.js"
+    "static/js/main.a3ee174d.js"
   ]
 }
