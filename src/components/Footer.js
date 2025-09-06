@@ -75,7 +75,7 @@ const Footer = () => (
         Copyright &copy; <Highlight>TJUAV</Highlight> 2025
       </Copyright>
       <Contributors style={Paragraph}>
-        Contributors: Aarya Srikanth '26, William Black '25, Nicolas Makovnik '23, Jason Klein '22
+        Contributors: Ritwik Sinha '26, Aarya Srikanth '26, William Black '25, Nicolas Makovnik '23, Jason Klein '22
       </Contributors>
     </FooterContent>
   </Container>

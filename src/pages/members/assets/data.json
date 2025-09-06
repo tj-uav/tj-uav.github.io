@@ -3,20 +3,113 @@
 		"heading": "UAV Team",
 		"subheading": "Interested. Active. Engaged. All of these describe the members of our team, who love working together and learning new things.",
 		"caption": [
-			"Some of the 2023-2024 team standing behind the Avalon Mk. 11",
-			"Back Row (Pictured Left to Right): Ryan Ke, William Black, Niels-Oliver DeChaine, Ritwik Sinha, Aneesh Peri, Arthur Prudius, Mr. Szczur, Sebastian Toro, Abhi Repala, Jerry Mao, Rhea Goswami, Jack Williamson",
-			"Front Row (Pictured Left to Right): Aarya Srikanth, Jacob Percy, Krishnan Shankar, Evan Cafaro, Aniketh Luchmapurkar"
+			"Some of the 2024-2025 team standing behind our plane Icarus.",
+			"Standing (Pictured Left to Right): Niels-Oliver DeChaine, William Black",
+			"Sitting (Pictured Left to Right): Polina Moreno, Ritwik Sinha, Sarah McAleer, Frank Zhang, Evan Cafaro, Alex Garcia, Aarya Srikanth, Ryan Ke, Aneesh Peri, Rivaan Verma"
 		]
 	},
 	"members": {
 		"heading": "Members",
 		"entries": [
 			{
+				"name": "Evan Cafaro",
+				"position": "Co-President",
+				"image": {
+					"src": "evan.png",
+					"alt": "Evan Cafaro; Co-President"
+				}
+			},
+			{
+				"name": "Frank Zhang",
+				"position": "Co-President",
+				"image": {
+					"src": "default.jpg",
+					"alt": "Frank Zhang; Co-President"
+				}
+			},
+			{
+				"name": "Mandy Van Buskirk",
+				"position": "Manufacturing Lead",
+				"image": {
+					"src": "mandy.jpg",
+					"alt": "Mandy Van Buskirk; Manufacturing Lead"
+				}
+			},
+			{
+				"name": "Jasper Chen",
+				"position": "Electronics Lead",
+				"image": {
+					"src": "default.jpg",
+					"alt": "Jasper Chen; Electronics Lead"
+				}
+			},
+			{
+				"name": "Aarya Srikanth",
+				"position": "Programming Lead",
+				"image": {
+					"src": "aarya.png",
+					"alt": "Aarya Srikanth; Programming Lead"
+				}
+			},
+						{
+				"name": "Aneesh Peri",
+				"position": "Mechanics Lead",
+				"image": {
+					"src": "aneesh.png",
+					"alt": "Aneesh Peri; Mechanics Lead"
+				}
+			},
+						{
+				"name": "Jacob Percy",
+				"position": "CV Lead",
+				"image": {
+					"src": "jacob.jpg",
+					"alt": "Jacob Percy; CV Lead"
+				}
+			},
+						{
+				"name": "Polina Moreno",
+				"position": "Co-Outreach Lead",
+				"image": {
+					"src": "polina.jpg",
+					"alt": "Polina Moreno; Co-Outreach Lead"
+				}
+			},
+			{
+				"name": "Sarah McAleer",
+				"position": "Co-Outreach Lead",
+				"image": {
+					"src": "default.jpg",
+					"alt": "Sarah McAleer; Co-Outreach Lead"
+				}
+			},
+			{
+				"name": "Ryan Ke",
+				"position": "Secretary",
+				"image": {
+					"src": "ryan.jpeg",
+					"alt": "Ryan Ke; Secretary"
+				}
+			},
+			{
+				"name": "Ritwik Sinha",
+				"position": "Mechanics, Webmaster",
+				"image": {
+					"src": "ritwik.jpg",
+					"alt": "Ritwik Sinha; Webmaster"
+				}
+			}
+		]
+	},
+	"alumni": {
+		"heading": "Alumni",
+		"entries": [
+						{
 				"name": "Niels-Oliver DeChaine",
 				"position": "Co-President",
 				"image": {
 					"src": "niels-oliver.png",
-					"alt": "Niels-Oliver DeChaine; Lead Pilot"
+					"alt": "Niels-Oliver DeChaine; Co-President"
 				}
 			},
 			{
@@ -24,18 +117,10 @@
 				"position": "Co-President",
 				"image": {
 					"src": "william.jpg",
-					"alt": "William Black; Webmaster"
+					"alt": "William Black; Co-President"
 				}
 			},
-			{
-				"name": "Evan Cafaro",
-				"position": "Mechanical Lead",
-				"image": {
-					"src": "evan.png",
-					"alt": "Evan Cafaro; Mechanical Team lead"
-				}
-			},				
-			{
+						{
 				"name": "Aniketh Luchmapurkar",
 				"position": "Programming Lead",
 				"image": {
@@ -43,23 +128,7 @@
 					"alt": "Aniketh Luchmapurkar; Programming Lead"
 				}
 			},
-			{
-				"name": "Aarya Srikanth",
-				"position": "Programming, Webmaster",
-				"image": {
-					"src": "aarya.png",
-					"alt": "Aarya Srikanth; Webmaster"
-				}
-			},
-			{
-				"name": "Ritwik Sinha",
-				"position": "Mechanics, Historian",
-				"image": {
-					"src": "ritwik.jpg",
-					"alt": "Ritwik Sinha; Historian"
-				}
-			},
-			{
+						{
 				"name": "Ishan Ajwani",
 				"position": "Outreach Lead",
 				"image": {
@@ -67,36 +136,6 @@
 					"alt": "Ishan Ajwani; Outreach Lead"
 				}
 			},
-			{
-				"name": "Aneesh Peri",
-				"position": "Mechanics, Secretary",
-				"image": {
-					"src": "aneesh.png",
-					"alt": "Aneesh Peri; Secretary"
-				}
-			},
-			{
-				"name": "Jacob Percy",
-				"position": "Drop Mech Lead",
-				"image": {
-					"src": "jacob.jpg",
-					"alt": "Jacob Percy; Drop Mech Lead"
-				}
-			},
-			{
-				"name": "Ryan Ke",
-				"position": "Electronics Lead",
-				"image": {
-					"src": "ryan.jpg",
-					"alt": "Ryan Ke; Electronics Lead"
-				}
-			}
-
-		]
-	},
-	"alumni": {
-		"heading": "Alumni",
-		"entries": [
 			{
 				"name": "Krishnan Shankar",
 				"position": "President",
