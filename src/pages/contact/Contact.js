@@ -3,21 +3,18 @@ import styled from "styled-components"
 import CosmicBackground from "./components/CosmicBackground"
 import ParticleBackground from "./components/ParticleBackground"
 
-// Container to hold all content
 const PageContainer = styled.div`
   width: 100%;
   min-height: 100vh;
   position: relative;
 `
-
-// Colors for particles (matching the ones from Members.js)
 const particleColors = ["#9d4edd", "#5e60ce", "#5390d9"]
 
 export default function Contact() {
   const containerStyle = {
     maxWidth: '1200px',
     margin: '0 auto',
-    padding: '60px 24px',  // Increased padding
+    padding: '60px 24px',
     fontFamily: 'system-ui, -apple-system, sans-serif',
     backgroundColor: 'transparent',
     color: 'white',
@@ -35,7 +32,6 @@ export default function Contact() {
     paddingBottom: '12px'
   };
 
-  // Add this new style for the heading underline effect
   const headingAfterStyle = {
     content: '""',
     position: 'absolute',
@@ -46,11 +42,10 @@ export default function Contact() {
     left: '0'
   };
 
-  // Grid with more spacing
   const gridStyle = {
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-    gap: '40px'  // Increased gap
+    gap: '40px'
   };
 
   const formStyle = {
@@ -75,10 +70,10 @@ export default function Contact() {
   const inputStyle = {
     width: '100%',
     padding: '8px 16px',
-    border: '1px solid rgba(157, 78, 221, 0.3)',  // Purple border matching cosmic theme
+    border: '1px solid rgba(157, 78, 221, 0.3)',
     borderRadius: '8px',
     fontSize: '16px',
-    backgroundColor: 'rgba(26, 26, 46, 0.7)',  // Deep blue-purple with transparency
+    backgroundColor: 'rgba(26, 26, 46, 0.7)',
     color: 'white',
     transition: 'all 0.2s ease',
     boxShadow: '0 2px 10px rgba(0, 0, 0, 0.3)'
@@ -91,7 +86,7 @@ export default function Contact() {
   };
 
   const buttonStyle = {
-    background: 'linear-gradient(135deg, #9d4edd, #5e60ce)',  // Cosmic gradient
+    background: 'linear-gradient(135deg, #9d4edd, #5e60ce)',
     color: 'white',
     padding: '12px 16px',
     border: 'none',
@@ -101,15 +96,15 @@ export default function Contact() {
     cursor: 'pointer',
     width: '100%',
     transition: 'all 0.3s ease',
-    boxShadow: '0 4px 15px rgba(157, 78, 221, 0.5)'  // Purple glow
+    boxShadow: '0 4px 15px rgba(157, 78, 221, 0.5)'
   };
 
   const infoBoxStyle = {
-    background: 'linear-gradient(145deg, rgba(26, 26, 46, 0.8), rgba(15, 52, 96, 0.8))',  // Cosmic gradient with transparency
+    background: 'linear-gradient(145deg, rgba(26, 26, 46, 0.8), rgba(15, 52, 96, 0.8))',
     borderRadius: '12px',
     padding: '28px',
     boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1), 0 0 30px rgba(157, 78, 221, 0.2)',  // Multi-layered shadow with purple glow
-    border: '1px solid rgba(157, 78, 221, 0.2)'  // Subtle purple border
+    border: '1px solid rgba(157, 78, 221, 0.2)'
   };
 
   const infoHeadingStyle = {
@@ -168,7 +163,7 @@ export default function Contact() {
 
   const dividerStyle = {
     height: '1px',
-    background: 'linear-gradient(to right, transparent, rgba(157, 78, 221, 0.5), transparent)',  // Gradient divider
+    background: 'linear-gradient(to right, transparent, rgba(157, 78, 221, 0.5), transparent)',
     margin: '28px 0'
   };
 
@@ -184,8 +179,7 @@ export default function Contact() {
         
         <div style={gridStyle}>
           <div>
-            {/* Form section */}
-            <form action="https://formspree.io/f/xwploplr" method="POST" style={formStyle}>
+            <form action="https://formspree.io/f/mvgwwlnb" method="POST" style={formStyle}>
               <div style={inputGroupStyle}>
                 <label htmlFor="name" style={labelStyle}>
                   Name
@@ -224,13 +218,6 @@ export default function Contact() {
                   style={textareaStyle}
                 />
               </div>
-
-              {/* This hidden field will forward emails to alexlenlakers@gmail.com */}
-              <input type="hidden" name="_replyto" value="alexlenlakers@gmail.com" />
-
-              {/* This ensures emails are sent to your specified address */}
-              <input type="hidden" name="_cc" value="alexlenlakers@gmail.com" />
-
               <button
                 type="submit"
                 style={buttonStyle}
@@ -248,7 +235,6 @@ export default function Contact() {
             
             <div style={infoItemStyle}>
               <div style={{marginTop: '4px'}}>
-                {/* Email icon */}
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9d4edd" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                   <polyline points="22,6 12,13 2,6"></polyline>
@@ -262,7 +248,6 @@ export default function Contact() {
             
             <div style={infoItemStyle}>
               <div style={{marginTop: '4px'}}>
-                {/* Location icon */}
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9d4edd" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                   <circle cx="12" cy="10" r="3"></circle>
