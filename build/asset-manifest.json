@@ -1,20 +1,22 @@
 {
   "files": {
     "main.css": "/static/css/main.b5559466.css",
-    "main.js": "/static/js/main.a3ee174d.js",
+    "main.js": "/static/js/main.30f09322.js",
     "static/media/sophia.png": "/static/media/sophia.69cf9a95e6d02da8fab6.png",
     "static/media/winston.png": "/static/media/winston.6eb33dd33ceacdf29731.png",
+    "static/media/polina.jpg": "/static/media/polina.28343c693666865eed47.jpg",
     "static/media/khoi.png": "/static/media/khoi.d0d5f7920430c4f2cf13.png",
-    "static/media/ryan.jpg": "/static/media/ryan.985e04973516686e95e7.jpg",
+    "static/media/teamupdated2.jpg": "/static/media/teamupdated2.05c5a1d211a0ff885e10.jpg",
     "static/media/jerry.png": "/static/media/jerry.766b9ad049644a1745fc.png",
     "static/media/teamupdated.jpg": "/static/media/teamupdated.e346930ce7f340ab4550.jpg",
     "static/media/alan.png": "/static/media/alan.3e252cf548aa18305904.png",
     "static/media/ronel.png": "/static/media/ronel.084e7da5a9c3b3cb47fe.png",
     "static/media/jacob.jpg": "/static/media/jacob.d071567aa037b0181568.jpg",
+    "static/media/team.jpg": "/static/media/team.185c3e7a6725d0046c8a.jpg",
     "static/media/viraj.jpg": "/static/media/viraj.b79741db0c228dd73f78.jpg",
     "static/media/aniketh.png": "/static/media/aniketh.1939082768c7c87113f1.png",
     "static/media/ish.jpg": "/static/media/ish.aa11c45d7b2744d705d9.jpg",
-    "static/media/team.jpg": "/static/media/team.718e83e6880e75a64ae3.jpg",
+    "static/media/frank.jpg": "/static/media/frank.901d130cf8cfac8e7c62.jpg",
     "static/media/niels-oliver.png": "/static/media/niels-oliver.a07435ff8ace09a61dba.png",
     "static/media/ritwik.jpg": "/static/media/ritwik.c99a95596678054fa93e.jpg",
     "static/media/abhi.png": "/static/media/abhi.a89ccae112bc05c6dfc2.png",
@@ -36,6 +38,8 @@
     "static/media/comp.jpg": "/static/media/comp.8dc6eb0c088ea52a07a0.jpg",
     "static/media/Poppins-Light.ttf": "/static/media/Poppins-Light.f41b63c0bb0963ace821.ttf",
     "static/media/Poppins-Regular.ttf": "/static/media/Poppins-Regular.8081832fc5cfbf634aa6.ttf",
+    "static/media/mandy.jpg": "/static/media/mandy.52949086a4a7983d40b5.jpg",
+    "static/media/ryan.jpeg": "/static/media/ryan.66fcef6781519696615e.jpeg",
     "static/media/neel.png": "/static/media/neel.efc6681b5174e1549919.png",
     "static/media/flying.jpg": "/static/media/flying.f851cfd899aef6f22b8f.jpg",
     "static/media/aneesh.png": "/static/media/aneesh.55073322e96ca2373997.png",
@@ -49,10 +53,10 @@
     "static/media/programmingIcon.svg": "/static/media/programmingIcon.5e94b131a98ff5a96447.svg",
     "index.html": "/index.html",
     "main.b5559466.css.map": "/static/css/main.b5559466.css.map",
-    "main.a3ee174d.js.map": "/static/js/main.a3ee174d.js.map"
+    "main.30f09322.js.map": "/static/js/main.30f09322.js.map"
   },
   "entrypoints": [
     "static/css/main.b5559466.css",
-    "static/js/main.a3ee174d.js"
+    "static/js/main.30f09322.js"
   ]
 }
