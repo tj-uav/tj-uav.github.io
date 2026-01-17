@@ -363,7 +363,7 @@ const Header = (props) => {
       </SearchContainer>
 
       <RightContainer>
-        <EnhancedButton href="/sponsorship-packet.pdf" target="blank">
+        <EnhancedButton href="/tjuav-sponsorship-packet(25-26).pdf" target="blank">
           Sponsorship Info
         </EnhancedButton>
         <Burger hook={[active, setActive]} />

@@ -72,7 +72,7 @@ const Footer = () => (
   <Container as="footer">
     <FooterContent>
       <Copyright style={Paragraph}>
-        Copyright &copy; <Highlight>TJUAV</Highlight> 2025
+        Copyright &copy; <Highlight>TJUAV</Highlight> 2026
       </Copyright>
       <Contributors style={Paragraph}>
         Contributors: Ritwik Sinha '26, Aarya Srikanth '26, William Black '25, Nicolas Makovnik '23, Jason Klein '22
