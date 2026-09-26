@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b5559466.css",
-    "main.js": "/static/js/main.77b1de02.js",
+    "main.js": "/static/js/main.32a213ec.js",
     "static/media/sophia.png": "/static/media/sophia.69cf9a95e6d02da8fab6.png",
     "static/media/winston.png": "/static/media/winston.6eb33dd33ceacdf29731.png",
     "static/media/polina.jpg": "/static/media/polina.28343c693666865eed47.jpg",
@@ -11,12 +11,15 @@
     "static/media/teamupdated.jpg": "/static/media/teamupdated.e346930ce7f340ab4550.jpg",
     "static/media/alan.png": "/static/media/alan.3e252cf548aa18305904.png",
     "static/media/ronel.png": "/static/media/ronel.084e7da5a9c3b3cb47fe.png",
+    "static/media/jasper.png": "/static/media/jasper.c491a7e416000365ea0f.png",
     "static/media/jacob.jpg": "/static/media/jacob.d071567aa037b0181568.jpg",
     "static/media/team.jpg": "/static/media/team.185c3e7a6725d0046c8a.jpg",
     "static/media/viraj.jpg": "/static/media/viraj.b79741db0c228dd73f78.jpg",
     "static/media/aniketh.png": "/static/media/aniketh.1939082768c7c87113f1.png",
     "static/media/ish.jpg": "/static/media/ish.aa11c45d7b2744d705d9.jpg",
+    "static/media/kevin.png": "/static/media/kevin.b952986cee31f16d8bde.png",
     "static/media/frank.jpg": "/static/media/frank.901d130cf8cfac8e7c62.jpg",
+    "static/media/lilly.jpg": "/static/media/lilly.78c6a0105ff46dffefc8.jpg",
     "static/media/niels-oliver.png": "/static/media/niels-oliver.a07435ff8ace09a61dba.png",
     "static/media/ritwik.jpg": "/static/media/ritwik.c99a95596678054fa93e.jpg",
     "static/media/abhi.png": "/static/media/abhi.a89ccae112bc05c6dfc2.png",
@@ -29,19 +32,23 @@
     "static/media/mia.jpg": "/static/media/mia.700564953dfe0eff535c.jpg",
     "static/media/ishan.png": "/static/media/ishan.3a346c0495704c306846.png",
     "static/media/william.jpg": "/static/media/william.090276f5134837c90ecf.jpg",
+    "static/media/nikhil.jpg": "/static/media/nikhil.2368ae70bc0783f2d1d6.jpg",
     "static/media/Montserrat-Regular.ttf": "/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
     "static/media/Montserrat-Bold.ttf": "/static/media/Montserrat-Bold.079ca05d3ded9bc107ab.ttf",
     "static/media/talking.jpg": "/static/media/talking.6d63140d5c62908df46e.jpg",
     "static/media/rachit.jpg": "/static/media/rachit.8f8896d06a645f750f48.jpg",
     "static/media/nicolas.jpg": "/static/media/nicolas.8cfebc603061bc90426b.jpg",
     "static/media/TJPF.png": "/static/media/TJPF.d73c0eac3ab015bbac1f.png",
+    "static/media/sudar.jpg": "/static/media/sudar.e70aba23ab07e28a175e.jpg",
     "static/media/comp.jpg": "/static/media/comp.8dc6eb0c088ea52a07a0.jpg",
     "static/media/Poppins-Light.ttf": "/static/media/Poppins-Light.f41b63c0bb0963ace821.ttf",
     "static/media/Poppins-Regular.ttf": "/static/media/Poppins-Regular.8081832fc5cfbf634aa6.ttf",
     "static/media/mandy.jpg": "/static/media/mandy.52949086a4a7983d40b5.jpg",
+    "static/media/sarah.jpg": "/static/media/sarah.cf21eb1023cf79202efd.jpg",
     "static/media/ryan.jpeg": "/static/media/ryan.66fcef6781519696615e.jpeg",
     "static/media/neel.png": "/static/media/neel.efc6681b5174e1549919.png",
     "static/media/rivaan.jpg": "/static/media/rivaan.a0f9b484459b4365c9ca.jpg",
+    "static/media/rishi.jpeg": "/static/media/rishi.f762462566a936466483.jpeg",
     "static/media/flying.jpg": "/static/media/flying.f851cfd899aef6f22b8f.jpg",
     "static/media/aneesh.png": "/static/media/aneesh.55073322e96ca2373997.png",
     "static/media/TJAB.jpg": "/static/media/TJAB.e12a96fd5620b67f6be1.jpg",
@@ -54,10 +61,10 @@
     "static/media/programmingIcon.svg": "/static/media/programmingIcon.191bf2f04b0f929685d8.svg",
     "index.html": "/index.html",
     "main.b5559466.css.map": "/static/css/main.b5559466.css.map",
-    "main.77b1de02.js.map": "/static/js/main.77b1de02.js.map"
+    "main.32a213ec.js.map": "/static/js/main.32a213ec.js.map"
   },
   "entrypoints": [
     "static/css/main.b5559466.css",
-    "static/js/main.77b1de02.js"
+    "static/js/main.32a213ec.js"
   ]
 }
